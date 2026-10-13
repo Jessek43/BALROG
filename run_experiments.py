@@ -19,7 +19,7 @@ CLIENT_BASE_URL = "http://0.0.0.0:8080/v1"
 
 presets = {
     "smoke": {"num_episodes_babyai": 1, "num_episodes_crafter": 1, "max_tokens": 512, "n_runs":1},
-    "standard": {"num_episodes_babyai": 10, "num_episodes_crafter": 10, "max_tokens": 8192, "n_runs":5}
+    "standard": {"num_episodes_babyai": 5, "num_episodes_crafter": 5, "max_tokens": 1024, "n_runs":5}
 }
 
 run_cfg = presets[RUN_TYPE]
