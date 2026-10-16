@@ -1,0 +1,153 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go forward,"NEW_MEMORY: Grey key is 1 step left and 3 steps forward. Wall 5 steps forward. Wall 1 step right. Yellow key not visible yet.
+PLAN: 1. Explore to locate the yellow key, moving toward the open area near the grey key to see more of the map. 2. Walk to the yellow key and pick it up. 3. Carry it to a cell adjacent to the grey key. 4. Drop the yellow key there.
+PREDICTION: Going forward moves me one step closer to the grey key (it becomes 1 step left and 2 steps forward), and newly visible cells should reveal more of the layout, possibly the yellow key.
+ACTION: go forward","a wall 4 steps forward
+a wall 1 step right
+a grey key 1 step left and 2 steps forward",0,False
+1,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Moving forward brings me closer to the grey key (it should become 1 step left and 1 step forward), and more of the map should come into view, possibly revealing the yellow key.
+ACTION: go forward","a wall 3 steps forward
+a wall 1 step right
+a grey key 1 step left and 1 step forward",0,False
+2,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Moving forward brings the grey key to 1 step left and 0 steps forward (beside me), and the wall ahead gets closer, revealing more of the map for finding the yellow key.
+ACTION: go forward","a wall 2 steps forward
+a wall 1 step right
+a grey key 1 step left",0,False
+3,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turning left should bring the area to my left into view, possibly revealing the yellow key, and the grey key will end up directly in front of me.
+ACTION: turn left","a wall 2 steps right
+a grey key 1 step forward",0,False
+4,turn left,"OBSERVATION_CHECK: SUCCESS (the turn reoriented me so the grey key is now 1 step forward, but the yellow key is still not visible)
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turning left should reveal the area on my left, where the yellow key may be visible.
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step left
+a yellow key 1 step right and 4 steps forward
+a grey key 1 step right",0,False
+5,go forward,"OBSERVATION_CHECK: SUCCESS (turning left revealed the yellow key, 1 step right and 4 steps forward).
+NEW_MEMORY: NONE
+PLAN: 1. Go forward 3 steps to be beside the yellow key. 2. Turn right, step forward onto the key's cell and pick it up. 3. Carry it to a cell adjacent to the grey key (grey key is 1 step right of me now). 4. Drop the yellow key there.
+PREDICTION: Moving forward should bring me closer to the yellow key, which will shift to 1 right and 3 forward.
+ACTION: go forward","a wall 4 steps forward
+a wall 1 step left
+a yellow key 1 step right and 3 steps forward",0,False
+6,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Go forward 2 more steps to be level with the yellow key (it will be 1 right). Turn right to face it, step onto its cell, pick it up. Carry it to a cell next to the grey key and drop it.
+PREDICTION: Moving forward brings the yellow key to 1 step right and 2 steps forward.
+ACTION: go forward","a wall 3 steps forward
+a wall 1 step left
+a yellow key 1 step right and 2 steps forward",0,False
+7,go forward,"OBSERVATION_CHECK: SUCCESS (the yellow key moved from 3 steps forward to 2 steps forward, so the move made progress)
+NEW_MEMORY: NONE
+PLAN: KEEP. Go forward until the yellow key is level with me (1 step right), then turn right to face it, step onto its cell, pick it up, carry it to a cell next to the grey key, and drop it.
+PREDICTION: The yellow key should appear 1 step right and 1 step forward.
+ACTION: go forward","a wall 2 steps forward
+a wall 1 step left
+a yellow key 1 step right and 1 step forward",0,False
+8,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Go forward until the yellow key is 1 step right with 0 steps forward, then turn right to face it, pick it up, carry it to a cell next to the grey key, and drop it.
+PREDICTION: The yellow key should appear 1 step right and 0 steps forward, directly beside me.
+ACTION: go forward","a wall 1 step forward
+a wall 1 step left
+a yellow key 1 step right",0,False
+9,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Turn right to face the yellow key, which is 1 step right. Then move onto or pick up the yellow key, carry it to a cell next to the grey key (1 step left and 3 steps forward from the earlier position), and drop it.
+PREDICTION: The yellow key should be directly in front of me (1 step forward) after turning right.
+ACTION: turn right","a wall 1 step left
+a yellow key 1 step forward",0,False
+10,pick up,"OBSERVATION_CHECK: SUCCESS (turn right made the yellow key appear 1 step forward, as predicted)
+NEW_MEMORY: NONE
+PLAN: Pick up the yellow key that is directly in front of me. Then navigate to a cell next to the grey key (grey key is about 1 step left and 3 steps forward from the earlier position) and drop the yellow key there.
+PREDICTION: The yellow key should be picked up and appear in my inventory.
+ACTION: pick up","You carry a yellow key
+a wall 6 steps forward
+a wall 1 step left",0,False
+11,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Turn right to face north, walk forward about 5 steps back toward the grey key's row, then drop the yellow key on the cell directly beside the grey key (grey key is 1 step left of my start cell, so the start cell is adjacent to it).
+PREDICTION: I will turn to face north, with the path back toward the grey key row in front of me.
+ACTION: turn right","You carry a yellow key
+a wall 6 steps forward
+a wall 1 step right
+a grey key 1 step left and 4 steps forward",0,False
+12,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Walk forward until the grey key is 1 step left and 1 step forward, then turn so the grey key is beside me and drop the yellow key on an adjacent cell.
+PREDICTION: Grey key moves to 1 step left and 3 steps forward; wall 6 steps forward becomes 5 steps forward.
+ACTION: go forward","You carry a yellow key
+a wall 5 steps forward
+a wall 1 step right
+a grey key 1 step left and 3 steps forward",0,False
+13,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Go forward two more steps so the grey key is 1 step left and 1 step forward. Then drop the yellow key onto the empty cell directly in front of me, which is right beside the grey key.
+PREDICTION: Wall 5 steps forward becomes 4 steps forward; grey key becomes 1 step left and 2 steps forward.
+ACTION: go forward","You carry a yellow key
+a wall 4 steps forward
+a wall 1 step right
+a grey key 1 step left and 2 steps forward",0,False
+14,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Wall becomes 3 steps forward; grey key becomes 1 step left and 1 step forward.
+ACTION: go forward","You carry a yellow key
+a wall 3 steps forward
+a wall 1 step right
+a grey key 1 step left and 1 step forward",0,False
+15,go forward,"OBSERVATION_CHECK: SUCCESS (the wall moved from 4 to 3 steps forward and the grey key moved closer, so the last move made progress)
+NEW_MEMORY: NONE
+PLAN: Go forward once more so the grey key is directly 1 step left, then drop the yellow key on the empty cell in front of me, which is diagonally adjacent to the grey key.
+PREDICTION: Grey key becomes 1 step left, wall becomes 2 steps forward.
+ACTION: go forward","You carry a yellow key
+a wall 2 steps forward
+a wall 1 step right
+a grey key 1 step left",0,False
+16,drop,"OBSERVATION_CHECK: FAILED: The internal plan expected the grey key to become directly 1 step left after another forward move, but it is already 1 step left with no forward offset, so the planned step is already done and the plan is outdated.
+NEW_MEMORY: Grey key is 1 step left of my current position (same row). The cell directly in front of me is empty.
+PLAN: Drop the yellow key on the empty cell in front of me, which is diagonally adjacent to the grey key. If diagonal does not count as next to, reposition to place the key orthogonally adjacent to the grey key.
+PREDICTION: The yellow key is placed one step forward, diagonal to the grey key, and I no longer carry it.
+ACTION: drop","a wall 1 step right
+a grey key 1 step left
+a yellow key 1 step forward",0,False
+17,pick up,"OBSERVATION_CHECK: FAILED: The drop succeeded, but the yellow key is only diagonal to the grey key, not orthogonally next to it.
+NEW_MEMORY: Dropping the yellow key one step forward put it diagonal to the grey key (grey is 1 left, yellow is 1 forward), which does not count as next to.
+PLAN: Pick up the yellow key again, step forward so the yellow key's former cell is behind me, turn left to face the cell north of the grey key, then drop the yellow key there.
+PREDICTION: The yellow key is picked up from the cell in front of me and I carry it again.
+ACTION: pick up","You carry a yellow key
+a wall 2 steps forward
+a wall 1 step right
+a grey key 1 step left",0,False
+18,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Go forward one step so the grey key is diagonally behind-left, turn left so I face the cell directly above the grey key, then drop the yellow key there.
+PREDICTION: I move one cell forward, the grey key shifts to 1 left and 1 step back, and a wall stays 1 step ahead.
+ACTION: go forward","You carry a yellow key
+a wall 1 step forward
+a wall 1 step right",0,False
+19,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Turn left to face the cell directly north of the grey key (the grey key is now 1 left and 1 back), then drop the yellow key there so it sits next to the grey key.
+PREDICTION: I rotate 90 degrees left, now facing the open cell directly above the grey key, with the wall still 1 step to my right.
+ACTION: turn left","You carry a yellow key
+a wall 6 steps forward
+a wall 1 step right
+a grey key 1 step left and 1 step forward",0,False
+20,drop,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Dropping places the key in the cell directly in front of me. The grey key is 1 left and 1 forward, so the cell 1 forward is directly east of it and adjacent.
+PLAN: Drop the yellow key now, which places it 1 forward, directly east of the grey key. Then the task is complete.
+PREDICTION: The yellow key appears 1 step forward, directly right of the grey key, so the two keys are adjacent.
+ACTION: drop","a wall 1 step right
+a grey key 1 step left and 1 step forward
+a yellow key 1 step forward",0.85234375,True

@@ -1,0 +1,120 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go forward,"NEW_MEMORY: Red ball is 2 steps left and 1 step forward; wall 5 steps forward; wall 3 steps right; blue key location not yet seen.
+PLAN: 1) Locate the blue key (not visible yet, so may need to turn to scan). 2) Walk to the red ball, pick it up using pick up when directly on it or facing it as needed. 3) Carry the red ball to a cell adjacent to the blue key. 4) Drop the red ball next to the blue key.
+PREDICTION: Going forward one step should bring the red ball to 2 steps left and 0 steps forward (directly beside me on the left), and the wall 5 steps forward would become 4 steps forward.
+ACTION: go forward","a wall 4 steps forward
+a wall 3 steps right
+a red ball 2 steps left",0,False
+1,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1) Turn left to face the red ball, which is 2 steps to my left. 2) Walk toward it until it is directly in front of me and adjacent. 3) Pick up the red ball. 4) Scan for the blue key (not yet seen) and turn to look for it. 5) Carry the red ball to a cell next to the blue key and drop it.
+PREDICTION: After turning left, the red ball should appear 2 steps forward, and the wall 4 steps forward should now appear 4 steps to my left.
+ACTION: turn left","a wall 3 steps left
+a red ball 2 steps forward",0,False
+2,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Moving forward one step brings the red ball to 1 step in front of me.
+ACTION: go forward","a wall 3 steps left
+a red ball 1 step forward",0,False
+3,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1) Go forward onto the red ball. 2) Pick up the red ball. 3) Scan for the blue key by turning and looking around. 4) Carry the red ball to a cell next to the blue key and drop it.
+PREDICTION: Moving forward one step puts me on the red ball, so it should be directly below me.
+ACTION: go forward","a wall 3 steps left
+a red ball 1 step forward",0,False
+4,pick up,"OBSERVATION_CHECK: FAILED: The view did not change after the last ""go forward"", so the move was blocked. The red ball is 1 step forward and is an obstacle I cannot walk onto.
+NEW_MEMORY: Red ball is directly in front (1 step forward) and blocks forward movement; do not repeat ""go forward"" into it.
+PLAN: 1) Pick up the red ball from the cell in front of me. 2) Turn to scan for the blue key (wall 3 steps left and wall 5 steps forward noted). 3) Walk to a cell next to the blue key, then drop the red ball.
+PREDICTION: The red ball in front of me should be picked up and become my held item, and the view should show it in my inventory.
+ACTION: pick up","You carry a red ball
+a wall 3 steps forward
+a wall 3 steps left",0,False
+5,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1) Turn right to scan for the blue key (not yet seen). 2) Walk toward the key while avoiding walls (3 steps forward, 3 steps left). 3) Stand next to the blue key and drop the red ball.
+PREDICTION: The view rotates right, revealing new objects and walls, possibly including the blue key.
+ACTION: turn right","You carry a red ball
+a wall 4 steps forward
+a wall 3 steps left",0,False
+6,turn right,"OBSERVATION_CHECK: SUCCESS (the turn changed the view, so I am now facing the original direction with a wall 4 steps ahead)
+NEW_MEMORY: NONE
+PLAN: KEEP (1. Turn right to scan for the blue key. 2. Walk toward the key while avoiding walls. 3. Stand next to the blue key and drop the red ball.)
+PREDICTION: The view rotates right again, possibly revealing the blue key on the far side of the wall.
+ACTION: turn right","You carry a red ball
+a wall 4 steps forward
+a wall 3 steps right
+a blue key 2 steps right and 3 steps forward",0,False
+7,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Walk forward toward the blue key (it is 3 steps forward and 2 steps right). 2. Turn right when the key is level with me and step toward it. 3. Stand next to the blue key and drop the red ball.
+PREDICTION: Moving forward brings the blue key to about 2 steps forward and 2 steps right, and the view shifts closer to it.
+ACTION: go forward","You carry a red ball
+a wall 3 steps forward
+a wall 3 steps right
+a blue key 2 steps right and 2 steps forward",0,False
+8,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Go forward twice so the blue key is level with me, 2 steps right. 2. Turn right and step forward once so the key is directly ahead and adjacent. 3. Drop the red ball next to the blue key.
+PREDICTION: The blue key moves to about 1 step forward and 2 steps right, getting closer.
+ACTION: go forward","You carry a red ball
+a wall 2 steps forward
+a wall 3 steps right
+a blue key 2 steps right and 1 step forward",0,False
+9,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Go forward once more so the blue key is level with me, 2 steps right. 2. Turn right so the key is 2 steps ahead. 3. Go forward once so the key is 1 step ahead. 4. Drop the red ball in a free cell next to the key.
+PREDICTION: The blue key moves to 2 steps right and 0 steps forward (level with me), and the forward wall moves to 1 step ahead.
+ACTION: go forward","You carry a red ball
+a wall 1 step forward
+a blue key 2 steps right",0,False
+10,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Go forward once so the blue key is level with me, 2 steps right. 2. Turn right so the key is 2 steps ahead. 3. Go forward once so the key is 1 step ahead. 4. Drop the red ball in a free cell next to the key.
+PREDICTION: The wall ahead becomes adjacent (0 steps forward), and the blue key shows as 2 steps right with no forward offset.
+ACTION: go forward","You carry a red ball
+a wall 1 step forward
+a blue key 2 steps right",0,False
+11,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I turn to face right, so the blue key should appear 2 steps forward.
+ACTION: turn right","You carry a red ball
+a wall 1 step left
+a blue key 2 steps forward",0,False
+12,go forward,"OBSERVATION_CHECK: SUCCESS (the turn put the blue key directly ahead, 2 steps forward, as predicted)
+NEW_MEMORY: NONE
+PLAN: 1. Go forward once so the blue key is 1 step ahead. 2. Turn so I face a free cell beside the key. 3. Drop the red ball there, next to the key.
+PREDICTION: The blue key will be 1 step forward and the wall on my left will be 2 steps away.
+ACTION: go forward","You carry a red ball
+a wall 1 step left
+a blue key 1 step forward",0,False
+13,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Turn right to face an open cell beside my current position. 2. Go forward one step so the blue key is diagonal to me. 3. Turn left so I face the cell directly beside the key. 4. Drop the red ball there.
+PREDICTION: I turn to face east, and the blue key stays 1 step ahead-left of me, with the wall still on my left.
+ACTION: turn right","You carry a red ball
+a wall 6 steps forward
+a blue key 1 step left",0,False
+14,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Go forward one step so the blue key is diagonal-behind me on my left. 2. Turn left so I face the cell directly north of the key. 3. Drop the red ball onto that cell, which is orthogonally next to the key.
+PREDICTION: I move one cell forward, and the blue key ends up 1 step left and 1 step back from me.
+ACTION: go forward","You carry a red ball
+a wall 5 steps forward
+a wall 2 steps left",0,False
+15,turn left,"OBSERVATION_CHECK: SUCCESS (the wall ahead went from 6 to 5 steps, so the forward move worked)
+NEW_MEMORY: NONE
+PLAN: Turn left to face west, so the cell in front of me is directly north of the blue key (key is 1 step left and 1 step back from me). Then drop the red ball onto that cell, which is orthogonally adjacent to the key.
+PREDICTION: I rotate to face west, and the cell in front of me becomes the one next to the blue key.
+ACTION: turn left","You carry a red ball
+a wall 2 steps forward
+a wall 2 steps left
+a blue key 1 step left and 1 step forward",0,False
+16,drop,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Drop the red ball on the cell directly in front of me (1 step forward). That cell is orthogonally adjacent to the blue key (1 step left and 1 step forward), so the goal is met. The earlier plan to turn left is outdated.
+PREDICTION: The red ball is placed on the empty cell 1 step forward, next to the blue key.
+ACTION: drop","a wall 2 steps left
+a blue key 1 step left and 1 step forward
+a red ball 1 step forward",0.88046875,True

@@ -1,0 +1,107 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn left,"NEW_MEMORY: Wall 3 steps forward and a wall 3 steps to the right at start; blue ball not yet visible.
+PLAN: Explore to locate the blue ball; first turn to scan the surroundings (left side is open away from the right wall), then move toward the ball once seen, using turns to align and forward steps to approach, then pick up or toggle as needed.
+PREDICTION: Turning left changes my facing direction so the wall on my right becomes a wall behind/to the side, and new objects in the left view may appear.
+ACTION: turn left","a wall 4 steps forward
+a wall 3 steps right",0,False
+1,go forward,"OBSERVATION_CHECK: SUCCESS (the view changed after turning left, and the forward wall now reads 4 steps, so there is open space ahead)
+NEW_MEMORY: NONE
+PLAN: Move forward into the open space ahead to explore for the blue ball, stopping to turn and scan if it appears or if a wall blocks the way.
+PREDICTION: I move one step forward and the forward wall should read about 3 steps away.
+ACTION: go forward","a wall 3 steps forward
+a wall 3 steps right",0,False
+2,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The forward wall should read about 2 steps away and the right wall should stay at 3 steps.
+ACTION: go forward","a wall 2 steps forward
+a wall 3 steps right",0,False
+3,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The forward wall should read about 1 step away and the right wall should stay at 3 steps.
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps right",0,False
+4,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move forward one more step, since the wall is now 1 step ahead, then turn left to scan the new open area for the blue ball.
+PREDICTION: The forward wall should be adjacent to me (0 steps away), and the right wall should still be 3 steps away.
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps right",0,False
+5,go forward,"OBSERVATION_CHECK: SUCCESS (the forward wall went from 3 to 2 to 1 steps away, and the right wall stayed 3 steps away, so the agent is making progress along the corridor)
+NEW_MEMORY: NONE
+PLAN: KEEP. Move forward one more step to reach the wall ahead, then turn left to scan the new open area for the blue ball.
+PREDICTION: The forward wall will be 0 steps away (adjacent), and the right wall will still be 3 steps away.
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps right",0,False
+6,turn left,"OBSERVATION_CHECK: FAILED: The last ""go forward"" did not change the view (wall still 1 step forward), so the path ahead is blocked.
+NEW_MEMORY: Path straight ahead is blocked by a wall 1 step away; repeating ""go forward"" will not work, so I must turn to find another route.
+PLAN: Turn left to scan the new direction for an opening and the blue ball, then move along any open path while avoiding the blocked forward direction.
+PREDICTION: The view will rotate; the wall that is currently to my left-facing side should become visible in front, revealing whether that direction is open.
+ACTION: turn left","a wall 4 steps forward
+a wall 1 step right",0,False
+7,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Walk forward along the open corridor (wall 4 steps ahead, wall 1 step to the right) and scan for the blue ball or an opening; turn if blocked.
+PREDICTION: The view shifts one step closer; wall ahead becomes 3 steps and the right wall stays at 1 step.
+ACTION: go forward","a wall 3 steps forward
+a wall 1 step right",0,False
+8,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Earlier ""wall 1 step ahead"" block was resolved by turning left; the forward path is now open, so memory 2 is outdated.
+PLAN: Keep walking forward along the corridor (wall ahead now 3 steps, wall 1 step to the right) and scan for the blue ball or an opening; turn if blocked.
+PREDICTION: The view shifts one step closer; the wall ahead becomes 2 steps and the right wall stays at 1 step.
+ACTION: go forward","a wall 2 steps forward
+a wall 1 step right",0,False
+9,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Earlier ""wall 1 step ahead"" block was cleared by turning left; forward movement is working again, and the ""wall 3 steps ahead"" plan note is stale since the current view shows 2 steps.
+PLAN: Continue walking forward along the corridor, keeping the wall on the right, and scan for the blue ball or an opening; turn left if the forward path is blocked.
+PREDICTION: The view shifts one step closer, so the wall ahead should show 1 step and the right wall should remain 1 step away.
+ACTION: go forward","a wall 1 step forward
+a wall 1 step right",0,False
+10,turn left,"OBSERVATION_CHECK: SUCCESS (the wall ahead went from 2 steps to 1 step, so the forward move made progress)
+NEW_MEMORY: NONE
+PLAN: Wall is now 1 step ahead and blocks forward movement. Turn left to find an open route, then keep following the corridor while scanning for the blue ball.
+PREDICTION: Agent rotates 90 degrees left, and the view should show a different wall distance ahead, revealing a possible opening.
+ACTION: turn left","a wall 6 steps forward
+a wall 1 step right
+a blue ball 2 steps left and 4 steps forward",0,False
+11,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Blue ball spotted at 4 steps forward and 2 steps left of the current position. Older notes about a blocked forward path are outdated because the view now shows a wall 6 steps ahead.
+PLAN: Go forward 4 steps until the ball is directly to my left, then turn left and go forward 2 steps to reach the ball.
+PREDICTION: The agent moves one step forward, and the blue ball should appear 3 steps forward and 2 steps left.
+ACTION: go forward","a wall 5 steps forward
+a wall 1 step right
+a blue ball 2 steps left and 3 steps forward",0,False
+12,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Go forward 3 more steps until the ball is directly to my left, then turn left and go forward 2 steps to reach it.
+PREDICTION: The wall ahead moves from 5 steps to 4 steps, and the blue ball moves from 2 steps left and 3 forward to 2 steps left and 2 forward.
+ACTION: go forward","a wall 4 steps forward
+a wall 1 step right
+a blue ball 2 steps left and 2 steps forward",0,False
+13,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Go forward 2 more steps until the ball is directly to my left, then turn left and go forward 2 steps to reach it.
+PREDICTION: The wall ahead moves from 4 steps to 3 steps, and the blue ball moves from 2 steps left and 2 forward to 2 steps left and 1 forward.
+ACTION: go forward","a wall 3 steps forward
+a wall 1 step right
+a blue ball 2 steps left and 1 step forward",0,False
+14,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The blue ball moves from 2 steps left and 1 forward to 2 steps left and directly beside me, and the wall ahead moves from 3 steps to 2 steps.
+ACTION: go forward","a wall 2 steps forward
+a wall 1 step right
+a blue ball 2 steps left",0,False
+15,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Turn left so the blue ball (2 steps left) is directly ahead, then go forward 2 steps to reach it.
+PREDICTION: I will face left, and the blue ball will appear 2 steps straight ahead.
+ACTION: turn left","a wall 2 steps right
+a blue ball 2 steps forward",0,False
+16,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Go forward 2 steps to reach the blue ball, which is now straight ahead.
+PREDICTION: The blue ball moves to 1 step forward.
+ACTION: go forward","a wall 2 steps right
+a blue ball 1 step forward",0.7609375,True

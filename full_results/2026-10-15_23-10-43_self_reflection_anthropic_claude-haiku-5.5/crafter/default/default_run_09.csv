@@ -1,0 +1,2564 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,Do,"NEW_MEMORY: Start position: only grass visible, 1 step west. No trees, water, or stone in view yet.
+PLAN: 1) Explore to find trees (collect wood, ~5 needed), 2) Place table near trees, 3) Make wood pickaxe and wood sword, 4) Collect sapling from grass and place plant, 5) Find water to drink, find cows to eat, 6) Find stone, collect stone, place stone, make stone pickaxe and sword, 7) Find coal and iron, place furnace near table, make iron pickaxe and sword, 8) Find diamond, sleep at night when energy drops to stay healthy.
+PREDICTION: I face grass in front; ""Do"" on grass may yield a sapling with some probability, but more likely nothing changes. Moving east instead would reveal new terrain to the east, so I will first try to collect a sapling by interacting with the grass in front.
+ACTION: Do","You see:
+- grass 1 step to your west
+
+You face grass at your front.",0.0,False
+1,Move East,"OBSERVATION_CHECK: FAILED: ""Do"" on grass produced nothing and the view is unchanged, so no progress was made toward a sapling or any other resource.
+NEW_MEMORY: Facing grass with Do yielded no sapling; repeated Do on grass wastes steps, so explore to find trees instead.
+PLAN: 1) Move east to explore and find trees (collect ~5 wood), 2) Place table near trees, 3) Make wood pickaxe and wood sword, 4) Collect sapling from grass and place plant, 5) Find water to drink, find cows to eat, 6) Find stone, collect stone, place stone, make stone pickaxe and sword, 7) Find coal and iron, place furnace near table, make iron pickaxe and sword, 8) Find diamond, sleep at night when energy drops to stay healthy.
+PREDICTION: Moving east shifts my view one tile east, revealing new terrain such as trees, water, or stone.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- tree 6 steps to your north-east
+
+You face grass at your front.",0.0,False
+2,Move North,"OBSERVATION_CHECK: FAILED: The previous Move East did not change the view; the grass 1 step west is still the same and the tree is now 6 steps north-east, so the move may have been blocked or the view did not shift as expected.
+NEW_MEMORY: Move East from the start position appeared to produce no visible change in terrain relative to me; I should verify movement by checking whether the tree's relative position shifts after each move.
+PLAN: 1) Move North-East toward the tree (move North first, then East), 2) Collect ~5 wood from trees, 3) Place table near trees, 4) Make wood pickaxe and wood sword, 5) Collect sapling from grass and place plant, 6) Find water to drink and cows to eat, 7) Find stone, collect stone, place stone, make stone pickaxe and sword, 8) Find coal and iron, place furnace near table, make iron pickaxe and sword, 9) Find diamond, sleep at night when energy drops.
+PREDICTION: Moving North should shift my view so the tree appears closer on the east side, with the tree becoming about 5 steps north-east.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- sand 5 steps to your north-east
+- tree 5 steps to your north-east
+
+You face grass at your front.",0.0,False
+3,Move North,"OBSERVATION_CHECK: SUCCESS (the tree moved from 6 to 5 steps north-east and new sand appeared, so the move north shifted my view and made progress)
+NEW_MEMORY: NONE
+PLAN: KEEP (continue north toward the tree, then east; collect about 5 wood, place table near trees, make wood pickaxe and sword, collect sapling and place plant, find water and cows, then find stone, coal, iron, and diamond)
+PREDICTION: The tree should appear about 4 steps north-east, or closer on the east side, and the view should shift north.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- water 4 steps to your north-east
+- sand 4 steps to your north-east
+- tree 4 steps to your east
+
+You face grass at your front.",0.0,False
+4,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP (continue north toward the tree 4 steps east, then collect about 5 wood, place table near trees, make wood pickaxe and sword, collect sapling and place plant, find water and cows, then find stone, coal, iron, and diamond)
+PREDICTION: The view shifts north, the tree moves closer on the east side, and the water and sand get nearer to the north-east.
+ACTION: Move North","You see:
+- water 3 steps to your north
+- grass 1 step to your west
+- sand 3 steps to your north-east
+- tree 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+5,Move East,"OBSERVATION_CHECK: SUCCESS (the view shifted: water is now 3 steps north and the tree moved to my south-east, so the move north made progress)
+NEW_MEMORY: NONE
+PLAN: Head east and south toward the tree 5 steps south-east, collect about 5 wood, place a table near the trees, make a wood pickaxe and sword, collect a sapling and place a plant, drink at the water 3 steps north when needed, then search for stone, coal, iron, and diamond.
+PREDICTION: I move one step east, and the tree should appear about 4 steps south-east, with the water still visible to the north.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- water 2 steps to your north
+- sand 2 steps to your north-east
+- tree 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+6,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move east and then south toward the tree 4 steps south-east, collect about 5 wood, place a table, make a wood pickaxe and sword, collect a sapling and place a plant, drink at the water 2 steps north when needed, then search for stone, coal, iron, and diamond.
+PREDICTION: I move one step east, and the tree should appear about 3 steps south-east or closer.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- water 2 steps to your north
+- sand 1 step to your north
+- tree 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+7,Move East,"OBSERVATION_CHECK: SUCCESS (the view shifted: sand and water moved closer, and the tree went from 4 to 3 steps away)
+NEW_MEMORY: NONE
+PLAN: KEEP. Move east and south toward the tree 3 steps south-east, collect wood (about 5), place a table, make a wood pickaxe and sword, collect a sapling and place a plant, drink at the water 2 steps north when needed, then search for stone, coal, iron, and diamond.
+PREDICTION: I move one step east, and the tree should appear about 2 steps south-east or closer.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- water 2 steps to your north
+- sand 1 step to your north
+- tree 2 steps to your south-east
+
+You face grass at your front.",0.0,False
+8,Move East,"OBSERVATION_CHECK: SUCCESS. The view shifted (the tree went from 3 to 2 steps away and the water is now 2 steps north), so the last move east worked.
+NEW_MEMORY: NONE
+PLAN: KEEP. Move east and south until the tree is directly in front, then Do to collect wood (about 5), place a table, make a wood pickaxe and sword, collect a sapling and place a plant, drink at the water 2 steps north when needed, then search for stone, coal, iron, and diamond.
+PREDICTION: I move one step east and the tree should be closer, about 1 step south-east or directly south.
+ACTION: Move East","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+- tree 1 step to your south
+
+You face grass at your front.",0.0,False
+9,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Tree is 1 step south, so move South to get adjacent, then Do to collect wood (about 5 pieces), place a table, make a wood pickaxe and sword, collect a sapling and place a plant, drink at the water 2 steps north when needed, then search for stone, coal, iron, and diamond.
+PREDICTION: I move one step south and the tree should be directly in front of me (facing it), so the next Do should collect wood.
+ACTION: Move South","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+- tree 1 step to your south
+
+You face tree at your front.",0.0,False
+10,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Tree is directly south and I am facing it, so Do to collect wood repeatedly (about 5 pieces), place a table, make a wood pickaxe and wood sword, then collect a sapling and place a plant, drink from the water 2 steps north when needed, then search for stone, coal, iron, and diamond.
+PREDICTION: The tree in front of me yields one wood into my inventory.
+ACTION: Do","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+
+You face grass at your front.",1.0,False
+11,Place Table,"OBSERVATION_CHECK: SUCCESS: Do on the tree gave 1 wood, but the tree is no longer visible and I now face grass.
+NEW_MEMORY: The tree vanished after one harvest, so trees may not be renewable here; I need to find more trees.
+PLAN: Test whether 1 wood is enough to place a table for the achievement; if it works, find more trees for wood tools, then get a sapling and plant, drink from the water 2 steps north, and search for stone, coal, iron, and diamond.
+PREDICTION: A table is placed in front of me on the grass, unlocking the Place Table achievement.
+ACTION: Place Table","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+
+You face grass at your front.",0.0,False
+12,Move East,"OBSERVATION_CHECK: FAILED: Place Table did not work. Inventory still shows wood 1, and no table appears in front of me, so 1 wood is not enough.
+NEW_MEMORY: Placing a table with only 1 wood fails; I need more wood before trying again. The tree I harvested earlier disappeared, so I need to find other trees.
+PLAN: Explore to find more trees and collect at least 3-4 wood, then retry Place Table near the water. Make a wood pickaxe and wood sword, then collect a sapling and place a plant. Drink from the water 2 steps north. Then search for stone, coal, iron, and diamond.
+PREDICTION: Moving East reveals new terrain to the east, possibly trees, and I stay on grass.
+ACTION: Move East","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+
+You face sand at your front.",0.0,False
+13,Move East,"OBSERVATION_CHECK: FAILED: The view shifted (the tree to the south is gone) but the status still reads ""face sand,"" so I'm not sure the move east advanced me. No new trees are visible.
+NEW_MEMORY: The tree 1 step south vanished after harvesting, confirming trees disappear here. Only 1 wood is available, and I'm circling the same small area near the water.
+PLAN: Explore east and south past the grass to find new trees, collect at least 3-4 wood, then place a table near the water, make a wood pickaxe and wood sword, collect a sapling, place a plant, drink from the lake, and search for stone, coal, iron, and diamond.
+PREDICTION: Moving east should reveal new terrain to the east and possibly show new trees.
+ACTION: Move East","You see:
+- water 3 steps to your north-west
+- sand 1 step to your north
+- grass 1 step to your west
+
+You face grass at your front.",0.0,False
+14,Move East,"OBSERVATION_CHECK: FAILED: the last move did shift the view, but I have still only 1 wood and no trees are visible, so I am circling the lake area without finding new resources.
+NEW_MEMORY: Trees near the start may not have vanished; the earlier ""tree disappeared"" reading could be a misreading of the view. Trees are scarce near this lake, so I must explore farther east or south to find them.
+PLAN: Explore east and south past the lake to find a cluster of trees, collect at least 4 wood, place a table, make a wood pickaxe and wood sword, collect a sapling and place it, drink from the lake, then search for stone, coal, iron, and diamond.
+PREDICTION: Moving east should reveal new terrain to the east, possibly including trees.
+ACTION: Move East","You see:
+- water 4 steps to your north-west
+- sand 1 step to your west
+- grass 1 step to your south
+
+You face grass at your front.",0.0,False
+15,Move East,"OBSERVATION_CHECK: SUCCESS (the view shifted after Move East, so I moved, but no trees are visible and wood is still only 1)
+NEW_MEMORY: Table placement failed with only 1 wood, and no trees are visible from the current position, so the lake area has few trees.
+PLAN: Explore east and south past the lake to find a cluster of trees, collect at least 4 wood, place a table, make a wood pickaxe and wood sword, collect a sapling and place it, drink from the lake, then search for stone, coal, iron, and diamond.
+PREDICTION: Moving east reveals new terrain to the east, possibly including trees.
+ACTION: Move East","You see:
+- water 5 steps to your north-west
+- sand 2 steps to your west
+- grass 1 step to your west
+- zombie 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+16,Move East,"OBSERVATION_CHECK: SUCCESS (the view shifted: water moved from 4 to 5 steps northwest and sand from 1 to 2 steps west, so I moved east)
+NEW_MEMORY: Trees seen earlier near the lake are no longer visible, and a zombie is 5 steps southeast. I still have only 1 wood, so I need to find a new tree cluster.
+PLAN: KEEP. Continue exploring east, then south past the lake, to find at least 4 trees. Collect wood, place a table, make a wood pickaxe and wood sword, collect a sapling and place it, drink from the lake, then search for stone, coal, iron, and diamond.
+PREDICTION: Moving east reveals more terrain to the east, possibly including trees.
+ACTION: Move East","You see:
+- water 6 steps to your north-west
+- sand 2 steps to your north
+- grass 1 step to your west
+- zombie 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+17,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Explore east past the lake to find a tree cluster with at least 4 trees. Collect wood, place a table, make a wood pickaxe and wood sword, collect a sapling and place it, drink from the lake, then search for stone, coal, iron, and diamond. Fight the nearby zombie when it approaches.
+PREDICTION: The view shifts west by one step, revealing new terrain to the east, possibly trees.
+ACTION: Move East","You see:
+- water 7 steps to your north-west
+- sand 2 steps to your north
+- grass 1 step to your west
+- zombie 1 step to your east
+- cow 4 steps to your south-east
+
+You face zombie at your front.",-0.2,False
+18,Do,"OBSERVATION_CHECK: FAILED: The last Move East did not change my view much, and I have been circling the same small area near the lake with only 1 wood, so progress has stalled.
+NEW_MEMORY: Movement east near the lake has produced little new terrain, and trees have not been reliably found; I am stuck in a loop around the lake area.
+PLAN: Defeat the adjacent zombie with Do while facing it, then head toward the cow to the southeast for food if needed, then explore south or east past the lake to find a tree cluster with at least 4 trees, collect wood, place a table, make a wood pickaxe and sword, then search for stone, coal, iron, and diamond.
+PREDICTION: The zombie takes damage from my hit, and it may die after several hits or retaliate and reduce my health.
+ACTION: Do","You see:
+- water 7 steps to your north-west
+- sand 2 steps to your north
+- grass 1 step to your west
+- cow 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+19,Move South,"OBSERVATION_CHECK: FAILED: No tree is visible and the zombie is gone, so I'm still circling the lake area with only 1 wood.
+NEW_MEMORY: Looping near the lake with no new trees visible; the zombie is no longer in view, so I'll stop waiting on it and explore south toward the cow and unexplored terrain.
+PLAN: Explore south past the cow to find a tree cluster, collect at least 4 wood, place a table, make a wood pickaxe and wood sword, then search for stone, coal, iron, and diamond while drinking at the lake and eating the cow when needed.
+PREDICTION: I move one step south onto new terrain and may reveal trees or the cow's surroundings.
+ACTION: Move South","You see:
+- sand 3 steps to your north
+- grass 1 step to your west
+- cow 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+20,Move South,"OBSERVATION_CHECK: FAILED: The south move changed the view (the water is no longer visible and the cow is now 3 steps southeast), but I have only 1 wood and have been circling the lake without finding a new tree cluster.
+NEW_MEMORY: Circling the lake area east-west has not found trees; the lake is a dead end for wood, so I must explore south away from the water.
+PLAN: Move south past the cow to scout for a tree cluster, collect at least 4 wood, place a table, make a wood pickaxe and wood sword, then search for stone, coal, iron, and diamond while drinking at the lake and eating the cow when needed.
+PREDICTION: I move one step south, revealing new terrain to the south where trees or stone may be visible.
+ACTION: Move South","You see:
+- sand 6 steps to your north-west
+- grass 1 step to your west
+- cow 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+21,Move South,"OBSERVATION_CHECK: SUCCESS (the view shifted: sand moved from 3 steps north to 6 steps northwest, so I moved south)
+NEW_MEMORY: Trees near the lake have been hard to find or keep track of, so I am spending too many steps circling the lake area; heading south into unexplored terrain.
+PLAN: Move south past the cow to scout unexplored terrain for a tree cluster, collect at least 4 wood, place a table, make a wood pickaxe and wood sword, then search for stone, coal, iron, and diamond while drinking at the lake and eating the cow when needed.
+PREDICTION: I move one step south, revealing new terrain to the south, possibly trees or stone.
+ACTION: Move South","You see:
+- sand 7 steps to your north-west
+- grass 1 step to your west
+- cow 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+22,Move South,"OBSERVATION_CHECK: SUCCESS (the view shifted as the sand moved farther away, so I moved south, but no trees are visible yet)
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue moving south into unexplored terrain to find a tree cluster, collect at least 4 wood, place a table, make a wood pickaxe and wood sword, then search for stone, coal, iron, and diamond, drinking at the lake and eating the cow when needed.
+PREDICTION: I move one step south and new terrain comes into view, possibly trees.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- cow 2 steps to your south-east
+
+You face grass at your front.",0.0,False
+23,Move South,"OBSERVATION_CHECK: SUCCESS (the south move shifted the view: sand moved farther north and the cow is now closer)
+NEW_MEMORY: Earlier notes about trees vanishing and looping around the lake are unreliable. No trees are visible now, so the lake area is a poor wood source. Explore south.
+PLAN: KEEP. Explore south into unexplored terrain to find a tree cluster, collect at least 4 wood, place a table, make a wood pickaxe and wood sword, then search for stone, coal, iron, and diamond, drinking at the lake and eating the cow when needed.
+PREDICTION: I move one step south and new terrain, possibly trees, comes into view.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- tree 4 steps to your south-west
+- cow 2 steps to your south
+
+You face grass at your front.",0.0,False
+24,Move South,"OBSERVATION_CHECK: SUCCESS (the view shifted: the water is gone and a cow and tree are now in view, so the southward move made progress)
+NEW_MEMORY: NONE
+PLAN: Head southwest to the tree 4 steps away and collect wood (aim for at least 4 wood), then place a table, make a wood pickaxe and wood sword, and keep exploring south and west for stone, coal, iron, and diamond. Drink at the lake and eat the cow when food or drink drops.
+PREDICTION: I move one step south, and the tree should be about 3 steps southwest with the cow closer in view.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- stone 6 steps to your south-west
+- tree 3 steps to your south-west
+- cow 1 step to your south
+
+You face cow at your front.",0.1,False
+25,Do,"OBSERVATION_CHECK: SUCCESS (the view shifted and the tree and stone are now closer to the southwest, so the south move made progress)
+NEW_MEMORY: NONE
+PLAN: Hit the cow in front for the Eat Cow achievement, then head southwest to the tree 3 steps away and collect wood (aim for at least 4). Place a table, make a wood pickaxe and wood sword, then go to the stone 6 steps southwest and keep exploring for coal, iron, and diamond. Drink at the lake when drink drops.
+PREDICTION: The cow takes damage from my hit, and after a few more hits it is eaten, raising food.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 6 steps to your south-west
+- tree 3 steps to your south-west
+- cow 1 step to your south
+
+You face cow at your front.",0.0,False
+26,Do,"OBSERVATION_CHECK: SUCCESS (the cow is still directly in front of me, so the hit registered and it needs more hits)
+NEW_MEMORY: NONE
+PLAN: KEEP (hit the cow until eaten for Eat Cow, then move southwest to the tree 3 steps away and collect wood to at least 4, place table, make wood pickaxe and wood sword, then head to the stone southwest and look for coal, iron, and diamond, drinking at the lake when drink drops)
+PREDICTION: The cow takes another hit and gets closer to being eaten, raising food.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 6 steps to your south-west
+- cow 2 steps to your south-west
+- tree 3 steps to your south-west
+
+You face grass at your front.",0.0,False
+27,Move South,"OBSERVATION_CHECK: FAILED: The cow moved away after my last Do, so I did not eat it. The cow is now 2 steps southwest and no longer in front of me.
+NEW_MEMORY: Cows move between actions, so I must re-check their position before each Do. Earlier memories about trees vanishing and circling the lake are unreliable, so I am heading southwest toward the tree and stone.
+PLAN: Move south to close in on the cow, hit it until eaten for Eat Cow, then go southwest to the tree 3 steps away and collect wood to at least 4, place table, make wood pickaxe and wood sword, then head to the stone to the southwest and look for coal, iron, and diamond, drinking at the lake when drink drops.
+PREDICTION: I move one step south, which should put the cow directly west or southwest of me, within reach for the next Do.
+ACTION: Move South","You see:
+- grass 1 step to your north
+- stone 5 steps to your south-west
+- path 7 steps to your south-west
+- cow 1 step to your west
+- tree 2 steps to your south-west
+
+You face grass at your front.",0.0,False
+28,Move West,"OBSERVATION_CHECK: SUCCESS (the south move changed the view, and the cow is now 1 step west, so I'm making progress toward it)
+NEW_MEMORY: NONE
+PLAN: Face the cow by moving West (the move is blocked by the cow, so it turns me toward it), then Do repeatedly until it is eaten for Eat Cow. Then go southwest to the tree 2 steps away and collect wood to at least 4, place table, make wood pickaxe and wood sword, then head to the stone to the southwest to look for coal, iron, and diamond, drinking at the lake when drink drops.
+PREDICTION: I won't move, but I'll turn to face the cow directly to my west, so the next Do can hit it.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- stone 5 steps to your south-west
+- path 7 steps to your south-west
+- cow 1 step to your west
+- tree 2 steps to your south-west
+
+You face cow at your front.",0.0,False
+29,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The cow is directly west and I am facing it, so Do should damage it, and repeated Do actions should eventually eat it.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 5 steps to your south-west
+- path 7 steps to your south-west
+- tree 2 steps to your south-west
+- cow 1 step to your east
+
+You face grass at your front.",1.0,False
+30,Move East,"OBSERVATION_CHECK: FAILED: The Do action missed because the cow moved to my east before the hit, so I am now facing grass.
+NEW_MEMORY: Cows move between actions, so a Do aimed at a cow can miss; I must face the cow's current tile right before each Do.
+PLAN: Move East to face the cow (the move is blocked by it, so it turns me toward it), then Do repeatedly until eaten for Eat Cow. Then go southwest to the tree 2 steps away, collect wood to at least 4, place table, make wood pickaxe and wood sword, then head to the stone southwest for coal, iron, and diamond, drinking at the lake when drink drops.
+PREDICTION: The cow is directly east, so Move East should be blocked and turn me to face it, with no position change.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 5 steps to your south-west
+- path 7 steps to your south-west
+- tree 2 steps to your south-west
+- cow 2 steps to your south-east
+
+You face grass at your front.",0.0,False
+31,Move South,"OBSERVATION_CHECK: FAILED: the cow moved away again, so the Move East did not reach a clear target and the view shows no clear progress.
+NEW_MEMORY: Cows keep shifting position, so chasing the cow wastes steps; food is already 9/9, so prioritize wood from the nearby tree.
+PLAN: Go to the tree 2 steps southwest and collect wood until I have at least 5. Then place a table, make a wood pickaxe and wood sword, head to the stone southwest for stone, coal, and iron, and return to the cow for Eat Cow when convenient, drinking at the lake when drink drops.
+PREDICTION: Moving South should bring the tree closer, to about 1 step southwest or directly west of me.
+ACTION: Move South","You see:
+- grass 1 step to your north
+- stone 4 steps to your south-west
+- path 6 steps to your south-west
+- tree 1 step to your west
+- cow 1 step to your east
+
+You face tree at your front.",0.0,False
+32,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The tree is at my front, so Do should collect wood and raise wood from 1 to 2.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 4 steps to your south-west
+- path 6 steps to your south-west
+- tree 1 step to your west
+- cow 2 steps to your south-east
+
+You face grass at your front.",0.0,False
+33,Move West,"OBSERVATION_CHECK: FAILED: The last Do hit grass because I was facing south, while the tree is 1 step west. Wood stayed at 2, so my prediction was wrong.
+NEW_MEMORY: Do only collects from the tile I am facing. Trees are to my west, so I must turn west before using Do. Moving into a tree turns me to face it without moving.
+PLAN: Move West to turn and face the tree, then Do repeatedly until wood is at least 5. Then place a table, make a wood pickaxe and wood sword, head southwest to the stone for stone, coal, and iron, and return to the cow or lake when food or drink drops.
+PREDICTION: Move West turns me to face the tree, which blocks my movement, so my position and the view stay the same and the tree is now in front of me.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- stone 4 steps to your south-west
+- path 6 steps to your south-west
+- tree 1 step to your west
+- cow 2 steps to your south-east
+
+You face tree at your front.",0.0,False
+34,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Do collects wood from the tree directly to my west, increasing wood from 2 to 3.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 4 steps to your south-west
+- path 6 steps to your south-west
+- tree 2 steps to your south
+- cow 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+35,Move South,"OBSERVATION_CHECK: SUCCESS (wood increased from 2 to 3 after Do on the tree)
+NEW_MEMORY: NONE
+PLAN: Move South to step next to the tree 2 steps south, then Do repeatedly until wood is at least 5. Then place a table, make a wood pickaxe and wood sword, head southwest to the stone for stone, coal, and iron, and return to the cow or lake when food or drink drops.
+PREDICTION: I move one tile south, and the tree should then be directly in front of me, one step south.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- stone 3 steps to your west
+- path 5 steps to your south-west
+- coal 4 steps to your south-west
+- tree 1 step to your south
+- cow 2 steps to your east
+
+You face tree at your front.",0.0,False
+36,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Collect wood from the tree directly south with repeated Do until wood is at least 5, then place a table, make a wood pickaxe and wood sword, then head southwest to the stone and coal.
+PREDICTION: The tree is in front of me, so Do should collect one wood, raising wood from 3 to 4.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 3 steps to your west
+- path 5 steps to your south-west
+- coal 4 steps to your south-west
+- tree 2 steps to your south
+- cow 3 steps to your north-east
+
+You face grass at your front.",0.0,False
+37,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move South once to get adjacent to the tree 2 steps south, then repeat Do on it until wood is at least 5. Then place a table, make a wood pickaxe and wood sword, and head southwest to the stone and coal.
+PREDICTION: I move one tile south onto grass, and the tree should then be directly in front of me.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- stone 2 steps to your west
+- path 4 steps to your west
+- coal 3 steps to your south-west
+- tree 1 step to your south
+- cow 5 steps to your north-east
+
+You face tree at your front.",0.0,False
+38,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Collect wood from the tree directly south until wood is at least 5. Then place a table, make a wood pickaxe and a wood sword, and head southwest to the stone and coal.
+PREDICTION: The tree in front of me is at my south, so Do should give +1 wood and the tree should stay in place.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 2 steps to your west
+- path 4 steps to your west
+- coal 3 steps to your south-west
+- tree 1 step to your east
+- cow 5 steps to your north-east
+
+You face grass at your front.",0.0,False
+39,Place Table,"OBSERVATION_CHECK: SUCCESS (wood went up to 5 and the tree is now 1 step east, so the harvest worked)
+NEW_MEMORY: NONE
+PLAN: Place a table on the grass in front of me now that I have 5 wood. Then make a wood pickaxe and a wood sword at the table. Next, head southwest to the stone and coal, and collect more wood from the tree to the east if needed.
+PREDICTION: A table appears on the grass tile in front of me and wood drops from 5 to a lower number.
+ACTION: Place Table","You see:
+- grass 1 step to your west
+- stone 2 steps to your west
+- path 4 steps to your west
+- coal 3 steps to your south-west
+- table 1 step to your south
+- cow 4 steps to your north-east
+- tree 1 step to your east
+
+You face table at your front.",1.0,False
+40,Make Wood Pickaxe,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Make a wood pickaxe at the table now (uses 1 wood, leaves 2). Then make a wood sword (uses 1 wood). Then mine the stone 2 steps west and the coal to the southwest. Keep 1 wood spare for a later stone pickaxe, and collect more wood from the tree to the east if needed.
+PREDICTION: A wood pickaxe appears in my inventory and wood drops from 3 to 2.
+ACTION: Make Wood Pickaxe","You see:
+- grass 1 step to your west
+- stone 2 steps to your west
+- path 4 steps to your west
+- coal 3 steps to your south-west
+- table 1 step to your south
+- cow 4 steps to your north-east
+- tree 1 step to your east
+
+You face table at your front.",1.0,False
+41,Make Wood Sword,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Make wood sword now at the table (uses 1 wood, leaves 1). Walk 2 steps west to mine stone, then make stone pickaxe with the remaining wood and stone. Mine coal to the southwest, then collect more wood from the tree to the east for the iron tools.
+PREDICTION: A wood sword appears in inventory and wood drops from 2 to 1.
+ACTION: Make Wood Sword","You see:
+- grass 1 step to your west
+- stone 2 steps to your west
+- path 4 steps to your west
+- coal 3 steps to your south-west
+- table 1 step to your south
+- cow 4 steps to your north-east
+- tree 1 step to your east
+
+You face table at your front.",1.0,False
+42,Move East,"OBSERVATION_CHECK: SUCCESS (wood sword crafted; inventory shows wood_sword and wood went from 2 to 1)
+NEW_MEMORY: NONE
+PLAN: Face the tree to the east and collect wood, then collect stone 2 steps west, make a stone pickaxe at the table, collect coal to the southwest, and gather more wood for iron tools.
+PREDICTION: Moving east into the tree turns me to face it without moving, so the tree will be in front of me for the next Do.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 2 steps to your west
+- path 4 steps to your west
+- coal 3 steps to your south-west
+- cow 3 steps to your north
+- table 1 step to your south
+- tree 1 step to your east
+
+You face tree at your front.",0.0,False
+43,Do,"OBSERVATION_CHECK: SUCCESS (Move East was blocked by the tree, which is intended. I now face the tree at my front.)
+NEW_MEMORY: NONE
+PLAN: KEEP. Collect wood from the tree in front, then collect more wood for a stone pickaxe and iron tools, gather stone 2 steps west, make a stone pickaxe and sword at the table, then mine coal to the southwest.
+PREDICTION: Do collects one wood from the tree in front, so wood goes from 1 to 2.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 2 steps to your west
+- path 4 steps to your west
+- coal 3 steps to your south-west
+- cow 3 steps to your north
+- table 1 step to your south
+- tree 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+44,Move West,"OBSERVATION_CHECK: FAILED: The last Do was aimed at grass and yielded nothing, and the tree I was facing is no longer adjacent (it is now 3 steps south-east).
+NEW_MEMORY: The tree I was facing vanished after one harvest and Do on grass wastes steps, so I should move toward the stone and tree rather than repeat Do on grass.
+PLAN: Move west to reach the stone 2 steps west and collect it for a stone pickaxe, then go south-east to the tree 3 steps away for more wood, return to the table to craft the stone pickaxe and sword, then mine coal to the south-west.
+PREDICTION: I move one step west onto the grass, leaving the stone 1 step to my west.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- stone 1 step to your west
+- path 3 steps to your west
+- coal 2 steps to your south
+- cow 3 steps to your north-east
+- table 2 steps to your south-east
+- tree 4 steps to your south-east
+
+You face stone at your front.",0.0,False
+45,Do,"OBSERVATION_CHECK: SUCCESS (the view shifted: stone is now 1 step west and I am facing it, so the move worked)
+NEW_MEMORY: NONE
+PLAN: Collect stone with Do, then collect a second stone, return to the table (2 steps south-east) to craft a stone pickaxe, then gather more wood from the tree 4 steps south-east, mine the coal 2 steps south, and craft the stone sword.
+PREDICTION: Do on the facing stone adds 1 stone to my inventory and the stone tile may disappear or stay, depending on the game's rules.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 1 step to your south
+- path 1 step to your west
+- coal 2 steps to your south
+- cow 3 steps to your north-east
+- table 2 steps to your south-east
+- tree 4 steps to your south-east
+
+You face path at your front.",1.0,False
+46,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The stone I mined to the west is now a path. Another stone is 1 step south, so I can turn south by moving into it.
+PLAN: Move South to face the stone, Do to collect a second stone, walk back next to the table (2 steps south-east), Make Stone Pickaxe, then collect wood from the tree to the south-east, mine the coal 2 steps south, and make the stone sword.
+PREDICTION: Move South is blocked by the stone, so I turn to face it without moving.
+ACTION: Move South","You see:
+- grass 1 step to your north
+- stone 1 step to your south
+- path 1 step to your west
+- coal 2 steps to your south
+- cow 4 steps to your north-east
+- table 2 steps to your south-east
+- tree 4 steps to your south-east
+
+You face stone at your front.",0.0,False
+47,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Do to mine the stone to the south, walk back near the table (2 steps south-east), Make Stone Pickaxe, mine coal 2 steps south, then get more wood from the tree to the south-east and make the stone sword.
+PREDICTION: Facing the stone to the south and mining it, so stone goes from 1 to 2 and the stone tile becomes path.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 2 steps to your west
+- path 1 step to your west
+- cow 3 steps to your north
+- coal 2 steps to your south
+- table 2 steps to your south-east
+- tree 4 steps to your south-east
+
+You face path at your front.",0.0,False
+48,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move south toward the table (2 steps south-east), get adjacent to it, Make Stone Pickaxe with the 2 wood and 2 stone, mine the coal 2 steps south, then gather more wood from the tree to the south-east and make a stone sword.
+PREDICTION: I move one tile south, which should bring the table within crafting range.
+ACTION: Move South","You see:
+- grass 1 step to your north
+- stone 1 step to your west
+- path 2 steps to your west
+- lava 4 steps to your south-west
+- coal 1 step to your south
+- table 1 step to your east
+- tree 3 steps to your east
+- cow 5 steps to your south-east
+
+You face coal at your front.",0.0,False
+49,Make Stone Pickaxe,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Make Stone Pickaxe now while the table is 1 step east, then Do on the coal to the south to collect it, then gather more wood from the trees to the east and make a stone sword.
+PREDICTION: The stone pickaxe is crafted using 1 wood and 1 stone, leaving 1 wood and 1 stone in inventory.
+ACTION: Make Stone Pickaxe","You see:
+- grass 1 step to your north
+- stone 1 step to your west
+- path 2 steps to your west
+- lava 4 steps to your south-west
+- coal 1 step to your south
+- table 1 step to your east
+- tree 3 steps to your east
+- cow 5 steps to your south-east
+
+You face coal at your front.",1.0,False
+50,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Do on the coal to the south to collect it, then gather wood from the tree to the east, then make a stone sword at the table.
+PREDICTION: Coal is added to inventory because I am facing it with a wood pickaxe.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 1 step to your west
+- path 1 step to your south
+- lava 4 steps to your south-west
+- table 1 step to your east
+- tree 3 steps to your east
+- cow 4 steps to your south-east
+
+You face path at your front.",1.1,False
+51,Make Stone Sword,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Make a stone sword now with the table 1 step east (I have 1 wood and 1 stone). Then collect more wood from the tree 3 steps east, then gather stone and coal for furnace and iron tools.
+PREDICTION: Wood and stone are consumed and a stone_sword is added to the inventory.
+ACTION: Make Stone Sword","You see:
+- grass 1 step to your north
+- stone 1 step to your west
+- path 1 step to your south
+- lava 4 steps to your south-west
+- table 1 step to your east
+- tree 3 steps to your east
+- cow 4 steps to your south-east
+
+You face path at your front.",1.0,False
+52,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Face the stone 1 step west and mine it for stone, then go to the tree 3 steps east for wood, then return to the table and furnace area to make iron tools after finding iron.
+PREDICTION: Moving west turns me to face the stone (it blocks movement), so I should be facing it next.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- stone 1 step to your west
+- path 1 step to your south
+- cow 4 steps to your north-west
+- lava 4 steps to your south-west
+- table 1 step to your east
+- tree 3 steps to your east
+
+You face stone at your front.",0.0,False
+53,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Mine the stone to my west with Do to collect stone, then collect wood from the tree 3 steps east, return to the table, and place a furnace once I have enough stone. Find iron and use the coal I already have to make iron tools.
+PREDICTION: Do on the stone 1 step west yields 1 stone in inventory and turns that tile into a path.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- cow 4 steps to your north-west
+- lava 4 steps to your south-west
+- table 1 step to your east
+- tree 3 steps to your east
+
+You face path at your front.",0.0,False
+54,Move North,"OBSERVATION_CHECK: SUCCESS. The Do on the stone to the west yielded 1 stone and turned that tile into a path, as predicted.
+NEW_MEMORY: NONE
+PLAN: Go around the table to the tree 3 steps east to collect wood (I have 0 wood). Then return to the table, mine more stone (stone is 3 steps north-west), place a furnace near the table, and find iron to make iron tools with the coal I have.
+PREDICTION: I move one step north onto grass, so the table will appear to my south-east and the tree will be about 3 steps east.
+ACTION: Move North","You see:
+- grass 1 step to your north
+- stone 2 steps to your west
+- path 1 step to your west
+- cow 3 steps to your north-west
+- table 2 steps to your south-east
+- tree 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+55,Move East,"OBSERVATION_CHECK: SUCCESS (the north move changed the view, so I moved onto grass and I'm no longer blocked)
+NEW_MEMORY: NONE
+PLAN: Walk east and south around the table to the tree about 4 steps southeast, collect 2 or more wood, return to the table to make a wood sword, then collect more stone and place a furnace near the table. Look for iron and use the coal I already have for iron tools. Later find water to drink.
+PREDICTION: I move one step east, so the table and tree should appear one step closer to my west side.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 3 steps to your west
+- path 2 steps to your west
+- cow 3 steps to your north-west
+- table 1 step to your south
+- tree 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+56,Move East,"OBSERVATION_CHECK: SUCCESS (the view shifted after moving East: the table and tree positions changed relative to me)
+NEW_MEMORY: NONE
+PLAN: Walk east around the table toward the tree 3 steps southeast, collect several wood (I have none now), return to the table, then gather stone and coal and place a furnace near the table. Find iron, then craft iron tools with the coal. Find water later.
+PREDICTION: I move one step east and the tree should appear closer, about 2 steps southeast or 2 steps south-east along a diagonal.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 4 steps to your west
+- path 3 steps to your west
+- cow 3 steps to your south-east
+- table 2 steps to your south-west
+- tree 2 steps to your south-east
+
+You face grass at your front.",0.0,False
+57,Move South,"OBSERVATION_CHECK: SUCCESS (the table moved from 1 step south to 2 steps southwest, so I moved east as intended)
+NEW_MEMORY: NONE
+PLAN: KEEP. Move south, then east toward the tree 2 steps southeast, face it, and collect several wood. Return to the table to craft a wood-based item and place a furnace near the table. Then gather more stone and find iron.
+PREDICTION: I move one step south, and the tree should appear about 1 step east and 1 step south of me.
+ACTION: Move South","You see:
+- grass 1 step to your north
+- stone 5 steps to your north-west
+- path 2 steps to your west
+- lava 6 steps to your south-west
+- cow 1 step to your south
+- table 1 step to your west
+- tree 1 step to your east
+
+You face cow at your front.",0.0,False
+58,Do,"OBSERVATION_CHECK: SUCCESS (the view shifted: the table is now 1 step west and a cow is directly south, so the move south worked)
+NEW_MEMORY: NONE
+PLAN: Attack the cow directly south of me now for the Eat Cow achievement, since it is adjacent and I am already facing it. Then turn east to the tree 1 step away and collect wood. Return to the table to craft, then place a furnace near the table and look for iron.
+PREDICTION: Hitting the cow lowers its health; repeated Do should kill it and give food and the Eat Cow achievement.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 5 steps to your north-west
+- path 2 steps to your west
+- lava 6 steps to your south-west
+- cow 4 steps to your north-west
+- table 1 step to your west
+- tree 1 step to your east
+
+You face grass at your front.",0.0,False
+59,Move East,"OBSERVATION_CHECK: FAILED: The Do on grass did nothing. The cow moved away, so the Eat Cow attempt missed and I made no progress.
+NEW_MEMORY: Do on grass with the cow gone wasted a step. The tree is adjacent to my east, so I will face it by moving east and then collect wood.
+PLAN: Move East to face the adjacent tree (blocked, so I only turn). Do repeatedly to collect wood (about 5 or more). Return to the table to the west and craft a wood-based item, then place a furnace near the table, and search for iron and more coal.
+PREDICTION: Move East is blocked by the tree, so I turn to face it and the view stays the same.
+ACTION: Move East","You see:
+- grass 1 step to your north
+- stone 5 steps to your north-west
+- path 2 steps to your west
+- lava 6 steps to your south-west
+- cow 3 steps to your north
+- table 1 step to your west
+- tree 1 step to your east
+
+You face tree at your front.",0.0,False
+60,Do,"OBSERVATION_CHECK: SUCCESS (Move East was blocked by the tree, so I turned to face it and am now adjacent to it, which is the intended position)
+NEW_MEMORY: NONE
+PLAN: Do repeatedly on the tree to collect about 5 wood, then return to the table to the west and make a wood item, place a table or furnace if needed, then search for iron and more coal.
+PREDICTION: Do collects one wood from the tree in front of me, and the tree may remain or vanish.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 5 steps to your north-west
+- path 2 steps to your west
+- lava 6 steps to your south-west
+- cow 4 steps to your north-west
+- table 1 step to your west
+- tree 2 steps to your south
+
+You face grass at your front.",0.0,False
+61,Move South,"OBSERVATION_CHECK: FAILED: The last Do was aimed at grass, not the tree, so no wood was gained and the tree has since moved to 2 steps south.
+NEW_MEMORY: Do on grass again wasted a step; the tree was not in front of me after my east-facing move. Always confirm the tree is exactly 1 step in the facing direction before using Do.
+PLAN: Move South toward the tree until it is directly in front, then Do repeatedly to collect about 4 more wood, return to the table 1 step west, then make a wood pickaxe or sword if wood allows, and place a furnace near the table for iron tools later.
+PREDICTION: I move one tile south, leaving the tree 1 step directly south of me and in front of me.
+ACTION: Move South","You see:
+- stone 4 steps to your south-west
+- path 2 steps to your west
+- grass 1 step to your west
+- lava 5 steps to your south-west
+- cow 5 steps to your north-west
+- table 2 steps to your north-west
+- tree 1 step to your south
+
+You face tree at your front.",0.0,False
+62,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Collect wood from the tree directly south with Do until I have about 4 or more wood, then return to the table 1 step west, make a wood pickaxe or sword if wood allows, and place a furnace near the table for iron tools later.
+PREDICTION: The tree is in front of me, so Do should give me 1 wood and wood count goes from 1 to 2.
+ACTION: Do","You see:
+- stone 4 steps to your south-west
+- path 2 steps to your west
+- cow 6 steps to your north-west
+- lava 5 steps to your south-west
+- grass 1 step to your west
+- table 2 steps to your north-west
+- tree 2 steps to your south
+
+You face grass at your front.",0.0,False
+63,Move South,"OBSERVATION_CHECK: SUCCESS (Do on the tree raised wood from 1 to 2, and the tree now sits 2 steps south.)
+NEW_MEMORY: NONE
+PLAN: Move South once to close the gap so the tree is directly in front, then Do repeatedly to collect wood until I have 4 or more. Then return to the table 1 step west, craft a wood pickaxe if needed, and place a furnace near the table for iron tools later.
+PREDICTION: I move one tile south onto grass, and the tree becomes adjacent in front of me to the south.
+ACTION: Move South","You see:
+- stone 3 steps to your south-west
+- path 2 steps to your west
+- lava 4 steps to your south-west
+- cow 6 steps to your north-west
+- grass 1 step to your west
+- table 3 steps to your north-west
+- tree 1 step to your south
+
+You face tree at your front.",0.0,False
+64,Do,"OBSERVATION_CHECK: FAILED: The last Move South did not change my view. The tree is still 1 step south, but I am now facing it, so I can collect wood directly.
+NEW_MEMORY: The earlier tree was previously misjudged as 1 step away while I faced grass. I should confirm ""You face tree at your front"" before using Do.
+PLAN: Do repeatedly on the tree to the south until I have at least 4 wood. Then return to the table 3 steps northwest, craft a wood pickaxe if needed, and place a furnace near the table for iron tools later.
+PREDICTION: Do collects wood from the tree in front of me, raising wood from 2 to 3.
+ACTION: Do","You see:
+- stone 3 steps to your south-west
+- path 2 steps to your west
+- lava 4 steps to your south-west
+- cow 6 steps to your north-west
+- grass 1 step to your west
+- table 3 steps to your north-west
+- tree 3 steps to your south-west
+
+You face grass at your front.",0.0,False
+65,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Walk to the tree 3 steps southwest, collect wood until I have at least 5, return to the table 3 steps northwest, place a furnace near it, then look for coal and iron.
+PREDICTION: I move one tile west on the grass and get one step closer to the tree in the southwest.
+ACTION: Move West","You see:
+- path 1 step to your west
+- stone 2 steps to your south-west
+- lava 3 steps to your south-west
+- cow 4 steps to your north-west
+- grass 1 step to your north
+- table 2 steps to your north
+- tree 2 steps to your south
+
+You face path at your front.",0.0,False
+66,Move South,"OBSERVATION_CHECK: SUCCESS (Move West moved me onto new ground, and the tree is now 2 steps south, closer than before)
+NEW_MEMORY: NONE
+PLAN: Move South once to get adjacent to the tree 2 steps south, confirm ""You face tree at your front,"" then use Do repeatedly to collect wood until I have at least 5. Then return to the table 2 steps north, place a furnace nearby, and look for coal and iron.
+PREDICTION: I move one tile south and the tree becomes 1 step in front of me.
+ACTION: Move South","You see:
+- path 2 steps to your north-west
+- lava 2 steps to your west
+- stone 1 step to your west
+- table 3 steps to your north
+- grass 1 step to your north
+- tree 1 step to your south
+- cow 4 steps to your south-east
+
+You face tree at your front.",0.0,False
+67,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Collect wood from the tree directly south with repeated Do until I have at least 5 wood, then return north to the table (3 steps north), place a furnace near it, and search for coal and iron.
+PREDICTION: The tree is in front of me, so Do should give +1 wood and I stay in place.
+ACTION: Do","You see:
+- path 2 steps to your north-west
+- lava 2 steps to your west
+- stone 1 step to your west
+- table 3 steps to your north
+- grass 1 step to your north
+- tree 6 steps to your north-east
+- cow 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+68,Move West,"OBSERVATION_CHECK: FAILED: the last Do was aimed at grass, so no wood was gained and the tree is no longer in front of me.
+NEW_MEMORY: Lava is 2 steps west, beyond the stone; never walk west past the stone tile. Do not use Do on grass.
+PLAN: Face the stone 1 step west by moving into it (blocked, so I only turn), mine it with Do for stone, then head north to the table 3 steps away to craft and place a furnace. After that, find trees for wood and search for coal and iron away from the lava.
+PREDICTION: I stay in place and turn to face the stone 1 step west.
+ACTION: Move West","You see:
+- path 2 steps to your north-west
+- lava 2 steps to your west
+- stone 1 step to your west
+- table 3 steps to your north
+- grass 1 step to your north
+- tree 6 steps to your north-east
+- cow 4 steps to your south-east
+
+You face stone at your front.",0.0,False
+69,Do,"OBSERVATION_CHECK: FAILED: The Move West only turned me to face the stone (the view did not shift), so I made no progress toward the table.
+NEW_MEMORY: Moving into an adjacent stone only turns me to face it; lava is 2 steps west beyond the stone, so I must not advance west past the stone tile.
+PLAN: Mine the stone in front with Do, then go north 3 steps to the table, collect more wood from the trees to the northeast, and craft/place a furnace near the table. Search for coal and iron away from the lava.
+PREDICTION: Do on the stone tile yields 1 stone in inventory, and the stone tile becomes path.
+ACTION: Do","You see:
+- path 1 step to your west
+- lava 2 steps to your west
+- stone 2 steps to your south-west
+- table 3 steps to your north
+- grass 1 step to your north
+- tree 6 steps to your north-east
+- cow 3 steps to your east
+
+You face path at your front.",0.0,False
+70,Place Furnace,"OBSERVATION_CHECK: SUCCESS - Do mined the stone (stone went to 2) and the tile is now path.
+NEW_MEMORY: NONE
+PLAN: Try placing a furnace on the path tile to the west (this also blocks the lava route), then if it fails, walk north 3 steps to the table, collect more wood from the northeast trees, and search for coal and iron away from the lava.
+PREDICTION: The furnace is placed on the path tile to my west if the table counts as nearby; otherwise nothing happens.
+ACTION: Place Furnace","You see:
+- path 1 step to your west
+- lava 2 steps to your west
+- stone 2 steps to your south-west
+- table 3 steps to your north
+- grass 1 step to your north
+- tree 6 steps to your north-east
+- cow 4 steps to your east
+
+You face path at your front.",0.0,False
+71,Move North,"OBSERVATION_CHECK: FAILED: Place Furnace did nothing. The inventory is unchanged and no furnace appeared, because the table is 3 steps north and not nearby.
+NEW_MEMORY: Placing a furnace or crafting requires the table to be adjacent (within about 1 tile), not 3 steps away.
+PLAN: Move North 2 steps to stand next to the table, then Place Furnace there. Afterward, collect more stone and wood, then find coal and iron away from the lava to the west.
+PREDICTION: I move one tile north and the table gets closer, with the view shifting south.
+ACTION: Move North","You see:
+- path 1 step to your west
+- stone 3 steps to your south-west
+- lava 3 steps to your south-west
+- cow 4 steps to your north-west
+- grass 1 step to your north
+- table 2 steps to your north
+- tree 5 steps to your north-east
+
+You face grass at your front.",0.0,False
+72,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Move North once more so the table is 1 step away, then step to a free tile beside it so I can Place Furnace while it is nearby. Afterward, collect more stone and wood, then find coal and iron away from the lava to the west.
+PREDICTION: I move one tile north and the table appears 1 step to my north, with the view shifting south.
+ACTION: Move North","You see:
+- stone 4 steps to your south-west
+- path 1 step to your west
+- skeleton 5 steps to your south-west
+- grass 1 step to your south
+- cow 4 steps to your north-west
+- lava 4 steps to your south-west
+- table 1 step to your north
+- tree 4 steps to your north-east
+
+You face table at your front.",0.0,False
+73,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Step west onto the path so the table is diagonal and still within the 3x3 nearby area. Then Place Furnace on the free path tile in front. Afterward, collect more stone and wood, then find coal and iron away from the lava to the west.
+PREDICTION: I move one tile west onto the path, and the table is diagonally northeast of me, still nearby for crafting.
+ACTION: Move West","You see:
+- stone 3 steps to your south
+- path 1 step to your west
+- skeleton 4 steps to your south-west
+- grass 1 step to your east
+- cow 3 steps to your north-west
+- lava 3 steps to your south-west
+- table 2 steps to your north-east
+- tree 5 steps to your north-east
+
+You face path at your front.",0.0,False
+74,Place Furnace,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Place the furnace on the path tile in front while the table is still nearby. If placement fails, move to get adjacent to the table. Afterward, collect more stone and wood, then find coal and iron away from the lava to the west.
+PREDICTION: A furnace appears on the path tile to my west, if the table counts as nearby for placement.
+ACTION: Place Furnace","You see:
+- stone 3 steps to your south
+- path 1 step to your west
+- skeleton 4 steps to your south-west
+- grass 1 step to your east
+- cow 3 steps to your north-west
+- lava 3 steps to your south-west
+- table 2 steps to your north-east
+- tree 5 steps to your north-east
+
+You face path at your front.",0.0,False
+75,Move North,"OBSERVATION_CHECK: FAILED: The furnace did not appear. Stone is still 2 and no furnace is in inventory, because the table is 2 steps north-east and not adjacent.
+NEW_MEMORY: Place Furnace failed while the table was 2 steps away. The table must be within the 3x3 area around me, so I need to move adjacent to it before placing a furnace.
+PLAN: Move North to get closer to the table (north-east side). Once the table is adjacent (including diagonal), face an open path or grass tile and place the furnace. Then collect more wood and stone, look for coal and iron away from the lava to the west, and craft iron tools at the table and furnace.
+PREDICTION: I move one tile north, and the table should end up adjacent to me (within 1 tile in some direction).
+ACTION: Move North","You see:
+- grass 1 step to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- skeleton 5 steps to your south-west
+- arrow 4 steps to your south-west
+- cow 2 steps to your north-west
+- lava 4 steps to your south-west
+- table 1 step to your east
+- tree 4 steps to your east
+
+You face grass at your front.",0.0,False
+76,Place Furnace,"OBSERVATION_CHECK: SUCCESS (moving north changed the view, and the table is now 1 step east, adjacent to me)
+NEW_MEMORY: NONE
+PLAN: Place the furnace on the grass to my north while the table is adjacent to my east. Then gather more wood and stone, find coal and iron away from the lava to the west, and craft iron tools at the table and furnace.
+PREDICTION: A furnace appears on the grass tile north of me, with the table still adjacent to the east.
+ACTION: Place Furnace","You see:
+- grass 1 step to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- skeleton 5 steps to your south-west
+- cow 2 steps to your north-west
+- arrow 3 steps to your south-west
+- lava 4 steps to your south-west
+- table 1 step to your east
+- tree 4 steps to your east
+
+You face grass at your front.",0.0,False
+77,Move West,"OBSERVATION_CHECK: FAILED: Place Furnace did not work. No furnace appears in the view or inventory, and I'm still facing grass with the table adjacent to the east, so the furnace likely needs more stone than I have.
+NEW_MEMORY: Place Furnace failed twice with the table adjacent and 2 stone in inventory. Furnace probably needs more stone, so I should collect more before retrying.
+PLAN: Move west onto the path, then head north-west to mine stone 3 steps away and gather at least 3 more stone. Return to the table, stand adjacent to it, and retry Place Furnace. After that, find iron and use the table and furnace to craft iron tools, staying away from the lava to the south-west.
+PREDICTION: I move onto the path tile to the west, and the stone to the north-west should come closer.
+ACTION: Move West","You see:
+- grass 2 steps to your north
+- stone 2 steps to your north-west
+- path 1 step to your west
+- skeleton 4 steps to your south-west
+- cow 1 step to your north
+- lava 3 steps to your south
+- arrow 3 steps to your south-east
+- table 2 steps to your east
+
+You face path at your front.",0.0,False
+78,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Move back east so the table is adjacent, then face an open path or grass tile and place the furnace. If that fails, mine more stone, then look for iron and coal to craft iron tools, avoiding the lava to the south-west.
+PREDICTION: I move one step east and the table becomes 1 step away.
+ACTION: Move East","You see:
+- grass 1 step to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- skeleton 4 steps to your south-west
+- cow 2 steps to your north-west
+- lava 4 steps to your south-west
+- table 1 step to your east
+- arrow 3 steps to your south-east
+- tree 4 steps to your east
+
+You face table at your front.",0.0,False
+79,Move North,"OBSERVATION_CHECK: SUCCESS (Move East shifted the view so the table is now directly east and adjacent.)
+NEW_MEMORY: Facing the table means the furnace target tile is occupied, so Place Furnace cannot succeed while I face the table. I need to face an empty grass or path tile while the table is still within 1 tile.
+PLAN: Move North onto the grass so the table stays diagonally adjacent, then place the furnace on the empty tile I face. If it fails, gather more stone (the stone 3 steps northwest or the one to the south-west), return near the table, and retry. After that, look for iron and more coal to craft iron tools, avoiding the lava to the south-west.
+PREDICTION: I move one tile north onto grass, and the table ends up diagonally southeast of me, still within crafting range, with grass in front of me.
+ACTION: Move North","You see:
+- grass 1 step to your north
+- stone 2 steps to your west
+- path 1 step to your south
+- skeleton 5 steps to your south-west
+- arrow 4 steps to your south-west
+- cow 1 step to your west
+- table 2 steps to your south-east
+- tree 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+80,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Table is now 2 steps southeast, outside the 3x3 crafting area, so Place Furnace attempts from here will fail. I need to step back so the table is diagonal or adjacent before placing.
+PLAN: Move South so the table is diagonal (southeast) to me, then Place Furnace on the path tile I face. Then craft with the table and furnace nearby, and look for iron and coal to make iron tools while avoiding the lava to the southwest.
+PREDICTION: I move one tile south onto the path, the table ends up diagonally southeast of me, and I face the tile I just left, which is valid for placing a furnace.
+ACTION: Move South","You see:
+- grass 2 steps to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- skeleton 4 steps to your south-west
+- arrow 2 steps to your south-west
+- lava 4 steps to your south-west
+- cow 1 step to your north
+- table 1 step to your east
+- tree 4 steps to your east
+
+You face path at your front.",0.0,False
+81,Place Furnace,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Place the furnace on the path tile I'm facing while the table is adjacent to my east. If it fails, collect more stone (stone is 3 steps northwest) and retry. After the furnace is placed, use the table and furnace to craft iron tools once I find iron and coal, and avoid the lava to the southwest.
+PREDICTION: A furnace appears on the path tile in front of me, since the table is now adjacent to the east.
+ACTION: Place Furnace","You see:
+- grass 2 steps to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- skeleton 4 steps to your south-west
+- lava 4 steps to your south-west
+- cow 1 step to your north
+- arrow 1 step to your south
+- table 1 step to your east
+- tree 4 steps to your east
+
+You face arrow at your front.",0.0,False
+82,Noop,"OBSERVATION_CHECK: FAILED: The last Place Furnace did not place anything. I am facing an arrow, an object that occupies the tile, so the furnace target is blocked.
+NEW_MEMORY: Place Furnace fails when the faced tile holds an object such as an arrow or cow. Wait for the object to move before placing.
+PLAN: Noop until the arrow leaves the tile south of me, then Place Furnace while the table stays adjacent to the east. If it still fails, collect more stone (3 steps northwest), return next to the table, and retry on a free tile. After the furnace, collect coal and iron to make iron tools, and avoid the lava to the southwest.
+PREDICTION: The arrow moves away and the tile to my south becomes free path, so the next Place Furnace can succeed.
+ACTION: Noop","You see:
+- grass 2 steps to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- skeleton 5 steps to your south-west
+- lava 4 steps to your south-west
+- cow 1 step to your north
+- table 1 step to your east
+- arrow 2 steps to your south-east
+- tree 4 steps to your east
+
+You face path at your front.",0.0,False
+83,Place Furnace,"OBSERVATION_CHECK: SUCCESS (the arrow moved away, so the tile in front of me is now free path and the table is still adjacent to the east)
+NEW_MEMORY: NONE
+PLAN: Place Furnace now while facing free path with the table adjacent to the east. If it fails, collect more stone (3 steps northwest), return next to the table, and retry on a free tile. After the furnace, collect coal and iron to make iron tools, and avoid the lava to the southwest.
+PREDICTION: A furnace is placed on the path tile in front of me, next to the table.
+ACTION: Place Furnace","You see:
+- grass 2 steps to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- skeleton 5 steps to your south-west
+- arrow 3 steps to your south-east
+- lava 4 steps to your south-west
+- cow 1 step to your north
+- table 1 step to your east
+- tree 4 steps to your east
+
+You face path at your front.",0.0,False
+84,Move West,"OBSERVATION_CHECK: FAILED: Place Furnace did not work again. No furnace appeared, and the table is adjacent with the target tile free, so I likely need more stone.
+NEW_MEMORY: Place Furnace failed with the table adjacent, the target tile free, and 2 stone in inventory. Stone is the likely missing requirement, so I need to collect more before retrying.
+PLAN: Walk west onto the path, then head northwest to the stone 3 steps away and mine 2 or more stones. Return next to the table, face an empty tile, and place the furnace. After that, find coal and iron to make iron tools while avoiding the lava to the southwest.
+PREDICTION: I move one tile west onto the path, which brings the stone area closer.
+ACTION: Move West","You see:
+- grass 2 steps to your north
+- stone 2 steps to your north-west
+- path 1 step to your west
+- skeleton 4 steps to your south-west
+- arrow 2 steps to your south
+- lava 3 steps to your south
+- cow 3 steps to your north-east
+- table 2 steps to your east
+
+You face path at your front.",0.0,False
+85,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Move north toward the stone 2 steps northwest, mine 1 or more stone, return within 1 tile of the table, face an empty tile, and place the furnace. Then find coal and iron for iron tools, avoiding the lava to the south.
+PREDICTION: I move one tile north, which brings the stone to the northwest and closer to me.
+ACTION: Move North","You see:
+- grass 1 step to your north
+- stone 1 step to your west
+- path 1 step to your south
+- skeleton 5 steps to your south-west
+- cow 2 steps to your north-east
+- arrow 4 steps to your south-east
+- table 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+86,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Turn west to face the stone 1 step away and mine it with Do to get a third stone. Then walk back within 1 tile of the table (3 steps southeast), face an empty tile, and try Place Furnace. Afterward, look for coal and iron, avoiding the lava to the southwest.
+PREDICTION: Moving west is blocked by the stone, so I turn to face it without moving, and the stone is now at my front.
+ACTION: Move West","You see:
+- grass 1 step to your east
+- stone 1 step to your west
+- path 1 step to your south
+- skeleton 4 steps to your south-west
+- cow 1 step to your north
+- table 3 steps to your south-east
+- arrow 5 steps to your south-east
+
+You face stone at your front.",0.0,False
+87,Do,"OBSERVATION_CHECK: SUCCESS (the west move was blocked by stone, which turned me to face it, as the plan intended)
+NEW_MEMORY: NONE
+PLAN: KEEP. Mine the stone to the west with Do to get a third stone. Then walk back next to the table (it is 3 steps southeast), face an empty tile, and try Place Furnace. Afterward, look for coal and iron, avoiding the lava to the southwest.
+PREDICTION: Do collects the stone to my west, stone goes from 2 to 3, and that tile becomes path.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 2 steps to your north-west
+- path 1 step to your west
+- arrow 3 steps to your south-west
+- skeleton 4 steps to your south-west
+- cow 2 steps to your north-east
+- table 3 steps to your south-east
+
+You face path at your front.",0.0,False
+88,Move East,"OBSERVATION_CHECK: SUCCESS. The Do action mined the stone, and stone went from 2 to 3.
+NEW_MEMORY: NONE
+PLAN: KEEP. Move back toward the table (3 steps southeast) until it is adjacent, then face an empty grass or path tile and try Place Furnace with 3 stone. If it fails, collect more stone and retry. After the furnace, look for coal and iron while avoiding the lava to the southwest.
+PREDICTION: I move one tile east onto the path, which brings the table closer (about 2 steps southeast).
+ACTION: Move East","You see:
+- grass 1 step to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- arrow 3 steps to your south-west
+- skeleton 5 steps to your south-west
+- cow 2 steps to your north
+- table 2 steps to your south-east
+- tree 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+89,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move South so the table is diagonal or adjacent, then face an empty grass or path tile and try Place Furnace with 3 stone. If it fails, collect more stone and retry. After the furnace, look for coal and iron while avoiding the lava to the southwest.
+PREDICTION: I move one tile south onto grass, and the table ends up within my 3x3 crafting area.
+ACTION: Move South","You see:
+- grass 1 step to your north
+- stone 4 steps to your north-west
+- path 1 step to your west
+- arrow 3 steps to your north-west
+- skeleton 4 steps to your south-west
+- lava 4 steps to your south-west
+- cow 3 steps to your north
+- table 1 step to your east
+- tree 4 steps to your east
+
+You face path at your front.",0.0,False
+90,Place Furnace,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Place the furnace now on the path tile I'm facing, since the table is adjacent (1 step east) and I have 3 stone. If it fails, check whether the faced tile is free and collect more stone. After the furnace, look for iron and coal while avoiding the lava to the southwest.
+PREDICTION: A furnace appears on the path tile in front of me, with the table still adjacent.
+ACTION: Place Furnace","You see:
+- grass 1 step to your north
+- stone 4 steps to your north-west
+- path 1 step to your west
+- skeleton 4 steps to your south-west
+- lava 4 steps to your south-west
+- cow 3 steps to your north
+- table 1 step to your east
+- tree 4 steps to your east
+
+You face path at your front.",0.0,False
+91,Move North,"OBSERVATION_CHECK: FAILED: Place Furnace did not create a furnace; no furnace appears in the view and stone stayed at 3 with the table adjacent to the east.
+NEW_MEMORY: Place Furnace failed again with the table adjacent, the faced tile free (path), and 3 stone, so 3 stone is not enough. Repeated attempts from this spot are a loop.
+PLAN: Stop retrying the furnace here. Walk north-west to mine more stone (stone is 4 steps NW, path 1 step west), gather 2-3 more stone, return next to the table with a free faced tile, then place the furnace. After that, find iron and coal while avoiding the lava to the south-west.
+PREDICTION: Moving north onto the grass brings me closer to the stone to the north-west.
+ACTION: Move North","You see:
+- grass 1 step to your north
+- stone 3 steps to your north-west
+- path 1 step to your west
+- arrow 4 steps to your south-west
+- skeleton 5 steps to your south-west
+- cow 3 steps to your north-west
+- table 2 steps to your south-east
+- tree 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+92,Move East,"OBSERVATION_CHECK: FAILED: The last Place Furnace attempts did not succeed, and the table is now 2 steps southeast, outside the crafting area.
+NEW_MEMORY: Repeated Place Furnace attempts from the same spot with the table 2 steps away are a loop. I must move so the table is diagonal or adjacent before placing again.
+PLAN: Move East, then South so the table is diagonally adjacent, then Place Furnace on an empty faced tile. If that fails, gather more stone from the stone to the northwest and retry.
+PREDICTION: Moving East shifts me one tile closer to the table, leaving it about 1 step east and 2 steps south of me.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 4 steps to your north-west
+- path 2 steps to your west
+- arrow 4 steps to your south-west
+- skeleton 6 steps to your south-west
+- cow 4 steps to your north-west
+- table 1 step to your south
+- tree 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+93,Place Furnace,"OBSERVATION_CHECK: SUCCESS (the table moved from 2 steps south-east to 1 step south, as predicted)
+NEW_MEMORY: NONE
+PLAN: Place Furnace now while the table is adjacent (south) and I face grass. If it fails, mine more stone at the stone 4 steps north-west, return to the table, and retry on a free grass or path tile.
+PREDICTION: A furnace appears on the grass tile in front of me, next to the table.
+ACTION: Place Furnace","You see:
+- grass 1 step to your west
+- stone 4 steps to your north-west
+- path 2 steps to your west
+- arrow 3 steps to your west
+- skeleton 6 steps to your south-west
+- cow 4 steps to your north-west
+- table 1 step to your south
+- tree 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+94,Place Furnace,"OBSERVATION_CHECK: FAILED: The last Place Furnace produced no furnace in view, so the attempt did not make progress.
+NEW_MEMORY: Place Furnace has failed repeatedly with the table adjacent. The previous attempts may have been facing a bad target or lacked the required stone.
+PLAN: Retry Place Furnace while facing grass with the table adjacent to the south. If it fails again, mine more stone at the stone 4 steps north-west, then return to the table and retry.
+PREDICTION: A furnace appears on the grass tile in front of me, next to the table.
+ACTION: Place Furnace","You see:
+- grass 1 step to your west
+- stone 4 steps to your north-west
+- path 2 steps to your west
+- cow 4 steps to your north-west
+- skeleton 5 steps to your south-west
+- table 1 step to your south
+- tree 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+95,Move North,"OBSERVATION_CHECK: FAILED: Place Furnace was repeated at the same spot with no change in inventory (still 3 stone), so I am looping.
+NEW_MEMORY: Place Furnace keeps failing next to the table with 3 stone, so it probably needs more stone. Stop retrying here and gather more stone first.
+PLAN: Walk northwest to the stone about 4 steps away, mine several stones (aim for 5 or more), return to the table, face an empty grass tile, and then place the furnace.
+PREDICTION: I move one step north onto grass, and the stone to the northwest should get closer.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- stone 3 steps to your west
+- path 3 steps to your south-west
+- cow 3 steps to your north-west
+- table 2 steps to your south
+- tree 4 steps to your north-east
+
+You face grass at your front.",0.0,False
+96,Move West,"OBSERVATION_CHECK: SUCCESS (Move North shifted the view: the table moved from 1 to 2 steps south, so I moved north as expected.)
+NEW_MEMORY: Repeated Place Furnace attempts near the table with 3 stone keep failing, so I am stuck retrying the same action. Stone is 3 steps west and lava lies further southwest, so avoid going past the stone.
+PLAN: Move west toward the stone 3 steps away, mine 3 or more stones (use Do while facing stone), return next to the table, face an empty grass or path tile, and try Place Furnace with 5 or more stone. If it still fails, look for a different placement spot.
+PREDICTION: I move one step west onto grass, and the stone to the west should be 2 steps away.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- stone 2 steps to your west
+- path 2 steps to your south-west
+- cow 1 step to your west
+- arrow 4 steps to your south-west
+- table 3 steps to your south-east
+- tree 5 steps to your north-east
+
+You face cow at your front.",0.0,False
+97,Do,"OBSERVATION_CHECK: FAILED: The west move was blocked by a cow, which is now directly in front of me, so I did not get closer to the stone or the table.
+NEW_MEMORY: A cow is blocking the west route, and repeated Place Furnace attempts near the table are a loop, so I should gather more stone and try again from a new spot.
+PLAN: Attack the cow with Do until it is eaten (Eat Cow achievement), then mine the stone 2 steps west to get 5 or more stone, return within 1 tile of the table, face an empty grass or path tile, and try Place Furnace again. If it fails, move to a different spot and retry.
+PREDICTION: The cow takes damage from my hit, and after a few hits it is eaten and disappears, clearing the path west.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 2 steps to your west
+- path 2 steps to your south-west
+- arrow 3 steps to your south-west
+- table 3 steps to your south-east
+- tree 5 steps to your north-east
+
+You face grass at your front.",0.0,False
+98,Move West,"OBSERVATION_CHECK: SUCCESS. The cow is no longer visible after the Do action, so it was likely eaten or killed, and the west route is clearing.
+NEW_MEMORY: The cow is gone from view, so the west route may now be open. Stone is 2 steps west and lava lies further southwest, so do not go past the stone.
+PLAN: Move west onto the grass, then face the stone 1 tile west and mine it with Do to gather more stone. Return near the table (3 steps southeast), face an empty tile, and try Place Furnace. If it fails, move to a different spot and retry.
+PREDICTION: I move one tile west onto the grass, and the stone should then be 1 step to my west.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- stone 1 step to your west
+- path 2 steps to your south-west
+- arrow 1 step to your south
+- skeleton 3 steps to your south
+- table 4 steps to your south-east
+
+You face stone at your front.",0.0,False
+99,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The table is now 4 steps away, out of crafting range, so furnace attempts need me to return near it.
+PLAN: Mine the stone 1 step west with Do to gather more stone, return to the table (southeast), face an empty grass or path tile, and try Place Furnace. If it fails, place a new table here with my spare wood and retry.
+PREDICTION: The stone to my west is collected, so my stone count rises from 3 to 4 and the tile becomes path.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 2 steps to your west
+- path 1 step to your west
+- skeleton 3 steps to your south
+- table 4 steps to your south-east
+
+You face path at your front.",-0.2,False
+100,Place Table,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The stone to the west was mined (stone count rose to 4) and the tile is now path. The old table is 4 steps away, out of crafting range, so repeated furnace attempts there were a loop.
+PLAN: Place a new table on the path tile to my west using spare wood, then face another free grass or path tile next to it and Place Furnace with the 4 stone. Then craft iron tools once I find iron, and keep exploring for coal, iron, water, and saplings.
+PREDICTION: A table appears on the path tile west of me, and wood drops from 4 to about 3 or fewer.
+ACTION: Place Table","You see:
+- grass 1 step to your north
+- stone 2 steps to your west
+- path 1 step to your south
+- table 1 step to your west
+- cow 3 steps to your north
+
+You face table at your front.",0.0,False
+101,Move North,"OBSERVATION_CHECK: SUCCESS. A new table is now adjacent to my west and wood dropped to 2, so Place Table worked.
+NEW_MEMORY: Facing the table blocks Place Furnace, so I must face an empty grass or path tile while still within 1 tile of the table.
+PLAN: Move North onto the grass so the table is diagonal to me, then Place Furnace on the grass tile I face; after that, craft iron tools once I find iron and coal, and keep exploring for water, saplings, and diamonds.
+PREDICTION: I move onto the grass tile north of me, the table ends up diagonal (southwest), and I face new grass to the north.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- stone 3 steps to your south-west
+- path 2 steps to your south
+- cow 3 steps to your north-west
+- table 2 steps to your south-west
+
+You face grass at your front.",0.0,False
+102,Move West,"OBSERVATION_CHECK: SUCCESS (Move North moved me onto the grass, and the table now appears 2 steps southwest.)
+NEW_MEMORY: Furnace placement failed several times while I was facing the table or too far from it. I need to stand next to the table and face an empty grass or path tile.
+PLAN: Move West onto the grass to get adjacent to the table, then face an empty tile and Place Furnace. After that, collect more wood for a new table if needed, find iron and coal, and craft iron tools. Keep an eye out for water, saplings, and diamonds.
+PREDICTION: I move one tile west onto grass, and the table should end up within about 1 tile of me, close enough for furnace placement.
+ACTION: Move West","You see:
+- grass 1 step to your west
+- stone 2 steps to your south-west
+- path 2 steps to your south
+- table 1 step to your south
+- cow 3 steps to your north-east
+- arrow 4 steps to your south-east
+
+You face grass at your front.",0.1,False
+103,Place Furnace,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Place the furnace on the grass tile I'm facing, since the table is now directly south of me (adjacent). Then gather wood for another table if needed, find iron and coal, and craft iron tools near the table and furnace. Watch for water, saplings, and diamonds.
+PREDICTION: A furnace appears on the grass tile to my west, with the table adjacent to me.
+ACTION: Place Furnace","You see:
+- grass 1 step to your north
+- stone 2 steps to your south-west
+- path 2 steps to your south
+- furnace 1 step to your west
+- table 1 step to your south
+- arrow 3 steps to your south-east
+- cow 4 steps to your north-east
+
+You face furnace at your front.",1.0,False
+104,Move East,"OBSERVATION_CHECK: SUCCESS (the furnace now sits 1 step west and the table is 1 step south, so Place Furnace worked.)
+NEW_MEMORY: Furnace placed to my west with the table directly south, so both are in place for crafting iron tools. Stone is needed for more tools and for future placement.
+PLAN: Collect stone at the south-west (around the path to the south), return to the table and furnace, and find wood (2 in inventory, need more for a table or iron tools), then iron, then craft the iron pickaxe and iron sword near the table and furnace.
+PREDICTION: Moving East takes me around the table so I can reach the path and stone to the south-west.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 3 steps to your south-west
+- path 2 steps to your south
+- furnace 2 steps to your west
+- table 2 steps to your south-west
+- arrow 1 step to your south
+- cow 4 steps to your north-east
+
+You face grass at your front.",0.0,False
+105,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Mine stone to the south-west near the path, collect more wood (I have 2, need more for tools), find water since drink is 4/9, then find iron and craft iron tools at the table and furnace.
+PREDICTION: I move one step west onto the grass, getting closer to the stone to the south-west and the furnace.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- stone 2 steps to your south-west
+- path 2 steps to your south
+- furnace 1 step to your west
+- table 1 step to your south
+- arrow 1 step to your east
+- cow 5 steps to your north-east
+
+You face furnace at your front.",0.0,False
+106,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Find water soon since drink is 4/9. Explore away from the lava to the west to find water and iron, then return to the table and furnace (stand next to both) to craft iron tools. Mine extra stone and collect wood on the way.
+PREDICTION: I move one step north onto the grass, which should reveal new terrain to the north for finding water or iron.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- stone 3 steps to your south-west
+- path 3 steps to your south
+- furnace 2 steps to your south-west
+- table 2 steps to your south
+- arrow 1 step to your east
+- cow 5 steps to your north-east
+
+You face grass at your front.",0.0,False
+107,Move North,"OBSERVATION_CHECK: SUCCESS (the table moved from 1 step south to 2 steps south, so I moved north as intended)
+NEW_MEMORY: NONE
+PLAN: Explore north to find water (drink is 4/9) and iron. Avoid the lava to the west. Mine stone and collect wood on the way, then return to the table and furnace to craft iron tools once I have iron and coal.
+PREDICTION: I move one step north onto grass and reveal new terrain to the north, possibly water or iron.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- stone 4 steps to your south-west
+- furnace 3 steps to your south-west
+- table 3 steps to your south
+- arrow 1 step to your east
+- cow 5 steps to your north-east
+
+You face grass at your front.",0.0,False
+108,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Explore north to find water (drink 4/9) and iron, collecting stone and wood on the way. Return to the table and furnace to craft iron tools once I have iron.
+PREDICTION: I move one step north onto grass and reveal new terrain to the north, possibly water or iron.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- furnace 4 steps to your south-west
+- arrow 1 step to your east
+- cow 3 steps to your east
+
+You face grass at your front.",0.0,False
+109,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Keep exploring north to find water (drink is 4/9) and iron, collecting stone and wood along the way, then return to the table and furnace to craft iron tools.
+PREDICTION: I move one step north onto grass and see new terrain to the north, possibly water or iron.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- arrow 1 step to your east
+- cow 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+110,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Keep exploring north to find water (drink 4/9), trees for wood, and iron. Collect stone and wood along the way, then return to the table and furnace to craft iron tools.
+PREDICTION: I move one step north onto grass and should see more terrain to the north, possibly water, trees, or iron.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- sand 4 steps to your north-west
+- arrow 1 step to your east
+- cow 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+111,Move North,"OBSERVATION_CHECK: SUCCESS (the view shifted and new terrain, sand, appeared to the north-west, so the move worked)
+NEW_MEMORY: NONE
+PLAN: Head north-west toward the sand, since sand usually borders water, and drink to raise drink 4/9. Then collect wood from trees to the north-east, gather more stone, and return to the table and furnace to craft iron tools.
+PREDICTION: I move one step north onto grass and get closer to the sand and possibly the water beyond it.
+ACTION: Move North","You see:
+- sand 3 steps to your north-west
+- grass 1 step to your west
+- arrow 1 step to your east
+- cow 6 steps to your south-east
+
+You face grass at your front.",0.0,False
+112,Move North,"OBSERVATION_CHECK: SUCCESS - I moved north onto grass and the view shifted, with the sand now closer (3 steps north-west).
+NEW_MEMORY: NONE
+PLAN: Continue north-west toward the sand to find water, drink to raise drink from 4/9, then collect wood from trees to the north-east, gather stone, and return to the table and furnace to craft iron tools.
+PREDICTION: Moving north brings me closer to the sand and possibly the lake beyond it.
+ACTION: Move North","You see:
+- water 5 steps to your north-west
+- sand 2 steps to your north-west
+- grass 1 step to your west
+- arrow 1 step to your east
+
+You face grass at your front.",0.0,False
+113,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue north-west toward the sand and water to drink, then gather wood and stone and return to the table and furnace for iron tools.
+PREDICTION: Moving north gets me closer to the sand and water, and the view should shift so the sand is nearer.
+ACTION: Move North","You see:
+- water 4 steps to your north-west
+- sand 1 step to your west
+- grass 1 step to your south
+- arrow 1 step to your east
+
+You face sand at your front.",0.0,False
+114,Move West,"OBSERVATION_CHECK: FAILED: The last Move North did not change the view toward the water (water still 4 steps away), and I am now facing sand, so my forward movement was blocked and I am not making progress toward the water.
+NEW_MEMORY: Sand is directly north of me now, and sand may be walkable; I was previously blocked by my facing direction, so I should move west onto the sand to get closer to the water at the north-west.
+PLAN: Move West onto the sand, then head north-west toward the water, drink until drink is full, then collect wood and stone and return to the table and furnace to craft iron tools.
+PREDICTION: Moving west onto the sand tile should shift the view so the water is 2-3 steps to my north-west.
+ACTION: Move West","You see:
+- water 3 steps to your north-west
+- sand 1 step to your north
+- grass 1 step to your west
+- arrow 3 steps to your north-east
+
+You face grass at your front.",0.0,False
+115,Move North,"OBSERVATION_CHECK: SUCCESS (the view shifted, water moved from 4 to 3 steps north-west, so the move west worked)
+NEW_MEMORY: NONE
+PLAN: KEEP. Move North onto the sand, then continue north-west to the water and drink until drink is full. Then collect wood and stone, return to the table and furnace, and craft iron tools.
+PREDICTION: I move north onto the sand, and the water should be about 2 steps to my north-west.
+ACTION: Move North","You see:
+- water 2 steps to your north-west
+- sand 1 step to your west
+- grass 2 steps to your south-west
+- arrow 3 steps to your north-east
+
+You face sand at your front.",0.0,False
+116,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Move West onto the sand to get closer to the water to the north-west, then face the water and use Do until drink is full. Then collect wood and stone, return to the table and furnace, and craft iron tools.
+PREDICTION: I move west onto the sand, and the water should be about 1 to 2 steps away to my north-west or north.
+ACTION: Move West","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- sand 1 step to your west
+- arrow 5 steps to your north-east
+
+You face sand at your front.",0.0,False
+117,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Face the water 1 step north by moving North (water blocks movement, so I only turn). Then use Do until drink is full. After that, collect wood and stone, return to the table and furnace, and craft iron tools.
+PREDICTION: I turn to face the water to my north without moving, so the next action Do should drink water and raise drink from 4.
+ACTION: Move North","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- sand 1 step to your west
+- arrow 6 steps to your north-east
+
+You face water at your front.",0.0,False
+118,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Face the water to the north and use Do repeatedly until drink is full (9/9). Then collect more wood and stone, return to the table and furnace, and craft iron tools.
+PREDICTION: I stay in place facing the water, and drink should increase from 4 after Do.
+ACTION: Do","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- sand 1 step to your west
+
+You face water at your front.",1.0,False
+119,Do,"OBSERVATION_CHECK: SUCCESS (drink rose from 4 to 5 after using Do on the water to the north)
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Drink increases from 5 to 6 while I stay in place facing the water.
+ACTION: Do","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- sand 1 step to your west
+- zombie 6 steps to your south-west
+
+You face water at your front.",0.0,False
+120,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Drink increases from 6 to 7 while I stay in place facing the water.
+ACTION: Do","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- sand 1 step to your west
+- zombie 5 steps to your south-west
+
+You face water at your front.",0.0,False
+121,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep facing the water to the north and use Do until drink is 9/9, then gather wood and stone, return to the table and furnace, and craft iron tools.
+PREDICTION: Drink increases from 7 to 8 while I stay in place facing the water.
+ACTION: Do","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- sand 1 step to your west
+- zombie 4 steps to your south-west
+
+You face water at your front.",0.0,False
+122,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep facing the water to the north and use Do until drink is 9/9, watch the approaching zombie and fight it if it reaches me, then gather wood and stone, return to the table and furnace, and craft iron tools.
+PREDICTION: Drink increases from 8 to 9 while I stay in place facing the water.
+ACTION: Do","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- sand 1 step to your west
+- zombie 3 steps to your south
+
+You face water at your front.",0.0,False
+123,Move South,"OBSERVATION_CHECK: SUCCESS (drink rose to 9/9 after using Do on the water)
+NEW_MEMORY: NONE
+PLAN: Drink is full, so stop using Do on the water. Move south to face the zombie 3 steps away, let it come adjacent, then attack it with Do until it is defeated. After that, gather wood and stone, return to the table, and craft tools.
+PREDICTION: I move one step south onto the grass and face south, closer to the zombie, which should be about 2 steps away.
+ACTION: Move South","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+- zombie 2 steps to your south
+
+You face grass at your front.",0.0,False
+124,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move South to close the gap to the zombie, which should leave it adjacent and in front of me. Then use Do until it is defeated. After that, gather wood and stone, return to the table, and craft tools.
+PREDICTION: I move one tile south and end up one tile from the zombie, facing it.
+ACTION: Move South","You see:
+- water 3 steps to your north
+- grass 1 step to your west
+- sand 2 steps to your north
+- zombie 2 steps to your south-west
+
+You face grass at your front.",0.0,False
+125,Noop,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Let the zombie come to me, then face it and use Do until it is defeated. Afterward, gather wood and stone, return to the table, and craft tools.
+PREDICTION: I stay in place while the zombie moves closer, likely ending up adjacent or nearly adjacent to me.
+ACTION: Noop","You see:
+- water 3 steps to your north
+- grass 1 step to your north
+- sand 2 steps to your north
+- zombie 1 step to your west
+
+You face grass at your front.",-0.2,False
+126,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Face the zombie, which is 1 step west, by moving West (blocked by the zombie, so I turn to face it). Then use Do repeatedly until it is defeated. Afterward, gather wood and stone, return to the table, and craft tools.
+PREDICTION: I stay in place and turn to face the zombie to my west, ready to attack.
+ACTION: Move West","You see:
+- water 3 steps to your north
+- grass 1 step to your north
+- sand 2 steps to your north
+- zombie 1 step to your west
+
+You face zombie at your front.",0.0,False
+127,Do,"OBSERVATION_CHECK: SUCCESS (the Move West turned me to face the zombie, which is now directly in front of me)
+NEW_MEMORY: NONE
+PLAN: Attack the zombie with Do until it is defeated. Then collect more wood and stone, find or place a table, and craft a stone sword or pickaxe upgrades as needed.
+PREDICTION: The zombie takes damage from my stone sword, and its health drops toward defeat.
+ACTION: Do","You see:
+- water 3 steps to your north
+- grass 1 step to your west
+- sand 2 steps to your north
+- zombie 2 steps to your north-west
+
+You face grass at your front.",0.0,False
+128,Noop,"OBSERVATION_CHECK: FAILED: The zombie moved from directly west to 2 steps north-west, so my Do hit grass and made no progress. The current view also doesn't show the table, furnace, or lava from my memory notes.
+NEW_MEMORY: Do on grass collects nothing; the zombie moves erratically, so attacking requires it to be directly in front of me. Memory notes about the table, furnace, and lava are not visible now and may be outdated.
+PLAN: Wait for the zombie to step adjacent, face it, and attack with Do until defeated. Then collect wood (I have 2, need more for a table) and stone, and drink water to the north. Afterward, locate or rebuild a table and furnace for iron tools.
+PREDICTION: The zombie approaches to an adjacent tile, or stays nearby, and I keep my position while my energy and health hold steady.
+ACTION: Noop","You see:
+- water 3 steps to your north
+- grass 1 step to your west
+- sand 2 steps to your north
+- zombie 1 step to your north
+
+You face grass at your front.",0.1,False
+129,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The zombie moved from west to north, so my Noop changed the view. The prior memory notes about a table, furnace, and lava don't match the current observation, so they may be outdated.
+PLAN: Face the zombie by moving North (it blocks the tile, so I turn without moving), then attack with Do until it is defeated. Afterward, collect wood and stone, then drink from the water 3 steps north.
+PREDICTION: I turn to face the zombie to my north without moving, and I'm ready to attack.
+ACTION: Move North","You see:
+- water 3 steps to your north
+- grass 1 step to your west
+- sand 2 steps to your north
+- zombie 1 step to your north
+
+You face zombie at your front.",0.0,False
+130,Do,"OBSERVATION_CHECK: SUCCESS (Move North turned me to face the zombie, which blocks the tile, so I am now ready to attack)
+NEW_MEMORY: NONE
+PLAN: Attack the zombie with Do until it is defeated, then collect wood from trees and stone, then drink from the water 3 steps north.
+PREDICTION: The zombie takes damage from my sword; it may be defeated after a few hits.
+ACTION: Do","You see:
+- water 3 steps to your north
+- grass 1 step to your west
+- sand 2 steps to your north
+
+You face grass at your front.",1.0,False
+131,Move North,"OBSERVATION_CHECK: FAILED: The zombie is no longer visible after my Do, so it was probably defeated, but the internal memory notes about a table, furnace, and lava don't match the current view.
+NEW_MEMORY: The memory notes about the table, furnace, lava, and trees don't match the current view and may be outdated; trust the live observation and re-verify before relying on them.
+PLAN: Move north toward the water 3 steps away and drink to restore drink, then look for trees to collect wood, then collect stone and rebuild the table and furnace nearby.
+PREDICTION: I move one step north and the water gets closer, now 2 steps away.
+ACTION: Move North","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+
+You face sand at your front.",0.0,False
+132,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Move north onto the sand, then drink from the water to the north. Next, find trees for wood and stone for tools, and sleep when energy gets low.
+PREDICTION: I move one step north onto the sand, and the water will be 1 step north of me.
+ACTION: Move North","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- sand 1 step to your west
+
+You face water at your front.",0.0,False
+133,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Drink from the water to the north to try for the Collect Drink achievement. Then find trees for wood, stone for tools, and a safe place to sleep when energy gets low.
+PREDICTION: I drink from the water in front of me, so drink stays at maximum and Collect Drink may unlock.
+ACTION: Do","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- sand 1 step to your west
+
+You face water at your front.",0.0,False
+134,Move West,"OBSERVATION_CHECK: FAILED: Do on water left drink at 9/9 and the view unchanged, so repeating it is a loop with no progress.
+NEW_MEMORY: Drink is already full, so repeated Do on water is a loop. Stop drinking here and explore for trees, cows, and a safe sleep spot.
+PLAN: 1. Move west onto the sand, away from the water. 2. Explore to find trees and collect wood (need at least 4-5 for table plus tools). 3. Place a table near trees and craft wood tools as needed. 4. Collect sapling and place plant, then look for cows. 5. Find a safe enclosed spot (stone walls) to sleep when energy gets low. 6. Find coal, iron, and build a furnace near the table to craft iron tools, then search for diamond.
+PREDICTION: I move onto the sand to the west, which should shift the view and move me away from the water.
+ACTION: Move West","You see:
+- water 1 step to your north
+- grass 1 step to your south
+- zombie 4 steps to your south-west
+- sand 1 step to your west
+
+You face sand at your front.",0.0,False
+135,Move South,"OBSERVATION_CHECK: FAILED: The Move West view is unchanged (water still 1 step north, sand still 1 step west), so I did not actually move and am stuck facing the same spot.
+NEW_MEMORY: Moving West from this spot did not change position; I am looping between the water and sand here. Stop repeating Move West and Do on water, and explore south and away from the lake.
+PLAN: 1. Move South, away from the water, onto the grass. 2. Explore to find trees and collect wood (at least 4-5 for a table and tools). 3. Place a table near the trees and craft wood tools. 4. Collect a sapling, place a plant, and look for cows. 5. Find a safe enclosed spot (stone walls) to sleep when energy gets low. 6. Find coal, iron, and stone, rebuild the furnace near a table, craft iron tools, then search for diamond.
+PREDICTION: Moving South puts me on grass, the view shifts so water moves further north, and I can explore new terrain for trees.
+ACTION: Move South","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+- zombie 2 steps to your west
+
+You face grass at your front.",0.0,False
+136,Move West,"OBSERVATION_CHECK: SUCCESS (the view shifted and water is now 2 steps north, so I moved south away from the lake)
+NEW_MEMORY: NONE
+PLAN: 1. Defeat the nearby zombie with the stone sword for an achievement, then continue. 2. Explore south and away from the lake to find trees and collect wood (need 4-5 for table and tools). 3. Place a table near trees and craft tools as needed. 4. Collect a sapling, place a plant, and look for cows. 5. Find stone and build a safe enclosed spot to sleep when energy is low. 6. Find iron, rebuild the furnace near a table, craft iron tools, then search for diamond.
+PREDICTION: Moving West puts me on grass directly beside the zombie, so it should be in front of me for attacks.
+ACTION: Move West","You see:
+- grass 1 step to your south
+- water 2 steps to your north
+- sand 1 step to your north
+- zombie 1 step to your west
+
+You face zombie at your front.",-0.2,False
+137,Do,"OBSERVATION_CHECK: FAILED: Move West did not advance me, since the zombie blocked the tile and I am still beside the same water and sand area.
+NEW_MEMORY: Moving West is blocked when the zombie occupies the western tile; I am stuck near the lake, so I must fight the zombie first and then move south away from the water.
+PLAN: 1. Attack the zombie in front with Do until it is defeated. 2. Explore south and away from the lake to find trees and collect wood (need 4-5 for table and tools). 3. Place a table near trees and craft tools as needed. 4. Collect a sapling, place a plant, and look for cows. 5. Find stone and build a safe enclosed spot to sleep when energy is low. 6. Find iron, rebuild the furnace near a table, craft iron tools, then search for diamond.
+PREDICTION: The zombie is directly in front of me, so Do should damage it and move me closer to defeating it.
+ACTION: Do","You see:
+- grass 1 step to your south
+- water 2 steps to your north
+- sand 1 step to your north
+- zombie 1 step to your west
+
+You face zombie at your front.",0.0,False
+138,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The zombie is directly west and I am facing it, so Do should damage it and bring it closer to defeat.
+ACTION: Do","You see:
+- grass 1 step to your west
+- water 2 steps to your north
+- sand 1 step to your north
+
+You face grass at your front.",0.0,False
+139,Move South,"OBSERVATION_CHECK: FAILED: I have been looping between the lake and sand near the zombie, and the zombie is no longer visible, so the fight did not clearly progress.
+NEW_MEMORY: Looping near the lake: repeated Move West, Move North, and Do on water/sand/zombie with no progress. Memory notes about table, furnace, and lava are contradictory and may be outdated.
+PLAN: 1. Move south away from the lake to find trees and collect at least 4 wood. 2. Place a table near the trees and craft a wood or stone tool as needed. 3. Collect a sapling, place a plant, and look for cows. 4. Find stone and build a safe enclosed spot to sleep when energy is low. 5. Find coal and iron, build a furnace next to a table, craft iron tools, then search for diamond.
+PREDICTION: I will move one tile south onto grass, away from the lake, and the view should shift so new terrain such as trees comes into sight.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- water 3 steps to your north
+- sand 2 steps to your north
+
+You face grass at your front.",0.0,False
+140,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I move one tile south onto grass, away from the lake, and new terrain should come into view, hopefully including trees.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- sand 3 steps to your north
+
+You face grass at your front.",0.0,False
+141,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I move one tile south onto grass, away from the lake, and the sand should appear one step farther north while new terrain comes into view, hopefully including trees.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- sand 6 steps to your north-east
+- zombie 6 steps to your south-east
+
+You face grass at your front.",0.0,False
+142,Move South,"OBSERVATION_CHECK: SUCCESS (Move South moved me onto grass and the view shifted, so I made progress away from the lake.)
+NEW_MEMORY: NONE
+PLAN: KEEP. 1. Keep moving south to explore and find trees, collecting at least 4 wood. 2. Place a table near the trees and craft tools as needed. 3. Collect a sapling, place it, and look for cows. 4. Find stone and build a safe enclosed spot to sleep when energy is low. 5. Find coal and iron, build a furnace next to a table, craft iron tools, then search for diamond.
+PREDICTION: I move one tile south onto grass, and new terrain further south comes into view, hopefully including trees.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- zombie 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+143,Move South,"OBSERVATION_CHECK: SUCCESS (the view shifted and the sand moved further north, so I moved south)
+NEW_MEMORY: NONE
+PLAN: KEEP. 1. Keep moving south to explore and find trees, collecting at least 4 wood. 2. Place a table near the trees and craft tools as needed. 3. Collect a sapling, place it, and look for cows. 4. Find stone and build a safe enclosed spot to sleep when energy is low. 5. Find coal and iron, build a furnace next to a table, craft iron tools, then search for diamond.
+PREDICTION: I move one tile south and more terrain comes into view, hopefully including trees.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- zombie 2 steps to your south-east
+- furnace 6 steps to your south-east
+
+You face grass at your front.",0.0,False
+144,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. 1. Keep moving south to explore and find trees, collecting at least 4 wood. 2. Place a table near the trees and craft tools as needed. 3. Collect a sapling, place it, and look for cows. 4. Find stone and build a safe enclosed spot to sleep when energy is low. 5. Find coal and iron, build a furnace next to a table, craft iron tools, then search for diamond.
+PREDICTION: I move one tile south, the view shifts, and I may see trees or the zombie gets closer for a fight.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- path 4 steps to your south-west
+- stone 3 steps to your south
+- zombie 1 step to your east
+- furnace 5 steps to your south-east
+- table 7 steps to your south-east
+
+You face grass at your front.",-0.2,False
+145,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The zombie is now 1 step east, and health is down to 3/9, so I need to deal with it before exploring further.
+PLAN: 1. Face the zombie to the east and attack it with Do until defeated. 2. Recover health and avoid further zombie fights while low. 3. Keep exploring south for trees, then build a table near the trees and craft tools. 4. Collect a sapling, place it, and find cows. 5. Find stone and build a safe enclosed spot to sleep when energy is low. 6. Find coal and iron, build a furnace next to a table, craft iron tools, then search for diamond.
+PREDICTION: Moving East is blocked by the zombie, so I turn to face it without moving, and it stays in front of me for the next Do.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- path 4 steps to your south-west
+- stone 3 steps to your south
+- zombie 1 step to your east
+- furnace 5 steps to your south-east
+- table 7 steps to your south-east
+
+You face zombie at your front.",0.0,False
+146,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Attack the zombie to the east with Do until it is defeated. 2. Recover health and avoid other zombies while health is low. 3. Explore south for trees, then place a table near them and craft tools. 4. Collect a sapling, place it, and find cows. 5. Find stone and build a safe enclosed spot to sleep when energy is low. 6. Find coal and iron, build a furnace next to a table, craft iron tools, then search for diamond.
+PREDICTION: The zombie is directly in front of me, so Do should deal damage and eventually defeat it.
+ACTION: Do","You see:
+- grass 1 step to your west
+- path 4 steps to your south-west
+- stone 3 steps to your south
+- zombie 1 step to your east
+- furnace 5 steps to your south-east
+- table 7 steps to your south-east
+
+You face zombie at your front.",0.0,False
+147,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The zombie is still directly in front of me, so Do should damage it again, and it may be defeated soon.
+ACTION: Do","You see:
+- grass 1 step to your west
+- path 4 steps to your south-west
+- stone 3 steps to your south
+- furnace 5 steps to your south-east
+- table 7 steps to your south-east
+
+You face grass at your front.",0.0,False
+148,Move South,"OBSERVATION_CHECK: SUCCESS (the zombie is no longer visible, so it was likely defeated, and the view changed after the attack)
+NEW_MEMORY: NONE
+PLAN: 1. Move south toward the stone 3 steps away and mine it with Do. 2. Recover health by avoiding zombies and staying away from open grass at night. 3. Find trees for more wood, then find coal and iron near the furnace and table to the southeast. 4. Build a stone shelter and sleep when energy is low. 5. Collect a sapling, place it, find cows, and then search for diamond.
+PREDICTION: I move one tile south onto grass, getting closer to the stone 2 tiles away and staying clear of the zombie area.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- coal 5 steps to your south-west
+- path 3 steps to your south-west
+- stone 2 steps to your south
+- furnace 4 steps to your south-east
+- table 6 steps to your south-east
+
+You face grass at your front.",0.0,False
+149,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Move south twice to reach the stone 2 steps south and mine it with Do. 2. Avoid zombies and recover health (currently 3/9) by staying away from open grass. 3. Find more wood, then return to the table and furnace to the southeast to craft and collect coal and iron. 4. Build a stone shelter and sleep when energy is low. 5. Collect a sapling, place it, find cows, and search for diamond.
+PREDICTION: I move one tile south, and the stone should then be 1 step south of me, directly in front.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- stone 1 step to your south
+- coal 4 steps to your south-west
+- path 2 steps to your south-west
+- furnace 3 steps to your east
+- skeleton 6 steps to your south-east
+- table 5 steps to your south-east
+
+You face stone at your front.",0.0,False
+150,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Mine the stone directly south with Do. 2. Collect more stone and wood, avoiding open grass while health is low (3/9). 3. Return to the table and furnace to the southeast to craft stone and iron tools. 4. Build a stone shelter and sleep when energy is low. 5. Collect a sapling, place it, find cows, and search for diamond.
+PREDICTION: The stone tile in front of me is removed and added to my inventory, giving stone 1.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 2 steps to your south
+- coal 4 steps to your south-west
+- path 1 step to your south
+- furnace 3 steps to your east
+- skeleton 6 steps to your south-east
+- table 5 steps to your south-east
+
+You face path at your front.",0.0,False
+151,Move South,"OBSERVATION_CHECK: SUCCESS (the Do mined a stone: inventory shows stone 1, and the tile in front is now path)
+NEW_MEMORY: Mined stone directly south; that tile is now path. Stone is 2 steps south and coal is 4 steps southwest.
+PLAN: 1. Move south onto the path and mine the stone 2 steps south with Do. 2. Mine the coal to the southwest, avoiding open grass while health is low (3/9). 3. Get more wood, then return to the table and furnace to the southeast to craft stone and iron tools. 4. Build a stone shelter and sleep when energy is low. 5. Collect a sapling, place it, find cows, and search for diamond.
+PREDICTION: I move one tile south onto the path, and the stone will be 1 step in front of me.
+ACTION: Move South","You see:
+- grass 1 step to your north
+- stone 1 step to your south
+- lava 7 steps to your south-west
+- path 1 step to your west
+- coal 3 steps to your south-west
+- arrow 4 steps to your south-east
+- furnace 4 steps to your north-east
+- skeleton 5 steps to your south-east
+- table 4 steps to your east
+
+You face stone at your front.",0.0,False
+152,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Mine the stone in front of me with Do, then collect coal 3 steps southwest, avoid lava to the far southwest, return to the table 4 steps east to craft, and build a shelter to recover health and sleep.
+PREDICTION: The stone directly south is collected, adding 1 stone to inventory (2 total) and leaving a path tile in front of me.
+ACTION: Do","You see:
+- grass 1 step to your north
+- stone 1 step to your east
+- lava 7 steps to your south-west
+- path 1 step to your west
+- coal 3 steps to your south-west
+- arrow 3 steps to your south-east
+- furnace 4 steps to your north-east
+- skeleton 5 steps to your south-east
+- table 4 steps to your east
+
+You face path at your front.",0.0,False
+153,Move South,"OBSERVATION_CHECK: SUCCESS (the Do action mined the stone to the south, stone count is now 2, and the tile in front is path)
+NEW_MEMORY: NONE
+PLAN: Move south onto the path tile, head southwest toward the coal 3 steps away while avoiding the lava far to the southwest, collect the coal, then return to the table 4 steps east to craft, and build a stone shelter to recover health and sleep.
+PREDICTION: I move one tile south onto the path, and the coal to the southwest should get closer.
+ACTION: Move South","You see:
+- grass 2 steps to your north
+- stone 2 steps to your north-east
+- lava 6 steps to your south-west
+- path 1 step to your west
+- coal 2 steps to your west
+- arrow 1 step to your south
+- furnace 5 steps to your north-east
+- skeleton 3 steps to your east
+- table 5 steps to your north-east
+
+You face arrow at your front.",0.0,False
+154,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Arrow from skeleton is 1 step south and blocks southward movement; skeleton is 3 steps east shooting arrows, so I should leave its line of fire.
+PLAN: Move west onto the path to get out of the skeleton's firing line, then face the coal 1 step west and collect it with Do, then return to the table and furnace to craft, and rest in a sealed stone shelter to recover health.
+PREDICTION: I move one tile west onto the path, and the coal should be 1 step west of me.
+ACTION: Move West","You see:
+- grass 2 steps to your west
+- tree 4 steps to your west
+- stone 2 steps to your south-west
+- lava 5 steps to your south-west
+- path 1 step to your north
+- coal 1 step to your west
+- arrow 1 step to your south
+- furnace 6 steps to your north-east
+- skeleton 4 steps to your east
+
+You face coal at your front.",0.1,False
+155,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Collect the coal directly west with Do (I am already facing it), then move away from the skeleton's line of fire toward the trees to the west, gather wood, and return to the table and furnace to craft iron tools. Rest in a sealed stone shelter when energy and health allow.
+PREDICTION: The coal tile is removed from the map and my coal count goes from 1 to 2.
+ACTION: Do","You see:
+- grass 2 steps to your west
+- tree 4 steps to your west
+- stone 2 steps to your south-west
+- lava 5 steps to your south-west
+- path 1 step to your west
+- arrow 3 steps to your east
+- furnace 6 steps to your north-east
+- skeleton 4 steps to your east
+
+You face path at your front.",0.0,False
+156,Move West,"OBSERVATION_CHECK: SUCCESS (coal went from 1 to 2 and the coal tile is gone, so the Do worked)
+NEW_MEMORY: Collected second coal from the tile directly west; that tile is now path. Skeleton is 4 steps east and shooting arrows along this row, so I should leave its line.
+PLAN: Move west across the path toward the trees 4 steps west, gather at least 3 more wood (for a new table and crafting), then return to the table and furnace to make iron tools. Find iron. When energy is low, build a stone shelter and sleep.
+PREDICTION: I move one tile west onto the path and get out of the skeleton's firing row, with the view shifting east by one tile.
+ACTION: Move West","You see:
+- grass 1 step to your west
+- tree 3 steps to your west
+- stone 1 step to your south
+- coal 7 steps to your south-west
+- lava 4 steps to your south-west
+- path 1 step to your east
+- arrow 3 steps to your east
+
+You face grass at your front.",0.0,False
+157,Move West,"OBSERVATION_CHECK: SUCCESS (the view shifted: coal moved from 1 step west to 7 steps southwest, and the tree is now 3 steps west, so I moved west).
+NEW_MEMORY: NONE
+PLAN: Keep heading west across the grass to the trees 3 steps west, collect at least 3 more wood, avoid the arrow line and lava to the southwest, then return to the table and furnace to craft iron tools once iron is found. When energy gets low, build a stone shelter and sleep.
+PREDICTION: I move one tile west onto grass, and the tree should be about 2 steps west.
+ACTION: Move West","You see:
+- grass 1 step to your west
+- coal 5 steps to your south-west
+- stone 1 step to your south
+- tree 2 steps to your west
+- lava 3 steps to your south-west
+- path 1 step to your east
+- arrow 3 steps to your east
+
+You face grass at your front.",0.0,False
+158,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I move one tile west onto the grass, and the tree should then be 1 step west and directly in front of me.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- stone 1 step to your south
+- lava 2 steps to your south
+- coal 4 steps to your south-west
+- tree 1 step to your west
+- path 2 steps to your east
+- arrow 3 steps to your east
+
+You face tree at your front.",0.0,False
+159,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Lava is 2 steps south of my current position, so I must not move south from here. The tree is directly west and I am facing it.
+PLAN: Collect wood from the tree to my west (repeat Do until the tree yields wood, or until it disappears), then look for more trees to reach at least 5 wood. Keep away from the lava to the south and the skeleton's arrow line to the east. Return to the table to place a new table and furnace if needed, then craft iron tools once iron is found. When energy gets low, build a stone shelter and sleep.
+PREDICTION: Doing this while facing the tree should add 1 wood to my inventory, bringing it to 3.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 1 step to your south
+- lava 2 steps to your south
+- coal 4 steps to your south-west
+- tree 3 steps to your north-west
+- path 3 steps to your south
+- arrow 2 steps to your east
+
+You face grass at your front.",0.0,False
+160,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The tree directly west was harvested and wood went to 3. The remaining tree is 3 steps northwest, and lava is 2 steps south, so I must not go south.
+PLAN: Move west onto the grass, then head northwest to the tree, collect wood until I have at least 5, stay away from the lava and the skeleton's arrow line to the east, then place a table and furnace near stone and coal, craft iron tools when iron is found, and build a stone shelter to sleep when energy is low.
+PREDICTION: I move one tile west onto the grass, moving away from the lava and getting closer to the northwest tree.
+ACTION: Move West","You see:
+- grass 1 step to your west
+- stone 1 step to your south
+- lava 2 steps to your south
+- coal 3 steps to your south-west
+- tree 2 steps to your north-west
+- path 3 steps to your south
+- arrow 2 steps to your east
+
+You face grass at your front.",0.0,False
+161,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Move west onto the grass, then face north toward the tree 2 steps northwest and collect wood. Avoid the lava 2 steps south, then place a table and furnace near the stone and coal.
+PREDICTION: I move one tile west onto grass, putting the tree about one step northwest, which should bring it within reach after one more move.
+ACTION: Move West","You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- tree 1 step to your north
+- arrow 2 steps to your east
+
+You face grass at your front.",0.0,False
+162,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Face north toward the tree 1 step north by moving North (blocked by the tree, so I only turn). Then use Do to collect wood. Afterward, mine the coal 2 steps southwest, keep away from the lava to the southeast, and place a table and furnace once I have enough wood.
+PREDICTION: I will not move, but I will turn to face the tree 1 step north.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- tree 1 step to your north
+- arrow 1 step to your east
+
+You face tree at your front.",0.0,False
+163,Do,"OBSERVATION_CHECK: SUCCESS (the Move North was blocked by the tree, so I turned to face it, which is the intended effect)
+NEW_MEMORY: NONE
+PLAN: Collect wood from the tree to the north with Do. Then, with at least 4-5 wood, place a table on safe grass away from the lava to the southeast. Place a furnace next to the table, then craft iron tools once I find iron. Sleep in a safe enclosed spot when energy is low, and avoid the skeleton's firing line.
+PREDICTION: The tree in front of me gives 1 wood, so wood goes from 3 to 4 and the tree may disappear.
+ACTION: Do","You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+
+You face grass at your front.",-0.2,False
+164,Place Table,"OBSERVATION_CHECK: SUCCESS. The Do on the tree raised wood from 3 to 4, and the tree is gone, so I now face grass.
+NEW_MEMORY: The harvested tree north of me is gone, so I face open grass. Health is critically low at 2/9 and lava is 3 steps southeast, so I must avoid moving southeast.
+PLAN: Place a table on the grass in front of me to create a barrier and a crafting spot. Then place stone to enclose myself and sleep when energy is low to recover health. Avoid the lava to the southeast and the skeleton's line of fire. Collect more wood from remaining trees afterward.
+PREDICTION: A table appears on the grass tile north of me, wood decreases, and the table blocks the northern approach.
+ACTION: Place Table","You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+165,Sleep,"OBSERVATION_CHECK: SUCCESS (Place Table worked: the table is now 1 step north and I am facing it.)
+NEW_MEMORY: Table placed 1 step north of my position. Lava is 3 steps southeast, and I have 2 stone in inventory.
+PLAN: Sleep now to restore energy (4/9) and health while the stone tile to my south and the table to my north block two sides. Afterward, wake up, check for zombies, place stone on the open west or east side if I can face it, then gather wood from the remaining trees to the northwest and build a furnace next to the table.
+PREDICTION: Energy starts rising and health regenerates slowly while I sleep; I may wake up with the Wake Up achievement if no threat interrupts.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+166,Sleep,"OBSERVATION_CHECK: SUCCESS - Sleep was executed, energy is 4/9 and the character is sleeping, so the action took effect.
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up, then check for threats, collect more wood from the remaining trees to the northwest, and build a furnace next to the table.
+PREDICTION: Energy rises and health regenerates while sleeping; I wake up later with the Wake Up achievement if no zombie interrupts.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+167,Sleep,"OBSERVATION_CHECK: SUCCESS (still sleeping, energy rose and health is recovering, so the sleep is making progress)
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up. Then check for zombies and skeleton arrows, avoid the lava to the southeast and the skeleton's firing line, and collect wood from the trees to the northwest. Once I have enough wood, place a furnace next to the table.
+PREDICTION: Energy keeps rising and health regenerates while I remain asleep; the action is likely ignored until I wake up.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+168,Sleep,"OBSERVATION_CHECK: SUCCESS: still sleeping with energy at 4/9 and no new threats visible; the view is unchanged because sleep blocks movement.
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up. Then check for zombies and arrows, avoid the lava to the southeast and the skeleton's firing line, collect wood from the trees to the northwest, and once I have enough wood, place a furnace next to the table.
+PREDICTION: Energy keeps rising and health slowly regenerates while I stay asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+169,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up. Then check for zombies and arrows, avoid the lava to the southeast and the skeleton's firing line, collect wood from trees to the northwest, and once I have enough wood, place a furnace next to the table while standing within 1 tile of it.
+PREDICTION: Energy rises and health slowly regenerates while I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+170,Sleep,"OBSERVATION_CHECK: SUCCESS - Sleep continues, energy has risen to 4/9 and health is recovering, with no threats adjacent in view.
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up. Then check for zombies and arrows, stay away from the lava to the southeast and the skeleton's firing line, collect wood from the remaining trees, and rebuild a table and furnace near each other before crafting iron tools.
+PREDICTION: Energy increases by about 1 and health regenerates slightly while I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+171,Sleep,"OBSERVATION_CHECK: SUCCESS (Energy rose to 4/9 while sleeping, and I'm still safe next to the table.)
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up. Then check for zombies, arrows, and skeletons, stay away from the lava to the southeast, collect wood from remaining trees, and rebuild a table and furnace near each other before crafting iron tools.
+PREDICTION: Energy increases by about 1 and health regenerates slightly while I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+172,Sleep,"OBSERVATION_CHECK: SUCCESS (still asleep, energy rose to 4/9 and health is regenerating slowly)
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up. Then check for zombies, arrows, and skeletons, avoid the lava to the southeast, collect wood from remaining trees, and build a table and furnace near each other before crafting iron tools.
+PREDICTION: Energy increases by about 1 and health regenerates slightly while I stay asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.1,False
+173,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up. Then check for zombies, arrows, and skeletons, stay away from the lava to the southeast, collect wood from remaining trees, and rebuild a table and furnace near each other before crafting iron tools.
+PREDICTION: Energy rises slightly and health regenerates while I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+174,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up. Then check for zombies, arrows, and skeletons, stay away from the lava to the southeast, collect wood from remaining trees, and rebuild a table and furnace near each other before crafting iron tools.
+PREDICTION: Energy and health rise slightly while I remain asleep; the view stays the same.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+175,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up, then check for zombies, arrows, and skeletons, avoid the lava to the southeast, collect wood from remaining trees, and rebuild a table and furnace near each other before crafting iron tools.
+PREDICTION: Energy and health rise slightly while I stay asleep, and the view stays mostly the same.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+176,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up, then check for zombies, arrows, and skeletons, avoid the lava to the southeast, collect wood from remaining trees, and rebuild a table and furnace near each other before crafting iron tools.
+PREDICTION: Energy rises further, health recovers slightly, and the view stays the same while I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+177,Sleep,"OBSERVATION_CHECK: SUCCESS (energy rose from 5 to the sleep target while the view stayed the same, as expected during sleep)
+NEW_MEMORY: NONE
+PLAN: KEEP - Continue sleeping until energy is full and I wake up, then check for zombies, arrows, and skeletons, avoid the lava to the southeast, collect wood from remaining trees, and rebuild a table and furnace near each other before crafting iron tools.
+PREDICTION: Energy keeps rising and health recovers slightly while the view stays the same.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 3 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+178,Sleep,"OBSERVATION_CHECK: SUCCESS: energy rose from earlier levels to 5/9 and health is recovering, but a zombie is now 3 steps north, which is a new threat.
+
+NEW_MEMORY: A zombie is 3 steps north while I am asleep at 3/9 health. Zombie hits are much stronger on a sleeping player, so this is dangerous.
+
+PLAN: Keep sleeping while energy is below max, since I cannot act until I wake. Once awake, face the zombie with the stone sword and attack it when it is directly in front. Then retreat away from the lava to the southeast, collect wood from remaining trees, and place a new table and furnace near each other before crafting iron tools.
+
+PREDICTION: Energy keeps rising and health recovers slightly; the zombie may approach but I should remain asleep until energy is full.
+
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 2 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+179,Sleep,"OBSERVATION_CHECK: SUCCESS (energy rose to 5/9 and health recovered from 2 to 3 while sleeping, but a zombie is now 2 steps north)
+NEW_MEMORY: NONE
+PLAN: KEEP. Remain asleep until energy is full. Once awake, face the zombie and attack with the stone sword when it is directly in front. Keep health in mind and avoid the lava to the southeast. Then gather wood, and place a furnace next to the table to craft iron tools.
+PREDICTION: Actions are ignored while asleep, so energy keeps rising and health slowly recovers. The zombie may reach me and wake me when it hits.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 2 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+180,Noop,"OBSERVATION_CHECK: SUCCESS (still asleep, energy rising from 5 toward full, health recovered from 2 to 3, zombie approaching from the north)
+NEW_MEMORY: Health was recorded as 2/9 earlier but is now 3/9; the zombie is 2 steps north and will reach me soon.
+PLAN: KEEP. Remain asleep until energy is full. Once awake, face the zombie and attack it with the stone sword when it is directly in front. Avoid the lava to the southeast. Then gather wood and place a furnace next to the table to craft iron tools.
+PREDICTION: Actions are ignored while asleep, so the character stays asleep and energy keeps rising. The zombie may reach me and wake me when it attacks.
+ACTION: Noop","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 2 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+181,Sleep,"OBSERVATION_CHECK: SUCCESS (the Noop was accepted; I'm still asleep with energy rising from 5/9, so no action is available until I wake up)
+NEW_MEMORY: NONE
+PLAN: KEEP. Remain asleep until energy is full. Once awake, face the zombie and attack it with the stone sword when it is directly in front. Avoid the lava to the southeast. Then gather wood and place a furnace next to the table to craft iron tools.
+PREDICTION: Actions are ignored while asleep, so the character stays asleep and energy rises. The zombie may approach and wake me by attacking.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 2 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+182,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Remain asleep until energy is full. Once awake, face the zombie and attack it with the stone sword when it is directly in front. Avoid the lava to the southeast. Then gather wood and place a furnace next to the table to craft iron tools.
+PREDICTION: Actions are ignored while asleep, so energy should keep rising and I should stay asleep unless the zombie wakes me by attacking.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 2 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+183,Sleep,"OBSERVATION_CHECK: FAILED: I am still asleep, so my Sleep actions are being ignored and the view has not changed. No movement is possible until I wake up.
+NEW_MEMORY: While asleep, every action is ignored, so repeated Sleep or Noop calls only advance time. A zombie is 2 steps north and health is 3/9, so I need to wake up and fight it once energy is restored.
+PLAN: KEEP. Remain asleep until energy is full and I wake up. Then face the zombie, attack it with the stone sword when it is directly in front, and avoid the lava to the southeast. After that, gather wood, place a furnace next to the table, and craft iron tools.
+PREDICTION: Sleep is ignored while asleep, so I stay asleep and energy rises slightly. The zombie may approach and attack, which could wake me.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 2 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+184,Sleep,"OBSERVATION_CHECK: FAILED: I am still asleep, so the last Sleep was ignored and nothing changed except the zombie moving closer; I can only wait.
+NEW_MEMORY: NONE
+PLAN: KEEP. Remain asleep until energy is full and I wake up. Then face the zombie and attack it with the stone sword when it is directly in front. Avoid the lava to the southeast. Afterward, gather wood, place a furnace next to the table, and craft iron tools.
+PREDICTION: Sleep is ignored while asleep, so energy rises slowly and the zombie may move closer or attack, which could wake me.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 2 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+185,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy is full and I wake up. Then face the zombie and attack it with the stone sword when it is directly in front. Avoid the lava to the southeast. Afterward, gather wood, place a furnace next to the table, and craft iron tools.
+PREDICTION: Actions are ignored while asleep, so energy rises slowly and the zombie may approach or attack.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 2 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.1,False
+186,Sleep,"OBSERVATION_CHECK: FAILED: Sleep has not restored energy (still 5/9), and the zombie has moved to 2 steps north. While asleep, actions are ignored, so the position has not changed.
+NEW_MEMORY: While asleep, every action is ignored, so I cannot flee or attack until I wake up. Zombie approach is a threat when health is low.
+PLAN: KEEP. Continue sleeping until energy is full and I wake up. Then face the zombie and attack it with the stone sword when it is directly in front. Avoid the lava to the southeast. Afterward, gather wood, place a furnace next to the table, and craft iron tools.
+PREDICTION: No effect while asleep; energy rises slightly and the zombie may move closer.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- zombie 2 steps to your north
+- table 1 step to your north
+
+You face table at your front.",0.0,False
+187,Sleep,"OBSERVATION_CHECK: SUCCESS (energy rose from earlier levels and health recovered from 2 to 4 while asleep)
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy is full and I wake up. Once awake, face the zombie and attack it with the stone sword when it is directly in front. Avoid the lava to the southeast. Afterward, gather wood, place a furnace next to the table, and craft iron tools.
+PREDICTION: No effect while asleep; energy rises slightly and health may recover further, while the zombie may move closer.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+- zombie 3 steps to your north-east
+
+You face table at your front.",0.0,False
+188,Sleep,"OBSERVATION_CHECK: SUCCESS (energy rose to 6/9 and health recovered from 2/9 to 4/9 while sleeping)
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy is full and I wake up. Once awake, face the zombie and attack it with the stone sword when it is directly in front. Avoid the lava to the southeast. Afterward, gather wood, place a furnace next to the table, and craft iron tools.
+PREDICTION: Actions are ignored while asleep, so energy and health should keep recovering slowly and I should stay in place until I wake up.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+- zombie 4 steps to your north-east
+
+You face table at your front.",0.0,False
+189,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy is full and I wake up. Once awake, watch for the zombie and attack it with the stone sword only when it is directly in front. Avoid the lava to the southeast. Then gather wood, place a furnace near the table, and craft iron tools.
+PREDICTION: Actions are ignored while asleep, so I stay in place and energy and health keep recovering slowly until I wake.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+- zombie 3 steps to your north-east
+
+You face table at your front.",0.0,False
+190,Sleep,"OBSERVATION_CHECK: SUCCESS (still asleep, energy rising from 6/9 and health recovered from 3/9 to 4/9, so sleep is recovering stats)
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy is full and I wake up. Once awake, watch the zombie 3 steps northeast and attack it with the stone sword only when it is directly in front. Avoid the lava to the southeast. Then gather wood, place a furnace near the table, and craft iron tools.
+PREDICTION: Actions are ignored while asleep, so I stay in place and health and energy keep recovering slowly until I wake.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+- zombie 2 steps to your north-east
+
+You face table at your front.",0.0,False
+191,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy is full and I wake up. Once awake, attack the zombie only when it is directly in front of me, avoid the lava to the southeast, then gather wood, place a furnace near the table, and craft iron tools.
+PREDICTION: Actions are ignored while asleep, so I stay in place, and health and energy recover slowly.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- grass 1 step to your west
+- path 4 steps to your south-east
+- stone 1 step to your south
+- lava 3 steps to your south-east
+- coal 2 steps to your south-west
+- table 1 step to your north
+- zombie 1 step to your east
+
+You face table at your front.",-0.4,True

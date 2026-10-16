@@ -1,0 +1,160 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go forward,"NEW_MEMORY: Relative to start, red box is about 2 left and 5 forward, green key is about 3 right and 5 forward, walls at 3 left and 6 forward.
+PLAN: 1. Walk forward toward the key's row (about 5 steps). 2. Turn right and walk 3 steps to stand on or beside the key, then face it. 3. Pick up the green key. 4. Walk to the red box (about 5 left of the key's column) and stop adjacent to it. 5. Drop the key so it sits next to the red box.
+PREDICTION: The red box and green key should appear about 1 step closer in front of me, and the wall 6 steps forward should be 5 steps forward.
+ACTION: go forward","a wall 5 steps forward
+a wall 3 steps left
+a red box 2 steps left and 4 steps forward
+a green key 3 steps right and 4 steps forward",0,False
+1,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The red box and green key should appear about 1 step closer, with the wall 6 steps forward now 5 steps forward.
+ACTION: go forward","a wall 4 steps forward
+a wall 3 steps left
+a red box 2 steps left and 3 steps forward
+a green key 3 steps right and 3 steps forward",0,False
+2,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The red box and green key should appear about 1 step closer, with the wall 4 steps forward becoming 3 steps forward.
+ACTION: go forward","a wall 3 steps forward
+a wall 3 steps left
+a red box 2 steps left and 2 steps forward
+a green key 3 steps right and 2 steps forward",0,False
+3,go forward,"OBSERVATION_CHECK: SUCCESS (the view shifted closer to the key and box, and the wall ahead went from 4 to 3 steps)
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The wall will appear 2 steps forward, the red box 2 left and 1 forward, and the green key 3 right and 1 forward.
+ACTION: go forward","a wall 2 steps forward
+a wall 3 steps left
+a red box 2 steps left and 1 step forward
+a green key 3 steps right and 1 step forward",0,False
+4,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP (1. Go forward until the green key is level with me. 2. Turn right and walk toward the key until I stand on it and pick it up. 3. Walk to the red box, about 2 left and 1 forward of the key's current spot, and stop adjacent to it. 4. Drop the key next to the red box. Avoid the wall 2 forward and 3 left.)
+PREDICTION: The wall will appear 1 step forward, the green key will be 3 right and 0 forward (level with me), and the red box will be 2 left and 0 forward.
+ACTION: go forward","a wall 1 step forward
+a red box 2 steps left
+a green key 3 steps right",0,False
+5,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Turn right to face the green key, which is 3 steps right. 2. Walk forward until I stand on the key and pick it up. 3. Walk to the red box, which is 2 steps left of the key's position, and stop adjacent to it. 4. Drop the key next to the red box. Avoid the wall 1 step forward.
+PREDICTION: I will face right, and the green key will be 3 steps forward of me.
+ACTION: turn right","a wall 1 step left
+a green key 3 steps forward",0,False
+6,go forward,"OBSERVATION_CHECK: SUCCESS (turning right put the green key 3 steps straight ahead, as predicted)
+NEW_MEMORY: NONE
+PLAN: Walk forward 3 steps to stand on the green key and pick it up. Then head to the red box, which is about 2 steps left of the key's original position, stop adjacent to it, and drop the key. Keep clear of the wall 1 step to the left.
+PREDICTION: The green key should be 2 steps forward after I move one step.
+ACTION: go forward","a wall 1 step left
+a green key 2 steps forward",0,False
+7,go forward,"OBSERVATION_CHECK: SUCCESS (the green key moved from 3 steps forward to 2 steps forward, so the move made progress)
+NEW_MEMORY: NONE
+PLAN: Go forward 2 steps until the green key is directly underfoot, then pick up the key; then head to the red box (about 2 steps left of the key's original position), stop adjacent to it, and drop the key. Keep clear of the wall 1 step to the left.
+PREDICTION: The green key should be 1 step forward after I move one step.
+ACTION: go forward","a wall 1 step left
+a green key 1 step forward",0,False
+8,go forward,"OBSERVATION_CHECK: SUCCESS (the key moved from 2 steps forward to 1 step forward, so the last move made progress)
+NEW_MEMORY: NONE
+PLAN: KEEP. Go forward once more to stand on the green key, pick up the key, then head to the red box (about 2 steps left of the key's original position), stop adjacent to it, and drop the key. Keep clear of the wall 1 step to the left.
+PREDICTION: The green key should be directly underfoot after this move.
+ACTION: go forward","a wall 1 step left
+a green key 1 step forward",0,False
+9,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Go forward once more to stand on the green key, pick up the key, then head to the red box (about 2 steps left of the key's original position), stop adjacent to it, and drop the key. Keep clear of the wall 1 step to the left.
+PREDICTION: The green key moves from 1 step forward to directly underfoot, so I can pick it up next.
+ACTION: go forward","a wall 1 step left
+a green key 1 step forward",0,False
+10,toggle,"OBSERVATION_CHECK: FAILED: The last ""go forward"" left the view unchanged (green key still 1 step forward, wall still 1 step left), so the key is blocking the cell in front of me.
+NEW_MEMORY: Green key is directly in front of me and blocks forward movement; repeated ""go forward"" will not reach it.
+PLAN: Interact with the key in front using toggle; if it is not picked up, try pick up; then turn toward the red box (about 2 left of the key's original position), move adjacent to it, and drop the key.
+PREDICTION: Toggle interacts with the green key in front of me, which may pick it up or change the view.
+ACTION: toggle","a wall 1 step left
+a green key 1 step forward",0,False
+11,pick up,"OBSERVATION_CHECK: FAILED: The toggle produced no change; the view is identical and the key is still 1 step forward.
+NEW_MEMORY: Toggle did nothing on the key, and repeated ""go forward"" is blocked by the key, so I am stuck facing it.
+PLAN: Try ""pick up"" to grab the key in front of me; if picked up, turn toward the red box (2 left of the key's original position), move adjacent to it, and drop the key.
+PREDICTION: The key should be picked up and no longer appear in the view ahead.
+ACTION: pick up","You carry a green key
+a wall 2 steps forward
+a wall 1 step left",0,False
+12,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Turn around to face west, walk west 3 steps until the red box is directly in front of me, then move one step closer so the key ends up adjacent to it, and drop the key.
+PREDICTION: I turn to face north, and the red box should be on my left-forward side, moving me toward a west-facing position.
+ACTION: turn left","You carry a green key
+a wall 1 step forward
+a wall 2 steps right",0,False
+13,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Red box is about 4 steps west of me on the same row; the wall directly ahead blocks north, so I must head west.
+PLAN: Turn left to face west, walk forward until the red box is about 1 step ahead, then go forward once more so I am adjacent to it, and drop the green key next to it.
+PREDICTION: I will face west, and the red box should be roughly 4 steps forward along my row.
+ACTION: turn left","You carry a green key
+a wall 1 step right
+a red box 4 steps forward",0,False
+14,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Walk forward until the red box is 1 step ahead, then drop the green key so it lands next to the box.
+PREDICTION: The red box should appear 3 steps forward.
+ACTION: go forward","You carry a green key
+a wall 1 step right
+a red box 3 steps forward",0,False
+15,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The red box should appear 2 steps forward.
+ACTION: go forward","You carry a green key
+a wall 1 step right
+a red box 2 steps forward",0,False
+16,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Go forward until the red box is 1 step ahead, then drop the green key so it lands next to the box.
+PREDICTION: The red box should appear 1 step forward.
+ACTION: go forward","You carry a green key
+a wall 1 step right
+a red box 1 step forward",0,False
+17,drop,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The old memory about the key blocking movement is outdated, since I now carry the key and the red box is 1 step ahead.
+PLAN: Drop the green key now. I am already adjacent to the red box, so the key should land next to it and complete the goal.
+PREDICTION: The green key is placed on the floor right beside the red box.
+ACTION: drop","You carry a green key
+a wall 1 step right
+a red box 1 step forward",0,False
+18,drop,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The green key is set down on the floor next to the red box, completing the goal.
+ACTION: drop","You carry a green key
+a wall 1 step right
+a red box 1 step forward",0,False
+19,turn left,"OBSERVATION_CHECK: FAILED: The previous ""drop"" did not change the observation. The red box occupies the cell directly in front of me, so the key has nowhere to land.
+NEW_MEMORY: Dropping while the red box is directly ahead fails because the cell in front is occupied. Need to drop from a cell diagonal to the box, facing a free cell orthogonally adjacent to it.
+PLAN: Turn left, go forward to sidestep the box, turn right so I face the cell next to the box, then drop the key there.
+PREDICTION: I turn to face west, and the red box should shift to my front-right diagonal, with the cell in front of me free.
+ACTION: turn left","You carry a green key
+a wall 6 steps forward
+a red box 1 step right",0,False
+20,go forward,"OBSERVATION_CHECK: SUCCESS. The turn left rotated me, and the red box moved from 1 step ahead to 1 step right, as predicted.
+NEW_MEMORY: NONE
+PLAN: Go forward one step to clear the box's side. Turn right so I face the free cell that is orthogonally adjacent to the box. Drop the key there.
+PREDICTION: I move one step forward (west). The red box ends up diagonally behind-right of me, with the cell in front free.
+ACTION: go forward","You carry a green key
+a wall 5 steps forward
+a wall 2 steps right",0,False
+21,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Turn right to face the free cell directly east of me, which is orthogonally adjacent to the red box (box is diagonally behind-right). Then drop the green key onto that cell.
+PREDICTION: I turn to face east, with the free cell in front of me adjacent to the red box.
+ACTION: turn right","You carry a green key
+a wall 2 steps forward
+a wall 2 steps right
+a red box 1 step right and 1 step forward",0,False
+22,drop,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Drop the green key on the free cell directly in front of me, which is orthogonally adjacent to the red box (box is 1 right, 1 forward, so the cell in front is directly left of it).
+PREDICTION: The green key is placed on the free cell in front of me, next to the red box, and I am no longer carrying it.
+ACTION: drop","a wall 2 steps right
+a green key 1 step forward
+a red box 1 step right and 1 step forward",0.83828125,True
