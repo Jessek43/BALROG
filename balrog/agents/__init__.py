@@ -8,6 +8,7 @@ from .few_shot import FewShotAgent
 from .naive import NaiveAgent
 from .robust_naive import RobustNaiveAgent
 from .robust_cot import RobustCoTAgent
+from .self_reflection import PredictiveReflectionAgent
 
 
 class AgentFactory:
@@ -56,6 +57,11 @@ class AgentFactory:
             return RobustNaiveAgent(client_factory, prompt_builder)
         elif self.config.agent.type == "robust_cot":
             return RobustCoTAgent(client_factory, prompt_builder, config=self.config)
-
+        elif self.config.agent.type == "self_reflection":
+            return PredictiveReflectionAgent(
+                client_factory,
+                prompt_builder,
+                max_memory_entries=self.config.agent.get("max_memory_entries", 15),
+            )
         else:
             raise ValueError(f"Unknown agent type: {self.config.agent}")
