@@ -1,0 +1,40 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn right,"(1) I see a wall 2 steps to my left, a blue ball 4 steps forward, and a yellow ball 2 steps right and 4 steps forward. (2) The goal is to pick up the yellow ball first, then go to the blue ball. (3) The yellow ball is offset to the right, so turning right to face it and then moving forward is the most direct way to approach it.","a wall 5 steps forward
+a wall 2 steps right",0,False
+1,turn left,"(1) I see walls 5 steps ahead and 2 steps to my right, but neither ball is visible from this heading. Earlier I saw a blue ball 4 steps forward and a yellow ball 2 right and 4 forward, so I turned right and now face away from them. (2) The goal is to pick up the yellow ball, then go to the blue ball. (3) Turning left returns me to my original heading, where both balls were visible, so I can re-orient toward the yellow ball.","a wall 2 steps left
+a blue ball 4 steps forward
+a yellow ball 2 steps right and 4 steps forward",0,False
+2,go forward,"(1) I see a wall 2 steps left, a blue ball 4 steps forward, and a yellow ball 2 steps right and 4 steps forward. The last two actions (turn right, then turn left) returned me to this same view, so I am facing the original direction. (2) The goal is to pick up the yellow ball first, then go to the blue ball. (3) The yellow ball is 4 steps forward and 2 steps right, so moving forward closes the forward distance toward it most directly.","a wall 2 steps left
+a blue ball 3 steps forward
+a yellow ball 2 steps right and 3 steps forward",0,False
+3,go forward,"(1) I see a wall 2 steps left, a blue ball 3 steps forward, and a yellow ball 2 steps right and 3 steps forward. (2) The goal is to pick up the yellow ball first, then go to the blue ball. (3) The yellow ball is 3 steps ahead and 2 to the right, so moving forward reduces the distance to it most directly, and I can turn right to reach its column once I'm closer.","a wall 2 steps left
+a blue ball 2 steps forward
+a yellow ball 2 steps right and 2 steps forward",0,False
+4,go forward,"(1) I see a wall 2 steps left, a blue ball 2 steps forward, and a yellow ball 2 steps right and 2 steps forward. (2) The goal is to walk to the yellow ball, pick it up, and then go to the blue ball. (3) The yellow ball is diagonally ahead, so moving forward brings me closer to it along the shortest path, and it reduces the forward distance from 2 to 1.","a wall 2 steps left
+a blue ball 1 step forward
+a yellow ball 2 steps right and 1 step forward",0,False
+5,turn right,"(1) I see a wall 2 steps left, a blue ball 1 step forward, and a yellow ball 2 steps right and 1 step forward. (2) The goal is to pick up the yellow ball first, then go to the blue ball. (3) The yellow ball is not directly in front of me; it is 2 steps right and 1 step forward. Turning right would bring it 2 steps ahead, so turning right is the best next move toward it.","a wall 5 steps forward
+a yellow ball 1 step left and 2 steps forward
+a blue ball 1 step left",0,False
+6,go forward,"(1) I see a wall 5 steps forward, a yellow ball 1 step left and 2 steps forward, and a blue ball 1 step left. (2) The goal is to pick up the yellow ball first, then go to the blue ball. (3) The yellow ball is diagonally ahead-left, so moving forward brings it closer. Going forward twice would put it directly to my left, where I can turn to face it and pick it up.","a wall 4 steps forward
+a wall 2 steps left
+a yellow ball 1 step left and 1 step forward",0,False
+7,go forward,"(1) I see a yellow ball 1 step left and 1 step forward, a wall 4 steps forward, and a wall 2 steps left. The blue ball is not currently visible. (2) The goal is to pick up the yellow ball, then go to the blue ball. (3) Moving forward once puts the yellow ball directly to my left, so I can then turn left to face it and pick it up.","a wall 3 steps forward
+a yellow ball 1 step left",0,False
+8,turn left,"(1) I see a wall 3 steps forward and the yellow ball 1 step to my left. The blue ball is no longer visible in this view, but it was previously about 1 step left of the yellow ball's position. (2) The goal is to pick up the yellow ball first, then go to the blue ball. (3) The yellow ball is not directly in front of me, so I need to turn left to face it. After that it will be 1 step forward, and I can pick it up.","a wall 3 steps right
+a blue ball 2 steps left and 1 step forward
+a yellow ball 1 step forward",0,False
+9,pick up,"(1) I see a wall 3 steps to my right, a blue ball 2 steps left and 1 step forward, and a yellow ball 1 step forward, directly in front of me. (2) The goal is to pick up the yellow ball first, then go to the blue ball. (3) The yellow ball is 1 step in front of me, so I can pick it up now without moving; going forward would do nothing.","You carry a yellow ball
+a wall 2 steps forward
+a wall 3 steps right
+a blue ball 2 steps left and 1 step forward",0,False
+10,go forward,"(1) I see a wall 2 steps forward, a wall 3 steps right, and the blue ball 2 steps left and 1 step forward. I am carrying the yellow ball. (2) The goal is to reach the blue ball now that the yellow ball is picked up. (3) Stepping forward once puts the blue ball directly to my left, 2 steps away. Turning left then makes it straight ahead, so the path is short and avoids the walls.","You carry a yellow ball
+a wall 1 step forward
+a wall 3 steps right
+a blue ball 2 steps left",0,False
+11,turn left,"(1) I see that I am carrying the yellow ball, a wall is 1 step forward, a wall is 3 steps right, and the blue ball is 2 steps left in the same row. (2) The goal is to bring the yellow ball to the blue ball, so I need to reach the blue ball while carrying the yellow ball. (3) Turning left will face me toward the blue ball, which will then be 2 steps forward, so I can walk straight to it.","You carry a yellow ball
+a wall 1 step right
+a blue ball 2 steps forward",0,False
+12,go forward,"(1) I see that I am carrying the yellow ball, a wall is 1 step to my right, and the blue ball is 2 steps directly forward. (2) The goal is to carry the yellow ball to the blue ball, which I already have, so I need to reach the blue ball. (3) Moving forward is the shortest path, since the blue ball is straight ahead 2 steps away.","You carry a yellow ball
+a wall 1 step right
+a blue ball 1 step forward",0.90859375,True

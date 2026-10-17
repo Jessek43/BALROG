@@ -1,0 +1,54 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go forward,"(1) I see a wall 3 steps ahead, a wall 2 steps to my left, a green key at 1 right and 2 forward, and a blue key at 3 right and 2 forward. (2) The goal is to pick up the blue key first, then go to the green key. (3) The blue key is 2 steps forward and 3 steps right, so moving forward first makes progress toward it without hitting a wall, and I can turn right and move toward it afterward.","a wall 2 steps forward
+a wall 2 steps left
+a green key 1 step right and 1 step forward
+a blue key 3 steps right and 1 step forward",0,False
+1,go forward,"(1) I see a wall 2 steps ahead and 2 steps to my left, a green key 1 step right and 1 step forward, and a blue key 3 steps right and 1 step forward. (2) The goal is to pick up the blue key first, then reach the green key. (3) Moving forward one step puts me level with both keys, with the green key directly to my right and the blue key 3 steps to my right, so the path to the blue key is shortest from there.","a wall 1 step forward
+a wall 2 steps left
+a green key 1 step right
+a blue key 3 steps right",0,False
+2,turn right,"(1) I see a wall 1 step forward, a wall 2 steps left, a green key 1 step right, and a blue key 3 steps right, all in my current row. (2) The goal is to pick up the blue key first, then go to the green key. (3) Both keys are to my right, so I need to face right before moving; turning right is the best next action, after which the blue key is 3 steps ahead.","a wall 1 step left
+a blue key 3 steps forward
+a green key 1 step forward",0,False
+3,turn right,"(1) I see a wall 1 step to my left, a green key 1 step directly ahead, and a blue key 3 steps directly ahead, with the green key lying between me and the blue key. (2) The goal is to pick up the blue key first, then go to the green key. (3) Going straight would run into the green key, so I need to sidestep around it to reach the blue key. Turning right opens a path away from the wall toward that detour.","a wall 6 steps forward
+a wall 2 steps right
+a blue key 3 steps left
+a green key 1 step left",0,False
+4,turn left,"(1) I see a wall 6 steps ahead, a wall 2 steps to my right, a blue key 3 steps to my left, and a green key 1 step to my left. (2) The goal is to pick up the blue key first, then go to the green key. (3) Both keys are on my left, so turning left will bring them in front of me. The blue key is then 3 steps ahead and the green key 1 step ahead, so turning left is the best next move.","a wall 1 step left
+a blue key 3 steps forward
+a green key 1 step forward",0,False
+5,turn right,"(1) I see a green key 1 step forward, a blue key 3 steps forward (behind the green key in the same line), and a wall 1 step to my left. The agent has been looping between two views (turn right, turn right, turn left). (2) The goal is to pick up the blue key first, then reach the green key. The green key blocks the direct path to the blue key. (3) Turning right breaks the loop and starts a detour around the green key toward the blue key. From the next view, I can go forward and then turn back toward the blue key.","a wall 6 steps forward
+a wall 2 steps right
+a blue key 3 steps left
+a green key 1 step left",0,False
+6,go forward,"(1) I see a blue key 3 steps left and a green key 1 step left, which places the blue key 3 steps north and the green key 1 step north of me. A wall is 2 steps right and another is 6 steps ahead. The last several turns have cycled between two headings, so I need to break the loop. (2) The goal is to pick up the blue key first, then go to the green key. The green key sits directly on the straight path to the blue key, so I should route around it. (3) Going forward moves me one step east, out of the green key's column, so I can then turn north and approach the blue key from the side without being blocked.","a wall 5 steps forward
+a wall 2 steps right",0,False
+7,turn left,"(1) I see walls 5 steps forward (south) and 2 steps right (west). Neither key is currently visible, but from earlier observations the blue key is about 3 east and 2 north of me, and the green key is about 1 east and 1 north. (2) The goal is to pick up the blue key first, then go to the green key. (3) I am facing south, so east is on my left. Turning left to face east lets me head toward the blue key, which is the most direct route.","a wall 5 steps forward
+a wall 2 steps left
+a blue key 1 step left and 3 steps forward
+a green key 1 step left and 1 step forward",0,False
+8,go forward,"(1) I see a wall 5 steps forward and 2 steps left, the blue key 1 step left and 3 steps forward, and the green key 1 step left and 1 step forward. (2) The goal is to pick up the blue key first, then go to the green key. (3) The blue key is 3 steps ahead and 1 to the left. Walking forward along my current line keeps the path clear, and after 3 steps the blue key will be directly to my left, so one turn left will face it. Going forward is the best next step.","a wall 4 steps forward
+a blue key 1 step left and 2 steps forward
+a green key 1 step left",0,False
+9,go forward,"(1) I see a wall 4 steps ahead, a blue key 1 step left and 2 steps forward, and a green key 1 step directly left. (2) The goal is to pick up the blue key first, then go to the green key. (3) Going forward moves me closer to the blue key, which is 2 steps ahead and 1 to my left. After two forward steps it will be directly to my left, so turning left will put it in front of me to pick up.","a wall 3 steps forward
+a wall 2 steps left
+a blue key 1 step left and 1 step forward",0,False
+10,go forward,"(1) I see a wall 3 steps ahead, a wall 2 steps to my left, and the blue key 1 step left and 1 step forward. (2) The goal is to pick up the blue key first, then go to the green key. (3) The blue key is one diagonal step away, so moving forward brings it directly to my left, which is the quickest route to standing on it.","a wall 2 steps forward
+a blue key 1 step left",0,False
+11,turn left,"(1) I see a wall 2 steps forward and the blue key 1 step to my left. The green key is not in view. (2) The goal is to pick up the blue key, then go to the green key. (3) The blue key is not directly in front of me, so I need to face left to bring it in front of me. Turning left makes the key 1 step forward, so I can then move onto it and pick it up.","a wall 2 steps right
+a green key 2 steps left and 1 step forward
+a blue key 1 step forward",0,False
+12,pick up,"(1) I see a wall 2 steps right, the blue key 1 step forward (directly in front of me), and the green key 2 steps left and 1 step forward. (2) The goal is to pick up the blue key first, then go to the green key. (3) The blue key is directly in front of me, so picking it up is the most direct step toward the goal.","You carry a blue key
+a wall 2 steps forward
+a wall 2 steps right
+a green key 2 steps left and 1 step forward",0,False
+13,go forward,"(1) I see that I am carrying the blue key. A wall is 2 steps forward and another is 2 steps right. The green key is 2 steps left and 1 step forward. (2) The goal is to reach the green key now that I have the blue key. (3) Moving forward one step puts the green key directly 2 steps to my left, which is the shortest route to reaching it, since I then turn left and walk toward it.","You carry a blue key
+a wall 1 step forward
+a wall 2 steps right
+a green key 2 steps left",0,False
+14,turn left,"(1) I see that I'm carrying the blue key, a wall is 1 step directly ahead, a wall is 2 steps to my right, and the green key is 2 steps to my left. (2) The goal is to reach the green key now that I have the blue key. (3) The wall blocks moving forward, and the green key is directly to my left, so turning left makes it 2 steps ahead, reachable by going forward.","You carry a blue key
+a wall 1 step right
+a green key 2 steps forward",0,False
+15,go forward,"(1) I see that I am carrying the blue key, a wall is 1 step to my right, and the green key is 2 steps directly forward. (2) The goal is to reach the green key now that I have picked up the blue key. (3) The green key is straight ahead, so moving forward brings me closest to it.","You carry a blue key
+a wall 1 step right
+a green key 1 step forward",0.8875,True

@@ -9,6 +9,7 @@ from .naive import NaiveAgent
 from .robust_naive import RobustNaiveAgent
 from .robust_cot import RobustCoTAgent
 from .self_reflection import PredictiveReflectionAgent
+from .reasoning import ReasoningAgent
 
 
 class AgentFactory:
@@ -63,5 +64,7 @@ class AgentFactory:
                 prompt_builder,
                 max_memory_entries=self.config.agent.get("max_memory_entries", 15),
             )
+        elif self.config.agent.type == "reasoning":
+            return ReasoningAgent(client_factory, prompt_builder)
         else:
             raise ValueError(f"Unknown agent type: {self.config.agent}")

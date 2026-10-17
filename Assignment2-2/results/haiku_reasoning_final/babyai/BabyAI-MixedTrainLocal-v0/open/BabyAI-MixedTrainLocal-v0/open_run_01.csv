@@ -1,0 +1,78 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn right,"(1) I see a wall directly in front of me, one step forward, and another wall three steps to my left. No door or other object is visible. (2) The goal is to find and open the door, which is not yet in view. (3) Going forward is blocked by the wall, and the open space is not to the left, so turning right should reveal new area and possibly the door.","a wall 4 steps forward
+a wall 1 step left
+a locked blue door 3 steps right and 4 steps forward",0,False
+1,go forward,"(1) I see a locked blue door 3 steps right and 4 steps forward, a wall 4 steps forward (in the same row as the door, so the door sits in a wall line), and a wall 1 step to my left. (2) The goal is to open the locked blue door, which requires standing directly in front of it and using toggle. (3) The door is 3 right and 4 forward, so I should stand 3 right and 3 forward, facing it. Going forward first moves me toward that row while staying clear of the wall directly ahead at 4 steps, so the next step is go forward.","a wall 3 steps forward
+a wall 1 step left
+a locked blue door 3 steps right and 3 steps forward",0,False
+2,turn right,"(1) I see a wall 3 steps forward, a wall 1 step left, and a locked blue door 3 steps right and 3 steps forward, so the path straight ahead is blocked. (2) The goal is to reach the locked blue door and toggle it open, which means standing directly in front of it. (3) Going forward is blocked by the wall, so I need to turn right first to head toward the door's column, then walk east, turn north, and approach it.","a wall 6 steps forward
+a wall 3 steps left
+a locked blue door 3 steps left and 3 steps forward
+a blue key 3 steps right and 1 step forward",0,False
+3,turn right,"(1) I see a blue key 3 steps right and 1 step forward, a locked blue door 3 steps left and 3 steps forward, and walls 6 steps forward and 3 steps left. (2) The goal is to pick up the blue key, then go to the locked blue door and use toggle on it while holding the key. (3) The key is off to my right, so I need to turn right to face it and head toward it. Turning right is the first step of the shortest route: turn right, go forward 3, turn left, then the key is 1 step ahead.","a wall 4 steps forward
+a wall 1 step right
+a blue key 1 step left and 3 steps forward",0,False
+4,go forward,"(1) I see a blue key 3 steps forward and 1 step left, with a wall 1 step to my right and a wall 4 steps ahead. The locked blue door is further away, so it is not yet relevant. (2) The goal is to pick up the blue key, then return to the locked blue door and toggle it open. (3) Walking forward toward the key's column is the shortest route. Three forward steps put the key directly to my left, then I can turn and pick it up.","a wall 3 steps forward
+a wall 1 step right
+a blue key 1 step left and 2 steps forward",0,False
+5,go forward,"(1) I see a wall 3 steps ahead, a wall 1 step to my right, and the blue key 1 step left and 2 steps ahead. The locked blue door is further away, behind me and to the left. (2) The goal is to pick up the blue key, then go to the locked blue door and toggle it open. (3) Going forward moves me one step closer to the key, which is 2 steps ahead and 1 to the left, so this is the best next action.","a wall 2 steps forward
+a wall 1 step right
+a blue key 1 step left and 1 step forward",0,False
+6,go forward,"(1) I see a blue key 1 step left and 1 step forward, a wall 2 steps forward, and a wall 1 step right. The locked blue door was seen earlier further ahead and to the left. (2) The goal is to pick up the blue key and then use it on the locked blue door. (3) The key is diagonal (1 left, 1 forward), so I need to move onto its cell. Going forward first puts the key directly to my left, and I can then turn left and step onto it before picking it up. Going forward is the first step of that path.","a wall 1 step forward
+a wall 1 step right
+a blue key 1 step left",0,False
+7,turn left,"(1) I see a wall 1 step forward, a wall 1 step right, and the blue key 1 step left. The locked blue door was seen earlier to the right-forward side, so the key is the item I need. (2) The goal is to pick up the blue key, then go to the locked blue door and toggle it open. (3) The key is directly to my left, so I need to face left before I can interact with it. Turning left is the best next action.","a wall 1 step right
+a blue key 1 step forward",0,False
+8,pick up,"(1) I see a blue key 1 step forward, directly in front of me, and a wall 1 step to my right; the locked blue door was previously seen to the far side of the wall. (2) The goal is to pick up the blue key and then use it to unlock the blue door. (3) The key is directly in front of me, so ""pick up"" collects it now, and ""go forward"" would do nothing.","You carry a blue key
+a wall 6 steps forward
+a wall 1 step right",0,False
+9,turn left,"(1) I see a wall 6 steps forward and a wall 1 step right. From my dead-reckoning of the earlier observations, I am at roughly (-2, 0) facing south, and I now carry the blue key. The locked blue door is about 3 steps south of the start line at x=4, roughly 6 steps east and 3 steps south of me. (2) The goal is to carry the key to the locked blue door, stand directly in front of it, and toggle it open. (3) I need to face east to head toward the door, so turning left (from facing south to facing east) is the best next move.","You carry a blue key
+a wall 6 steps forward
+a wall 1 step left
+a locked blue door 3 steps right and 6 steps forward",0,False
+10,turn right,"(1) I see a wall 6 steps forward, a wall 1 step left, and the locked blue door 3 steps right and 6 steps forward, and I am carrying the blue key. (2) The goal is to reach the locked blue door and toggle it open with the key. (3) The door is to my right, so turning right to face it is the best next step; then I can go forward toward it.","You carry a blue key
+a wall 6 steps forward
+a wall 1 step right",0,False
+11,turn left,"(1) I see a blue key I'm carrying, a wall 6 steps ahead, and a wall 1 step to my right. Earlier, from the left-turned view, the locked blue door was 3 steps right and 6 steps forward, which places it roughly 6 steps to my left and 3 steps to my right-hand side from here. (2) The goal is to reach the locked blue door and use the blue key on it, so I need to get to a cell adjacent to the door and face it. (3) The door lies to my left, so turning left to face that direction is the first step toward it, and it's the most direct move.","You carry a blue key
+a wall 6 steps forward
+a wall 1 step left
+a locked blue door 3 steps right and 6 steps forward",0,False
+12,go forward,"(1) I see that I am carrying the blue key. The locked blue door is 3 steps right and 6 steps forward, and a wall is 1 step to my left. (2) The goal is to unlock the blue door with the key I'm carrying, which means getting adjacent to the door and facing it, then toggling. (3) Moving forward brings me closer to the door's row, since it is 6 steps ahead and 3 to the right. The path is clear: no wall is directly in front of me.","You carry a blue key
+a wall 5 steps forward
+a wall 1 step left
+a locked blue door 3 steps right and 5 steps forward",0,False
+13,go forward,"(1) I see that I am carrying the blue key, a wall 5 steps forward, a wall 1 step to my left, and the locked blue door 3 steps to my right and 5 steps forward. (2) The goal is to unlock the blue door, which means getting directly in front of it while holding the key and using toggle. (3) The door is 5 steps ahead and 3 to the right, so walking forward moves me closest to a position from which I can approach it. Going forward is the next step on the shortest route.","You carry a blue key
+a wall 4 steps forward
+a wall 1 step left
+a locked blue door 3 steps right and 4 steps forward",0,False
+14,go forward,"(1) I see I'm carrying the blue key. A wall is 4 steps ahead and another is 1 step to my left. The locked blue door is 3 steps right and 4 steps forward. (2) The goal is to reach the door with the key in hand and toggle it open. (3) The door is still 4 steps forward and 3 steps right, so moving forward brings me closer. The route is to go forward until I'm level with the door, then turn right toward it.","You carry a blue key
+a wall 3 steps forward
+a wall 1 step left
+a locked blue door 3 steps right and 3 steps forward",0,False
+15,turn right,"(1) I see a locked blue door 3 steps right and 3 steps forward, a wall 1 step to my left, and a wall 3 steps forward. I am carrying the blue key. (2) The goal is to unlock the door, which means standing directly in front of it facing it, then toggling with the key. That position is 3 steps right and 2 steps forward of me, facing forward. (3) Turning right to face the door's side lets me walk 3 steps toward it, then turning left and walking 2 steps puts me directly in front of the door. Turning right is the first step of that route.","You carry a blue key
+a wall 6 steps forward
+a wall 3 steps left
+a locked blue door 3 steps left and 3 steps forward",0,False
+16,go forward,"(1) I see a wall 6 steps ahead, a wall 3 steps to my left, and the locked blue door 3 steps ahead and 3 steps to my left. I am carrying the blue key. (2) The goal is to unlock the blue door. To use the key, I must stand directly in front of the door, facing it, and toggle. (3) The door is 3 ahead and 3 left, so I should walk forward 3 steps to line up with it, then turn left, walk 2 steps toward it, and toggle. The first step is to go forward.","You carry a blue key
+a wall 5 steps forward
+a wall 3 steps left
+a locked blue door 3 steps left and 2 steps forward",0,False
+17,go forward,"(1) I see that I am carrying the blue key. A wall lies 5 steps forward and 3 steps left, and the locked blue door is 3 steps left and 2 steps forward. (2) The goal is to reach the locked blue door and use the key to open it, which means standing directly in front of the door and toggling it. (3) Going forward moves me toward the door's row, and I can then turn left and walk to face it, so going forward is the best next step.","You carry a blue key
+a wall 4 steps forward
+a wall 3 steps left
+a locked blue door 3 steps left and 1 step forward",0,False
+18,go forward,"(1) I see I'm carrying the blue key. A wall is 4 steps ahead and another wall is 3 steps to my left. The locked blue door is 3 steps left and 1 step forward, sitting in that left wall line. (2) The goal is to reach the door, face it, and use the key with toggle. (3) Moving forward once puts the door directly to my left, 3 steps away, so I'm on the right row. Then I can turn left to face it and walk up to it.","You carry a blue key
+a wall 3 steps forward
+a locked blue door 3 steps left",0,False
+19,turn left,"(1) I see that I am carrying a blue key. There is a wall 3 steps ahead, and a locked blue door 3 steps to my left, on the same row as me. (2) The goal is to unlock the blue door with the key. I need to get directly in front of the door, facing it, and then use toggle. (3) The door is to my left, but I am facing forward, so I must turn left first. After turning, the door will be 3 steps ahead, so I can walk forward twice and then toggle.","You carry a blue key
+a wall 3 steps right
+a locked blue door 3 steps forward",0,False
+20,go forward,"(1) I am carrying a blue key. A wall is 3 steps to my right, and the locked blue door is 3 steps directly ahead. (2) The goal is to unlock the blue door, which means walking up to it while holding the key and using toggle. (3) The door is straight ahead, so going forward moves me closer to it. Once it is directly in front of me, I can toggle it.","You carry a blue key
+a wall 3 steps right
+a locked blue door 2 steps forward",0,False
+21,go forward,"(1) I see a locked blue door 2 steps directly ahead, a wall 3 steps to my right, and I am carrying the blue key. (2) The goal is to unlock the blue door using the key I carry, which means getting adjacent to the door and facing it, then toggling. (3) The door is straight ahead and 2 steps away, so moving forward once brings me to 1 step from it; the next step would be toggle, since the door would then be directly in front of me.","You carry a blue key
+a wall 3 steps right
+a locked blue door 1 step forward",0,False
+22,toggle,"(1) I see that I am carrying a blue key, there is a wall 3 steps to my right, and the locked blue door is 1 step directly in front of me. (2) The goal is to unlock the blue door using the blue key I'm carrying. (3) The door is directly in front of me, so moving forward would do nothing. The best action is to toggle, which should unlock the door.","You carry a blue key
+a wall 3 steps right
+a open blue door 1 step forward",0.83828125,True

@@ -1,0 +1,68 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go forward,"(1) I see a wall 4 steps ahead and a wall 2 steps to my right, so there is open floor ahead and no green door visible yet. (2) The goal is to find and open the green door, so I need to explore. (3) Moving forward explores the open space ahead, toward the wall 4 steps away, without turning into the wall on my right, so going forward is the most useful next action.","a wall 3 steps forward
+a wall 2 steps right",0,False
+1,go forward,"(1) I see a wall 3 steps forward and a wall 2 steps to my right; the previous wall was 4 steps forward, so I moved one step closer. No green door is visible yet. (2) The goal is to find and open the green door, which is not yet in view, so I need to explore while avoiding walls. (3) The wall ahead is 3 steps away and the opening is unknown, so continuing forward moves me toward exploring the area and gathering more information about the layout.","a wall 2 steps forward
+a wall 2 steps right",0,False
+2,go forward,"(1) I see a wall 2 steps forward and a wall 2 steps right, so the path ahead is open for one more step before the wall, and a wall runs alongside on my right. (2) The goal is to reach and open the green door, which is not yet visible, so I need to keep exploring forward while staying clear of walls. (3) Going forward again moves me closer to the open area ahead without bumping into anything, so ""go forward"" is the best next action.","a wall 1 step forward
+a wall 2 steps right",0,False
+3,turn left,"(1) I see a wall 1 step forward and a wall 2 steps to my right, so the path ahead is blocked after one more step and the wall on the right is getting closer as I move forward. (2) The goal is to reach and open the green door, which is not yet visible, so I need to explore past the wall ahead. (3) The wall is directly 1 step in front of me, so ""go forward"" would do nothing; turning left moves me away from the wall toward open space to explore for the door, and I should keep the wall on my right side while navigating around it.","a wall 5 steps forward
+a wall 1 step right
+a green key 2 steps left and 4 steps forward",0,False
+4,go forward,"(1) I see a wall 5 steps forward, a wall 1 step to the right, and a green key 2 steps left and 4 steps forward. I had previously turned left after walking forward, so my position has shifted. (2) The goal is to open the green door; the green key is needed to get there, so I should first pick up the key. (3) The key is 4 steps forward and 2 steps left, so I need to reach it. Since I just turned left, I should now be facing the direction of the key's lateral offset; going forward moves me toward the key's forward distance, so going forward is the best next step.","a wall 4 steps forward
+a wall 1 step right
+a green key 2 steps left and 3 steps forward",0,False
+5,go forward,"(1) I see a wall 4 steps ahead, a wall 1 step to my right, and a green key 2 steps left and 3 steps forward. (2) The goal is to pick up the green key and then use it to open the green door, so I need to reach the key's cell. (3) The key is 3 steps forward and 2 to the left, so moving forward is the most direct step toward it, and I can turn left once I'm level with it.","a wall 3 steps forward
+a wall 1 step right
+a green key 2 steps left and 2 steps forward",0,False
+6,go forward,"(1) I see a wall 3 steps forward, a wall 1 step right, and a green key 2 steps left and 2 steps forward, so the key is just ahead and to my left. (2) The goal is to reach and open the green door, and the green key is needed first, so I should pick up the key. (3) Moving forward one step brings the key to 1 step forward and 2 steps left, and I need to get it directly underneath me, so continuing forward is the best move toward it.","a wall 2 steps forward
+a wall 1 step right
+a green key 2 steps left and 1 step forward",0,False
+7,turn left,"(1) I see a wall 2 steps forward, a wall 1 step to my right, and a green key 2 steps left and 1 step forward. (2) The goal is to open the green door, which requires first getting the green key, so I need to reach the key and pick it up. (3) The key is 1 step forward and 2 steps to my left; moving forward once more brings it to 2 steps left and directly beside me, but turning left first will place it directly in front of me after one forward step, so turning left is the most efficient next move toward the key.","a wall 6 steps forward
+a wall 2 steps right
+a locked green door 1 step right and 6 steps forward
+a green key 1 step right and 2 steps forward",0,False
+8,go forward,"(1) I see a wall 6 steps ahead and 2 to my right, a locked green door 1 step right and 6 steps ahead, and a green key 1 step right and 2 steps ahead. (2) The goal is to open the locked green door, which requires first picking up the green key. (3) The key is 2 steps ahead and 1 to my right, so moving forward brings me closer to it without overshooting. The next step is to go forward.","a wall 5 steps forward
+a wall 2 steps right
+a locked green door 1 step right and 5 steps forward
+a green key 1 step right and 1 step forward",0,False
+9,go forward,"(1) I see a wall 5 steps forward and a wall 2 steps right, a locked green door 1 step right and 5 steps forward, and a green key 1 step right and 1 step forward. (2) The goal is to open the locked green door, which requires first picking up the green key. (3) The key is 1 step forward and 1 step right, so I should move forward once more to be directly beside it (key then 1 step right), then turn right to face it and pick it up.","a wall 4 steps forward
+a locked green door 1 step right and 4 steps forward
+a green key 1 step right",0,False
+10,turn right,"(1) I see a wall 4 steps ahead, a locked green door 1 step right and 4 steps forward, and a green key directly 1 step to my right. (2) The goal is to pick up the green key and then use it to open the locked green door. (3) The key is off to my right, so I need to turn to face it before I can pick it up. Turning right is the next action that moves me toward the key.","a wall 3 steps right
+a green key 1 step forward",0,False
+11,pick up,"(1) I see a wall 3 steps to my right and a green key 1 step directly in front of me; earlier I saw a locked green door ahead on my right. (2) The goal is to unlock and open the green door, which requires first picking up the green key. (3) The key is directly in front of me, so ""go forward"" would do nothing; picking it up is the next step toward the goal.","You carry a green key
+a wall 2 steps forward
+a wall 3 steps right",0,False
+12,turn left,"(1) I see that I am carrying the green key. Walls are 2 steps forward and 3 steps right. The locked green door was last seen 1 step right and 4 steps forward of my earlier position, which places it about 4 steps to my left and 1 step forward from where I am now. (2) The goal is to bring the key to the locked green door and toggle it open. (3) Turning left to face the door's direction is the most efficient next step, after which I can walk forward toward the door.","You carry a green key
+a wall 4 steps forward
+a wall 2 steps right
+a locked green door 1 step right and 4 steps forward",0,False
+13,go forward,"(1) I see a locked green door 1 step right and 4 steps forward, a wall 4 steps forward, and a wall 2 steps right, and I am carrying the green key. (2) The goal is to unlock the green door: reach a cell directly beside or in front of it, face it, and toggle it with the key. (3) The door is 4 steps ahead and 1 to the right, so walking forward 4 steps puts me beside it, then turning right to face it and toggling should open it. Going forward is the first step of that route.","You carry a green key
+a wall 3 steps forward
+a wall 2 steps right
+a locked green door 1 step right and 3 steps forward",0,False
+14,go forward,"(1) I see a locked green door 1 step right and 3 steps forward, a wall 2 steps right, and I am carrying the green key. (2) The goal is to unlock the green door, so I must reach a tile directly adjacent to it, face it, and toggle it with the key. (3) The door is 3 steps ahead and 1 to the right, so moving forward brings me closest to it, with the wall on my right staying out of the way.","You carry a green key
+a wall 2 steps forward
+a wall 2 steps right
+a locked green door 1 step right and 2 steps forward",0,False
+15,go forward,"(1) I see a wall 2 steps forward and a wall 2 steps right. The locked green door is 1 step right and 2 steps forward, and I am carrying the green key. (2) The goal is to unlock the green door: get adjacent to it, face it, and use the key with toggle. (3) Going forward moves me closer, leaving the door 1 step right and 1 step forward. Going forward once more will put it directly to my right, then I can turn right to face it and toggle.","You carry a green key
+a wall 1 step forward
+a wall 2 steps right
+a locked green door 1 step right and 1 step forward",0,False
+16,go forward,"(1) I see that I'm carrying the green key. A wall is 1 step ahead and another 2 steps to my right. The locked green door is 1 step right and 1 step forward, so it is diagonal to me. (2) The goal is to unlock the green door, which means standing directly adjacent to it, facing it, and using toggle while holding the key. (3) Moving forward one step puts the door directly to my right. Then I can turn right to face it and toggle it. Going forward is the best next action.","You carry a green key
+a wall 1 step forward
+a wall 2 steps right
+a locked green door 1 step right and 1 step forward",0,False
+17,turn right,"(1) I see the locked green door 1 step right and 1 step forward (diagonal), a wall directly in front of me, a wall 2 steps right, and I am carrying the green key. (2) The goal is to face the locked green door directly so I can toggle it with the key. (3) The wall blocks moving forward, so I should turn right, step east beside the wall line, then turn left to face the door directly. Turning right is the first step of that route.","You carry a green key
+a wall 2 steps forward
+a wall 1 step left
+a locked green door 1 step left and 1 step forward",0,False
+18,go forward,"(1) I see a locked green door 1 step left and 1 step forward, a wall 1 step left, a wall 2 steps forward, and I am carrying the green key. (2) The goal is to unlock the green door, which means getting to a position directly adjacent to it, facing it, and using toggle. (3) Moving forward once puts the door directly to my left, so the next step is to turn left to face it, then toggle. Going forward is the most direct move now.","You carry a green key
+a wall 1 step forward
+a locked green door 1 step left",0,False
+19,turn left,"(1) I carry the green key. A locked green door is 1 step to my left with no forward offset, so it is directly beside me. A wall is 1 step ahead. (2) The goal is to unlock the green door using the key I'm carrying. (3) I need to face the door, so turning left is the best next action. Then I can use toggle on it.","You carry a green key
+a wall 1 step right
+a locked green door 1 step forward",0,False
+20,toggle,"(1) I am carrying a green key. A locked green door is 1 step forward, directly in front of me, and a wall is 1 step to my right. (2) The goal is to open the locked green door, which I can do with the key I'm carrying. (3) Since the door is directly in front of me and I hold the key, ""toggle"" should unlock it, so that is the action that most directly reaches the goal.","You carry a green key
+a wall 1 step right
+a open green door 1 step forward",0.85234375,True

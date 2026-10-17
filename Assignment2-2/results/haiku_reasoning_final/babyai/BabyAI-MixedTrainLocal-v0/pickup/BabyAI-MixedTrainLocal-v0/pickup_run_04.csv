@@ -1,0 +1,21 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go forward,"(1) I see a wall 4 steps ahead, a wall 1 step to my left, and the blue key 3 steps right and 3 steps forward. (2) The goal is to reach the blue key, which is 3 right and 3 forward, so I need to close both distances. (3) Going forward reduces the forward distance to the key and stays clear of the wall 4 steps ahead, so it is the best first move. I can turn right later for the remaining rightward steps.","a wall 3 steps forward
+a wall 1 step left
+a blue key 3 steps right and 2 steps forward",0,False
+1,go forward,"(1) I see a wall 3 steps forward, a wall 1 step to my left, and the blue key 3 steps right and 2 steps forward. (2) The goal is to reach and pick up the blue key. (3) Walking forward 2 more steps puts the key 3 steps to my right. Then I can turn right and walk 2 steps to get adjacent to it. The wall is still 3 steps ahead, so moving forward is safe.","a wall 2 steps forward
+a wall 1 step left
+a blue key 3 steps right and 1 step forward",0,False
+2,go forward,"(1) I see a wall 2 steps forward, a wall 1 step to my left, and the blue key 3 steps right and 1 step forward; the key is getting closer with each step forward. (2) The goal is to reach the blue key and pick it up. (3) The key is 1 step forward and 3 steps right, so I should keep moving forward to get level with it before turning right, and going forward is the best move since the wall is 2 steps ahead and still not blocking.","a wall 1 step forward
+a wall 1 step left
+a blue key 3 steps right",0,False
+3,turn right,"(1) I see a wall 1 step forward, a wall 1 step left, and the blue key 3 steps to my right with no forward offset. (2) The goal is to reach and pick up the blue key. (3) The forward path is blocked by a wall, and the key is directly to my right, so turning right makes the key 3 steps ahead and lets me walk straight toward it.","a wall 1 step left
+a blue key 3 steps forward",0,False
+4,go forward,"(1) I see a wall 1 step to my left and the blue key 3 steps directly ahead of me. (2) The goal is to reach and pick up the blue key. (3) The key is straight ahead, so moving forward brings me closer; I need to go forward until the key is directly beneath me, then pick it up.","a wall 1 step left
+a blue key 2 steps forward",0,False
+5,go forward,"(1) I see a wall 1 step to my left and the blue key 2 steps directly in front of me. (2) The goal is to pick up the blue key, so I need to get to the key's cell and pick it up. (3) The key is 2 steps forward, so moving forward once brings it to 1 step in front of me, after which I can pick it up.","a wall 1 step left
+a blue key 1 step forward",0,False
+6,go forward,"(1) I see a wall 1 step to my left and the blue key 1 step directly in front of me. (2) The goal is to pick up the blue key. (3) The key is directly in front of me, so moving forward would do nothing; the key is an object that I can pick up once I'm standing on it, so I should move forward onto its location, then pick up. Since the key is 1 step forward, going forward is the action that brings me to it.","a wall 1 step left
+a blue key 1 step forward",0,False
+7,pick up,"(1) I see a wall 1 step to my left, and the blue key is 1 step directly in front of me. (2) The goal is to pick up the blue key, which requires being on the same cell as it. (3) The key is 1 step forward, and my earlier ""go forward"" actions did not move me onto it, so the key is likely on the cell directly in front of me. Moving forward again would do nothing, so the best action is to pick up the object below me, since the key should now be beneath me.","You carry a blue key
+a wall 4 steps forward
+a wall 1 step left",0.8875,True

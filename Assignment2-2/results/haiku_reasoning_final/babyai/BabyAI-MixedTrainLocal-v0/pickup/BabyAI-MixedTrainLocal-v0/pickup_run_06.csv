@@ -1,0 +1,12 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go forward,"(1) I see a wall 4 steps ahead, a wall 3 steps to my left, and the green box 2 steps left and 1 step forward. (2) The goal is to reach the green box and pick it up. (3) The box is diagonal-ish, so the shortest route is to step forward first, which puts the box directly 2 steps to my left. Then I can turn left and walk to it.","a wall 3 steps forward
+a green box 2 steps left",0,False
+1,turn left,"(1) I see a wall 3 steps forward and the green box 2 steps to my left, so the box is level with me, not ahead. (2) The goal is to pick up the green box, which means standing on its cell and using pick up. (3) I need to face the box first, so turning left is the best next step; then I can move forward twice onto it.","a wall 3 steps right
+a green box 2 steps forward",0,False
+2,go forward,"(1) I see a green box 2 steps forward and a wall 3 steps to my right. Earlier I moved forward and then turned left, so the box is now straight ahead. (2) The goal is to pick up the green box. (3) The box is 2 steps ahead, so moving forward closes the distance. This is the most direct action toward reaching it.","a wall 3 steps right
+a green box 1 step forward",0,False
+3,go forward,"(1) I see a green box 1 step forward, directly in front of me, and a wall 3 steps to my right. (2) The goal is to pick up the green box. (3) The box is directly in front of me, so moving forward does nothing; the best action is to pick up the object below me... but the box is 1 step ahead, not below, so the correct move is to step onto its cell with ""go forward"" to stand on it, then pick up.","a wall 3 steps right
+a green box 1 step forward",0,False
+4,pick up,"(1) I see a green box 1 step forward, directly in front of me, and a wall 3 steps to my right. (2) The goal is to pick up the green box. (3) The box is 1 step forward, so ""go forward"" would do nothing; the box is directly in front of me, and I need to be standing on it to pick it up, so the best action is to move onto its position with go forward, which the rules say should be interpreted as the box being directly in front of me, so I should use pick up now.","You carry a green box
+a wall 2 steps forward
+a wall 3 steps right",0.9296875,True
