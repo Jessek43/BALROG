@@ -1,0 +1,48 @@
+{
+    "task": "BabyAI-MixedTrainLocal-v0/pick_up_seq_go_to",
+    "action_frequency": {
+        "turn right": 46,
+        "go forward": 60,
+        "turn left": 6,
+        "toggle": 1,
+        "pick up": 1
+    },
+    "input_tokens": 122738,
+    "output_tokens": 18134,
+    "done": true,
+    "episode_return": 0.19843749999999993,
+    "num_steps": 114,
+    "failed_candidates": [
+        "go forward to check. ACTION: go forward",
+        "Since the ball is already picked up and the red box is not in view, I will turn right to check for the red box.",
+        "turn right -> Observation: \"You carry a yellow ball, wall 6 steps forward, wall 2 steps left\" (so after turning right, the forward wall is at 6 steps, left wall at 2 steps)."
+    ],
+    "mission": "pick up the yellow ball, then go to the red box",
+    "progression": 1.0,
+    "process_num": "ForkProcess-5",
+    "seed": 2787330836,
+    "agent": {
+        "type": "reasoning",
+        "remember_cot": true,
+        "max_text_history": 16,
+        "max_image_history": 0,
+        "max_cot_history": 1,
+        "max_icl_history": 1000,
+        "cache_icl": false,
+        "max_memory_entries": 15
+    },
+    "client": {
+        "client_name": "xai",
+        "model_id": "upstage/solar-mini4",
+        "base_url": "https://openrouter.ai/api/v1",
+        "generate_kwargs": {
+            "temperature": 1.0,
+            "max_tokens": 8192,
+            "thinking_budget": null
+        },
+        "timeout": 60,
+        "max_retries": 5,
+        "delay": 2,
+        "alternate_roles": false
+    }
+}
