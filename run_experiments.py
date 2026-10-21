@@ -12,7 +12,8 @@ N_WORKERS = 10
 
 MODELS = {
     "haiku-5.5":"anthropic/claude-haiku-5.5",
-    "solar-mini-4":"upstage/solar-mini4"
+    "solar-mini-4":"upstage/solar-mini4",
+    "mistral-nemo":"mistralai/mistral-nemo"
 }
 
 
@@ -25,14 +26,16 @@ presets = {
 EXPERIMENTS = {
     "haiku_reasoning_smoke": {"model": "haiku-5.5", "agent":"reasoning", "run_type":"smoke"},
     "solar_reasoning_smoke": {"model":"solar-mini-4", "agent":"reasoning", "run_type":"smoke"},
+    "mistral_reasoning_smoke":{"model":"mistral-nemo", "agent":"reasoning", "run_type":"smoke"},
     "haiku_naive": {"model": "haiku-5.5", "agent":"naive", "run_type":"standard"},
     "solar_naive": {"model":"solar-mini-4", "agent":"naive", "run_type":"standard"},
     "haiku_reasoning": {"model":"haiku-5.5", "agent":"reasoning", "run_type":"standard"},
-    "solar_reasoning": {"model":"solar-mini-4", "agent":"reasoning", "run_type":"standard"}
+    "solar_reasoning": {"model":"solar-mini-4", "agent":"reasoning", "run_type":"standard"},
+    "mistral_reasoning":{"model":"mistral-nemo", "agent":"reasoning", "run_type":"standard"}
 }
 
 # which experiments to run right now
-RUN = ["solar_reasoning_smoke"]
+RUN = ["mistral_reasoning"]
 
 RESULTS_CSV = "full_results/results.csv"
 COLUMNS = ["experiment", "run_type", "model", "agent", "babyai", "babyai_se", "crafter", "crafter_se",
