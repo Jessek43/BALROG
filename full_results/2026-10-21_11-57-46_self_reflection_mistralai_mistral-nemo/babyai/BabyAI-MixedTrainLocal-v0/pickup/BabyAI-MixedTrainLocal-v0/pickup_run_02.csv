@@ -1,0 +1,475 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn right,"NEW_MEMORY: NONE
+PLAN: Turn right to avoid the wall on the left
+PREDICTION: Wall should be no longer visible 3 steps left
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps left",0,False
+1,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The wall 3 steps left should disappear, allowing me to move forward
+ACTION: turn left","a wall 3 steps forward
+a wall 3 steps left",0,False
+2,go forward,"OBSERVATION_CHECK: ""FAILED: Did not move closer to goal""
+NEW_MEMORY: ""Blocked path forward for 3 steps""
+PLAN: ""Go 3 steps left, then turn right""
+PREDICTION: ""The wall 3 steps left should disappear, and I should be able to turn right""
+ACTION: ""go forward""","a wall 2 steps forward
+a wall 3 steps left",0,False
+3,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The wall 3 steps left should disappear""
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left",0,False
+4,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The wall 3 steps left should disappear""
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left",0,False
+5,go forward,"OBSERVATION_CHECK: FAILED: Successfully moved forward, but still blocked from the left and no green box in sight
+NEW_MEMORY: Blocked path from the left after taking two steps forward
+PLAN: Go forward once more, then attempt to move left
+PREDICTION: ""The wall 3 steps left should disappear""
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left",0,False
+6,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The wall 3 steps left should disappear""
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left",0,False
+7,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path forward for 1 step
+PLAN: KEEP
+PREDICTION: ""The wall 3 steps left should appear if it was not already there""
+ACTION: turn left","a wall 3 steps forward
+a wall 1 step right",0,False
+8,turn right,"OBSERVATION_CHECK: FAILED: You hit a wall
+NEW_MEMORY: Blocked path forward for 1 step
+PLAN: KEEP
+PREDICTION: A wall will still be 1 step forward
+ACTION: turn right","a wall 1 step forward
+a wall 3 steps left",0,False
+9,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: A wall will still be 1 step forward
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left",0,False
+10,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: A wall will still be 1 step forward
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left",0,False
+11,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Trying to move through the door opening we just created.
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left",0,False
+12,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: To move through the door opening.
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left",0,False
+13,go left,"OBSERVATION_CHECK: FAILED: Tried to move forward but did not change location as expected
+NEW_MEMORY: Blocked path forward for 1 step
+PLAN: Change direction, move left
+PREDICTION: To move left without encountering a wall within the first step
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+14,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall to the left
+NEW_MEMORY: Blocked path to the left after taking one step forward
+PLAN: KEEP
+PREDICTION: Turn right to change direction
+ACTION: turn right","a wall 4 steps forward
+a wall 1 step left",0,False
+15,go left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move left
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 1 step left",0,False
+16,go left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move left
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 1 step left",0,False
+17,go left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move left
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+18,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall to the left
+NEW_MEMORY: Blocked path to the left
+PLAN: Keep changing directions until an opening is found
+PREDICTION: Turn right
+ACTION: turn right","a wall 6 steps forward
+a wall 1 step left",0,False
+19,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The agent should be able to move forward and find an opening
+ACTION: go forward","a wall 5 steps forward
+a wall 1 step left",0,False
+20,turn right,"OBSERVATION_CHECK: FAILED: Unable to move forward
+NEW_MEMORY: Blocked path forward for 5 steps
+PLAN: Turn right until an opening is found, then try moving forward again
+PREDICTION: The agent should be able to turn and move forward once an opening is found
+ACTION: turn right","a wall 6 steps forward
+a wall 2 steps right",0,False
+21,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path to the right after turning right
+PLAN: Turn left until an opening is found, then try moving forward again
+PREDICTION: Should be able to turn and move forward once an opening is found
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step left",0,False
+22,turn right,"OBSERVVATION_CHECK: FAILED: Unable to move forward
+NEW_MEMORY: Loop found going left after turning right
+PLAN: Turn right until an opening is found, then turn left again and try moving forward
+PREDICTION: Wall should be on the left side, opening forward
+ACTION: turn right","a wall 6 steps forward
+a wall 2 steps right",0,False
+23,turn right,"OBSERVATION_CHECK: FAILED: Did not make progress forward
+NEW_MEMORY: Blocked path forward for 6 steps
+PLAN: KEEP
+PREDICTION: Should find an opening to the right
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step right",0,False
+24,turn left,"OBSERVATION_CHECK: FAILED: Hitting a wall after turning right
+NEW_MEMORY: Blocked path to the right after turning right
+PLAN: Turn left, then try moving forward
+PREDICTION: Should find an opening to the left and move forward
+ACTION: turn left","a wall 6 steps forward
+a wall 2 steps right",0,False
+25,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Will find an opening to the left and move forward towards the green box
+ACTION: go forward","a wall 5 steps forward
+a wall 2 steps right",0,False
+26,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Will find an opening to the left
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps left",0,False
+27,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Should find an opening to the right
+ACTION: turn right","a wall 5 steps forward
+a wall 2 steps right",0,False
+28,turn left,"OBSERVATION_CHECK: FAILED: Turn right did not open any new paths
+NEW_MEMORY: Blocked path to the right after turning right
+PLAN: KEEP
+PREDICTION: Turning left should lead back to the previous intersection
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps left",0,False
+29,go forward,"OBSERVVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward to the next intersection
+ACTION: go forward","a wall 4 steps forward
+a wall 2 steps left",0,False
+30,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left and move forward to next intersection
+ACTION: turn left","a wall 2 steps forward
+a wall 3 steps left",0,False
+31,turn right,"OBSERVATION_CHECK: FAILED: HIT A WALL
+NEW_MEMORY: Blocked path forward for 2 steps
+PLAN: Turn right, then try moving forward
+PREDICTION: Move forward if possible, otherwise update memory and plan
+ACTION: turn right","a wall 4 steps forward
+a wall 2 steps left",0,False
+32,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward
+ACTION: go forward","a wall 3 steps forward
+a wall 2 steps left",0,False
+33,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall moving forward
+NEW_MEMORY: Blocked path forward for 3 steps
+PLAN: KEEP
+PREDICTION: Turn around and face the wall
+ACTION: turn left","a wall 2 steps forward
+a wall 3 steps right",0,False
+34,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path forward for 3 steps
+PLAN: KEEP
+PREDICTION: Turn around
+ACTION: turn right","a wall 3 steps forward
+a wall 2 steps left",0,False
+35,turn left,"OBSERVATION_CHECK: FAILED: Unable to move forward
+NEW_MEMORY: Blocked path forward for 3 steps from where we are now
+PLAN: Turn around, then try moving left
+PREDICTION: Wall should still be on the right
+ACTION: turn left","a wall 2 steps forward
+a wall 3 steps right",0,False
+36,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn around to face the left wall
+ACTION: turn right","a wall 3 steps forward
+a wall 2 steps left",0,False
+37,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path forward for 3 steps from where we are now
+PLAN: KEEP - Turn around, move left
+PREDICTION: Should face the left wall
+ACTION: turn left","a wall 2 steps forward
+a wall 3 steps right",0,False
+38,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall forward
+NEW_MEMORY: Blocked path forward for 4 steps
+PLAN: Turn around, move right
+PREDICTION: Should see the right wall now
+ACTION: turn right","a wall 3 steps forward
+a wall 2 steps left",0,False
+39,turn right,"OBSERVATION_CHECK: FAILED: hit a wall
+NEW_MEMORY: Blocked path forward for 3 steps from current location
+PLAN: KEEP
+PREDICTION: Should turn around and face the start of the loop
+ACTION: turn right","a wall 5 steps forward
+a wall 3 steps left
+a green box 2 steps left and 4 steps forward",0,False
+40,turn left,"OBSERVATION_CHECK: FAILED: Dead end, cannot move right
+NEW_MEMORY: Blocked path after turning right
+PLAN: KEEP
+PREDICTION: Go back one step
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps left",0,False
+41,turn around,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn around and move right
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 2 steps left",0,False
+42,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turning to the right and僅僅步行
+ACTION: turn right","a wall 5 steps forward
+a wall 2 steps left
+a green box 1 step left and 4 steps forward",0,False
+43,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move right
+ACTION: go forward","a wall 4 steps forward
+a wall 2 steps left
+a green box 1 step left and 3 steps forward",0,False
+44,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn right and move towards the green box
+ACTION: turn right","a wall 5 steps forward
+a wall 3 steps right",0,False
+45,turn around,"OBSERVATION_CHECK: FAILED: Blocked path forward
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Will turn around to find a new path
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 3 steps right",0,False
+46,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall after turning around
+NEW_MEMORY: Blocked path forward for 5 steps
+PLAN: KEEP
+PREDICTION: Will find a new path by turning left
+ACTION: turn left","a wall 4 steps forward
+a wall 3 steps left
+a green box 2 steps left and 3 steps forward",0,False
+47,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Should move closer to the green box
+ACTION: go forward","a wall 3 steps forward
+a wall 3 steps left
+a green box 2 steps left and 2 steps forward",0,False
+48,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Should move closer to the green box
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps left",0,False
+49,turn around,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Should move closer to the green box
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 3 steps left",0,False
+50,turn left,"OBSERVATION_CHECK: FAILED:Hit a wall moving forward
+NEW_MEMORY: Blocked path forward for 6 steps
+PLAN: KEEP
+PREDICTION: Turn left to check another path
+ACTION: turn left","a wall 3 steps forward
+a wall 3 steps right
+a green box 3 steps left and 2 steps forward",0,False
+51,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall to the left
+NEW_MEMORY: Blocked path to the left after turning left from the previous location
+PLAN: KEEP
+PREDICTION: Turn right to align with the green box
+ACTION: turn right","a wall 3 steps forward
+a wall 3 steps left",0,False
+52,turn around,"OBSERVATION_CHECK: ""FAILED: Dead end, cannot turn right""
+NEW_MEMORY: ""Loop found going right after the turn""
+PLAN: ""KEEP""
+PREDICTION: ""Turn around to break the loop""
+ACTION: ""turn around""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 3 steps left",0,False
+53,turn left,"FAILED: Last action ""turn around"" did not change the observation, as we're still in a loop.
+NEW_MEMORY: Loop found turning around after trying to go forward
+PLAN: KEEP
+PREDICTION: Turning left should take us out of this loop and potentially towards the green box.
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right",0,False
+54,turn right,"OBSERVATION_CHECK: FAILED: Dead-end after turning left
+NEW_MEMORY: Blocked path forward for 3 steps from current location
+PLAN: Go back the way I came from, turn right, and try the alternative path
+PREDICTION: Turning right should take us out of this dead-end
+ACTION: turn right","a wall 2 steps forward
+a wall 3 steps left",0,False
+55,go back,"OBSERVATION_CHECK: FAILED: Reached a dead end
+NEW_MEMORY: Blocked path right
+PLAN: Go back one step, then turn around and go forward
+PREDICTION: Will escape the current dead end
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+56,turn around,"OBSERVATION_CHECK: ""FAILED: Hit a wall""
+NEW_MEMORY: ""Blocked path forward for 1 step from current location""
+PLAN: ""KEEP""
+PREDICTION: ""Will turn around""
+ACTION: ""turn around""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+57,turn around,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path forward for 1 step from current location
+PLAN: KEEP
+PREDICTION: Will turn around
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+58,turn around,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop found going right after turn
+PLAN: KEEP
+PREDICTION: Turn around
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+59,go left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path forward for 1 step from current location
+PLAN: KEEP
+PREDICTION: Move left and encounter a green box
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+60,turn around,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path forward for 1 step from current location
+PLAN: ""Turn around and go forward to find a path to the green box.""
+PREDICTION: Move backward and encounter an open path
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+61,go back,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path forward for 1 step from current location
+PLAN: KEEP
+PREDICTION: Move backward
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+62,turn around,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path forward for 1 step from current location
+PLAN: KEEP
+PREDICTION: Turn around to face the previous path
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+63,"turn around, go left","OBSERVATION_CHECK: FAILED: Turned around but still facing a wall
+NEW_MEMORY: ""Loop found turning around and backtracking""
+PLAN: ""Reverse previous steps until a new path is found. Turn around and go left.""
+PREDICTION: ""Turn left after turning around""
+ACTION: turn around, go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,True

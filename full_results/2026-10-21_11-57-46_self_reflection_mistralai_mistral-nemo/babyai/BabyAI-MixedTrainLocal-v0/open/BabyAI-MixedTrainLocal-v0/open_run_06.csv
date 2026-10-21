@@ -1,0 +1,1092 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn left,"NEW_MEMORY: Wall 2 steps forward, Wall 3 steps right, Green key 1 step left and 1 step forward
+PLAN: Turn left, go forward to reach the green key, pick up the key, then go right to open the green door.
+PREDICTION: The green key will be at my position.
+ACTION: turn left","a wall 4 steps forward
+a wall 2 steps right
+a green key 1 step right and 1 step forward",0,False
+1,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The green key will be in my inventory.
+ACTION: pick up","a wall 4 steps forward
+a wall 2 steps right
+a green key 1 step right and 1 step forward",0,False
+2,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left; I should now see the green key within reach.
+ACTION: turn left","a wall 5 steps forward
+a wall 3 steps left
+a locked green door 1 step left and 5 steps forward",0,False
+3,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Reach the green key within reach
+ACTION: go forward","a wall 4 steps forward
+a wall 3 steps left
+a locked green door 1 step left and 4 steps forward",0,False
+4,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Pick up the green key
+ACTION: turn left","a wall 3 steps forward
+a wall 3 steps left",0,False
+5,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent should reach the green key
+ACTION: go forward","a wall 2 steps forward
+a wall 3 steps left",0,False
+6,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall 2 steps forward
+NEW_MEMORY: Wall 2 steps forward, blocking path
+PLAN: KEEP (Turn left, go forward to reach the green key, pick up the key, then go right to open the green door.)
+PREDICTION: Agent should see the green key after turning left
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right
+a green key 2 steps left and 2 steps forward",0,False
+7,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent should now be able to reach the green key
+ACTION: go forward","a wall 2 steps forward
+a wall 2 steps right
+a green key 2 steps left and 1 step forward",0,False
+8,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP (Turn left, go forward to reach the green key, pick up the key)
+PREDICTION: Agent will be in front of the green key
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps right
+a green key 1 step right and 2 steps forward",0,False
+9,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP (Go forward to reach the green key, pick up the key)
+PREDICTION: Agent will pick up the green key
+ACTION: go forward","a wall 4 steps forward
+a wall 2 steps right
+a green key 1 step right and 1 step forward",0,False
+10,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 2 steps forward, blocking path
+PLAN: Turn left to check for other possibilities
+PREDICTION: Agent will change position to face another direction
+ACTION: turn left","a wall 5 steps forward
+a wall 3 steps left
+a locked green door 1 step left and 5 steps forward",0,False
+11,turn right,"OBSERVATION_CHECK: FAILED: Wall blocking path
+NEW_MEMORY: Wall 2 steps forward, blocking path
+PLAN: KEEP: Turn right to check for other possibilities
+PREDICTION: Agent will change position to face another direction
+ACTION: turn right","a wall 4 steps forward
+a wall 2 steps right
+a green key 1 step right and 1 step forward",0,False
+12,turn around,"OBSERVATION_CHECK: FAILED: Tried to move but hit a wall.
+NEW_MEMORY: Blocked path 2 steps forward
+PLAN: Turn around and try a different direction
+PREDICTION: Agent will face the opposite direction
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a green key 1 step right",0,False
+13,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path 3 steps forward
+PLAN: Keep
+PREDICTION: Agent will face the opposite direction and try to move right
+ACTION: turn right","a wall 3 steps left
+a green key 1 step forward",0,False
+14,,"**OBSERVATION_CHECK:** SUCCESS
+**NEW_MEMORY:** NONE
+**PLAN:** KEEP
+**PREDICTION:** Agent will turn towards the green key
+**ACTION:** turn left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps left
+a green key 1 step forward",0,False
+15,turn around,"OBSERVATION_CHECK: FAILED: Did not make progress, loop detected.
+NEW_MEMORY: Loop at 2 steps forward, 3 steps left.
+PLAN: Turn around and try the other direction.
+PREDICTION: Wall 3 steps backwards.
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps left
+a green key 1 step forward",0,False
+16,turn around,"OBSERVATION_CHECK: FAILED: Turn around did not change the observation.
+NEW_MEMORY: Loop at agent's current location; Wall 3 steps left, Green key 1 step forward.
+PLAN: Reverse direction, then try to pick up the green key.
+PREDICTION: Wall 3 steps backwards, then green key 1 step forward.
+ACTION: turn around
+turn left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps left
+a green key 1 step forward",0,False
+17,pick up,"OBSERVATION_CHECK: SUCCESS
+PLAN: KEEP
+PREDICTION: Pick up green key
+ACTION: pick up","You carry a green key
+a wall 2 steps forward
+a wall 3 steps left",0,False
+18,toggle,"OBSERVATION_CHECK: FAILED: Loop at agent's current location
+NEW_MEMORY: Loop at 3 steps left
+PLAN: Try to pick up the green key on the next action, since agent is already in front of it; if it succeeds, turn around
+PREDICTION: Pick up green key
+ACTION: toggle","You carry a green key
+a wall 2 steps forward
+a wall 3 steps left",0,False
+19,turn around,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The agent will turn around.
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 3 steps left",0,False
+20,pick up,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""The agent will pick up the green key and turn around.""
+ACTION: ""pick up""","You carry a green key
+a wall 1 step forward
+a wall 3 steps left",0,False
+21,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The agent will approach and interact with the green door.""
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 3 steps left",0,False
+22,turn around,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Loop at agent's current location; Wall 1 step forward, Wall 3 steps left, Green key 1 step forward.
+PLAN: ""Turn around to break the loop, then move forward to interact with the green door.""
+PREDICTION: ""The agent will turn around and move forward, approaching the green door.""
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 3 steps left",0,False
+23,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Move closer to the green door.""
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 3 steps left",0,False
+24,turn around,"OBSERVATION_CHECK: FAILED: ""Stuck in a loop, cannot make progress.""
+NEW_MEMORY: ""Loop at agent's current location; Wall 1 step forward, Wall 3 steps left, Green key 1 step forward.""
+PLAN: ""Turn around to break the loop, then move forward to interact with the green door.""
+PREDICTION: ""Break the loop and move closer to the green door.""
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 3 steps left",0,False
+25,"turn 180, stop, go forward","OBSERVATION_CHECK: FAILED: Previous action didn't change observation
+NEW_MEMORY: Loop at agent's current location; Wall 1 step forward, Wall 3 steps left, Green key 1 step forward.
+PLAN: Turn 180 degrees, then stop turning after 90 degrees, and go forward to break the loop and align with the green door.
+PREDICTION: Break the loop and move closer to the green door.
+ACTION: turn 180, stop, go forward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 3 steps left",0,False
+26,turn around,"OBSERVATION_CHECK: FAILED: Aligned with the green door, no change
+NEW_MEMORY: Loop at agent's current location; Wall 1 step forward, Wall 3 steps left, Green key 1 step forward.
+PLAN: Reverse direction, break the loop, then turn right and go forward towards the green door.
+PREDICTION: Move away from the looping wall and align with the opening that leads to the green door.
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 3 steps left",0,False
+27,turn 180,"OBSERVATION_CHECK: FAILED: Agent is stuck in a loop.
+NEW_MEMORY: Loop at agent's current location; Wall 1 step forward, Wall 3 steps left, Green key 1 step forward.
+PLAN: KEEP
+PREDICTION: Execute a 180-degree turn to break the loop and then go forward.
+ACTION: turn 180","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 3 steps left",0,False
+28,turn left,"OBSERVATION_CHECK: FAILED: Turned in a loop
+NEW_MEMORY: Loop at agent's current location; Wall 1 step forward, Wall 3 steps left, Green key 1 step forward
+PLAN: KEEP
+PREDICTION: Break the loop by turning left
+ACTION: turn left","You carry a green key
+a wall 3 steps forward
+a wall 1 step right",0,False
+29,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left to align with the green door
+ACTION: turn left","You carry a green key
+a wall 6 steps forward
+a wall 3 steps right
+a locked green door 2 steps left and 6 steps forward",0,False
+30,go backward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Reverse direction
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 5 steps forward
+a wall 3 steps right
+a locked green door 2 steps left and 5 steps forward",0,False
+31,turn right,"OBSERVATION_CHECK: ""FAILED: Hit a wall""
+NEW_MEMORY: ""Loop at current location; Wall 3 steps right, Locked green door 2 steps left""
+PLAN: ""KEEP - Turn right, then turn around, breaking the loop; finally go forward to the green door.""
+PREDICTION: ""Face the right wall""
+ACTION: ""turn right""","You carry a green key
+a wall 3 steps forward
+a wall 2 steps right",0,False
+32,Turn right,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP - Turn right, then turn around, breaking the loop; finally go forward to the green door.""
+PREDICTION: ""Face the correct direction towards the green door""
+ACTION: ""Turn right""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 2 steps forward
+a wall 2 steps right",0,False
+33,turn right,"OBSERVATION_CHECK: FAILED: Wall 2 steps forward
+NEW_MEMORY: 2. Blocked path 2 steps forward
+PLAN: KEEP - Turn right, then go forward; finally turn left and go forward to the green door.
+PREDICTION: Face the direction of the green door
+ACTION: turn right","You carry a green key
+a wall 2 steps forward
+a wall 2 steps left",0,False
+34,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Turn right, then go forward; finally turn left and go forward to the green door.
+PREDICTION: Face the direction of the green door.
+ACTION: turn right","You carry a green key
+a wall 5 steps forward
+a wall 2 steps left",0,False
+35,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Go forward.
+PREDICTION: Move closer to the green door.
+ACTION: go forward","You carry a green key
+a wall 4 steps forward
+a wall 2 steps left",0,False
+36,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Go forward.
+PREDICTION: Move closer to the green door.
+ACTION: go forward","You carry a green key
+a wall 3 steps forward
+a wall 2 steps left",0,False
+37,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Go forward.
+PREDICTION: Move closer to the locked green door.
+ACTION: go forward","You carry a green key
+a wall 2 steps forward
+a wall 2 steps left",0,False
+38,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Go forward.
+PREDICTION: Move closer to the locked green door.
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 2 steps left",0,False
+39,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP - Go forward.""
+PREDICTION: ""Move one step closer to the locked green door.""
+ACTION: ""go forward""","You carry a green key
+a wall 1 step forward
+a wall 2 steps left",0,False
+40,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Reach the locked green door.""
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 2 steps left",0,False
+41,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP - Go forward.""
+PREDICTION: ""Reach the locked green door.""
+ACTION: ""go forward""","You carry a green key
+a wall 1 step forward
+a wall 2 steps left",0,False
+42,turn right,"OBSERVATION_CHECK: ""FAILED: Reached a wall.""
+NEW_MEMORY: ""Wall 1 step forward, Wall 2 steps left.""
+PLAN: ""BACKTRACK - Turn right - Turn right.""
+PREDICTION: ""Move back to the intersection with the wall to the right.""
+ACTION: ""turn right""","You carry a green key
+a wall 5 steps forward
+a wall 1 step left
+a locked green door 1 step right and 5 steps forward",0,False
+43,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Move towards the locked green door.""
+ACTION: go forward","You carry a green key
+a wall 4 steps forward
+a wall 1 step left
+a locked green door 1 step right and 4 steps forward",0,False
+44,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Approach the locked green door.""
+ACTION: go forward","You carry a green key
+a wall 3 steps forward
+a wall 1 step left
+a locked green door 1 step right and 3 steps forward",0,False
+45,turn right,"OBSERVATION_CHECK: ""FAILED: Hit a wall""
+NEW_MEMORY: ""Blocked path 3 steps forward""
+PLAN: ""KEEP - Turn right - Go forward - Turn right - Turn left - Go forward""
+PREDICTION: ""Approach the door - Unlock it""
+ACTION: ""turn right""","You carry a green key
+a wall 6 steps forward
+a wall 3 steps left
+a locked green door 3 steps left and 1 step forward",0,False
+46,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: ""Loop at agent's current location; Wall 3 steps left, Green key 1 step forward.""
+PLAN: ""KEEP - Turn left - Go forward - Turn left - Go forward""
+PREDICTION: ""Approach the door - Unlock it""
+ACTION: turn left","You carry a green key
+a wall 3 steps forward
+a wall 1 step left
+a locked green door 1 step right and 3 steps forward",0,False
+47,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Go forward
+PREDICTION: ""Approach the door""
+ACTION: go forward","You carry a green key
+a wall 2 steps forward
+a wall 1 step left
+a locked green door 1 step right and 2 steps forward",0,False
+48,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Unlock the green door
+ACTION: toggle","You carry a green key
+a wall 2 steps forward
+a wall 1 step left
+a locked green door 1 step right and 2 steps forward",0,False
+49,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP - Go forward""
+PREDICTION: ""Open the green door""
+ACTION: ""go forward""","You carry a green key
+a wall 1 step forward
+a wall 1 step left
+a locked green door 1 step right and 1 step forward",0,False
+50,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Open the green door""
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 1 step left
+a locked green door 1 step right and 1 step forward",0,False
+51,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Open the green door""
+ACTION: toggle","You carry a green key
+a wall 1 step forward
+a wall 1 step left
+a locked green door 1 step right and 1 step forward",0,False
+52,toggle,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Open the green door""
+ACTION: ""toggle""","You carry a green key
+a wall 1 step forward
+a wall 1 step left
+a locked green door 1 step right and 1 step forward",0,False
+53,toggle,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Green door unlocked and opens""
+ACTION: ""toggle""","You carry a green key
+a wall 1 step forward
+a wall 1 step left
+a locked green door 1 step right and 1 step forward",0,False
+54,toggle,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Green door should open with the green key""
+ACTION: toggle","You carry a green key
+a wall 1 step forward
+a wall 1 step left
+a locked green door 1 step right and 1 step forward",0,False
+55,toggle,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Green door should open""
+ACTION: ""toggle""","You carry a green key
+a wall 1 step forward
+a wall 1 step left
+a locked green door 1 step right and 1 step forward",0,False
+56,turn right,"OBSERVATION_CHECK: FAILED: ""Green door did not open""
+NEW_MEMORY: ""Loop at agent's current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right""
+PLAN: ""Turn right, then use toggle to try opening the door again.""
+PREDICTION: ""Green door should open when facing it directly""
+ACTION: turn right","You carry a green key
+a wall 6 steps forward
+a wall 1 step left
+a locked green door 1 step left and 1 step forward",0,False
+57,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Green door should open
+ACTION: toggle","You carry a green key
+a wall 6 steps forward
+a wall 1 step left
+a locked green door 1 step left and 1 step forward",0,False
+58,turn right,"OBSERVATION_CHECK: FAILED: Green door did not open
+NEW_MEMORY: Blocked path at 1 step left and 1 step forward
+PLAN: Plan updated: ""Turn right again, then try toggling the door.""
+PREDICTION: Green door should open
+ACTION: turn right","You carry a green key
+a wall 6 steps forward
+a wall 1 step right",0,False
+59,turn right,"OBSERVVATION_CHECK: FAILED: Wall 1 step forward, Wall 1 step right
+NEW_MEMORY: Loop at agent's current location; Wall 1 step forward, Wall 1 step right
+PLAN: KEEP
+PREDICTION: Turning right again should bring me back to the starting point where I can toggle the door.
+ACTION: turn right","You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+60,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turning right again should take me back to the initial position near the door.
+ACTION: turn right","You carry a green key
+a wall 1 step forward
+a wall 1 step left
+a locked green door 1 step right and 1 step forward",0,False
+61,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turning right will bring me back to the locked green door.
+ACTION: turn right","You carry a green key
+a wall 6 steps forward
+a wall 1 step left
+a locked green door 1 step left and 1 step forward",0,False
+62,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP ""Turn right again, then try toggling the door.""
+PREDICTION: Turning right will bring me back to the door.
+ACTION: turn right","You carry a green key
+a wall 6 steps forward
+a wall 1 step right",0,False
+63,turn left,"OBSERVATION_CHECK: ""FAILED: Stuck in a loop; current location already noted as a loop.""
+NEW_MEMORY: ""NONE""
+PLAN: ""REVISED: Turn left, then try toggling the door.""
+PREDICTION: ""Turning left will bring me to the front of the locked green door.""
+ACTION: ""turn left""","You carry a green key
+a wall 6 steps forward
+a wall 1 step left
+a locked green door 1 step left and 1 step forward",0,False
+64,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Turning left will bring me to the front of the locked green door.""
+ACTION: turn left","You carry a green key
+a wall 1 step forward
+a wall 1 step left
+a locked green door 1 step right and 1 step forward",0,False
+65,turn left,"OBSERVATION_CHECK: ""FAILED: Turning left did not change the observation, indicating a loop.""
+NEW_MEMORY: ""Loop detected at current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right""
+PLAN: ""Revise plan: Turn left, then go forward to approach the locked green door.""
+PREDICTION: ""Turning left will bring me to the front of the locked green door.""
+ACTION: ""turn left""","You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+66,turn left,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Turning left will bring me to the front of the locked green door.""
+ACTION: ""turn left""","You carry a green key
+a wall 6 steps forward
+a wall 1 step right",0,False
+67,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""I should arrive at the locked green door.""
+ACTION: go forward","You carry a green key
+a wall 5 steps forward
+a wall 1 step right",0,False
+68,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""I should reach the locked green door.""
+ACTION: go forward","You carry a green key
+a wall 4 steps forward
+a wall 1 step right",0,False
+69,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""I will reach the locked green door with the green key in my possession.""
+ACTION: ""go forward""","You carry a green key
+a wall 3 steps forward
+a wall 1 step right",0,False
+70,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""I will reach the locked green door with the green key in my possession.""
+ACTION: go forward","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+71,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""I will reach the locked green door with the green key in my possession.""
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+72,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""I will reach the locked green door with the green key in my possession.""
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+73,turn left,"OBSERVATION_CHECK: ""FAILED: reached the wall""
+NEW_MEMORY: ""Loop at agent's current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right.""
+PLAN: ""Turn left to reorient and try a different path.""
+PREDICTION: ""I will face the locked green door.""
+ACTION: ""turn left""","You carry a green key
+a wall 6 steps forward
+a wall 1 step right",0,False
+74,turn left,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Turn left to align with the locked green door.""
+ACTION: ""turn left""","You carry a green key
+a wall 6 steps forward
+a wall 1 step left
+a locked green door 1 step right and 6 steps forward",0,False
+75,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop at agent's current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right
+PLAN: Turn left, then go forward, then turn left again to align with the green door.
+PREDICTION: ""Turn left, go forward once, then turn left again to face the locked green door.""
+ACTION: turn left","You carry a green key
+a wall 1 step forward
+a wall 1 step left",0,False
+76,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Turn towards the locked green door.""
+ACTION: turn right","You carry a green key
+a wall 6 steps forward
+a wall 1 step left
+a locked green door 1 step right and 6 steps forward",0,False
+77,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Turn towards the locked green door.""
+ACTION: turn left","You carry a green key
+a wall 1 step forward
+a wall 1 step left",0,False
+78,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop detected at current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right
+PLAN: REVISED: Turn right, then go forward once
+PREDICTION: ""Move towards the locked green door""
+ACTION: turn right","You carry a green key
+a wall 6 steps forward
+a wall 1 step left
+a locked green door 1 step right and 6 steps forward",0,False
+79,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Move towards the locked green door""
+ACTION: go forward","You carry a green key
+a wall 5 steps forward
+a wall 1 step left
+a locked green door 1 step right and 5 steps forward",0,False
+80,turn right,"OBSERVATION_CHECK: FAILED: Hit wall
+NEW_MEMORY: Loop at current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right.
+PLAN: KEEP
+PREDICTION: Turn right to face the door
+ACTION: turn right","You carry a green key
+a wall 6 steps forward
+a wall 2 steps right",0,False
+81,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn right to face the door
+ACTION: turn right","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+82,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP: Turn right, then go forward once
+PREDICTION: Turn to face the door
+ACTION: turn right","You carry a green key
+a wall 1 step forward
+a wall 2 steps left",0,False
+83,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn to face the green door
+ACTION: turn right","You carry a green key
+a wall 5 steps forward
+a wall 1 step left
+a locked green door 1 step right and 5 steps forward",0,False
+84,turn left,"OBSERVATION_CHECK: FAILED: Unable to progress towards the green door
+NEW_MEMORY: Loop detected at current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right.
+PLAN: Turn left, then go forward once.
+PREDICTION: Turn to face front towards the locked green door.
+ACTION: turn left","You carry a green key
+a wall 1 step forward
+a wall 2 steps left",0,False
+85,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left to face the locked green door.
+ACTION: turn left","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+86,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left to face the locked green door.
+ACTION: turn left","You carry a green key
+a wall 6 steps forward
+a wall 2 steps right",0,False
+87,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left to face the locked green door.
+ACTION: turn left","You carry a green key
+a wall 5 steps forward
+a wall 1 step left
+a locked green door 1 step right and 5 steps forward",0,False
+88,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn to face the locked green door.
+ACTION: turn left","You carry a green key
+a wall 1 step forward
+a wall 2 steps left",0,False
+89,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Face the locked green door.
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 2 steps left",0,False
+90,turn left,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Face the wall""
+ACTION: turn left","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+91,turn right,"OBSERVATION_CHECK: FAILED: Tried to move left, but view did not change, indicating a wall.
+NEW_MEMORY: Loop at agent's current location; Wall 1 step forward, Wall 2 steps left.
+PLAN: Try to move right or execute 'toggle' action if in front of the locked green door.
+PREDICTION: Face the locked green door or no change if another wall is present.
+ACTION: turn right","You carry a green key
+a wall 1 step forward
+a wall 2 steps left",0,False
+92,turn left,"OBSERVATION_CHECK: FAILED: Hitting a wall
+NEW_MEMORY: Wall 1 step forward, Wall 2 steps left, cannot move forward.
+PLAN: KEEP
+PREDICTION: Turn left
+ACTION: turn left","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+93,toggle,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop detected at current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right
+PLAN: Try 'toggle' action to open the locked green door
+PREDICTION: The green door should open
+ACTION: toggle","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+94,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The green door should open
+ACTION: toggle","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+95,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The door will open
+ACTION: toggle","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+96,toggle,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""The door will open""
+ACTION: ""toggle""","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+97,toggle,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""The door will open""
+ACTION: ""toggle""","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+98,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The door will open""
+ACTION: toggle","You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+99,go forward,"OBSERVATION_CHECK: ""FAILED: Wall 1 step right, Green door should have opened, but the observation is the same""
+NEW_MEMORY: ""Green door is locked and needs the green key to open, but I'm not in front of it""
+PLAN: ""Approach the door, then use 'toggle' to open it""
+PREDICTION: "" график \""Дверь откроется\""""
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+100,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Approach the door, then use 'toggle' to open it""
+ACTION: go forward","You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+101,toggle,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Unlock the door""
+ACTION: ""toggle""","You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+102,toggle,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop detected at current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right.
+PLAN: Unlock the door and move forward
+PREDICTION: Unlock the green door
+ACTION: toggle","You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+103,toggle,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Door will unlock""
+ACTION: ""toggle""","You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+104,turn left,"OBSERVATION_CHECK: ""FAILED: Tried to unlock door but it didn't open because I'm not standing in front of it""
+NEW_MEMORY: ""Loop at agent's current location; Wall 1 step forward, Wall 1 step left, Locked green door 1 step right""
+PLAN: ""Turn left, then go forward to reach the door, then toggle to open it""
+PREDICTION: ""Should move closer to the green door""
+ACTION: turn left","You carry a green key
+a wall 6 steps forward
+a wall 1 step right",0,False
+105,GO FORWARD,"OBSERVATION_CHECK: ""FAILED: PREVIOUS ACTION DID NOT CHANGE OBSERVATION""
+NEW_MEMORY: ""LOOP AT CURRENT LOCATION; WALL 6 STEPS FORWARD, WALL 1 STEP RIGHT""
+PLAN: ""KEEP""
+PREDICTION: ""SHOULD MOVE CLOSER TO THE GREEN DOOR""
+ACTION: ""GO FORWARD""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 5 steps forward
+a wall 1 step right",0,False
+106,TURN RIGHT,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""SHOULD MOVE FURTHER AWAY FROM THE WALL ON THE RIGHT""
+ACTION: ""TURN RIGHT""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 4 steps forward
+a wall 1 step right",0,False
+107,TURN LEFT,"OBSERVATION_CHECK: FAILED: hit a wall
+NEW_MEMORY: LOOP AT CURRENT LOCATION; WALL 1 STEP FORWARD, WALL 1 STEP RIGHT
+PLAN: KEEP
+PREDICTION: SHOULD MOVE LEFT TO ESCAPE LOOP
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 3 steps forward
+a wall 1 step right",0,False
+108,TURN LEFT,"OBSERVATION_CHECK: FAILED: faced a wall when moving forward
+NEW_MEMORY: LOOP AT CURRENT LOCATION; WALL 3 STEPS FORWARD, WALL 1 STEP RIGHT
+PLAN: KEEP
+PREDICTION: will turn left to escape the loop
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 2 steps forward
+a wall 1 step right",0,False
+109,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall and going left doesn't seem to get me to the door
+NEW_MEMORY: ""LOOP AT CURRENT LOCATION; WALL 2 STEPS FORWARD, WALL 1 STEP RIGHT""
+PLAN: ""KEEP""
+PREDICTION: Will turn right and hope to find a way to proceed
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+110,TURN RIGHT,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Will move forward towards the wall on the right
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+111,GO FORWARD,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Will reach the green door""
+ACTION: ""GO FORWARD""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+112,GO FORWARD,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Will reach the green door""
+ACTION: ""GO FORWARD""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+113,TURN RIGHT,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Open the green door""
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+114,TURN LEFT,"OBSERVATION_CHECK: FAILED: Can't move forward
+NEW_MEMORY: Loop at agent's current location; wall 1 step forward, wall 1 step right
+PLAN: KEEP
+PREDICTION: Turn left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+115,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Agent keeps turning left without progressing
+NEW_MEMORY: Wall 1 step forward, Wall 1 step right, Loop at current location
+PLAN: Break the loop and re-evaluate
+PREDICTION: Turn right to break the loop
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+116,TURN LEFT,"OBSERVATION_CHECK: FAILED: stuck in a loop
+NEW_MEMORY: Loop at current location; Wall 1 step forward, Wall 1 step right
+PLAN:Stop turning right, turn left again.
+PREDICTION: Go back towards the locked green door.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+117,GO FORWARD,"OBSERVATION_CHECK: FAILED: Cannot move forward or backward
+NEW_MEMORY: NONE
+PLAN: MOVE TO SERAH'S CURRENT LOCATION IF POSSIBLE
+PREDICTION: Move towards the green door
+ACTION: GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+118,TURN LEFT,"OBSERVATION_CHECK: ""FAILED: Cannot move forward, reached a wall""
+NEW_MEMORY: ""Loop at 1 step forward, 1 step right""
+PLAN: ""KEEP -> Turn LEFT, try to break the loop""
+PREDICTION: ""Turn towards the wall on the left side""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+119,GO FORWARD,"OBSERVATION_CHECK: FAILED: Turned towards the wall
+NEW_MEMORY: Loop at current location with wall 2 steps forward and 1 step right, carrying green key
+PLAN: KEEP -> Try going back to the previous intersection and take the other path
+PREDICTION: Move away from the wall and potentially find a new path
+ACTION: GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+120,"TURN RIGHT, GO FORWARD","OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: LOOP AT CURRENT LOCATION; WALL 1 STEP FORWARD, WALL 1 STEP RIGHT
+PLAN: BREAK_LOOP -> Turn right, then go forward
+PREDICTION: Move forward and potentially break the loop
+ACTION: TURN RIGHT, GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+121,TURN LEFT,"OBSERVATION_CHECK: FAILED: You're still in the same location
+NEW_MEMORY: LOOP AT CURRENT LOCATION; WALL 1 STEP FORWARD, WALL 1 STEP RIGHT
+PLAN: BREAK_LOOP -> Turn left
+PREDICTION: Turn to face new direction
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+122,"TURN LEFT, GO FORWARD","OBSERVATION_CHECK: FAILED: Hitting a wall
+NEW_MEMORY: Loop at current location; Wall 1 step forward, Wall 1 step right
+PLAN: KEEP -> Turn left, go forward
+PREDICTION: Move one step forward
+ACTION: TURN LEFT, GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+123,"TURN RIGHT, GO FORWARD","OBSERVATION_CHECK: FAILED: hit a wall
+NEW_MEMORY: Wall 1 step forward, Wall 1 step right, Loop at current location
+PLAN: TURN RIGHT, GO FORWARD
+PREDICTION: Move one step forward
+ACTION: TURN RIGHT, GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+124,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Wall 1 step forward
+NEW_MEMORY: Looped at previous location; Wall 1 step forward, Wall 1 step right
+PLAN: KEEP
+PREDICTION: Turn right
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+125,GO FORWARD,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward and reach the locked green door
+ACTION: GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+126,"TURN RIGHT, GO FORWARD","OBSERVATION_CHECK: FAILED: No progress made, still at the same location
+NEW_MEMORY: ""Loop at agent's current location; Wall 1 step forward, Wall 1 step right""
+PLAN: ""KEEP and adjust - TURN RIGHT, GO FORWARD""
+PREDICTION: ""Move right and reach the wall, then move forward""
+ACTION: TURN RIGHT, GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,False
+127,"TURN LEFT, GO FORWARD","OBSERVATION_CHECK: FAILED: Hit the wall
+NEW_MEMORY: Loop at current location; Wall 1 step forward, Wall 1 step right
+PLAN: ""KEEP and adjust - TURN LEFT, GO FORWARD""
+PREDICTION: ""Turn left and reach the wall, then move forward""
+ACTION: TURN LEFT, GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+You carry a green key
+a wall 1 step forward
+a wall 1 step right",0,True

@@ -1,0 +1,452 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn left,"NEW_MEMORY: Wall 2 steps forward, Wall 1 step left
+PLAN: Turn left, then go forward
+PREDICTION: Wall will be directly forward
+ACTION: turn left","a wall 1 step forward
+a wall 2 steps right",0,False
+1,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall directly forward
+PLAN: Turn right, then go forward
+PREDICTION: Wall will be 2 steps forward
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step left",0,False
+2,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall directly forward
+PLAN: Turn left, then turn right, then go forward
+PREDICTION: Wall will be 1 step forward
+ACTION: turn left","a wall 1 step forward
+a wall 2 steps right",0,False
+3,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Wall will be 2 steps forward
+ACTION: go forward","a wall 1 step forward
+a wall 2 steps right",0,False
+4,turn left,"OBSERVATION_CHECK: FAILED: HIT_WALL
+NEW_MEMORY: WALL_ALSO_2_STEPS_FORWARD
+PLAN: Turn left to explore, then reassess
+PREDICTION: Turn 90 degrees left
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 3 steps forward",0,False
+5,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn 90 degrees left
+ACTION: turn left","a wall 6 steps forward
+a wall 2 steps left
+a yellow key 3 steps right and 2 steps forward",0,False
+6,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn 90 degrees left
+ACTION: turn left","a wall 2 steps forward
+a wall 1 step left",0,False
+7,turn right,"OBSERVATION_CHECK: FAILED: Tried to turn left but view stayed the same, likely hit a wall
+NEW_MEMORY: WALL_ALSO_1_STEP_LEFT
+PLAN: Turn right to explore, then reassess
+PREDICTION: Turn 90 degrees right
+ACTION: turn right","a wall 6 steps forward
+a wall 2 steps left
+a yellow key 3 steps right and 2 steps forward",0,False
+8,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: WALL_ALSO_1_STEP_RIGHT
+PLAN: Turn left, go forward, right, then try to pick up the key
+PREDICTION: Turn 90 degrees left
+ACTION: turn left","a wall 2 steps forward
+a wall 1 step left",0,False
+9,turn right,"OBSERVATION_CHECK: FAILED: HIT_WALL
+NEW_MEMORY: WALL_ALSO_2_STEPS_FORWARD
+PLAN: KEEP
+PREDICTION: Turn 90 degrees right
+ACTION: turn right","a wall 6 steps forward
+a wall 2 steps left
+a yellow key 3 steps right and 2 steps forward",0,False
+10,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn 90 degrees left
+ACTION: turn left","a wall 2 steps forward
+a wall 1 step left",0,False
+11,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Take a step forward but still face the wall
+ACTION: go forward","a wall 1 step forward
+a wall 1 step left",0,False
+12,turn left,"OBSERVATION_CHECK: FAILED: Tried to move forward but hit a wall
+NEW_MEMORY: Wall directly forward
+PLAN: Turn left, go forward 2 steps, turn right, pick up key
+PREDICTION: Should now see the key at the optimal position to pick it up
+ACTION: turn left","a wall 1 step forward
+a wall 1 step right",0,False
+13,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Should now pick up the key
+ACTION: turn left","a wall 6 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 4 steps forward",0,False
+14,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left, move forward 2 steps, turn right, and pick up the key
+ACTION: turn left","a wall 6 steps forward
+a wall 1 step left",0,False
+15,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall 1 step forward
+NEW_MEMORY: Wall directly forward
+PLAN: KEEP
+PREDICTION: Turn left
+ACTION: turn left","a wall 1 step forward
+a wall 1 step left",0,False
+16,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left
+ACTION: turn left","a wall 1 step forward
+a wall 1 step right",0,False
+17,turn right,"OBSERVATION_CHECK: ""FAILED: Stuck in a loop""
+NEW_MEMORY: ""WALL_ALSO_1_STEP_RIGHT""
+NEW_MEMORY: ""TURNING_IN_CIRCLES_LOOP""
+PLAN: ""Turn right, go forward, turn left, pick up key""
+PREDICTION: ""Move forward and change direction""
+ACTION: turn right","a wall 1 step forward
+a wall 1 step left",0,False
+18,turn left,"OBSERVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: WALL_ALSO_2_STEPS_FORWARD
+PLAN: Keep turning left until facing no wall, then go forward and pick up the key
+PREDICTION: ""Turn left and see the path ahead""
+ACTION: turn left","a wall 1 step forward
+a wall 1 step right",0,False
+19,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: WALL_ALSO_1_STEP_RIGHT
+PLAN: KEEP
+PREDICTION: Turn left and see the same walls
+ACTION: turn left","a wall 6 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 4 steps forward",0,False
+20,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop turning left
+NEW_MEMORY: WALL_ALSO_2_STEPS_FORWARD, WALL_ALSO_1_STEP_LEFT, WALL_ALSO_1_STEP_RIGHT
+PLAN: Turn right, then go forward and pick up the key
+PREDICTION: Turn right and see an open path forward
+ACTION: turn right","a wall 1 step forward
+a wall 1 step right",0,False
+21,turn left,"OBSERVATION_CHECK: FAILED: Continued turning in circles
+NEW_MEMORY: WOULD_BE_STUCK IF_CONTINUE_TO_TURN
+PLAN: KEEP
+PREDICTION: Turn around and face open path
+ACTION: turn left","a wall 6 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 4 steps forward",0,False
+22,turn right,"OBSERVATION_CHECK: FAILED: Turned into a dead end
+NEW_MEMORY: WALL_ALSO_1_STEP_LEFT, WALL_ALSO_1_STEP_RIGHT
+PLAN: Turn right, go forward, then turn left and pick up the key
+PREDICTION: Face the open path and see the key
+ACTION: turn right","a wall 1 step forward
+a wall 1 step right",0,False
+23,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Should see the open path forward with the yellow key visible
+ACTION: go forward","a wall 1 step forward
+a wall 1 step right",0,False
+24,turn left,"OBSERVATION_CHECK: ""FAILED: No change in observation""
+NEW_MEMORY: ""WALL_ALSO_1_STEP_RIGHT""
+PLAN: ""KEEP""
+PREDICTION: ""Wall will still be ahead""
+ACTION: ""turn left""","a wall 6 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 4 steps forward",0,False
+25,,"**OBSERVATION_CHECK**: FAILED: Stuck in a loop (just turning)
+**NEW_MEMORY**: WALL_ALSOea left, WALL_ALSOiere, WALL_ALSO_one_right, TOO_MANY_TURNS (same views recurring)
+**PLAN**: TRY_PORTAL, EXPLORE_SIDEWAYS
+**PREDICTION**: Wall will still be ahead but let's explore to the left to find a new path.
+**ACTION**: turn left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 5 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 3 steps forward",0,False
+26,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall while moving forward.
+NEW_MEMORY: WALL_ALSO_2_STEPS_FORWARD
+PLAN: TRY_TURNING
+PREDICTION: Should see if turning helps to find a new path.
+ACTION: turn left","a wall 6 steps forward
+a wall 2 steps left
+a yellow key 3 steps right and 2 steps forward",0,False
+27,go forward,"OBSERVATION_CHECK:failed: WOULD_BE_STUCK IF_CONTINUE_TO_TURN
+NEW_MEMORY: WALL_ALSO_2_STEPS_LEFT, WALL_ALSO_1_STEP_FORWARD, WALL_ALSO_1_STEP_RIGHT
+PLAN: GO_TO_KEY
+PREDICTION: WILL_BE_ABLE_TO_PICK_UP_KEY
+ACTION: go forward","a wall 5 steps forward
+a wall 2 steps left
+a yellow key 3 steps right and 1 step forward",0,False
+28,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: WILL_BE_ABLE_TO_PICK_UP_KEY
+ACTION: pick up","a wall 5 steps forward
+a wall 2 steps left
+a yellow key 3 steps right and 1 step forward",0,False
+29,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: NO_CHANGE
+ACTION: turn right","a wall 5 steps forward
+a wall 2 steps right
+a yellow key 1 step left and 3 steps forward",0,False
+30,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: MOVE_TOWARDS_KEY
+ACTION: go forward","a wall 4 steps forward
+a wall 2 steps right
+a yellow key 1 step left and 2 steps forward",0,False
+31,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: PICK_UP_KEY
+ACTION: pick up","a wall 4 steps forward
+a wall 2 steps right
+a yellow key 1 step left and 2 steps forward",0,False
+32,turn right,"OBSERVATION_CHECK: FAILED: hit a wall attempting to move forward
+NEW_MEMORY: Wall 4 steps forward, 2 steps left
+PLAN: U-turn, then GO_TO_KEY
+PREDICTION: Turn right, position should change
+ACTION: turn right","a wall 2 steps forward
+a wall 3 steps right",0,False
+33,"turn left, go forward","OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left, go forward to approach key
+ACTION: turn left, go forward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps right",0,False
+34,turn right,"OBSERVATION_CHECK: FAILED: Dead end, cannot move forward
+NEW_MEMORY: WALL_ALSO_1_STEP_LEFT, WALL_ALSO_1_STEP_RIGHT, WALL_ALSO_2_STEPS_FORWARD
+PLAN: U-turn, then GO_TO_KEY
+PREDICTION: Turn back to face the entry path
+ACTION: turn right","a wall 3 steps forward
+a wall 1 step left",0,False
+35,turn left,"OBSERVATION_CHECK: ""FAILED: Cannot move forward""
+NEW_MEMORY: ""wall_2_steps_forward_wall_1_step_left""
+PLAN: ""KEEP: U-turn, then GO_TO_KEY""
+PREDICTION: ""Turn back to face the yellow key""
+ACTION: ""turn left""","a wall 1 step forward
+a wall 3 steps right",0,False
+36,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP: U-turn, then GO_TO_KEY
+PREDICTION: Turn back to face the yellow key
+ACTION: turn right","a wall 3 steps forward
+a wall 1 step left",0,False
+37,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP: U-turn, then GO_TO_KEY
+PREDICTION: Turn back to face the yellow key
+ACTION: turn left","a wall 1 step forward
+a wall 3 steps right",0,False
+38,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP: U-turn, then GO_TO_KEY
+PREDICTION: Agent will face the yellow key.
+ACTION: turn right","a wall 3 steps forward
+a wall 1 step left",0,False
+39,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP: U-turn, then GO_TO_KEY
+PREDICTION: Agent will face the opposite direction.
+ACTION: turn left","a wall 1 step forward
+a wall 3 steps right",0,False
+40,turn right,"OBSERVATION_CHECK: FAILED: Would be stuck if continue to turn
+NEW_MEMORY: WALL_ALSO_2_STEPS_FORWARD, WALL_ALSO_1_STEP_LEFT, WALL_ALSO_1_STEP_RIGHT
+PLAN: U-TURN, then GO_TO_KEY
+PREDICTION: Agent will face the opposite direction.
+ACTION: turn right","a wall 3 steps forward
+a wall 1 step left",0,False
+41,turn left,"OBSERVATION_CHECK: FAILED: Agent is facing the wrong direction
+NEW_MEMORY: Would be stuck if continue to turn
+PLAN: U-TURN, then GO_TO_KEY
+PREDICTION: Agent will face the correct direction
+ACTION: turn left","a wall 1 step forward
+a wall 3 steps right",0,False
+42,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent will turn around
+ACTION: turn left","a wall 4 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 2 steps forward",0,False
+43,turn right,"OBSERVATION_CHECK: FAILED: Would be stuck if continue to turn
+NEW_MEMORY: WOULD_BE_STUCK_IF_CONTINUE_TO_TURN
+PLAN: U-TURN, then GO_TO_KEY
+PREDICTION: Agent will turn around
+ACTION: turn right","a wall 1 step forward
+a wall 3 steps right",0,False
+44,turn left,"OBSERVERSION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Agent will face left""
+ACTION: ""turn left""","a wall 4 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 2 steps forward",0,False
+45,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Agent will face the yellow key""
+ACTION: ""go forward""","a wall 3 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 1 step forward",0,False
+46,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Agent will pick up the yellow key""
+ACTION: toggle","a wall 3 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 1 step forward",0,False
+47,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Agent will now be holding the yellow key""
+ACTION: pick up","a wall 3 steps forward
+a wall 1 step right
+a yellow key 2 steps left and 1 step forward",0,False
+48,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Agent will remain unchanged""
+ACTION: go forward","a wall 2 steps forward
+a wall 1 step right
+a yellow key 2 steps left",0,False
+49,turn left,"OBSERVATION_CHECK: FAILED: I hit a wall by moving forward
+NEW_MEMORY: WALL_2_STEPS_FORWARD, WALL_1_STEP_LEFT
+PLAN: TRY_TO_TURN, THEN GO_FORWARD
+PREDICTION: ""Agent will attempt to turn and potentially discover a new path""
+ACTION: turn left","a wall 2 steps right
+a yellow key 2 steps forward",0,False
+50,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent will pick up the yellow key
+ACTION: pick up","a wall 2 steps right
+a yellow key 2 steps forward",0,False
+51,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Go forward towards the wall
+ACTION: go forward","a wall 2 steps right
+a yellow key 1 step forward",0,False
+52,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall when trying to go forward
+NEW_MEMORY: WALL_ALSO_2_STEPS_FORWARD, WALL_ALSO_1_STEP_LEFT, WALL_ALSO_1_STEP_RIGHT
+PLAN: KEEP
+PREDICTION: Turn around and go left
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps left
+a yellow key 1 step right",0,False
+53,GO FORWARD,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward towards the yellow key
+ACTION: GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 2 steps left",0,False
+54,TURN LEFT,"OBSERVATION_CHECK: ""FAILED: Hit a wall""
+NEW_MEMORY: ""WALL_ALSO_2_STEPS_FORWARD""
+PLAN: ""KEEP""
+PREDICTION: ""Able to turn left""
+ACTION: ""TURN LEFT""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 2 steps left",0,False
+55,go back,"OBSERVATION_CHECK: FAILED: Would be stuck if continue to turn
+NEW_MEMORY: WOULD_BE_STUCK_IF_CONTINUE_TO_TURN
+PLAN: TRY_TO_GO BACKWARD
+PREDICTION: Move 1 step backward
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 2 steps left",0,False
+56,turn right,"OBSERVATION_CHECK: FAILED: Wall in front
+NEW_MEMORY: Wall 2 steps forward, Wall 2 steps left
+PLAN: KEEP - Turn right to break the loop
+PREDICTION: Turn right
+ACTION: turn right","a wall 5 steps forward
+a wall 2 steps left
+a yellow key 3 steps right and 1 step forward",0,False
+57,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Would be stuck if continue to turn
+PLAN: KEEP - Turn right to break the loop
+PREDICTION: Turn right
+ACTION: turn right","a wall 5 steps forward
+a wall 2 steps right
+a yellow key 1 step left and 3 steps forward",0,False
+58,turn left,"OBSERVATION_CHECK: FAILED: Turn right does not progress towards the key.
+NEW_MEMORY: Would be stuck if continue to turn right.
+PLAN: Turn left.
+PREDICTION: Turn left.
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps left
+a yellow key 3 steps right and 1 step forward",0,False
+59,look,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Would be stuck if continue to turn left.
+PLAN: KEEP
+PREDICTION: Refine observation
+ACTION: look","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 2 steps left
+a yellow key 3 steps right",0,False
+60,turn right,"OBSERVATION_CHECK: FAILED: Stuck turning in circles
+NEW_MEMORY: Would be stuck if continue to turn
+PLAN: Turn right, then go forward
+PREDICTION: Move away from the wall and towards the yellow key
+ACTION: turn right","a wall 3 steps right
+a yellow key 3 steps forward",0,False
+61,GO FORWARD,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Move closer to the yellow key""
+ACTION: ""GO FORWARD""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps right
+a yellow key 2 steps forward",0,False
+62,turn left,"OBSERVATION_CHECK: FAILED: Did not move closer to the yellow key
+NEW_MEMORY: Would be stuck if continue to turn right
+PLAN: TURN LEFT, GO FORWARD
+PREDICTION: ""Should now be able to move closer to the yellow key""
+ACTION: turn left","a wall 4 steps forward
+a wall 3 steps left
+a yellow key 2 steps right",0,False
+63,TURN LEFT,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent should now be able to move closer to the yellow key
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 3 steps left",0,True

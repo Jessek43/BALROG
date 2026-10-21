@@ -1,0 +1,65 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn right,"NEW_MEMORY: NONE
+PLAN: Turn right to start moving towards the goal.
+PREDICTION: Wall will still be in front, but now to the left.
+ACTION: turn right","a wall 3 steps forward
+a wall 3 steps left
+a red ball 1 step right and 2 steps forward",0,False
+1,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Red ball will be in front
+ACTION: go forward","a wall 2 steps forward
+a wall 3 steps left
+a red ball 1 step right and 1 step forward",0,False
+2,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Red ball will be in front
+ACTION: turn right","a wall 4 steps forward
+a wall 2 steps left
+a red ball 1 step left and 1 step forward",0,False
+3,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall while turning
+NEW_MEMORY: Blocked path straight ahead
+PLAN: KEEP, Turn right to reorient, then turn around and go left to navigate around the wall
+PREDICTION: Agent will face the left wall
+ACTION: turn right","a wall 5 steps forward
+a wall 3 steps right",0,False
+4,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP, Turn right, turn around (go back 2 steps), go forward, turn left to face the ball
+PREDICTION: Agent will face and be close to the red ball
+ACTION: turn right","a wall 3 steps forward
+a wall 2 steps right",0,False
+5,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP, go forward
+PREDICTION: Agent will be close to the red ball and able to interact with it
+ACTION: go forward","a wall 2 steps forward
+a wall 2 steps right",0,False
+6,turn right,"OBSERVATION_CHECK: FAILED: Blocked path straight ahead
+NEW_MEMORY: Blocked path 2 steps forward
+PLAN: Turn right, go forward, turn left, go forward, turn left
+PREDICTION: Agent will be able to pick up the red ball
+ACTION: turn right","a wall 2 steps forward
+a wall 2 steps left
+a red ball 2 steps right and 1 step forward",0,False
+7,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent should be able to pick up the red ball
+ACTION: go forward","a wall 1 step forward
+a wall 2 steps left
+a red ball 2 steps right",0,False
+8,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path straight ahead
+PLAN: Turn right, go forward
+PREDICTION: Agent should reach the red ball
+ACTION: turn right","a wall 1 step left
+a red ball 2 steps forward",0,False
+9,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent should pick up the red ball
+ACTION: go forward","a wall 1 step left
+a red ball 1 step forward",0.859375,True

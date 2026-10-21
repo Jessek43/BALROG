@@ -1,0 +1,959 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,go left,"NEW_MEMORY: Wall 5 steps forward, Wall 3 steps left, Purple box 2 steps left and 2 steps forward, Purple ball 3 steps right
+PLAN: Go left twice to reach the purple box, then pick it up and move right three times to reach the purple ball
+PREDICTION: The purple box will be on your current tile
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 3 steps left
+a purple box 2 steps left and 1 step forward",0,False
+1,go left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The purple box will be on the same tile as me
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a purple box 2 steps left",0,False
+2,turn right,"OBSERVATION_CHECK: FAILED: Reached a wall
+NEW_MEMORY: Wall 3 steps left
+PLAN: KEEP
+PREDICTION: Same view, should see the purple box again
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps left
+a purple ball 2 steps right and 3 steps forward",0,False
+3,go left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: See the purple box again
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 3 steps left
+a purple ball 2 steps right and 2 steps forward",0,False
+4,turn right,"OBSERVATION_CHECK: FAILED: Stuck pointing left
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Make a 180-degree turn and face right again
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps left
+a purple ball 2 steps left and 2 steps forward
+a purple box 3 steps right",0,False
+5,go left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move left and be in front of the purple box.
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 3 steps left
+a purple ball 2 steps left and 1 step forward",0,False
+6,turn right,"OBSERVATION_CHECK: FAILED: Wall 3 steps left
+NEW_MEMORY: Wall 3 steps left
+PLAN: KEEP; Turn right, then go forward twice to reach the purple box, then pick it up and go left three times to reach the purple ball
+PREDICTION: Move right and see the purple box
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps left
+a purple box 1 step right and 3 steps forward",0,False
+7,go right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP; Go right, then go forward twice to reach the purple box, then pick it up and go left three times to reach the purple ball.
+PREDICTION: Move right and see the purple box.
+ACTION: go right","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 3 steps left
+a purple box 1 step right and 2 steps forward",0,False
+8,go right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP; Go right, then go forward twice to reach the purple box, then pick it up and go left three times to reach the purple ball.
+PREDICTION: Move right and see the purple box in front.
+ACTION: go right","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 3 steps left
+a purple box 1 step right and 1 step forward",0,False
+9,turn left,"OBSERVATION_CHECK: FAILED: Stuck turning in a loop
+NEW_MEMORY: Stuck in a loop after turning right, can't move forward as there's a wall ahead.
+PLAN: KEEP; Turn left, then go left twice to avoid the wall and move closer to the purple box.
+PREDICTION: Turn left and see a wall 3 steps left, 2 steps forward, purple box 1 step forward.
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right",0,False
+10,go left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP; Turn left, then go left twice.
+PREDICTION: See a wall 2 steps left, 1 step forward, purple box 1 step right.
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 2 steps right",0,False
+11,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop without making progress towards the goal.
+NEW_MEMORY: NONE
+PLAN: ABANDON; Turn right, go forward, turn left, pick up the purple box, turn right, go forward, turn right, and drop it next to the purple ball.
+PREDICTION: See the purple box next to the purple ball.
+ACTION: turn right","a wall 2 steps forward
+a wall 2 steps left
+a purple box 2 steps right and 1 step forward",0,False
+12,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Stuck in a loop after turning right, can't move forward due to a wall ahead.
+PLAN: KEEP; Turn left, try to move forward to escape the loop.
+PREDICTION: Move out of the current dead end.
+ACTION: turn left","a wall 2 steps forward
+a wall 2 steps right",0,False
+13,turn right,"OBSERVATION_CHECK: FAILED: Stuck
+NEW_MEMORY: Dead end loop formed by walls after turning right.
+PLAN: REPLAN; Go back to the starting point by turning right twice.
+PREDICTION: Escape the dead end loop and go back to the starting point.
+ACTION: turn right","a wall 2 steps forward
+a wall 2 steps left
+a purple box 2 steps right and 1 step forward",0,False
+14,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a dead-end loop, can't move forward due to walls.
+NEW_MEMORY: Dead-end loop formed by walls, can't move forward or left.
+PLAN: KEEP; Turn right twice and go back to the starting point.
+PREDICTION: Escape the dead-end loop and return to the starting point.
+ACTION: turn right","a wall 5 steps forward
+a wall 2 steps left
+a purple box 1 step left and 2 steps forward",0,False
+15,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a dead-end loop
+NEW_MEMORY: Dead-end loop formed by walls, can't move forward or left.
+PLAN: TURN RIGHT, GO FORWARD
+PREDICTION: Escape the dead-end loop and return to the starting point.
+ACTION: turn right","a wall 2 steps right
+a purple ball 4 steps forward",0,False
+16,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop, can't move forward or left
+NEW_MEMORY: Dead-end loop after turning right, can't move forward or left
+PLAN: TURN LEFT, GO FORWARD
+PREDICTION: Escape the dead-end loop
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps left
+a purple box 1 step left and 2 steps forward",0,False
+17,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Dead-end loop formed by walls, cannot move forward or left
+PLAN: TURN RIGHT, GO FORWARD
+PREDICTION: Move closer to the purple box
+ACTION: turn right","a wall 2 steps right
+a purple ball 4 steps forward",0,False
+18,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Dead-end loop formed by walls, can't move forward or left
+PLAN: TURN LEFT, GO FORWARD
+PREDICTION: Move away from the purple box, but necessary to break the loop
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps left
+a purple box 1 step left and 2 steps forward",0,False
+19,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 2 steps right
+PLAN: KEEP
+PREDICTION: Turn back towards the purple box
+ACTION: turn right","a wall 2 steps right
+a purple ball 4 steps forward",0,False
+20,turn left,"OBSERVATION_CHECK: ""FAILED: Can't move forward due to wall""
+NEW_MEMORY: ""Dead-end loop after turning right, can't move forward or left""
+PLAN: ""TURN BACK, TURN LEFT, GO FORWARD""
+PREDICTION: ""Move towards the purple ball""
+ACTION: ""turn left""","a wall 5 steps forward
+a wall 2 steps left
+a purple box 1 step left and 2 steps forward",0,False
+21,go right,"OBSERVATION_CHECK: ""FAILED: Stuck in a loop after turning right, can't move forward due to a wall ahead.""
+NEW_MEMORY: ""Dead-end loop formed by walls, can't move forward or left""
+PLAN: ""TURN BACK, GO FORWARD, TURN RIGHT""
+PREDICTION: ""Move to the intersection""
+ACTION: ""go right""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 2 steps left
+a purple box 1 step left and 1 step forward",0,False
+22,turn left,"OBSERVATION_CHECK: ""FAILED: Cannot move forward due to a wall ahead.""
+NEW_MEMORY: ""Dead-end loop formed by walls after turning right, can't move forward or left.""
+PLAN: ""TURN BACK, GO LEFT, GO FORWARD, TURN RIGHT""
+PREDICTION: ""Move to the intersection with the purple box and the purple ball""
+ACTION: turn left","a wall 2 steps forward
+a wall 3 steps left
+a purple box 1 step right and 1 step forward",0,False
+23,turn left,"OBSERVATION_CHECK: FAILED: Can't move forward due to a wall ahead.
+NEW_MEMORY: Dead-end loop formed by walls, cannot move forward or left.
+PLAN: KEEP
+PREDICTION: Move left to break the loop.
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right",0,False
+24,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Dead-end loop formed by walls after turning right, can't move forward or left.
+PLAN: TURN BACK, GO LEFT, GO FORWARD, TURN LEFT
+PREDICTION: Move left and break the loop.
+ACTION: turn right","a wall 2 steps forward
+a wall 3 steps left
+a purple box 1 step right and 1 step forward",0,False
+25,turn left,"OBSERVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: Dead-end loop formed by walls after turning right, can't move forward or left.
+PLAN: KEEP
+PREDICTION: Turn left to face the purple box
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right",0,False
+26,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop after turning right
+NEW_MEMORY: Wall 2 steps right, Dead-end loop formed by walls after turning right, can't move forward or left.
+PLAN: TURN BACK, GO RIGHT, GO FORWARD, TURN LEFT
+PREDICTION: Move towards the purple box
+ACTION: turn right","a wall 2 steps forward
+a wall 3 steps left
+a purple box 1 step right and 1 step forward",0,False
+27,turn left,"OBSERVATION_CHECK: FAILED: Can't move forward due to a wall ahead.
+NEW_MEMORY: Stuck in a loop after turning right, can't move forward due to a wall ahead.
+PLAN: KEEP
+PREDICTION: Turn back to avoid being stuck in a loop.
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right",0,False
+28,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop.
+NEW_MEMORY: Dead-end loop after turning left, can't move forward or left.
+PLAN: TURN BACK (right), GO RIGHT, GO FORWARD, TURN LEFT
+PREDICTION: Move out of the loop and face the purple box.
+ACTION: turn right","a wall 2 steps forward
+a wall 3 steps left
+a purple box 1 step right and 1 step forward",0,False
+29,turn right,"OBSERVATION_CHECK: ""FAILED: Stuck in a loop, can't move forward or left.""
+NEW_MEMORY: ""Dead-end loop formed by walls after turning right, can't move forward or left.""
+PLAN: ""TURN RIGHT, GO BACKWARD, TURN LEFT""
+PREDICTION: ""Move back and face the right direction.""
+ACTION: ""turn right""","a wall 4 steps forward
+a wall 2 steps left
+a purple box 1 step left and 1 step forward",0,False
+30,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Dead-end loop formed by walls after turning right, can't move forward or left.
+PLAN: TURN LEFT, GO BACKWARD, TURN RIGHT
+PREDICTION: Move back and face the right direction.
+ACTION: turn left","a wall 2 steps forward
+a wall 3 steps left
+a purple box 1 step right and 1 step forward",0,False
+31,turn left,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Turn left, now facing the purple box""
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right",0,False
+32,turn right,"OBSERVATION_CHECK: ""FAILED: Unable to move forward or turn left without hitting a wall; stuck in a loop.""
+NEW_MEMORY: ""Dead-end loop after turning left, can't move forward or left.""
+PLAN: ""Turn right and try to find an alternative path.""
+PREDICTION: ""Turn right, facing a different direction.""
+ACTION: ""turn right""","a wall 2 steps forward
+a wall 3 steps left
+a purple box 1 step right and 1 step forward",0,False
+33,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop, can't proceed forward.
+NEW_MEMORY: Dead-end loop formed by walls, can't move forward or turn left.
+PLAN: KEEP: Turn right, look for an alternative path.
+PREDICTION: ""Turn right, hopes to find an alternative path or way to reach the purple box.""
+ACTION: turn right","a wall 4 steps forward
+a wall 2 steps left
+a purple box 1 step left and 1 step forward",0,False
+34,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop after turning right, can't move forward or left.
+NEW_MEMORY: Dead-end loop formed by walls after turning right, can't move forward or left.
+PLAN: KEEP: Turn left, try to find a different path to reach the purple box.
+PREDICTION: Turn left to look for an alternative path.
+ACTION: turn left","a wall 2 steps forward
+a wall 3 steps left
+a purple box 1 step right and 1 step forward",0,False
+35,go back,"OBSERVATION_CHECK: FAILED: Stuck in loop, can't move forward or left.
+NEW_MEMORY: Dead-end loop formed by walls, can't move forward or left.
+PLAN: ABANDON: Navigate to an open area of the map and reevaluate the environment.
+PREDICTION: Escape the current dead-end situation.
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left
+a purple box 1 step right",0,False
+36,go right,"OBSERVATION_CHECK: FAILED: Stuck in a dead-end loop.
+NEW_MEMORY: 16. Dead-end loop with a purple box 1 step right after going back from the previous dead-end.
+PLAN: KEEP
+PREDICTION: Try to exit the new dead-end loop and find an open area.
+ACTION: go right","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left
+a purple box 1 step right",0,False
+37,go back,"OBSERVATION_CHECK: FAILED: Stuck in a loop, cannot move forward or left
+NEW_MEMORY: Dead-end loop after turning left, cannot move forward or left
+PLAN: KEEP
+PREDICTION: Turn around and go back one step
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left
+a purple box 1 step right",0,False
+38,go back,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Stuck in a loop after going back, cannot move forward or backward.
+PLAN: KEEP: Navigate to an open area of the map and reevaluate the environment.
+PREDICTION: Turn around and move backward one step
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left
+a purple box 1 step right",0,False
+39,turn left,"OBSERVATION_CHECK: FAILED: Did not make progress
+NEW_MEMORY: Dead-end loop after going back, cannot move forward or backward.
+PLAN: KEEP: Try moving left to escape the loop.
+PREDICTION: Turn left
+ACTION: turn left","a wall 3 steps forward
+a wall 1 step right",0,False
+40,turn right,"OBSERVATION_CHECK: FAILED: Stuck in loop after turning left
+NEW_MEMORY: Stuck in a loop after turning left, cannot move forward or left
+PLAN: ESCAPE: Try to find a new path
+PREDICTION: Hopefully, by turning right, we might find a new path
+ACTION: turn right","a wall 1 step forward
+a wall 3 steps left
+a purple box 1 step right",0,False
+41,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop, cannot move forward
+NEW_MEMORY: Dead-end loop after turning right, cannot move forward or right
+PLAN: KEEP: Try to find a new path, escape this loop
+PREDICTION: Hopefully, by turning left, we might find a new path
+ACTION: turn left","a wall 3 steps forward
+a wall 1 step right",0,False
+42,go back,"OBSERVATION_CHECK: ""FAILED: Stuck in a loop, cannot move forward or left""
+NEW_MEMORY: ""A loop: 3 steps forward, 1 step right (dead-end)""
+PLAN: ""NEW: Go back, then turn right to try a new path""
+PREDICTION: ""Hopefully, by going back and turning right, we might escape this loop and find a new path""
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 1 step right",0,False
+43,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: 9. Stuck in a loop after going back, cannot move forward or back
+PLAN: KEEP
+PREDICTION: Attempt to turn right to break the loop
+ACTION: turn right","a wall 1 step forward
+a wall 2 steps left
+a purple box 2 steps right",0,False
+44,"go back, turn left","OBSERVATION_CHECK: FAILED: Stuck in loop
+NEW_MEMORY: Wall 1 step forward, Wall 2 steps left, Loop when going back
+PLAN: KEEP: Go back, turn left
+PREDICTION: Try a new path by turning left
+ACTION: go back, turn left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 2 steps left
+a purple box 2 steps right",0,False
+45,go forward,"OBSERVATION_CHECK: FAILED: Stuck in a loop and can't move forward or left
+NEW_MEMORY: Looped path: Go back, turn left
+PLAN: ABANDON, TRY A NEW PATH
+PREDICTION: Discover a new path
+ACTION: go forward","a wall 1 step forward
+a wall 2 steps left
+a purple box 2 steps right",0,False
+46,turn right,"Observation_Check: FAILED: Hit a wall
+New_Memory: Wall 1 step forward, Wall 2 steps left, Purple box 2 steps right
+Plan: KEEP
+Prediction: Discover a new path
+Action: turn right","a wall 1 step left
+a purple box 2 steps forward",0,False
+47,go back,"OBSERVATION_CHECK: ""FAILED: Hit a wall""
+NEW_MEMORY: ""12. Looped path after turning right""
+PLAN: ""KEEP, TRY A NEW PATH: go back, turn left""
+PREDICTION: ""Potentially discover a new path""
+ACTION: ""go back""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step left
+a purple box 1 step forward",0,False
+48,go back,"OBSERVATION_CHECK: FAILED: Could not move forward, hit a wall.
+NEW_MEMORY: Looped path after going back and turning left.
+PLAN: KEEP, TRY A NEW PATH: go back, turn right
+PREDICTION: ""Potentially discover a new path""
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step left
+a purple box 1 step forward",0,False
+49,go forward,"OBSERVATION_CHECK: ""FAILED: stuck in a loop, cannot move forward or back""
+NEW_MEMORY: ""Loop: go back, turn right""
+PLAN: ""NEW PLAN: try a new path, go forward, then turn left""
+PREDICTION: ""Potentially discover a new path""
+ACTION: go forward","a wall 1 step left
+a purple box 1 step forward",0,False
+50,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Move closer to the purple box""
+ACTION: go forward","a wall 1 step left
+a purple box 1 step forward",0,False
+51,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward, Wall 1 step left
+PLAN: KEEP: turn left, go forward, turn left, pick up
+PREDICTION: Move closer to the purple box and pick it up
+ACTION: turn left","a wall 1 step forward
+a wall 3 steps left
+a purple box 1 step right",0,False
+52,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move closer to and pick up the purple box
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left
+a purple box 1 step right",0,False
+53,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left and face the purple box
+ACTION: turn left","a wall 3 steps forward
+a wall 1 step right",0,False
+54,turn right,"OBSERVATION_CHECK: FAILED: turned back into a dead-end
+NEW_MEMORY: Dead-end loop after turning left, cannot move forward or left.
+PLAN: KEEP
+PREDICTION: Turn right and see if there is another path
+ACTION: turn right","a wall 1 step forward
+a wall 3 steps left
+a purple box 1 step right",0,False
+55,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP: turn left, go forward, turn left, pick up
+PREDICTION: Turn left to face the purple box, then go forward to reach it
+ACTION: turn left","a wall 3 steps forward
+a wall 1 step right",0,False
+56,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP: turn left, go forward, turn left, pick up
+PREDICTION: Turn left to face the purple box, then go forward to reach it
+ACTION: turn left","a wall 6 steps forward
+a wall 3 steps right
+a purple box 1 step left
+a purple ball 1 step right and 5 steps forward",0,False
+57,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left to face the purple box
+ACTION: turn left","a wall 1 step left
+a purple box 1 step forward",0,False
+58,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn to face the purple box
+ACTION: turn right","a wall 6 steps forward
+a wall 3 steps right
+a purple box 1 step left
+a purple ball 1 step right and 5 steps forward",0,False
+59,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn to face the purple box
+ACTION: turn left","a wall 1 step left
+a purple box 1 step forward",0,False
+60,turn right,"OBSERVATION_CHECK: FAILED: Did not move closer to the purple box
+NEW_MEMORY: Dead-end loop after turning left, cannot move forward or left.
+PLAN: NEW_PLAN: go back, turn right, go forward, pick up
+PREDICTION: Move towards the purple box
+ACTION: turn right","a wall 6 steps forward
+a wall 3 steps right
+a purple box 1 step left
+a purple ball 1 step right and 5 steps forward",0,False
+61,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move towards the purple box and pick it up.
+ACTION: go forward","a wall 5 steps forward
+a wall 3 steps right
+a purple ball 1 step right and 4 steps forward",0,False
+62,go back,"OBSERVATION_CHECK: FAILED: No progress made towards the purple box
+NEW_MEMORY: Wall 5 steps forward, Wall 3 steps right, Purple ball 1 step right and 4 steps forward
+PLAN: go back, turn right, go forward
+PREDICTION: Move closer to the purple box and pick it up
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 3 steps right
+a purple ball 1 step right and 3 steps forward",0,False
+63,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall while attempting to go back
+NEW_MEMORY: Wall 1 step forward, Wall 1 step right
+PLAN: KEEP
+PREDICTION: Turn left to face the open direction
+ACTION: turn left","a wall 4 steps forward
+a wall 3 steps left
+a purple box 2 steps left and 1 step forward",0,False
+64,turn right,"OBSERVATION_CHECK: FAILED: Turned left into a dead-end loop, cannot move forward or left.
+NEW_MEMORY: Dead-end loop found moving left from previous position.
+PLAN: KEEP
+PREDICTION: Turn right to face the open direction.
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps right
+a purple ball 1 step right and 3 steps forward",0,False
+65,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn right to face the open direction towards the purple box.
+ACTION: turn right","a wall 3 steps forward
+a wall 3 steps right
+a purple ball 3 steps left and 1 step forward",0,False
+66,turn left,"OBSERVATION_CHECK: FAILED: Dead-end loop after turning right, cannot move forward.
+NEW_MEMORY: Stuck in a loop after turning right, cannot move forward or right.
+PLAN: KEEP turn left, go forward.
+PREDICTION: Turn left to escape the loop and face the open direction towards the purple box.
+ACTION: turn left","a wall 4 steps forward
+a wall 3 steps right
+a purple ball 1 step right and 3 steps forward",0,False
+67,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP turn left, go forward.
+PREDICTION: Turn left, then move forward one step towards the purple ball.
+ACTION: turn left","a wall 4 steps forward
+a wall 3 steps left
+a purple box 2 steps left and 1 step forward",0,False
+68,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop after turning left, cannot move forward.
+NEW_MEMORY: Wall 4 steps forward, Wall 3 steps left, Purple Box 2 steps left and 1 step forward. Dead-end loop found moving left from previous position.
+PLAN: KEEP turn right, go forward.
+PREDICTION: Move forward one step towards the purple box.
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps right
+a purple ball 1 step right and 3 steps forward",0,False
+69,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP turn right, go forward""
+PREDICTION: ""Move forward one step towards the purple ball""
+ACTION: ""go forward""","a wall 3 steps forward
+a wall 3 steps right
+a purple ball 1 step right and 2 steps forward",0,False
+70,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP turn right, go forward
+PREDICTION: ""Turn right, then move forward one step towards the purple ball""
+ACTION: turn right","a wall 3 steps forward
+a wall 3 steps left
+a purple ball 2 steps left and 1 step forward",0,False
+71,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP turn right, go forward
+PREDICTION: Move one step towards the purple ball
+ACTION: go forward","a wall 2 steps forward
+a purple ball 2 steps left",0,False
+72,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP turn right, go forward
+PREDICTION: Move one step right towards the purple ball
+ACTION: turn right","a wall 4 steps forward
+a wall 2 steps left
+a purple box 2 steps right and 3 steps forward",0,False
+73,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP turn right, go forward
+PREDICTION: Move one step right towards the purple ball
+ACTION: turn right","a wall 5 steps forward
+a purple box 3 steps left and 2 steps forward
+a purple ball 2 steps right",0,False
+74,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP turn right, go forward
+PREDICTION: Move one step right towards the purple ball
+ACTION: turn right","a wall 2 steps right
+a purple ball 2 steps forward",0,False
+75,turn right,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP turn right, go forward""
+PREDICTION: ""Move one step right towards the purple ball""
+ACTION: ""turn right""","a wall 2 steps forward
+a purple ball 2 steps left",0,False
+76,turn right,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP turn right, go forward""
+PREDICTION: ""Move one step right towards the purple ball""
+ACTION: ""turn right""","a wall 4 steps forward
+a wall 2 steps left
+a purple box 2 steps right and 3 steps forward",0,False
+77,go back,"OBSERVATION_CHECK: FAILED: Stuck in a loop, cannot move right.
+NEW_MEMORY: Loop discovered after turning right, cannot move right or forward.
+PLAN: GO BACK, TURN RIGHT, GO FORWARD
+PREDICTION: ""Move one step backward and turn right""
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 2 steps left
+a purple box 2 steps right and 2 steps forward",0,False
+78,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Pick up the purple box""
+ACTION: pick up","a wall 3 steps forward
+a wall 2 steps left
+a purple box 2 steps right and 2 steps forward",0,False
+79,turn right,"OBSERVATION_CHECK: ""FAILED: Wall 3 steps forward""
+NEW_MEMORY: ""Blocked path: Wall 3 steps forward.""
+PLAN: ""KEEP""
+PREDICTION: ""Turn right""
+ACTION: ""turn right""","a wall 5 steps forward
+a wall 3 steps left
+a purple box 2 steps left and 2 steps forward
+a purple ball 3 steps right",0,False
+80,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop after turning right, cannot move forward or right.
+NEW_MEMORY: A loop is discovered after turning right, stuck in this position.
+PLAN: Change direction continuously until closer to the goal is visible.
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps left
+a purple box 2 steps right and 2 steps forward",0,False
+81,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move closer to the purple box
+ACTION: go forward","a wall 2 steps forward
+a wall 2 steps left
+a purple box 2 steps right and 1 step forward",0,False
+82,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move closer to the purple box
+ACTION: turn left","a wall 2 steps forward
+a wall 2 steps right",0,False
+83,,"**OBSERVATION_CHECK:** ""FAILED: Stuck in a loop, can't move forward or left""
+**NEW_MEMORY:** ""Loop discovered after turning left, cannot move forward or left from the current position.""
+**PLAN:** ""KEEP""
+**PREDICTION:** ""Try to turn right to break the loop.""
+**ACTION:** turn right","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 2 steps right",0,False
+84,turn right,"OBSERVATION_CHECK: FAILED: Dead-end loop after turning left, cannot move forward or left.
+NEW_MEMORY: Stuck in a loop after turning left, cannot move forward or left.
+PLAN: KEEP, Change direction continuously until closer to the goal is visible.
+PREDICTION: Move right, expect to see a wall and update the observation.
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step left
+a purple box 3 steps right and 1 step forward",0,False
+85,turn left,"OBSERVATION_CHECK: FAILED: Unable to move right, stuck in a loop.
+NEW_MEMORY: Loop discovered after turning right, cannot move right or forward.
+PLAN: U-Turn and try moving left instead.
+PREDICTION: Move left, see the same wall and a clear path left.
+ACTION: turn left","a wall 1 step forward
+a wall 2 steps right",0,False
+86,turn right,"OBSERVATION_CHECK: FAILED: No progress made.
+NEW_MEMORY: Loop discovered after turning left, cannot move forward or left.
+PLAN: KEEP
+PREDICTION: Move right and see the same wall and a clear path right.
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step left
+a purple box 3 steps right and 1 step forward",0,False
+87,turn left,"OBSERVATION_CHECK: FAILED: Turn right did not result in moving away from the wall on the right.
+NEW_MEMORY: Blocked path: Wall to the right.
+PLAN: KEEP (U-Turn, then try moving left).
+PREDICTION: Turn left, clear path left, should see the same wall forward and to the right.
+ACTION: turn left","a wall 1 step forward
+a wall 2 steps right",0,False
+88,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop after turning left, cannot move forward or left.
+NEW_MEMORY: Dead-end loop after turning left, cannot move forward or left.
+PLAN: U-TURN, try moving forward.
+PREDICTION: Turn right, clear path forward.
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step left
+a purple box 3 steps right and 1 step forward",0,False
+89,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop, cannot move forward or backward.
+NEW_MEMORY: DEAD-END_LOOP: Turning right leads to a dead-end.
+PLAN: U-TURN, try alternating between turning left and right until no dead-end is found.
+PREDICTION: Possible clear path forward after U-turn.
+ACTION: turn left","a wall 1 step forward
+a wall 2 steps right",0,False
+90,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a dead-end.
+NEW_MEMORY: DEAD-END_LOOP: Turning right leads to a dead-end after 2 steps right.
+PLAN: KEEP: Try alternating turns starting with left.
+PREDICTION: Turning left might open up a new path.
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step right
+a purple ball 1 step left and 4 steps forward",0,False
+91,turn right,"OBSERVATION_CHECK: FAILED: Hitting a wall
+NEW_MEMORY: DEAD-END_LOOP: Turning left at the current spot leads to a dead-end and hitting a wall.
+PLAN: CHANGE: Instead of alternating turns, try going right regardless of the view since it seems to be the only available path.
+PREDICTION: Making an attempt to escape the current dead-end situation.
+ACTION: turn right","a wall 1 step forward
+a wall 2 steps right",0,False
+92,turn left,"OBSERVVATION_CHECK: FAILED: Hitting a wall
+NEW_MEMORY: DEAD-END_LOOP: Turning right leads to a dead-end after 2 steps right.
+PLAN: KEEP
+PREDICTION: Trying to find an alternative path.
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step right
+a purple ball 1 step left and 4 steps forward",0,False
+93,go forward,"OBSERVATION_CHECK: FAILED: Dead-end loop after turning left
+NEW_MEMORY: DEAD-END_LOOP: Turning left at the current spot leads to a dead-end and hitting a wall.
+PLAN: KEEP
+PREDICTION: Should be able to move forward now.
+ACTION: go forward","a wall 4 steps forward
+a wall 1 step right
+a purple ball 1 step left and 3 steps forward",0,False
+94,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Will be able to move forward one more step towards the purple ball.
+ACTION: go forward","a wall 3 steps forward
+a wall 1 step right
+a purple ball 1 step left and 2 steps forward",0,False
+95,go forward,"OBSERVATION_CHECK: **FAILED: hit a wall**
+NEW_MEMORY: **DEAD-END_LOOP: Turning right leads to a dead-end after 2 steps right.**
+PLAN: **KEEP**
+PREDICTION: **WILL try to move forward again, expecting to hit the wall.**
+ACTION: **go forward**","a wall 2 steps forward
+a wall 1 step right
+a purple ball 1 step left and 1 step forward",0,False
+96,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 2 steps forward
+PLAN: Turn right to try and find a different path
+PREDICTION: Will turn right and observe if there's a different path
+ACTION: turn right","a wall 1 step forward
+a wall 2 steps left",0,False
+97,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall after turning right
+NEW_MEMORY: DEAD-END_LOOP: Turning right leads to a dead-end after 2 steps right.
+PLAN: Turn left and try to go forward to find a different path
+PREDICTION: Will turn left and observe if there's a different path
+ACTION: turn left","a wall 2 steps forward
+a wall 1 step right
+a purple ball 1 step left and 1 step forward",0,False
+98,turn left,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Will turn left to find an opening to reach the purple ball.""
+ACTION: ""turn left""","a wall 6 steps forward
+a wall 2 steps right
+a purple ball 1 step right and 1 step forward",0,False
+99,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Turn left to align with the purple ball.""
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step left
+a purple box 3 steps right and 4 steps forward",0,False
+100,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Move towards the purple box to pick it up.""
+ACTION: ""go forward""","a wall 4 steps forward
+a wall 1 step left
+a purple box 3 steps right and 3 steps forward",0,False
+101,pick up,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Pick up the purple box""
+ACTION: ""pick up""","a wall 4 steps forward
+a wall 1 step left
+a purple box 3 steps right and 3 steps forward",0,False
+102,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""The purple box will be in front of the purple ball""
+ACTION: ""go forward""","a wall 3 steps forward
+a wall 1 step left
+a purple box 3 steps right and 2 steps forward",0,False
+103,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The purple box will be next to the purple ball""
+ACTION: go forward","a wall 2 steps forward
+a wall 1 step left
+a purple box 3 steps right and 1 step forward",0,False
+104,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The purple box will be next to the purple ball""
+ACTION: go forward","a wall 1 step forward
+a wall 1 step left
+a purple box 3 steps right",0,False
+105,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The purple box will be next to the purple ball""
+ACTION: go forward","a wall 1 step forward
+a wall 1 step left
+a purple box 3 steps right",0,False
+106,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The purple box will be next to the purple ball""
+ACTION: go forward","a wall 1 step forward
+a wall 1 step left
+a purple box 3 steps right",0,False
+107,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""The purple box will be next to the purple ball""
+ACTION: go forward","a wall 1 step forward
+a wall 1 step left
+a purple box 3 steps right",0,False
+108,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: **WALL_1_STEP_FORWARD**
+PLAN: KEEP
+PREDICTION: ""The purple box will not move forward""
+ACTION: turn left","a wall 1 step forward
+a wall 1 step right",0,False
+109,turn right,"OBSERVATION_CHECK: FAILED: Could not move forward
+NEW_MEMORY: DEAD-END_LOOP: Could not move forward or left
+PLAN: CHANGE_DIRECTION
+ACTION: turn right","a wall 1 step forward
+a wall 1 step left
+a purple box 3 steps right",0,False
+110,turn left,"OBSERVVATION_CHECK: FAILED: Hit a wall when trying to move forward.
+NEW_MEMORY: WALL_1_STEP_FORWARD
+PLAN: KEEP
+PREDICTION: Should see the same wall 1 step forward.
+ACTION: turn left","a wall 1 step forward
+a wall 1 step right",0,False
+111,,"OBSERVATION_CHECK: FAILED: Previous action did not change the observation, stuck in a loop.
+NEW_MEMORY: DEAD-END_LOOP: Turning right leads to a dead-end after 2 steps right.
+PLAN: $(""KEEP""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+112,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Move forward one step towards the purple box.""
+ACTION: ""go forward""","a wall 1 step forward
+a wall 1 step right",0,False
+113,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward
+PLAN: Try to reposition and find a new path
+PREDICTION: Turn to find a new path
+ACTION: turn right","a wall 1 step forward
+a wall 1 step left
+a purple box 3 steps right",0,False
+114,turn right,"OBSERVATION_CHECK: FAILED: Cannot move forward or right
+NEW_MEMORY: DEAD-END_LOOP: Turning right leads to a dead-end after 2 steps right.
+PLAN: KEEP
+PREDICTION: Attempting to turn right again might lead to the same dead-end, but we need to break the loop.
+ACTION: turn right","a wall 1 step left
+a purple box 3 steps forward",0,False
+115,turn right,"OBSERVATION_CHECK: FAILED: Cannot move forward or left
+NEW_MEMORY: DEAD-END_LOOP: Turning left at the current spot leads to a dead-end and hitting a wall.
+PLAN: KEEP
+PREDICTION: Check for new path or dead-end
+ACTION: turn right","a wall 6 steps forward
+a wall 1 step right
+a purple box 3 steps left
+a purple ball 1 step left and 5 steps forward",0,False
+116,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: DEAD-END_LOOP: Turning right leads to a dead-end after 2 steps right.
+PLAN: KEEP: Turn back and try another path
+PREDICTION: Possible dead-end, might need to turn around.
+ACTION: turn left","a wall 1 step left
+a purple box 3 steps forward",0,False
+117,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: DEAD-END_LOOP: Turning left leads to a dead-end and hitting a wall
+PLAN: KEEP: Turn right
+PREDICTION: Going back to explore another path
+ACTION: turn right","a wall 6 steps forward
+a wall 1 step right
+a purple box 3 steps left
+a purple ball 1 step left and 5 steps forward",0,False
+118,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move closer to the purple ball
+ACTION: go forward","a wall 5 steps forward
+a wall 1 step right
+a purple ball 1 step left and 4 steps forward",0,False
+119,go forward,"OBSERVATION_CHECK: FAILED: Can't move forward anymore
+NEW_MEMORY: DEAD-END_LOOP: Can't move forward or backward from this position
+PLAN: REVISE: Turn right, go forward, turn right, drop box, pick up ball
+PREDICTION: Move closer to the purple ball, drop the purple box, pick up the purple ball
+ACTION: go forward","a wall 4 steps forward
+a wall 1 step right
+a purple ball 1 step left and 3 steps forward",0,False
+120,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move closer to the purple ball
+ACTION: go forward","a wall 3 steps forward
+a wall 1 step right
+a purple ball 1 step left and 2 steps forward",0,False
+121,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move closer to the purple ball
+ACTION: go forward","a wall 2 steps forward
+a wall 1 step right
+a purple ball 1 step left and 1 step forward",0,False
+122,turn right,"OBSERVATION_CHECK: FAILED: Cannot move forward, hitting a wall
+NEW_MEMORY: Wall 2 steps forward, Wall 1 step right, Purple ball 1 step left and 1 step forward
+PLAN: KEEP
+PREDICTION: Turn right to face the purple ball
+ACTION: turn right","a wall 1 step forward
+a wall 2 steps left",0,False
+123,turn right,"OBSERVATION_CHECK: ""FAILED: Hit a wall""
+NEW_MEMORY: ""WALL_1_STEP_FORWARD""
+PLAN: ""REVISE: Turn right, go forward, turn right, drop box, pick up ball, turn left, go forward, turn left, drop ball""
+PREDICTION: ""Turn right to face a new direction""
+ACTION: ""turn right""","a wall 5 steps forward
+a wall 1 step left
+a purple box 3 steps right and 4 steps forward",0,False
+124,turn right,"OBSERVATION_CHECK: FAILED: Can't move forward or left
+NEW_MEMORY: DEAD-END_LOOP: Could not move forward or left
+PLAN: REVISE: Turn right, go forward, turn right, drop box, pick up ball, turn left, go forward, turn left, drop ball
+PREDICTION: ""Turn right to face a new direction""
+ACTION: turn right","a wall 6 steps forward
+a wall 2 steps right
+a purple ball 1 step right and 1 step forward",0,False
+125,turn left,"OBSERVATION_CHECK: FAILED: HIT_WALL_FORWARD
+NEW_MEMORY: WALL_1_STEP_FORWARD
+PLAN: KEEP
+PREDICTION: ""Turning left to change direction""
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step left
+a purple box 3 steps right and 4 steps forward",0,False
+126,turn right,"OBSERVATION_CHECK: FAILED: Could not move forward
+NEW_MEMORY: DEAD-END_LOOP: Could not move forward or left
+PLAN: KEEP
+PREDICTION: Turn right to check if there's a new direction
+ACTION: turn right","a wall 6 steps forward
+a wall 2 steps right
+a purple ball 1 step right and 1 step forward",0,False
+127,turn left,"OBSERVATION_CHECK: FAILED: hit a wall
+NEW_MEMORY: DEAD-END_LOOP: Turning left at the current spot leads to a dead-end and hitting a wall
+PLAN: KEEP
+PREDICTION: Turn left to check next possible direction
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step left
+a purple box 3 steps right and 4 steps forward",0,True

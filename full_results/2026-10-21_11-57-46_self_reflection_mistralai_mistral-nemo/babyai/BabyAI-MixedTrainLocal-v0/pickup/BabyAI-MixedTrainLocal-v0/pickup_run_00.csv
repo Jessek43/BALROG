@@ -1,0 +1,368 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn left,"NEW_MEMORY: Wall 5 steps forward, Wall 2 steps right, Grey Box 3 steps left and 2 steps forward.
+PLAN: Turn left, then take 2 steps forward to reach the grey box, then use 'toggle' to pick it up.
+PREDICTION: Grey box will be directly below you.
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps left
+a grey box 2 steps right and 3 steps forward",0,False
+1,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Grey box will be picked up.
+ACTION: toggle","a wall 5 steps forward
+a wall 2 steps left
+a grey box 2 steps right and 3 steps forward",0,False
+2,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Should be able to turn left and approach the grey box.
+ACTION: turn left","a wall 2 steps forward
+a wall 2 steps left",0,False
+3,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Should move closer to the grey box""
+ACTION: ""go forward""","a wall 1 step forward
+a wall 2 steps left",0,False
+4,turn right,"OBSERVATION_CHECK: ""FAILED: Hit a wall""
+NEW_MEMORY: ""Wall 1 step forward""
+PLAN: ""Turn right, go forward to check for the grey box""
+PREDICTION: ""Should move right and forward, potentially towards the grey box""
+ACTION: turn right","a wall 5 steps forward
+a wall 1 step left
+a grey box 3 steps right and 3 steps forward",0,False
+5,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward
+PLAN: Turn around, then go forward.
+PREDICTION: Move back and forward, hopefully towards the grey box.
+ACTION: turn right","a wall 6 steps forward
+a wall 2 steps right
+a grey box 3 steps left and 3 steps forward",0,False
+6,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 6 steps forward
+PLAN: Turn around twice, then go forward.
+PREDICTION: Move back, turn right, and then go forward, hoping to pass the wall.
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step right",0,False
+7,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall.
+NEW_MEMORY: Wall ahead.
+PLAN: Turn around, then go forward.
+PREDICTION: Move back, then move forward.
+ACTION: turn left","a wall 6 steps forward
+a wall 2 steps right
+a grey box 3 steps left and 3 steps forward",0,False
+8,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall.
+NEW_MEMORY: Wall ahead.
+PLAN: KEEP
+PREDICTION: Turn around and move forward.
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step right",0,False
+9,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall ahead
+PLAN: Turn left, then go forward
+PREDICTION: Move towards the grey box
+ACTION: turn left","a wall 6 steps forward
+a wall 2 steps right
+a grey box 3 steps left and 3 steps forward",0,False
+10,turn right,"OBSERVATION_CHECK: FAILED: Turned left and hit a wall.
+NEW_MEMORY: Wall ahead, facing the same wall as before.
+PLAN: KEEP
+PREDICTION: Turn right to face the grey box.
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step right",0,False
+11,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left to face the way towards the grey box.
+ACTION: turn left","a wall 6 steps forward
+a wall 2 steps right
+a grey box 3 steps left and 3 steps forward",0,False
+12,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn right to face the grey box.
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step right",0,False
+13,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop facing the same wall
+NEW_MEMORY: Wall ahead, facing the same wall as before.
+PLAN: Turn right, go forward, turn right, go forward
+PREDICTION: Turn right to face the open path and move forward
+ACTION: turn right","a wall 1 step forward
+a wall 2 steps left",0,False
+14,turn right,"OBSERVATION_CHECK: FAILED: hitting a wall
+NEW_MEMORY: Wall 1 step forward
+PLAN: Turn right, go forward, end the loop, turn right, go forward
+PREDICTION: Turn to face the open path
+ACTION: turn right","a wall 5 steps forward
+a wall 1 step left
+a grey box 3 steps right and 3 steps forward",0,False
+15,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move closer to the grey box
+ACTION: go forward","a wall 4 steps forward
+a wall 1 step left
+a grey box 3 steps right and 2 steps forward",0,False
+16,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Get closer to the grey box
+ACTION: go forward","a wall 3 steps forward
+a wall 1 step left
+a grey box 3 steps right and 1 step forward",0,False
+17,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn right and be able to see the grey box directly.
+ACTION: turn right","a wall 6 steps forward
+a wall 3 steps left
+a grey box 1 step left and 3 steps forward",0,False
+18,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: See the grey box directly
+ACTION: turn right","a wall 4 steps forward
+a wall 1 step right",0,False
+19,"None (stuck, no valid action to take based on current observation)","OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 4 steps forward, Wall 1 step right
+PLAN: KEEP
+PREDICTION: Nothing changes
+ACTION: None (stuck, no valid action to take based on current observation)","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 1 step right",0,False
+20,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall while trying to go forward.
+NEW_MEMORY: Wall 1 step right
+PLAN: KEEP
+PREDICTION: Turn right and observe new surroundings
+ACTION: turn right","a wall 1 step forward
+a wall 3 steps left",0,False
+21,turn left,"OBSERVATION_CHECK: FAILED: Wall ahead
+NEW_MEMORY: Wall ahead, cannot go forward.
+PLAN: KEEP
+PREDICTION: Turn left and observe new surroundings.
+ACTION: turn left","a wall 3 steps forward
+a wall 1 step right",0,False
+22,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop, turning left doesn't change the observation.
+NEW_MEMORY: Loop detected: Turning left and right between walls doesn't change observation.
+PLAN: KEEP
+PREDICTION: Turn right to break the loop.
+ACTION: turn right","a wall 1 step forward
+a wall 3 steps left",0,False
+23,turn right,"OBSERVATION_CHECK: FAILED: Cannot go forward, wall ahead.
+NEW_MEMORY: Wall 1 step forward, stuck in a loop turning left and right.
+PLAN: KEEP
+PREDICTION: Turn right to break the loop.
+ACTION: turn right","a wall 4 steps forward
+a wall 1 step left
+a grey box 3 steps right and 2 steps forward",0,False
+24,go forward,"OBSERVATION_CHECK: FAILED: Stuck in a loop turning left and right
+NEW_MEMORY: Walls with no visible way further ahead. Stuck in a loop, cannot progress
+PLAN: REVISED PLAN - Go back, turn left, go forward, end the loop, turn right, go forward
+PREDICTION: Should break the loop and get closer to the grey box
+ACTION: go forward","a wall 3 steps forward
+a wall 1 step left
+a grey box 3 steps right and 1 step forward",0,False
+25,go back,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Move closer to the grey box""
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 1 step left
+a grey box 3 steps right",0,False
+26,turn right,"OBSERVATION_CHECK: FAILED: Blocked by wall
+NEW_MEMORY: Wall 2 steps forward, Wall 1 step left
+PLAN: KEEP
+PREDICTION: Turn towards the grey box
+ACTION: turn right","a wall 2 steps left
+a grey box 3 steps forward",0,False
+27,go back,"OBSERVATION_CHECK: FAILED: Stuck in a loop turning left and right.
+NEW_MEMORY: Wall ahead, cannot go forward. Stuck in a loop, cannot progress.
+PLAN: ""Go 3 steps back, turn left, then go forward.""
+PREDICTION: Move away from the wall and reposition towards the grey box.
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps left
+a grey box 2 steps forward",0,False
+28,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move closer to the grey box.
+ACTION: go forward","a wall 2 steps left
+a grey box 1 step forward",0,False
+29,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move closer to the grey box.
+ACTION: go forward","a wall 2 steps left
+a grey box 1 step forward",0,False
+30,"None (stuck, no valid action to take based on current observation)","Observation_Check: FAILED: Hit a wall
+New_Memory: Wall ahead, cannot go forward. Stuck in a loop, cannot progress.
+Plan: KEEP
+Prediction: No change in observation, stuck in the same position.
+Action: None (stuck, no valid action to take based on current observation)","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps left
+a grey box 1 step forward",0,False
+31,go back,"OBSERVATION_CHECK: ""FAILED: Agent is against a wall and cannot progress""
+NEW_MEMORY: ""Wall 1 step forward, wall 2 steps left""
+PLAN: ""KEEP"" My current plan should still work, trying to go back to open space.
+PREDICTION: ""Should be able to move back one step, observing an open path.""
+ACTION: ""go back""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps left
+a grey box 1 step forward",0,False
+32,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a corner, cannot move back
+NEW_MEMORY: Wall 1 step forward, wall 2 steps left, cannot go back
+PLAN: ""UPDATE"" Turn left, try to find a new path
+PREDICTION: ""May succeed in finding a new path or may turn back to the starting point""
+ACTION: turn left","a wall 2 steps forward
+a wall 3 steps left
+a grey box 1 step right",0,False
+33,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 2 steps forward
+PLAN: KEEP Turn left, try to find a new path
+PREDICTION: May turn back to an open area
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right",0,False
+34,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP Turn left, try to find a new path
+PREDICTION: May find a new path to the grey box
+ACTION: turn left","a wall 5 steps forward
+a wall 3 steps right
+a grey box 1 step left",0,False
+35,go back,"OBSERVATION_CHECK: FAILED: Stuck, No progress made
+NEW_MEMORY: Wall 3 steps right is a dead end
+PLAN: KEEP Turn around, find a new path
+PREDICTION: Move backwards, may find a new path
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 3 steps right",0,False
+36,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 5 steps forward and 3 steps right is a dead end
+PLAN: TURN AROUND, FIND NEW PATH
+PREDICTION: Change direction, avoid the dead end
+ACTION: turn right","a wall 3 steps forward
+a wall 3 steps right",0,False
+37,turn left,"OBSERVATION_CHECK: FAILED: Dead end, cannot move forward
+NEW_MEMORY: Wall 5 steps forward and 3 steps right is a dead end
+PLAN: TURN LEFT, FIND NEW PATH
+PREDICTION: Change direction, avoid dead end
+ACTION: turn left","a wall 4 steps forward
+a wall 3 steps right",0,False
+38,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Wall 3 steps right and 1 step forward is a dead end.
+PLAN: FIND NEW PATH, MOVE ALONG THE WALL
+PREDICTION: Change direction, move along the wall
+ACTION: turn left","a wall 4 steps forward
+a wall 3 steps left
+a grey box 1 step left and 1 step forward",0,False
+39,go back,"OBSERVATION_CHECK: FAILED: Hit a wall while trying to move left
+NEW_MEMORY: Wall 1 step left
+PLAN: FIND NEW PATH, MOVE ALONG THE WALL
+PREDICTION: Change direction, move forward
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a grey box 1 step left",0,False
+40,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 4 steps forward
+PLAN: KEEP FIND NEW PATH, MOVE ALONG THE WALL
+PREDICTION: Turn around, face open direction
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps left",0,False
+41,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: WALL 5 STEPS FORWARD, WALL 2 STEPS LEFT
+PLAN: FIND NEW PATH, TRY MOVING LEFT
+PREDICTION: MOVE TOWARD OPEN SPACE ON LEFT
+ACTION: turn left","a wall 3 steps forward
+a grey box 1 step left",0,False
+42,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: REACH THE GREY BOX
+ACTION: go forward","a wall 2 steps forward
+a wall 3 steps left",0,False
+43,turn left,"OBSERVATION_CHECK: FAILED: Wall ahead
+NEW_MEMORY: Wall 2 steps forward
+PLAN: KEEP
+PREDICTION: Discover nearby path
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right
+a grey box 1 step left and 1 step forward",0,False
+44,turn left,"OBSERVATION_CHECK: FAILED: Couldn't move forward, hit a wall
+NEW_MEMORY: Wall 3 steps right and 1 step forward is a dead end
+PLAN: KEEP
+PREDICTION: Turn left to try a different path
+ACTION: turn left","a wall 5 steps forward
+a wall 3 steps right
+a grey box 1 step right and 1 step forward",0,False
+45,turn right,"OBSERVATION_CHECK: FAILED: Tried to move left, but still facing a wall and a blocked path.
+NEW_MEMORY: Wall 3 steps right and 1 step forward is a dead end.
+PLAN: KEEP
+PREDICTION: Turn right to try a different path.
+ACTION: turn right","a wall 3 steps forward
+a wall 2 steps right
+a grey box 1 step left and 1 step forward",0,False
+46,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 5 steps forward, Wall 2 steps right, Grey Box 3 steps left and 2 steps forward
+PLAN: FIND NEW PATH, MOVE LEFT TO CIRCUMVENT WALL
+PREDICTION: Find alternative route to grey box
+ACTION: turn left","a wall 5 steps forward
+a wall 3 steps right
+a grey box 1 step right and 1 step forward",0,False
+47,"turn right, go forward","OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Wall 5 steps forward, Wall 3 steps right, Dead end left and forward
+PLAN: SEEK NEW PATH, MOVE RIGHT AND FORWARD TO KEEP LOOKING
+PREDICTION: Possibly another dead end, but must try new route
+ACTION: turn right, go forward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a grey box 1 step right",0,False
+48,turn right,"OBSERVATION_CHECK: ""FAILED: Did not move closer to the goal""
+NEW_MEMORY: ""Wall 5 steps forward is a dead end. Turned 1 step right and 1 step forward into another dead end.""
+PLAN: ""KEEP""
+PREDICTION: ""Finding a new path""
+ACTION: ""turn right""","a wall 3 steps right
+a grey box 1 step forward",0,False
+49,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Picking up the grey box""
+ACTION: ""go forward""","a wall 3 steps right
+a grey box 1 step forward",0,False
+50,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Pick up the grey box""
+ACTION: pick up","You carry a grey box
+a wall 3 steps forward
+a wall 3 steps right",0.2828125,True

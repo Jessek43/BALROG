@@ -1,0 +1,495 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn right,"NEW_MEMORY: Wall forward, Wall left 3 steps
+PLAN: Turn right, Go forward, Pick up key
+PREDICTION: Key will be picked up
+ACTION: turn right","a wall 4 steps forward
+a wall 2 steps left
+a blue key 1 step right and 3 steps forward",0,False
+1,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn right, Go forward, Key will be picked up
+ACTION: turn right","a wall 5 steps forward
+a wall 3 steps right
+a blue key 3 steps left and 1 step forward",0,False
+2,turn left,"OBSERVATION_CHECK: FAILED: Tried to move forward but hit a wall
+NEW_MEMORY: Wall 1 step forward
+PLAN: Turn left, Turn right, Go forward, Pick up key
+PREDICTION: Turn left, Turn right, Move forward, Key will be picked up
+ACTION: turn left","a wall 4 steps forward
+a wall 2 steps left
+a blue key 1 step right and 3 steps forward",0,False
+3,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn right, Turn left, Move forward, Pick up key
+ACTION: turn right","a wall 5 steps forward
+a wall 3 steps right
+a blue key 3 steps left and 1 step forward",0,False
+4,go forward,"OBSERVATION_CHECK: FAILED: Stuck in a turning loop
+NEW_MEMORY: Stuck 3 steps left from the blue key
+PLAN: Keep
+Predicted Effect: Turn left, Turn right, Move forward, Pick up key
+ACTION: go forward","a wall 4 steps forward
+a wall 3 steps right
+a blue key 3 steps left",0,False
+5,turn left,"OBSERVATION_CHECK: FAILED: Stuck 3 steps left from the blue key
+NEW_MEMORY: Stuck in a loop, unable to move left or forward
+PLAN: KEEP: Turn left, Go forward, Pick up key
+PREDICTION: Reaching the blue key
+ACTION: turn left","a wall 3 steps left
+a blue key 3 steps forward",0,False
+6,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Picking up the blue key
+ACTION: go forward","a wall 3 steps left
+a blue key 2 steps forward",0,False
+7,turn left,"OBSERVATION_CHECK: FAILED: Unable to move forward due to wall
+NEW_MEMORY: ""Wall 1 step forward""
+PLAN: Turn left, Try to go forward again
+PREDICTION: Should run into another wall, updating memory accordingly
+ACTION: turn left","a wall 3 steps forward
+a blue key 2 steps right",0,False
+8,turn right,"OBSERVATION_CHECK: FAILED: Hit wall while trying to go forward
+NEW_MEMORY: Stuck in a loop, unable to move left or forward
+PLAN: Turn right, Try to go forward
+PREDICTION: Should now be able to reach the blue key
+ACTION: turn right","a wall 3 steps left
+a blue key 2 steps forward",0,False
+9,go backward,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Stuck in a loop, unable to move left or forward
+PLAN: Try to go backward
+PREDICTION: Move away from the wall and hopefully out of the loop
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps left
+a blue key 1 step forward",0,False
+10,go backward,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Wall blocking movement 1 step forward, Stuck 1 step left from the blue key
+PLAN: Retreat, assess the situation again, and try a new approach
+PREDICTION: Move away from the wall and potentially break the loop
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps left
+a blue key 1 step forward",0,False
+11,go backward,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Stuck in a loop, unable to move left or forward
+PLAN: Retreat, reassess, and try a new approach
+PREDICTION: Move away from the wall and reassess the situation
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps left
+a blue key 1 step forward",0,False
+12,go backward,"OBSERVATION_CHECK: ""FAILED: Unable to move closer to the blue key, stuck in a loop""
+NEW_MEMORY: ""Stuck in a loop, unable to move left or forward from the blue key""
+PLAN: ""KEEP: Retreat, reassess, and try a new approach""
+PREDICTION: ""Move away from the wall and reassess the situation""
+ACTION: ""go backward""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps left
+a blue key 1 step forward",0,False
+13,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall instead of moving backward
+NEW_MEMORY: Wall blocking movement 1 step backward
+PLAN: KEEP: Turn right and try to find another way around the wall
+PREDICTION: Will move away from the wall and reassess the situation
+ACTION: turn right","a wall 4 steps forward
+a blue key 1 step left",0,False
+14,turn left,"OBSERVATION_CHECK: FAILED: Could not move forward or left, stuck
+NEW_MEMORY: Wall blocking movement 1 step forward, Stuck 1 step left from the blue key
+PLAN: KEEP: Attempt to bypass the wall to the left and try again to reach the blue key
+PREDICTION: Will try to find a gap in the wall on the left
+ACTION: turn left","a wall 3 steps left
+a blue key 1 step forward",0,False
+15,turn right,"OBSERVATION_CHECK: FAILED: Unable to move left or forward
+NEW_MEMORY: Stuck in a loop, unable to move left or forward from the blue key
+PLAN: KEEP: Turn right and go backward to find another path
+PREDICTION: Should get me out of this loop and try a different route to the blue key
+ACTION: turn right","a wall 4 steps forward
+a blue key 1 step left",0,False
+16,turn right,"OBSERVATION_CHECK: FAILED: Unable to move left or forward
+NEW_MEMORY: Stuck 1 step left from the blue key
+PLAN: KEEP - Try turning around and moving backward to find another path
+PREDICTION: Should get me out of this loop and try a different route to the blue key
+ACTION: turn right","a wall 5 steps forward
+a wall 3 steps right",0,False
+17,go backward,"OBSERVATION_CHECK: FAILED: Unable to move forward or left
+NEW_MEMORY: Stuck in a loop, unable to move left or forward
+PLAN: KEEP - Try moving backward to find another path
+PREDICTION: Move backward and hopefully find a different route to the blue key
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 3 steps right",0,False
+18,go backward,"OBSERVATION_CHECK: FAILED: Cannot move backward
+NEW_MEMORY: Wall blocking movement 1 step backward
+PLAN: KEEP - Try moving backward to find another path
+PREDICTION: Attempt to move backward again
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 3 steps right",0,False
+19,turn right,"OBSERVATION_CHECK: FAILED: Unable to move backward, wall blocking path
+NEW_MEMORY: Wall blocking movement 1 step backward
+PLAN: KEEP - Try turning in place, then move forward, then try turning again to find another path
+PREDICTION: Turn in place and observe surroundings
+ACTION: turn right","a wall 3 steps forward
+a wall 3 steps left
+a blue key 3 steps right",0,False
+20,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Stuck 3 steps left from the blue key, Stuck 1 step right up from the blue key
+PLAN: KEEP - Try moving right, then try turning in place, then move forward, then try turning again to find another path
+PREDICTION: Should now be able to turn in place
+ACTION: turn right","a wall 3 steps left
+a blue key 3 steps forward",0,False
+21,go left,"OBSERVERVATION_CHECK: FAILED: Stuck in a loop, unable to move left or forward
+NEW_MEMORY: Stuck 3 steps left from the blue key
+PLAN: DROP - Try moving left, then try turning in place, then move forward to find another path
+PREDICTION: Should be able to move left
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps left
+a blue key 2 steps forward",0,False
+22,go backward,"OBSERVATION_CHECK: FAILED: Stuck in a loop, unable to move left or forward
+NEW_MEMORY: Wall blocking movement 1 step left, Stuck 3 steps left from the blue key
+PLAN: DROP - Try moving backward, then try turning right, then move forward
+PREDICTION: If successful, should move backward and be able to turn right
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps left
+a blue key 1 step forward",0,False
+23,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: If successful, should allow agent to navigate towards right
+ACTION: turn right","a wall 4 steps forward
+a blue key 1 step left",0,False
+24,go backward,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall to the right 4 steps
+PLAN: KEEP
+PREDICTION: Try to move backward
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 2 steps left",0,False
+25,go backward,"OBSERVATION_CHECK: FAILED: Stuck in a loop, unable to move left or forward
+NEW_MEMORY: Stuck 3 steps left from the blue key, Stuck 1 step right up from the blue key
+PLAN: KEEP
+PREDICTION: Try moving backward
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 2 steps left",0,False
+26,turn left,"OBSERVICATION_CHECK: FAILED: Unable to move backward, trying to break the loop.
+NEW_MEMORY: Stuck 2 steps forward from the blue key, Wall 2 steps left
+PLAN: DROP - Try moving left, then try turning right, then move forward
+PREDICTION: Try moving left
+ACTION: turn left","a wall 2 steps forward
+a wall 2 steps right
+a blue key 2 steps left and 1 step forward",0,False
+27,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop, unable to move left or forward
+NEW_MEMORY: Stuck 2 steps forward from the blue key, Wall 2 steps left
+PLAN: KEEP
+PREDICTION: Try moving right
+ACTION: turn right","a wall 2 steps forward
+a wall 2 steps left",0,False
+28,turn left,"OBSERVVATION_CHECK: FAILED: Cannot move right
+NEW_MEMORY: Stuck 3 steps left from the blue key
+PLAN: KEEP
+PREDICTION: Turn around
+ACTION: turn left","a wall 2 steps forward
+a wall 2 steps right
+a blue key 2 steps left and 1 step forward",0,False
+29,turn left,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Stuck in a loop, unable to move left or forward from the blue key
+PLAN: NEW_PLAN - Turn left, move forward, try to pick up the blue key
+PREDICTION: Move forward and pick up the blue key if possible
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps right
+a blue key 1 step right and 2 steps forward",0,False
+30,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward and pick up the blue key if possible
+ACTION: go forward","a wall 4 steps forward
+a wall 2 steps right
+a blue key 1 step right and 1 step forward",0,False
+31,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward and pick up the blue key if possible
+ACTION: go forward","a wall 3 steps forward
+a blue key 1 step right",0,False
+32,go left,"OBSERVATION_CHECK: FAILED: Hit a wall and failed to move forward
+NEW_MEMORY: Wall 3 steps forward
+PLAN: NEW_PLAN - Turn left, move left, try to pick up the blue key
+PREDICTION: Move left and attempt to pick up the blue key if possible
+ACTION: go left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 2 steps right",0,False
+33,turn right,"OBSERVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: Wall 2 steps forward, Stuck 2 steps right from the blue key
+PLAN: NEW_PLAN - Turn right, go forward
+PREDICTION: Should face the blue key
+ACTION: turn right","a wall 2 steps forward
+a wall 2 steps left
+a blue key 1 step right and 1 step forward",0,False
+34,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Turn right, go forward
+PREDICTION: Will face the blue key
+ACTION: turn right","a wall 5 steps forward
+a wall 2 steps left
+a blue key 1 step left and 1 step forward",0,False
+35,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Turn right, Go forward
+PREDICTION: Will face the blue key
+ACTION: turn right","a wall 5 steps forward
+a wall 2 steps right",0,False
+36,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP - Turn right, Go forward
+PREDICTION: Should be able to see the blue key
+ACTION: go forward","a wall 4 steps forward
+a wall 2 steps right",0,False
+37,go backward,"OBSERVATION_CHECK: FAILED: Did not make progress towards the blue key
+NEW_MEMORY: Was blocked 1 step forward from the blue key
+PLAN: BREAK_LOOP - Go backward, Then turn left, Then go forward
+PREDICTION: Should be able to see the blue key again
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 2 steps right",0,False
+38,go backward,"OBSERVATION_CHECK: FAILED: Was blocked 1 step forward from the blue key
+NEW_MEMORY: Wall blocking movement 1 step forward
+PLAN: BREAK_LOOP - Go backward, Then turn right, Then go forward
+PREDICTION: Should be able to see the blue key again
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 2 steps right",0,False
+39,go backward,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Stuck turning in circles at the 2 steps right of the wall
+PLAN: BREAK_LOOP - Go backward, Then turn left, Then go forward
+PREDICTION: See the blue key again after moving backwards and turning left
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 2 steps right",0,False
+40,turn left,"OBSERVATION_CHECK: FAILED: HIT WALL GOING FORWARD
+NEW_MEMORY: Stuck 3 steps left from the blue key
+PLAN: KEEP - Turn left, then go forward
+PREDICTION: See the blue key ahead
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step right",0,False
+41,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Stuck turning in circles at the 2 steps right of the wall
+PLAN: Turn right, then go forward
+PREDICTION: Should see walls and the way back
+ACTION: turn right","a wall 1 step forward
+a wall 2 steps right",0,False
+42,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Should see the blue key 1 step forward
+ACTION: go forward","a wall 1 step forward
+a wall 2 steps right",0,False
+43,turn left,"OBSERVATION_CHECK: FAILED: Stuck 1 step right from the wall
+NEW_MEMORY: Stuck turning in circles 1 step right from the wall
+PLAN: Turn left, then go backward, then turn right
+PREDICTION: Should see the previous view with a wall forward and right
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step right",0,False
+44,go backward,"OBSERVATION_CHECK: FAILED: Stuck turning in circles
+NEW_MEMORY: Stuck turning in circles 1 step right from the wall
+PLAN: KEEP
+PREDICTION: Should get out of the loop and see the previous view
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 1 step right",0,False
+45,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Stuck 1 step right from the wall
+PLAN: Turn left, then go backward, then turn right
+PREDICTION: Should turn left to break out of the loop
+ACTION: turn left","a wall 3 steps left
+a blue key 5 steps forward",0,False
+46,turn left,"OBSERVATION_CHECK: ""FAILED: Did not make progress, turned in circles""
+NEW_MEMORY: ""Stuck 3 steps left from the blue key""
+PLAN: ""Turn left, then go backward, then turn right""
+PREDICTION: ""Should turn left to break out of the loop""
+ACTION: ""turn left""","a wall 3 steps forward
+a wall 1 step left",0,False
+47,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Will break out of the loop
+ACTION: go forward","a wall 2 steps forward
+a wall 1 step left",0,False
+48,go backward,"OBSERVATION_CHECK: FAILED: Did not move forward
+NEW_MEMORY: Stuck 1 step forward from the wall, 1 step left from the blue key
+PLAN: KEEP
+PREDICTION: Will break out of the loop
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+49,turn left,"OBSERVATION_CHECK: FAILED: Tried to go backward but hit a wall
+NEW_MEMORY: Stuck 1 step right from the wall
+PLAN: KEEP
+PREDICTION: Turn left to face the wall
+ACTION: turn left","a wall 1 step forward
+a wall 1 step right",0,False
+50,turn right,"OBSERVATION_CHECK: FAILED: Hitting a wall
+NEW_MEMORY: Stuck 1 step right from the wall
+PLAN: KEEP
+PREDICTION: Turn right to face the blue key
+ACTION: turn right","a wall 1 step forward
+a wall 1 step left",0,False
+51,turn left,"OBSERVATION_CHECK: FAILED: Unable to move forward, hit a wall.
+NEW_MEMORY: Blocked path 1 step forward.
+PLAN: KEEP ""Turn left, then go backward, then turn right""
+PREDICTION: Turn left to face away from the wall.
+ACTION: turn left","a wall 1 step forward
+a wall 1 step right",0,False
+52,turn left,"OBSERVATION_CHECK: FAILED: Blocked by a wall
+NEW_MEMORY: Blocked path 1 step forward.
+PLAN: KEEP ""Turn left, then go backward, then turn right""
+PREDICTION: Turn left to face away from the wall.
+ACTION: turn left","a wall 6 steps forward
+a wall 1 step right",0,False
+53,turn left,"OBSERVATION_CHECK: FAILED: Tried to move backward, but ended up walking forward into a wall due to no valid action provided.
+NEW_MEMORY: Blocked path 1 step forward.
+PLAN: KEEP ""Turn left, then go backward, then turn right""
+PREDICTION: Turn left to face away from the wall.
+ACTION: turn left","a wall 6 steps forward
+a wall 1 step left
+a blue key 2 steps right and 5 steps forward",0,False
+54,turn right,"OBSERVATION_CHECK: ""FAILED: Stuck 1 step right from the wall""
+NEW_MEMORY: ""Wall blocking movement 1 step forward, Stuck 1 step left from the blue key, Stuck 1 step right from the wall""
+PLAN: ""Turn right, go forward, turn left""
+PREDICTION: ""Move away from the wall to the left""
+ACTION: ""turn right""","a wall 6 steps forward
+a wall 1 step right",0,False
+55,go backward,"OBSERVATION_CHECK: FAILED: Turned into a wall
+NEW_MEMORY: Blocked path 1 step forward.
+PLAN: KEEP
+PREDICTION: ""Move back towards the open area""
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 5 steps forward
+a wall 1 step right",0,False
+56,turn right,"OBSERVATION_CHECK: ""FAILED: Hit a wall when attempting to go backward""
+NEW_MEMORY: ""Blocked path 1 step backward""
+PLAN: ""KEEP""
+PREDICTION: ""Move right to escape the blocked path""
+ACTION: turn right","a wall 1 step forward
+a wall 2 steps right",0,False
+57,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path 1 step forward.
+PLAN: KEEP
+PREDICTION: Move right to find another path
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step left",0,False
+58,go backward,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked path 1 step forward after turning right
+PLAN: Reverse course and try a different path
+PREDICTION: Move backward and turn left to try a new direction
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+59,turn right,"OBSERVATION_CHECK: FAILED: Did not successfully move backward
+NEW_MEMORY: Blocked path 1 step backward
+PLAN: KEEP
+PREDICTION: Try a different direction
+ACTION: turn right","a wall 6 steps forward
+a wall 1 step left
+a blue key 2 steps right and 5 steps forward",0,False
+60,go backward,"OBSERVATION_CHECK: FAILED: Turn right from a dead end
+NEW_MEMORY: Stuck 1 step right from the wall
+PLAN: KEEP
+PREDICTION: Move out of the dead-end
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 5 steps forward
+a wall 1 step left
+a blue key 2 steps right and 4 steps forward",0,False
+61,turn right,"OBSERVATION_CHECK: FAILED: Could not move backward as planned
+NEW_MEMORY: Wall blocking movement 1 step backward
+PLAN: KEEP - Try to go around to find an alternative path to the blue key
+PREDICTION: Discover new path or hit a dead-end
+ACTION: turn right","a wall 6 steps forward
+a wall 2 steps right",0,False
+62,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall after turning
+NEW_MEMORY: Wall 2 steps right, Stuck 2 steps right
+PLAN: KEEP - Try a different direction
+PREDICTION: Discover an alternative route
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step left
+a blue key 2 steps right and 4 steps forward",0,False
+63,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall blocking movement 1 step forward, Stuck 1 step left from the blue key
+PLAN: KEEP - Consider alternative paths since direct route is blocked
+PREDICTION: Reevaluate approach towards blue key
+ACTION: turn right","a wall 6 steps forward
+a wall 2 steps right",0,True
