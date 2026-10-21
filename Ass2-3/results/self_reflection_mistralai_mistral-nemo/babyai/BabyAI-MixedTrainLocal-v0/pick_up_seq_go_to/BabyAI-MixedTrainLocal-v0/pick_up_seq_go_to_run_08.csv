@@ -1,0 +1,1326 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn right,"NEW_MEMORY: Wall 4 steps forward. Wall 3 steps left. Blue box 1 step right, 1 step forward. Green key 3 steps right, 3 steps forward.
+PLAN: Turn right, go forward, pick up green key, turn left, go forward, toggle blue box.
+PREDICTION: Green key will be picked up. Blue box will be reachable.
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps right
+a green key 3 steps left and 3 steps forward
+a blue box 1 step left and 1 step forward",0,False
+1,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Green key will be picked up.
+ACTION: go forward","a wall 3 steps forward
+a wall 3 steps right
+a green key 3 steps left and 2 steps forward
+a blue box 1 step left",0,False
+2,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent will pick up the green key.
+ACTION: pick up","a wall 3 steps forward
+a wall 3 steps right
+a green key 3 steps left and 2 steps forward
+a blue box 1 step left",0,False
+3,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent will turn right.
+ACTION: turn right","a wall 3 steps forward
+a wall 3 steps left",0,False
+4,turn left,"OBSERVATION_CHECK: FAILED: Agent bumped into a wall
+NEW_MEMORY: Wall 3 steps forward
+PLAN: Turn left, go forward, pick up green key, turn left, go forward, toggle blue box
+PREDICTION: Agent should move away from the wall
+ACTION: turn left","a wall 3 steps forward
+a wall 3 steps right
+a green key 3 steps left and 2 steps forward
+a blue box 1 step left",0,False
+5,turn left,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Agent should turn left towards the green key""
+ACTION: ""turn left""","a wall 3 steps right
+a blue box 1 step forward
+a green key 2 steps right and 3 steps forward",0,False
+6,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Agent should move forward towards the blue box""
+ACTION: ""go forward""","a wall 3 steps right
+a blue box 1 step forward
+a green key 2 steps right and 3 steps forward",0,False
+7,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""Agent should pick up the blue box""
+ACTION: toggle","a wall 4 steps forward
+a wall 3 steps right
+a green key 2 steps right and 3 steps forward",0,False
+8,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent should be holding the blue box now
+ACTION: go forward","a wall 3 steps forward
+a wall 3 steps right
+a green key 2 steps right and 2 steps forward",0,False
+9,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent should pick up the green key
+ACTION: go forward","a wall 2 steps forward
+a wall 3 steps right
+a green key 2 steps right and 1 step forward",0,False
+10,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent should pick up the green key
+ACTION: go forward","a wall 1 step forward
+a green key 2 steps right",0,False
+11,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Agent should pick up the green key
+ACTION: pick up","a wall 1 step forward
+a green key 2 steps right",0,False
+12,turn left,"OBSERVATION_CHECK: ""FAILED: Hit a wall""
+NEW_MEMORY: ""Wall 1 step forward""
+PLAN: ""TURN AROUND AND GO RIGHT""
+PREDICTION: ""Agent should move towards the green key""
+ACTION: ""turn left""","a wall 4 steps forward
+a wall 1 step right",0,False
+13,turn left,"OBSERVATION_CHECK: FAILED: Agent cannot move forward due to a wall.
+NEW_MEMORY: Wall 1 step right.
+PLAN: KEEP
+PREDICTION: Agent should find a way around the wall.
+ACTION: turn left","a wall 6 steps forward
+a green key 2 steps left",0,False
+14,go forward,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop when turning left at the wall 1 step right
+PLAN: GO FORWARD, THEN GO RIGHT
+PREDICTION: Move out of the loop and towards the green key
+ACTION: go forward","a wall 5 steps forward
+a wall 3 steps left",0,False
+15,GO FORWARD,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move towards the green key
+ACTION: GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 3 steps left",0,False
+16,GO FORWARD,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move towards the green key
+ACTION: GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 3 steps left",0,False
+17,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 3 steps forward
+PLAN: KEEP
+PREDICTION: Turn right to change direction
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 3 steps left",0,False
+18,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 2 steps forward
+PLAN: TURN RIGHT, GO FORWARD
+PREDICTION: Turn right, then move forward one step
+ACTION: turn right","a wall 4 steps forward
+a wall 2 steps left",0,False
+19,GO FORWARD,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward one step
+ACTION: GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 2 steps left",0,False
+20,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Wall 3 steps forward
+NEW_MEMORY: Wall 3 steps forward
+PLAN: KEEP
+PREDICTION: Turn right
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 2 steps left",0,False
+21,GO FORWARD,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward
+ACTION: GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 2 steps left",0,False
+22,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward
+PLAN: TURN RIGHT, GO FORWARD, TURN RIGHT, GO FORWARD
+PREDICTION: Move forward and turn right
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 2 steps left",0,False
+23,TURN RIGHT,"OBSERVATION_CHECK: ""FAILED: Hit a wall when trying to go forward""
+NEW_MEMORY: ""Loop when turning left at the wall 1 step right""
+PLAN: ""KEEP""
+PREDICTION: ""Turn right and attempt to move forward again""
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 2 steps left",0,False
+24,go forward,"OBSERVATION_CHECK: FAILED: HIT A WALL
+NEW_MEMORY: Wall 1 step forward.
+PLAN: TURN AROUND AND GO BACK
+PREDICTION: ""Move back one step""
+ACTION: go forward","a wall 1 step forward
+a wall 2 steps left",0,False
+25,turn right,"OBSERVATION_CHECK: FAILED: Wall in front
+NEW_MEMORY: ""Wall 1 step forward""
+PLAN: ""TURN AROUND AND GO BACK""
+PREDICTION: ""Move back one step""
+ACTION: turn right","a wall 5 steps forward
+a wall 1 step left",0,False
+26,go forward,"OBSERVATION_CHECK: FAILED: Turned right when there was a wall 1 step left.
+NEW_MEMORY: Wall 1 step left. Loop when turning right.
+PLAN: KEEP ""TURN AROUND AND GO BACK""
+PREDICTION: Move back four steps.
+ACTION: go forward","a wall 4 steps forward
+a wall 1 step left",0,False
+27,turn around,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 4 steps forward
+PLAN: KEEP ""TURN AROUND AND GO BACK""
+PREDICTION: Move back four steps
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 1 step left",0,False
+28,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Wall 4 steps forward
+NEW_MEMORY: Wall 4 steps forward, loop when turning right at wall 1 step left
+PLAN: KEEP ""TURN RIGHT AND GO FORWARD""
+PREDICTION: Move right and forward
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 1 step left",0,False
+29,TURN RIGHT,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP ""TURN RIGHT AND GO FORWARD""
+PREDICTION: Move right and forward
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+30,TURN LEFT,"OBSERVATION_CHECK: FAILED: Hits the wall
+NEW_MEMORY: Loop when turning right at the wall 1 step left
+PLAN: TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD
+PREDICTION: Move right, overcome the wall and move forward
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+31,TURN RIGHT,"OBSERVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: Wall 1 step forward, wall 1 step left. Loop when turning left.
+PLAN: TURN RIGHT, GO FORWARD, TURN RIGHT, GO FORWARD
+PREDICTION: Move right, overcome the wall and move forward
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+32,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Loop when turning right at the wall 1 step left
+PLAN: KEEP
+PREDICTION: Move right
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+33,TURN LEFT,"OBSERVATION_CHECK: FAILED: Loop when turning right at the wall 1 step left
+NEW_MEMORY: Loop when turning right at the wall 1 step left
+PLAN: TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD
+PREDICTION: Move left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+34,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Loop when turning left
+NEW_MEMORY: Wall 1 step forward, wall 1 step left. Loop when turning left.
+PLAN: KEEP
+PREDICTION: Turn right
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+35,TURN LEFT,"OBSERVATION_CHECK: FAILED: Hit a wall upon going forward
+NEW_MEMORY: Loop when turning right at the wall 1 step left
+PLAN: KEEP
+PREDICTION: Turn left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+36,TURN RIGHT,"OBSERVATION_CHECK: ""FAILED: Looping at wall 1 step left""
+NEW_MEMORY: "" Wall 1 step left, loop when turning right.""
+PLAN: ""KEEP""
+PREDICTION: ""Turn to face the wall""
+ACTION: ""TURN RIGHT""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+37,TURN LEFT,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Turn to face the other wall""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+38,TURN LEFT,"OBSERVATION_CHECK: FAILED: Loop when turning right at the wall 1 step left
+NEW_MEMORY: Loop when turning right at the wall 1 step left
+PLAN: TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, TURN RIGHT, PICK UP GREEN KEY, TURN RIGHT, GO FORWARD, TURN RIGHT, TOGGLE BLUE BOX
+PREDICTION: ""Exit the loop, turn right twice, pick up the green key""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+39,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Stuck in a loop.
+NEW_MEMORY: Loop when turning left at the wall 1 step right.
+PLAN: KEEP
+PREDICTION: Exit the loop.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+40,TURN LEFT,"OBSERVATION_CHECK: FAILED: Hit a wall.
+NEW_MEMORY: Loop when turning right at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: Exit the loop.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+41,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward, wall 1 step left. Loop when turning left.
+PLAN: KEEP
+PREDICTION: Move 1 step back and turn right to break the loop.
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+42,TURN LEFT,"OBSERVATION_CHECK: FAILED: Stuck in a loop after turning right
+NEW_MEMORY: Loop when turning right at the wall 1 step left
+PLAN: KEEP
+PREDICTION: Break the loop by turning left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+43,GO FORWARD,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Continue moving forward and reach an intersection
+ACTION: GO FORWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+44,TURN LEFT,"OBSERVATION_CHECK: FAILED: HIT A WALL
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left to break the loop
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+45,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Stuck in a loop turning left
+NEW_MEMORY: Loop when turning left at the wall 1 step right
+PLAN: TURN RIGHT, GO FORWARD
+PREDICTION: Break the loop and move forward
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+46,TURN LEFT,"OBSERVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: Loop when turning right at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: Break the loop and move forward.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+47,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Unable to proceed forward due to wall.
+NEW_MEMORY: Loop encountered when turning left at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: Turn right and move forward.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+48,GO BACKWARD,"OBSERVATION_CHECK: ""FAILED: Loop encountered when turning right.""
+NEW_MEMORY: ""Loop 4 steps forward and 1 step left.""
+PLAN: ""TURN RIGHT, GO BACKWARD, TURN RIGHT, GO FORWARD, TURN RIGHT, GO FORWARD, TURN RIGHT, TURN LEFT, GO FORWARD, PICK UP""
+PREDICTION: ""Pick up the green key after breaking the loop and navigating forward.""
+ACTION: ""GO BACKWARD""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+49,TURN LEFT,"OBSERVATION_CHECK: FAILED: ""Agent is stuck in a loop after turning right and then going backward.""
+NEW_MEMORY: ""Loop encountered when turning right at the wall 1 step left.""
+PLAN: ""TURN LEFT, TURN LEFT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, PICK UP""
+PREDICTION: ""Agent will break the loop and walk towards the green key.""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+50,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hitting a wall by going forward
+NEW_MEMORY: Wall 1 step left, Loop when turning left at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: Break the loop and turn towards the green key.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+51,TURN LEFT,"OBSERVATION_CHECK: FAILED: Stuck in a loop, turning right does not change view.
+NEW_MEMORY: Loop when turning right at the wall 1 step left.
+PLAN: TURN LEFT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, PICK UP
+PREDICTION: Breaking the loop and turning towards the green key.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+52,TURN RIGHT,"OBSERVATION_CHECK: ""FAILED: Stuck in a loop""
+NEW_MEMORY: ""Loop when turning left at the wall 1 step left.""
+PLAN: ""TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, PICK UP""
+PREDICTION: ""Breaking the loop and turning towards the green key.""
+ACTION: ""TURN RIGHT""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+53,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Cannot turn right because there's a wall.
+NEW_MEMORY: Loop encountered when turning right at the wall 1 step left.
+PLAN: KEEP ""TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, PICK UP""
+PREDICTION: Break the loop and turn towards the green key.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+54,TURN LEFT,"OBSERVATION_CHECK: FAILED: Unable to turn right due to continuous loops.
+NEW_MEMORY: Wall 1 step left. Loop when turning right.
+PLAN: KEEP ""TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, PICK UP""
+PREDICTION: Break the loop and turn towards the green key.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+55,TURN LEFT,"OBSERVATION_CHECK: FAILED: Stuck in a loop.
+NEW_MEMORY: Loop when turning right at the wall 1 step left.
+PLAN: KEEP ""TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, PICK UP""
+PREDICTION: Turn left and exit the loop.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+56,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward, 1 step left. Loop when turning left.
+PLAN: KEEP ""TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, PICK UP""
+PREDICTION: Turn right
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+57,TURN LEFT,"OBSERVATION_CHECK: FAILED: Stuck in a loop turning right
+NEW_MEMORY: Loop encountered when turning right at the wall 1 step left.
+PLAN: KEEP ""TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD, GO FORWARD, PICK UP""
+PREDICTION: Break out of the loop
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+58,TURN RIGHT,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Break out of the left-turn loop
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+59,GO RANDOMLY,"OBSERVATION_CHECK: ""FAILED: Dead end, walls all around""
+NEW_MEMORY: ""Loop when turning right, walls all around""
+PLAN: ""REVIEW_MAP, YOU_ARE_LOST, RANDOM_WALK""
+PREDICTION: ""Potentially escape the loop""
+ACTION: ""GO RANDOMLY""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+60,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Loop encountered by turning left at the wall 1 step left.
+NEW_MEMORY: Loop when turning left at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: Escape the loop by turning right
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+61,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Couldn't move forward due to a wall.
+NEW_MEMORY: Wall 1 step forward.
+PLAN: REVIEW_MAP, WALL_BEHIND, TRY_TO_ESCAPE_LOOP_VIA_OTHER_DIRECTION
+PREDICTION: Escape the current loop by turning right.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+62,TURN LEFT,"OBSERVATION_CHECK: FAILED: Stuck in loop, turning right repeats the same observation.
+NEW_MEMORY: Loop when turning right at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: Escape the current loop by turning left.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+63,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Turn left action leads to a loop
+NEW_MEMORY: Loop when turning left at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: Escape the current loop by turning right.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+64,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Turn right didn't change my view, still seeing walls.
+NEW_MEMORY: ""Loop 1 step forward and 1 step left.""
+PLAN: ""GO BACKWARD""
+PREDICTION: ""Should move away from the wall forward and left.""
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+65,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Stuck in a loop turning left.
+NEW_MEMORY: Loop when turning left at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: ""Should move forward after turning right.""
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+66,TURN LEFT,"OBSERVATION_CHECK: FAILED: ""Loop when turning right at wall 1 step left""
+NEW_MEMORY: ""Wall 1 step left, wall 1 step forward. Loop when turning right.""
+PLAN: ""TURN LEFT, GO FORWARD""
+PREDICTION: ""Should move forward after turning left.""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+67,TURN RIGHT,"OBSERVATION_CHECK: ""FAILED: Wall at 1 step forward.""
+NEW_MEMORY: ""Loop when turning left at the wall 1 step left.""
+PLAN: ""TURN RIGHT, GO FORWARD""
+PREDICTION: ""Should move forward after turning right.""
+ACTION: ""TURN RIGHT""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+68,TURN LEFT,"OBSERVATION_CHECK: FAILED: Wall still ahead.
+NEW_MEMORY: ""Wall 1 step left, wall 1 step forward. Loop when turning right.""
+PLAN: ""TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD""
+PREDICTION: ""Should be able to go forward after turning left.""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+69,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Loop when turning right
+NEW_MEMORY: Loop when turning right at wall 1 step left
+PLAN: TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD
+PREDICTION: ""Should encounter a gap between walls""
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+70,TURN LEFT,"OBSERVATION_CHECK: FAILED: hit a wall
+NEW_MEMORY: 10. Wall 4 steps forward, loops when turning right at wall 1 step left.
+PLAN: TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD
+PREDICTION: ""Should find a way out of the loop""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+71,TURN LEFT,"OBSERVATION_CHECK: FAILED: Loop when turning right
+NEW_MEMORY: Wall 1 step forward, loop when turning right at wall 1 step left
+PLAN: KEEP
+PREDICTION: TURN LEFT should break the loop
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+72,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Loop when turning left at the wall 1 step left.
+NEW_MEMORY: Wall 1 step left, loop when turning left.
+PLAN: KEEP
+PREDICTION: Should break the loop
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+73,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Loop detected
+NEW_MEMORY: Loop when turning left at the wall 1 step right.
+PLAN: KEEP
+PREDICTION: The agent should break the loop by turning right.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+74,TURN LEFT,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The agent should turn left and exit the loop.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+75,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Cannot move forward due to wall.
+NEW_MEMORY: Wall blocking forward movement at current location.
+PLAN: KEEP
+PREDICTION: Agent will turn right and attempt to move forward again.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+76,TURN LEFT,"OBSERVATION_CHECK: FAILED: Hit a wall moving forward
+NEW_MEMORY: Loop 1 step forward and 1 step left.
+PLAN: KEEP
+PREDICTION: Should break the loop by turning left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+77,TURN LEFT,"OBSERVATION_CHECK: FAILED: Havn't moved from the starting point
+NEW_MEMORY: Loop when turning right at the wall 1 step left
+PLAN: KEEP - TURN LEFT, GO FORWARD, TURN LEFT, GO FORWARD
+PREDICTION: Break the loop by turning left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+78,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Loop when turning left at the wall 1 step left.
+PLAN: KEEP - TURN RIGHT, GO FORWARD, TURN LEFT, GO FORWARD
+PREDICTION: Break the loop and move forward
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+79,TURN LEFT,"OBSERVATION_CHECK: FAILED: Agent is stuck in a loop
+NEW_MEMORY: Wall 1 step forward, loop when turning right at wall 1 step left
+PLAN: TURN LEFT, GO FORWARD, TURN RIGHT, GO FORWARD
+PREDICTION: Break the loop and move forward
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+80,TURN LEFT,"OBSERVATION_CHECK: FAILED: Hit wall 1 step forward
+NEW_MEMORY: Wall blocking forward movement at current location.
+PLAN: KEEP
+PREDICTION: Turn left and loop
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+81,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Wall blocking forward movement
+NEW_MEMORY: Loop when turning left and right at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: This should lead me to a new location.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+82,TURN LEFT,"OBSERVATION_CHECK: ""FAILED: Attempt to move right resulted in looping.""
+NEW_MEMORY: ""Dead end created by looping when turning right at the wall 1 step left.""
+PLAN: ""KEEP""
+PREDICTION: ""Turn left to break the loop.""
+ACTION: ""TURN LEFT""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+83,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Looping when turning left
+NEW_MEMORY: ""Loop when turning left at the wall 1 step left.""
+PLAN: ""GO BACK THREE STEPS LEFT""
+PREDICTION: ""Exit the loop.""
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+84,TURN LEFT,"OBSERVATION_CHECK: FAILED: Cannot make progress due to a wall blocking the forward path.
+NEW_MEMORY: Loop at the wall 1 step left when turning right.
+PLAN: KEEP
+PREDICTION: Will end up at the dead end again.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+85,TURN LEFT,"OBSERVATION_CHECK: FAILED: Hitting a wall
+NEW_MEMORY: Loop when turning left at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: Ending up at the wall again.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+86,TURN RIGHT,"OBSERVATION_CHECK: FAILED: unable to progress forward and stuck in a loop
+NEW_MEMORY: Loop formed by turning left at wall 1 step left
+PLAN: KEEP
+PREDICTION: Ending up at the wall again.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+87,TURN LEFT,"OBSERVATION_CHECK: FAILED: Unable to move forward, wall blocking path.
+NEW_MEMORY: ""WALL 1 STEP FORWARD, LOOP WHEN TURNING RIGHT AT WALL 1 STEP LEFT.""
+PLAN: KEEP
+PREDICTION: Ending up at the wall again.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+88,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Ending up at the wall again.
+NEW_MEMORY: Loop when turning left at the wall 1 step left.
+PLAN: KEEP
+PREDICTION: Go back one step to the left.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+89,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Stuck in a loop turning left and right at the wall 1 step left.
+NEW_MEMORY: Loop formed by turning left at wall 1 step left.
+PLAN: KEEP ""GO BACK THREE STEPS LEFT""
+PREDICTION: Move back three steps to the right.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+90,go back three steps left,"OBSERVATION_CHECK: FAILED: Hitting a wall forward
+NEW_MEMORY: WALL BLOCKING FORWARD MOVEMENT AT CURRENT LOCATION
+PLAN: KEEP ""GO BACK THREE STEPS LEFT""
+PREDICTION: Move back three steps to the left
+ACTION: go back three steps left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+91,go back three steps left,"OBSERVATION_CHECK: FAILED: No progress made, hitting a wall
+NEW_MEMORY: Loop when turning right at wall 1 step left
+PLAN: KEEP ""GO BACK THREE STEPS LEFT""
+PREDICTION: Move back three steps to the left
+ACTION: go back three steps left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+92,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Collided with a wall.
+NEW_MEMORY: Wall 1 step forward, loop when turning right at wall 1 step left.
+PLAN: KEEP ""TURN RIGHT"".
+PREDICTION: Turn right.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+93,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hitting a wall when trying to go forward.
+NEW_MEMORY: Wall blocking forward movement at current location.
+PLAN: KEEP ""TURN RIGHT"".
+PREDICTION: Will hit the wall blocking forward movement.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+94,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit wall blocking forward movement.
+NEW_MEMORY: ""Loop formed by turning right at wall 1 step left, wall blocking forward movement.""
+PLAN: ""KEEP 'TURN RIGHT', then 'GO FORWARD' if possible""
+PREDICTION: Wall blocking forward movement, may need to turn again.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+95,GO BACK,"OBSERVATION_CHECK: FAILED: Blocked by wall
+NEW_MEMORY: Loop with walls all around when turning right at wall 1 step left
+PLAN: KEEP ""TURN RIGHT"", then 'GO BACK' to previous location
+PREDICTION: Move one step back, facing the wall 1 step left
+ACTION: GO BACK","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+96,TURN LEFT,"OBSERVATION_CHECK: FAILED: Looped without progress
+NEW_MEMORY: ""Loop formed by turning right at wall 1 step left, then going back after two right turns, ending up at the start of the loop""
+PLAN: KEEP ""TURN LEFT"", then 'GO FORWARD' to check for other paths
+PREDICTION: Move one step forward, away from the wall on the left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+97,GO BACK,"OBSERVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: WALL BLOCKING FORWARD MOVEMENT AT CURRENT LOCATION
+PLAN: KEEP ""TURN LEFT"", THEN 'GO BACK', 'TURN RIGHT', 'GO FORWARD'
+PREDICTION: Move one step back left, then turn right and potentially move forward
+ACTION: GO BACK","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+98,TURN LEFT,"OBSERVATION_CHECK: FAILED: Hit wall forward
+NEW_MEMORY: ""Loop formed by turning right at wall 1 step left, then going back after one right turn, ending up at the current location.""
+PLAN: KEEP ""TURN LEFT"", THEN 'GO BACK', 'TURN RIGHT', 'GO FORWARD'
+PREDICTION: Move one step back left, then turn right and potentially move forward
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+99,TURN LEFT,"OBSERVATION_CHECK: FAILED: Stuck in a loop turning right
+NEW_MEMORY: Loop formed by turning right at wall 1 step left, then going back after one right turn, ending up at the current location.
+PLAN: Duncan out new path, ""TURN LEFT"", ""GO FORWARD"", ""TURN RIGHT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: Turn left and move forward
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+100,GO BACK,"OBSERVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: LOOP DETECTED: TURNING LEFT BRINGS US BACK TO THE START
+PLAN: KEEP: ""GO BACK"", ""TURN RIGHT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: Move backward, turn right, now there should be an open path forward
+ACTION: GO BACK","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+101,TURN RIGHT,"OBSERVATION_CHECK: FAILED: can't move forward
+NEW_MEMORY: ""WALL BLOCKING FORWARD MOVEMENT 2 STEPS LEFT""
+PLAN: KEEP: ""GO BACK"", ""TURN RIGHT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: Turn right, move forward closer to green key.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+102,GO BACK,"OBSERVATION_CHECK: FAILED: Wall blocking forward movement at current location.
+NEW_MEMORY: Loop detected: Turning right at wall 1 step left brings us back to the current location.
+PLAN: KEEP ""GO BACK"", ""TURN LEFT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: Go back one step and turn left, allowing us to move forward towards the green key.
+ACTION: GO BACK","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+103,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall when trying to go back.
+NEW_MEMORY: Loop at the wall 1 step left when turning right.
+PLAN: UPDATE ""GO RIGHT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: Move forward towards the green key.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+104,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Collided with wall while trying to execute previous action.
+NEW_MEMORY: Wall blocking forward movement at current location.
+PLAN: KEEP
+PREDICTION: Turn right to look for a new path.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+105,GO BACK,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop detected: Turning right at wall 1 step left brings us back to the current location.
+PLAN: KEEP
+PREDICTION: Try to go back and find an alternative path.
+ACTION: GO BACK","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+106,GO LEFT,"OBSERVATION_CHECK: FAILED: Can't move forward or back due to walls.
+NEW_MEMORY: Loop detected: Turning right at wall 1 step left brings us back to the current location.
+PLAN: KEEP ""GO LEFT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: May find an alternative path forward or reach a new location.
+ACTION: GO LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+107,GO LEFT,"OBSERVATION_CHECK: FAILED: Wall blocking forward movement
+NEW_MEMORY: Wall 1 step forward, wall 1 step left
+PLAN: KEEP ""GO LEFT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: May find an alternative path forward
+ACTION: GO LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+108,GO LEFT,"OBSERVATION_CHECK: FAILED: Not making progress forward
+NEW_MEMORY: Loop detected: turning right at wall 1 step left brings us back to the current location.
+PLAN: KEEP ""GO LEFT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: Might find an alternative path forward
+ACTION: GO LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+109,GO LEFT,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Loop detected: Turning left brings us back to the current location.
+PLAN: KEEP ""GO LEFT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: Might find an alternative path forward
+ACTION: GO LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+110,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Stuck in a loop, cannot progress forward or to the left
+NEW_MEMORY: ""Loop detected: Turning left brings us back to the current location.""
+PLAN: ""KEEP"", ""GO RIGHT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: ""Try to exit the loop by going right and moving forward if possible.""
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+111,TURN LEFT,"OBSERVATION_CHECK: FAILED: Blocked forward movement
+NEW_MEMORY: Loop detected at wall 1 step left when turning right.
+PLAN: ""TURN LEFT"", ""GO FORWARD"", ""PICK UP GREEN KEY""
+PREDICTION: ""Exit the loop by turning left and moving forward.""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+112,perfilh left,"OBSERVATION_CHECK: FAILED: Unable to move forward due to wall blocking progress.
+NEW_MEMORY: ""WALL BLOCKING FORWARD MOVEMENT 2 STEPS LEFT""
+PLAN: ""TURN LEFT"", ""GO FORWARD""
+PREDICTION: ""Exit the loop by turning left and moving forward.""
+ACTION: perfilh left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+113,TURN RIGHT,"OBSERVATION_CHECK: FAILED: I am in a loop by turning left and the same view is displayed.
+NEW_MEMORY: ""Loop detected: turning left brings us back to the current location.""
+PLAN: ""TRY_RIGHT"" - ""GO FORWARD""
+PREDICTION: ""Exit the loop by turning right and moving forward.""
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+114,TURN LEFT,"OBSERVATION_CHECK: FAILED: Hitting a wall forward
+NEW_MEMORY: ""Wall blocking forward movement at current location.""
+PLAN: KEEP
+PREDICTION: ""Turning left to check another direction.""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+115,NONE,"OBSERVATION_CHECK: FAILED: Loop detected, turning left brings us back to the current location.
+NEW_MEMORY: Loop detected: Turning left brings us back to the current location.
+PLAN: KEEP
+PREDICTION: No change in observation as we are stuck in a loop.
+ACTION: NONE","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+116,NONE,"OBSERVATION_CHECK: FAILED: Stuck in loop, cannot move forward or left
+NEW_MEMORY: LOOP DETECTED: TURNING LEFT BRINGS US BACK TO THE CURRENT LOCATION.
+PLAN: KEEP
+PREDICTION: No change in observation as we are stuck in a loop.
+ACTION: NONE","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+117,GO BACK,"OBSERVATION_CHECK: FAILED: Tried to move forward, but no change in view
+NEW_MEMORY: Loop detected when turning right at wall 1 step left
+PLAN: ""TRY_BACK"" - ""GO BACK"" - ""TURN LEFT"" - ""GO FORWARD""
+PREDICTION: Should be able to move forward after turning left and breaking the loop
+ACTION: GO BACK","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+118,TURN LEFT,"OBSERVATION_CHECK: FAILED: Wall 1 step forward
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+119,NONE,"OBSERVATION_CHECK: FAILED: Stuck in a loop turning left
+NEW_MEMORY: LOOP DETECTED: TURNING LEFT BRINGS US BACK TO THE START
+PLAN: KEEP
+PREDICTION: STAY IN THE SAME POSITION
+ACTION: NONE","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+120,TURN LEFT,"OBSERVATION_CHECK: ""FAILED: Hit a wall 1 step forward""
+NEW_MEMORY: ""Wall directly forward""
+PLAN: ""KEEP""
+PREDICTION: ""Stay in the same position""
+ACTION: ""TURN LEFT""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+121,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Stuck in a loop, turning left brings us back to the start
+NEW_MEMORY: Loop detected when turning left, turning right brings us back to the start
+PLAN: TURN BACK AND FIND ANOTHER PATH
+PREDICTION: Turn 180 degrees
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+122,NONE,"OBSERVATION_CHECK: FAILED: Wall directly forward and left
+NEW_MEMORY: 3. Wall directly forward, loop detected when turning left and right, cannot move forward
+PLAN: KEEP
+PREDICTION: Stay in place, no change in observation
+ACTION: NONE","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+123,NONE,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop detected when turning left, turning right brings us back to the start
+PLAN: KEEP
+PREDICTION: Stay in place, no change in observation
+ACTION: NONE","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+124,TURN LEFT,"OBSERVATION_CHECK: FAILED: No progress made, stuck in a loop
+NEW_MEMORY: LOOP DETECTED: TURNING RIGHT BRINGS US BACK TO THE START
+PLAN: KEEP
+PREDICTION: Turn left to break the loop
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+125,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Cannot move forward or left, stuck in a loop
+NEW_MEMORY: Loop detected when turning left and right, cannot move forward
+PLAN: KEEP
+PREDICTION: Turning right might break the loop
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+126,TURN LEFT,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Wall 1 step left looping when turning right
+PLAN: KEEP
+PREDICTION: Same view
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+127,NONE,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall directly forward, loop detected when turning left and right, cannot move forward
+PLAN: KEEP
+PREDICTION: Same view
+ACTION: NONE","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,True

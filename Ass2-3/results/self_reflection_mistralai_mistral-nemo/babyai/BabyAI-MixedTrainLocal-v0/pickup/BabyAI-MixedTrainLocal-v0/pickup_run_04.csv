@@ -1,0 +1,272 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn right,"NEW_MEMORY: Wall 6 steps forward, Wall 1 step left, Grey key 1 step right and 4 steps forward
+PLAN: Turn right, go forward 4 times, pick up grey key
+PREDICTION: Grey key will be 1 step in front of me
+ACTION: turn right","a wall 6 steps forward
+a wall 1 step right",0,False
+1,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Wall will be 1 step in front of me
+ACTION: go forward","a wall 5 steps forward
+a wall 1 step right",0,False
+2,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Wall will be 5 steps in front of me after taking this action
+ACTION: go forward","a wall 4 steps forward
+a wall 1 step right",0,False
+3,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Wall will be 1 step to the right after this action
+ACTION: turn right","a wall 1 step forward
+a wall 3 steps right",0,False
+4,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Wall will be 1 step forward after this action
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps right",0,False
+5,turn right,"OBSERVATION_CHECK: FAILED: Wall is still 1 step forward, did not proceed
+NEW_MEMORY: Blocked path ahead
+PLAN: KEEP - Turn right, go forward 4 times, pick up grey key
+PREDICTION: Wall will be 1 step forward after turning right
+ACTION: turn right","a wall 3 steps forward
+a wall 1 step left",0,False
+6,turn right,"OBSERVATION_CHECK: FAILED: Hitting a wall
+NEW_MEMORY: Blocked path forward
+PLAN: Turn right, go forward 3 times, turn right, go forward 4 times, pick up grey key
+PREDICTION: Should see the grey key after 4 steps forward
+ACTION: turn right","a wall 6 steps forward
+a wall 3 steps left
+a grey key 1 step left and 4 steps forward",0,False
+7,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Should see an open path after moving forward 3 times
+ACTION: go forward","a wall 5 steps forward
+a wall 3 steps left
+a grey key 1 step left and 3 steps forward",0,False
+8,turn left,"OBSERVATION_CHECK: FAILED: Blocked path ahead
+NEW_MEMORY: Wall 5 steps forward is blocked
+PLAN: KEEP
+PREDICTION: Turning left to find an alternate path
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps left
+a grey key 3 steps right and 1 step forward",0,False
+9,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Moving closer to the grey key
+ACTION: go forward","a wall 2 steps forward
+a wall 2 steps left
+a grey key 3 steps right",0,False
+10,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Moving to the grey key
+ACTION: turn right","a wall 2 steps left
+a grey key 3 steps forward",0,False
+11,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move towards the grey key
+ACTION: go forward","a wall 2 steps left
+a grey key 2 steps forward",0,False
+12,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn towards the grey key
+ACTION: turn right","a wall 5 steps forward
+a wall 3 steps right
+a grey key 2 steps left",0,False
+13,turn left,"OBSERVATION_CHECK: FAILED: Blocked path ahead
+NEW_MEMORY: Blocked path forward
+PLAN: Turn left, go forward 3 times, turn left, go forward 4 times, pick up grey key
+PREDICTION: Turn towards the wall
+ACTION: turn left","a wall 2 steps left
+a grey key 2 steps forward",0,False
+14,pick up,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Pick up the grey key
+ACTION: pick up","a wall 2 steps left
+a grey key 2 steps forward",0,False
+15,toggle,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move the grey key to my location
+ACTION: toggle","a wall 2 steps left
+a grey key 2 steps forward",0,False
+16,turn left,"OBSERVATION_CHECK: FAILED: ""Move the grey key to my location did not succeed.""
+NEW_MEMORY: ""Blocked path ahead""
+PLAN: ""Turn left, go forward 2 times, turn left, go forward, pick up grey key""
+PREDICTION: ""The grey key should appear in my inventory""
+ACTION: ""turn left""","a wall 2 steps forward
+a wall 3 steps left
+a grey key 2 steps right",0,False
+17,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: ""I should be able to pick up the grey key""
+ACTION: go forward","a wall 1 step forward
+a wall 3 steps left",0,False
+18,turn left,"OBSERVATION_CHECK: FAILED: I hit a wall
+NEW_MEMORY: Wall 1 step forward
+PLAN: Turn left, Go forward 2 times, Turn left, Go forward, Pick up grey key
+PREDICTION: Should be able to go forward 2 steps
+ACTION: turn left","a wall 3 steps forward
+a wall 1 step right",0,False
+19,NONE,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop: Turn left, then go forward immediately
+PLAN: KEEP
+PREDICTION: Wake up from the loop by observing the environment without taking an action
+ACTION: NONE","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 1 step right",0,False
+20,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Turn left to see if there's a path ahead
+ACTION: turn left","a wall 6 steps forward
+a wall 2 steps right
+a grey key 3 steps left and 1 step forward",0,False
+21,turn left,"OBSERVATION_CHECK: FAILED: Blocked path forward
+NEW_MEMORY: Wall 2 steps forward is blocked
+PLAN: Turn left, Go forward 2 times, Turn left, Go forward, Pick up grey key
+PREDICTION: Turn left to find an alternate path
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step left
+a grey key 1 step right and 3 steps forward",0,False
+22,turn left,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP: Turn left, Go forward 2 times, Turn left, Go forward, Pick up grey key""
+PREDICTION: ""Turn left to face the wall on the left""
+ACTION: ""turn left""","a wall 1 step forward
+a wall 2 steps left",0,False
+23,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left to face the wall on the right
+ACTION: turn left","a wall 2 steps forward
+a wall 1 step right",0,False
+24,Turn left,"OBSERVATION_CHECK: FAILED: Wall is 1 step forward
+NEW_MEMORY: Wall 1 step forward blocked
+PLAN: KEEP: Turn left, Go forward 2 times, Turn left, Go forward, Pick up grey key
+PREDICTION: Will face the wall blocking the path forward
+ACTION: Turn left","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+25,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall forward
+NEW_MEMORY: Wall 1 step forward blocked
+PLAN: Turn right, Go forward 2 times, Turn left, Go forward, Pick up grey key
+PREDICTION: Move around the wall and towards the grey key
+ACTION: turn right","a wall 1 step forward
+a wall 1 step left",0,False
+26,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move around the wall and towards the grey key
+ACTION: turn right","a wall 6 steps forward
+a wall 1 step left
+a grey key 1 step right and 4 steps forward",0,False
+27,turn right,"OBSERVATION_CHECK: FAILED: Wall 6 steps forward is still there after turning right
+NEW_MEMORY: Wall 6 steps forward is blocked
+PLAN: Keep
+PREDICTION: Turn right again to get unstuck
+ACTION: turn right","a wall 6 steps forward
+a wall 1 step right",0,False
+28,go forward,"OBSERVVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn right should not change the observation
+ACTION: go forward","a wall 5 steps forward
+a wall 1 step right",0,False
+29,turn right,"OBSERVATION_CHECK: FAILED: Blocked path ahead
+NEW_MEMORY: Wall 5 steps forward is blocked
+PLAN: Turn right, Go forward once, Turn left, Go forward, Turn right, Go forward, Pick up grey key
+PREDICTION: Turn right to face the grey key
+ACTION: turn right","a wall 1 step forward
+a wall 2 steps right",0,False
+30,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn to face the grey key
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step left",0,False
+31,turn left,"OBSERVATION_CHECK: FAILED: Turn right blocked by wall
+NEW_MEMORY: Wall 1 step right is blocked
+PLAN: Turn left, Go forward once, Turn left, Go forward, Turn right, Go forward, Pick up grey key
+PREDICTION: Face the wall directly
+ACTION: turn left","a wall 1 step forward
+a wall 2 steps right",0,False
+32,turn right,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: Loop: Turn left, then go forward results in remaining in the same position
+PLAN: KEEP
+PREDICTION: Turn right to break the loop
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step left",0,False
+33,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn left to face the grey key
+ACTION: turn left","a wall 1 step forward
+a wall 2 steps right",0,False
+34,turn right,"OBSERVATION_CHECK: FAILED: Turn left does not change the view, stuck in a loop
+NEW_MEMORY: Loop: Turn left, then go forward results in remaining in the same position
+PLAN: KEEP
+PREDICTION: Turn right to break the loop
+ACTION: turn right","a wall 2 steps forward
+a wall 1 step left",0,False
+35,turn left,"OBSERVATION_CHECK:Failed: Unable to move forward, wall is blocking the path
+NEW_MEMORY: Wall 2 steps forward
+PLAN:KEEP
+PREDICTION: Turn left to break the loop
+ACTION:turn left","a wall 1 step forward
+a wall 2 steps right",0,False
+36,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall forward
+NEW_MEMORY: Blocked path ahead
+PLAN: KEEP
+PREDICTION: Should break the loop by turning left
+ACTION: turn left","a wall 5 steps forward
+a wall 1 step right",0,False
+37,turn left,"OBSERVATION_CHECK: FAILED: Hitting wall while trying to go forward.
+NEW_MEMORY: Wall 1 step forward is blocked.
+PLAN: Keep
+PREDICTION: Turn left, move slightly backward to unblock the path.
+ACTION: turn left","a wall 2 steps left
+a grey key 4 steps forward",0,False
+38,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward and pick up the grey key
+ACTION: go forward","a wall 2 steps left
+a grey key 3 steps forward",0,False
+39,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move forward and pick up the grey key
+ACTION: go forward","a wall 2 steps left
+a grey key 2 steps forward",0,False
+40,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Pick up the grey key
+ACTION: go forward","a wall 2 steps left
+a grey key 1 step forward",0,False
+41,pick up,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Pick up the grey key""
+ACTION: ""pick up""","You carry a grey key
+a wall 3 steps forward
+a wall 2 steps left",0.40937499999999993,True

@@ -1,0 +1,3035 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,Move East,"NEW_MEMORY: Tree located 6 steps south-east of start; grass 1 step west. Trees are the wood source.
+PLAN: Walk to the tree 6 steps south-east (move South and East to get adjacent and facing it), collect wood with Do repeatedly, collect about 5-6 wood, place a table, make a wood pickaxe and wood sword, then search for stone to make stone tools, collect coal and iron, build a furnace near a table, make iron pickaxe and sword, look for diamond, and along the way drink water, eat cow, collect sapling and place plant, sleep when energy is low.
+PREDICTION: I move one step east onto grass; the tree should appear closer, about 5 steps to the south-east, and the view shifts by one cell.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- tree 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+1,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I move one step south, bringing the tree to about 4 steps south-east, and the view shifts by one cell.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- tree 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+2,Move South,"OBSERVATION_CHECK: SUCCESS (the tree's distance dropped from 5 to 4 steps, so the move brought me closer)
+NEW_MEMORY: NONE
+PLAN: KEEP (continue south and east toward the tree, then collect about 5-6 wood with Do, place a table, make a wood pickaxe and wood sword, then look for stone, coal, and iron; build a furnace near a table to make iron tools; look for diamond; drink water, eat cow, collect sapling and place plant, and sleep when energy is low)
+PREDICTION: I move one step south and the tree should be about 3 steps south-east.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- cow 5 steps to your south-west
+- tree 3 steps to your east
+
+You face grass at your front.",0.0,False
+3,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move East twice to reach the tree 3 steps east, then face it and use Do to collect wood (about 5-6 wood), place a table, make a wood pickaxe and wood sword, then search for stone, coal, and iron; build a furnace near a table for iron tools; look for diamond; drink water, eat cow, collect sapling and place plant, and sleep when energy is low.
+PREDICTION: I move one step east and the tree should be about 2 steps east of me.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- cow 6 steps to your south-west
+- tree 2 steps to your east
+
+You face grass at your front.",0.0,False
+4,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Move East once to stand next to the tree (it is 2 steps east, so I will be facing it), then use Do repeatedly to collect wood (about 5-6 pieces). Place a table, make a wood pickaxe and wood sword, then search for stone, coal, and iron; build a furnace near a table for iron tools; look for diamond; drink water, eat cow, collect sapling and place plant, and sleep when energy is low.
+PREDICTION: I move one step east and the tree becomes 1 step east of me, directly in front, so I should be facing it.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- cow 6 steps to your south-west
+- tree 1 step to your east
+- iron 7 steps to your north-east
+
+You face tree at your front.",0.0,False
+5,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Use Do repeatedly to collect about 5-6 wood from the tree in front. Then place a table, make a wood pickaxe and wood sword, then search for stone, coal, and iron; build a furnace near a table for iron tools; look for diamond; drink water, eat cow, collect sapling and place plant, and sleep when energy is low.
+PREDICTION: The tree is directly in front of me, so Do should collect one wood and the tree remains in place.
+ACTION: Do","You see:
+- grass 1 step to your west
+- cow 6 steps to your south-west
+- tree 3 steps to your east
+- iron 7 steps to your north-east
+
+You face grass at your front.",1.0,False
+6,Move East,"OBSERVATION_CHECK: FAILED: Do gave 1 wood, but the tree is now 3 steps east and I am facing grass, so I am no longer adjacent to it.
+NEW_MEMORY: Tree was adjacent (1 step east) before the last Do and gave 1 wood. Now it is listed 3 steps east, so I must walk east to reach it again.
+PLAN: Move East twice to stand next to the tree, then Do repeatedly to collect about 5-6 wood, then place a table, make a wood pickaxe and wood sword, then search for stone, coal, and iron, build a furnace near a table, look for diamond, drink water, eat cow, collect sapling and place plant, and sleep when energy is low.
+PREDICTION: I move one step east and the tree should appear about 2 steps east.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- tree 2 steps to your east
+- iron 6 steps to your north-east
+- stone 5 steps to your north-east
+
+You face grass at your front.",0.0,False
+7,Move East,"OBSERVATION_CHECK: SUCCESS (the tree went from 3 steps east to 2 steps east, so I moved closer)
+NEW_MEMORY: NONE
+PLAN: KEEP. Move East once more to stand next to the tree, then Do repeatedly to collect about 5-6 wood, place a table, make a wood pickaxe and wood sword, then search for stone, coal, and iron, build a furnace near a table, look for diamond, drink water, eat cow, collect sapling and place plant, and sleep when energy is low.
+PREDICTION: I move one step east and the tree should be 1 step east of me, directly in front.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- tree 1 step to your east
+- iron 5 steps to your north-east
+- stone 4 steps to your north-east
+
+You face tree at your front.",0.0,False
+8,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The internal state's tree distance (3 steps east) is outdated. The current observation shows the tree 1 step east and me facing it, so I should use Do now.
+PLAN: Do repeatedly to collect about 5-6 wood, place a table, make a wood pickaxe and wood sword, then search for stone (already seen 4 steps north-east), coal, and iron (seen 5 steps north-east), build a furnace near a table, look for diamond, drink water, eat cow, collect sapling and place plant, and sleep when energy is low.
+PREDICTION: The tree in front gives 1 wood, and wood goes from 1 to 2.
+ACTION: Do","You see:
+- grass 1 step to your west
+- tree 2 steps to your south
+- iron 5 steps to your north-east
+- stone 4 steps to your north-east
+
+You face grass at your front.",0.0,False
+9,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move South to reach the tree 2 steps south, then Do repeatedly to collect about 5-6 wood, place a table, make a wood pickaxe and wood sword, then get stone (4 steps north-east), coal, and iron (5 steps north-east), build a furnace near a table, look for diamond, drink water, eat cow, collect sapling and place plant, and sleep when energy is low.
+PREDICTION: I move one step south, and the tree becomes 1 step in front of me, so I will be facing it.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- tree 1 step to your south
+- stone 5 steps to your north-east
+- iron 6 steps to your north-east
+
+You face tree at your front.",0.0,False
+10,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The tree is directly in front of me, so Do should collect wood and wood count goes from 2 to 3.
+ACTION: Do","You see:
+- grass 1 step to your west
+- cow 4 steps to your west
+- tree 2 steps to your south-east
+- stone 5 steps to your north-east
+- iron 6 steps to your north-east
+
+You face grass at your front.",0.0,False
+11,Move South,"OBSERVATION_CHECK: SUCCESS (wood went from 2 to 3, and the tree I was facing is no longer directly in front)
+NEW_MEMORY: The tree directly south is gone or no longer in front; the nearest remaining tree is about 2 steps south-east, so I need to move toward it.
+PLAN: Move South toward the tree 2 steps south-east, then move East or South until it is directly in front and use Do to collect about 2-3 more wood. Then place a table, make a wood pickaxe and wood sword, mine stone 4 steps north-east, collect coal and iron, build a furnace near the table, make stone and iron tools, find diamond, drink water, eat a cow, collect a sapling and place it, and sleep when energy is low.
+PREDICTION: I move one tile south, which brings the tree about 1 step south-east or directly east of me.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- cow 5 steps to your north-west
+- tree 1 step to your east
+- stone 6 steps to your north-east
+- iron 7 steps to your north-east
+
+You face grass at your front.",0.0,False
+12,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Face the tree 1 step east with Move East (blocked movement turns me toward it), then use Do repeatedly to collect wood until I have about 5-6. Then place a table, make a wood pickaxe and wood sword, mine stone to the north-east, collect coal and iron, build a furnace near the table, make stone and iron tools, find diamond, drink water, eat a cow, collect a sapling and place it, and sleep when energy is low.
+PREDICTION: I stay in place and turn to face the tree directly east, so the tree is in front of me for Do.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- tree 1 step to your east
+- stone 6 steps to your north-east
+- cow 6 steps to your south-east
+- iron 7 steps to your north-east
+
+You face tree at your front.",0.0,False
+13,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. I am now facing the tree 1 step east, so use Do repeatedly to collect wood until I have about 5-6, then place a table, make a wood pickaxe and wood sword, mine stone to the north-east, collect coal and iron, build a furnace near the table, make stone and iron tools, find diamond, drink water, eat a cow, collect a sapling and place it, and sleep when energy is low.
+PREDICTION: Do collects one wood from the tree in front, wood goes from 3 to 4.
+ACTION: Do","You see:
+- grass 1 step to your west
+- tree 2 steps to your east
+- stone 6 steps to your north-east
+- cow 5 steps to your south-east
+- iron 7 steps to your north-east
+
+You face grass at your front.",0.0,False
+14,Move East,"OBSERVATION_CHECK: SUCCESS (wood went from 3 to 4, so the Do collected from the tree)
+NEW_MEMORY: The tree that was 1 step east is now 2 steps east, and I am facing grass, so I need to step east once more before using Do.
+PLAN: Move East to reach the tree, then Do repeatedly until I have about 5-6 wood, place a table, make a wood pickaxe and wood sword, mine stone to the north-east, collect coal and iron, build a furnace near the table, make stone and iron tools, find diamond, drink water, eat a cow, collect a sapling and place it, and sleep when energy is low.
+PREDICTION: I move one step east, so the tree becomes adjacent and I am facing it.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- tree 1 step to your east
+- stone 5 steps to your north-east
+- cow 4 steps to your south-east
+- iron 6 steps to your north-east
+
+You face tree at your front.",0.0,False
+15,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The tree is directly in front of me, so Do should collect one wood (inventory goes from 4 to 5).
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 5 steps to your north-east
+- tree 2 steps to your east
+- cow 4 steps to your south-east
+- iron 6 steps to your north-east
+
+You face grass at your front.",0.0,False
+16,Move East,"OBSERVATION_CHECK: SUCCESS (wood went up to 5 after the last Do, so the tree collection worked)
+NEW_MEMORY: NONE
+PLAN: Move East once to get adjacent to the tree 2 steps east, then Do until I have 5-6 wood, place a table, make a wood pickaxe and wood sword, mine stone to the north-east, collect coal and iron, build a furnace near the table, make stone and iron tools, find diamond, drink water, eat a cow, collect a sapling and place it, and sleep when energy is low.
+PREDICTION: I move one step east and end up facing the tree, so the next Do should collect wood.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 4 steps to your north-east
+- tree 1 step to your east
+- cow 3 steps to your south-east
+- iron 5 steps to your north-east
+
+You face tree at your front.",0.0,False
+17,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Collect wood with Do until I have 5-6 wood, place a table, make a wood pickaxe and wood sword, mine stone to the north-east, collect coal and iron, build a furnace near the table, make stone and iron tools, find diamond, drink water, eat a cow, collect a sapling and place it, and sleep when energy is low.
+PREDICTION: I am facing the tree 1 step east, so Do should collect 1 wood and bring my wood count to 6.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 4 steps to your north-east
+- tree 2 steps to your north-east
+- iron 5 steps to your north-east
+- cow 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+18,Place Table,"OBSERVATION_CHECK: SUCCESS (wood went from 5 to 6, and the tree I was facing is no longer directly east)
+NEW_MEMORY: The tree east of me is now depleted or gone; the nearest tree is 2 steps north-east, so I will stop chopping here.
+PLAN: 1. Place a table here (I have 6 wood). 2. Make a wood pickaxe. 3. Make a wood sword. 4. Walk north-east to the stone 4 steps away and collect stone. 5. Collect more wood as needed. 6. Make a stone pickaxe and stone sword near the table. 7. Collect coal and iron, place a furnace near the table, and make iron tools. 8. Find diamond, drink water, eat a cow, collect and plant a sapling, and sleep when energy is low.
+PREDICTION: A table is placed on the grass in front of me, and wood drops to about 5 or fewer.
+ACTION: Place Table","You see:
+- grass 1 step to your west
+- stone 4 steps to your north-east
+- tree 2 steps to your north-east
+- table 1 step to your east
+- iron 5 steps to your north-east
+- cow 3 steps to your south-east
+
+You face table at your front.",1.0,False
+19,Make Wood Pickaxe,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Make a wood pickaxe at the table now (4 wood in inventory). 2. Make a wood sword at the table. 3. Walk north-east to the tree 2 steps away and collect more wood. 4. Walk to the stone 4 steps north-east and collect stone. 5. Make stone pickaxe and stone sword at the table. 6. Collect coal and iron, place a furnace near the table, and make iron tools. 7. Find diamond, drink water, eat a cow, collect a sapling and plant it, and sleep when energy is low.
+PREDICTION: A wood pickaxe is crafted and wood drops from 4 to 3.
+ACTION: Make Wood Pickaxe","You see:
+- grass 1 step to your west
+- stone 4 steps to your north-east
+- tree 2 steps to your north-east
+- table 1 step to your east
+- iron 5 steps to your north-east
+- cow 3 steps to your south-east
+
+You face table at your front.",1.0,False
+20,Make Wood Sword,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Make a wood sword at the table now (3 wood in inventory). 2. Walk north-east to the tree 2 steps away and collect more wood. 3. Walk to the stone 4 steps north-east and collect stone. 4. Make stone pickaxe and stone sword at the table. 5. Collect coal and iron, place a furnace near the table, and make iron tools. 6. Find diamond, drink water, eat a cow, collect a sapling and plant it, and sleep when energy is low.
+PREDICTION: A wood sword is crafted and wood drops from 3 to 2, with the wood pickaxe still in inventory.
+ACTION: Make Wood Sword","You see:
+- grass 1 step to your west
+- stone 4 steps to your north-east
+- tree 2 steps to your north-east
+- table 1 step to your east
+- iron 5 steps to your north-east
+- cow 3 steps to your south-east
+
+You face table at your front.",1.0,False
+21,Move North,"OBSERVATION_CHECK: SUCCESS (wood sword crafted; inventory shows wood_sword 1 and wood reduced to 2)
+NEW_MEMORY: NONE
+PLAN: KEEP (1. Collect 3-4 more wood from trees to the north-east. 2. Mine stone 4 steps north-east. 3. Make stone pickaxe and stone sword at the table. 4. Collect coal and iron, place a furnace near the table, make iron tools. 5. Find diamond, drink water, eat cow, collect sapling and plant it, sleep when energy is low.)
+PREDICTION: Moving north gets me closer to the tree 2 steps north-east, so I can collect more wood next.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- stone 3 steps to your north-east
+- tree 1 step to your east
+- table 2 steps to your south-east
+- iron 4 steps to your north-east
+- cow 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+22,Move East,"OBSERVATION_CHECK: SUCCESS (Moving north brought the stone and iron closer, and the view shifted as expected.)
+NEW_MEMORY: NONE
+PLAN: 1. Face the tree 1 step east and collect wood with Do. 2. Collect 2-3 more wood from nearby trees. 3. Mine stone 3 steps north-east. 4. Make stone pickaxe and stone sword at the table. 5. Collect coal and iron, place a furnace near the table, make iron tools. 6. Find diamond, drink water, eat cow, collect sapling and plant it, sleep when energy is low.
+PREDICTION: The tree blocks my path east, so I should turn to face it without moving, and then be ready to collect wood.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 3 steps to your north-east
+- tree 1 step to your east
+- table 2 steps to your south-east
+- iron 4 steps to your north-east
+- cow 4 steps to your south-east
+
+You face tree at your front.",0.0,False
+23,Do,"OBSERVATION_CHECK: FAILED: Move East was blocked by the tree directly east, so I only turned to face it and did not advance.
+NEW_MEMORY: Tree 1 step east blocks eastward movement; face it and use Do to harvest wood rather than repeating Move East.
+PLAN: 1. Do to collect wood from the tree east. 2. Collect 2-3 more wood from nearby trees. 3. Mine stone 3 steps north-east. 4. Make stone pickaxe and stone sword at the table. 5. Collect coal and iron, place a furnace near the table, make iron tools. 6. Find diamond, drink water, eat cow, collect sapling and plant it, sleep when energy is low.
+PREDICTION: Do will collect one wood from the tree in front, raising wood from 2 to 3.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 3 steps to your north-east
+- table 2 steps to your south-east
+- iron 4 steps to your north-east
+- tree 3 steps to your south-east
+- cow 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+24,Move North,"OBSERVATION_CHECK: FAILED: The previous Do was wasted because I was facing grass, so no wood was gained and the view did not change.
+NEW_MEMORY: Do on grass does nothing. Check that the front tile is a tree before using Do. The nearest tree is 3 steps south-east, not adjacent.
+PLAN: 1. Move north toward stone 3 steps north-east and mine 2-3 stone. 2. Return to the table (2 south-east of stone area) and make stone pickaxe and stone sword with 3 wood in inventory. 3. Mine coal and iron near the stone, place a furnace next to the table, and make iron pickaxe and iron sword, collecting extra wood from the tree 3 steps south-east first. 4. Find diamond, drink water, eat cow (4 steps south-east), collect sapling, place plant, and sleep when energy is low.
+PREDICTION: I move one tile north, and the stone 3 steps north-east should come to about 2 steps north-east.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- iron 3 steps to your north
+- stone 2 steps to your north-east
+- table 3 steps to your south-east
+- tree 4 steps to your south-east
+- cow 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+25,Move North,"OBSERVATION_CHECK: SUCCESS (the view shifted: iron is now 3 steps north and stone is 2 steps north-east, so I moved closer)
+NEW_MEMORY: NONE
+PLAN: KEEP (1. Move north and east to reach the stone, then mine 2-3 stone. 2. Return to the table and make a stone pickaxe and stone sword with the 3 wood. 3. Mine coal and iron, place a furnace near the table, and make the iron pickaxe and iron sword, collecting extra wood from the tree to the south-east first. 4. Find diamond, drink water, eat a cow, collect a sapling, place a plant, and sleep when energy is low.)
+PREDICTION: I move one tile north, so the stone should be 1 step north-east and the iron 2 steps north.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- stone 1 step to your east
+- iron 2 steps to your north
+- table 4 steps to your south-east
+- tree 5 steps to your south-east
+- coal 6 steps to your north-east
+
+You face grass at your front.",0.0,False
+26,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Face the stone 1 step east and mine 2-3 stone. 2. Return to the table (4 steps south-east) and make a stone pickaxe and stone sword with the 3 wood. 3. Mine the iron 2 steps north and coal 6 steps north-east, place a furnace near the table, and make the iron pickaxe and iron sword. 4. Find diamond, drink water, eat a cow, collect a sapling, place a plant, and sleep when energy is low.
+PREDICTION: The stone blocks eastward movement, so I will turn to face it without moving, and the stone will be directly in front of me.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 1 step to your east
+- iron 2 steps to your north
+- table 4 steps to your south-east
+- tree 5 steps to your south-east
+- coal 6 steps to your north-east
+
+You face stone at your front.",0.0,False
+27,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Mine 2-3 stone with Do while facing the stone 1 step east. 2. Return to the table (4 steps south-east) and make a stone pickaxe and stone sword with the wood. 3. Mine the iron 2 steps north and coal 6 steps north-east, place a furnace near the table, and make the iron pickaxe and iron sword. 4. Find diamond, drink water, eat a cow, collect a sapling, place a plant, and sleep when energy is low.
+PREDICTION: Do with the wood pickaxe on the adjacent stone will collect 1 stone, and the stone tile may become grass or path.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 2 steps to your north-east
+- iron 2 steps to your north
+- path 1 step to your east
+- table 4 steps to your south-east
+- tree 5 steps to your south-east
+- coal 6 steps to your north-east
+
+You face path at your front.",1.0,False
+28,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I move onto the path tile east, which brings the stone 2 steps north-east closer for mining.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 1 step to your north
+- iron 1 step to your east
+- table 3 steps to your south
+- tree 4 steps to your south-east
+- coal 5 steps to your north-east
+
+You face iron at your front.",0.0,False
+29,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Face the stone 1 step north and mine it with Do to get 2 stone. 2. Walk back toward the table (3 steps south) and make a stone pickaxe, then a stone sword. 3. Return to mine the iron to the west-north area, collect coal, place a furnace near the table, and make the iron pickaxe and iron sword. 4. Find diamond, drink water, eat a cow, collect a sapling, place a plant, and sleep when energy is low.
+PREDICTION: Moving north is blocked by the stone, so I turn to face it, and the stone becomes my front tile for mining.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- stone 1 step to your north
+- iron 1 step to your east
+- table 3 steps to your south
+- tree 4 steps to your south-east
+- coal 5 steps to your north-east
+
+You face stone at your front.",0.0,False
+30,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The stone 1 step north in front of me is mined and becomes 2 stone in inventory.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 2 steps to your north
+- iron 1 step to your east
+- path 1 step to your north
+- table 3 steps to your south
+- tree 4 steps to your south-east
+- coal 5 steps to your north-east
+
+You face path at your front.",0.0,False
+31,Move South,"OBSERVATION_CHECK: SUCCESS (stone went from 1 to 2 in inventory and the mined tile is now path)
+NEW_MEMORY: NONE
+PLAN: 1. Walk south toward the table (3 steps south) and craft a stone pickaxe, then a stone sword. 2. Return to the iron 1 step east and mine it with the stone pickaxe. 3. Mine coal to the north-east. 4. Place a furnace near the table and craft the iron pickaxe and iron sword. 5. Find diamond, drink water, eat a cow, collect a sapling, place a plant, and sleep when energy is low.
+PREDICTION: I move 1 step south, and the table should appear about 2 steps south of me.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- iron 2 steps to your north-east
+- stone 3 steps to your north
+- path 1 step to your north
+- table 2 steps to your south
+- tree 3 steps to your south-east
+- coal 7 steps to your north-east
+
+You face grass at your front.",0.0,False
+32,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Move south once to stand next to the table. 2. Make a stone pickaxe, then a stone sword. 3. Return to the iron 1 step east and mine it with the stone pickaxe. 4. Mine the coal to the north-east. 5. Place a furnace near the table and craft the iron pickaxe and iron sword. 6. Find diamond, drink water, eat a cow, collect a sapling, place a plant, and sleep when energy is low.
+PREDICTION: I move 1 step south and the table should be directly in front of me, 1 step south.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- path 2 steps to your north
+- table 1 step to your south
+- stone 4 steps to your north-east
+- iron 3 steps to your north-east
+- tree 2 steps to your south-east
+
+You face table at your front.",0.0,False
+33,Make Stone Pickaxe,"OBSERVATION_CHECK: SUCCESS (the view shifted and the table is now directly in front of me, 1 step south)
+NEW_MEMORY: NONE
+PLAN: KEEP. Craft a stone pickaxe and a stone sword at the table, mine the iron 1 step east with the stone pickaxe, mine the coal to the north-east, place a furnace near the table, craft iron tools, then find diamond, water, a cow, and a sapling.
+PREDICTION: I craft a stone pickaxe using 1 wood and 1 stone, leaving wood 2 and stone 1.
+ACTION: Make Stone Pickaxe","You see:
+- grass 1 step to your west
+- path 2 steps to your north
+- table 1 step to your south
+- stone 4 steps to your north-east
+- iron 3 steps to your north-east
+- tree 2 steps to your south-east
+
+You face table at your front.",1.0,False
+34,Make Stone Sword,"OBSERVATION_CHECK: SUCCESS (Make Stone Pickaxe crafted: stone_pickaxe is now 1, and wood dropped from 3 to 2 and stone from 2 to 1, as expected.)
+NEW_MEMORY: NONE
+PLAN: Craft a stone sword at the table now (uses 1 wood and 1 stone). Then collect more stone from the stone to the north-east, mine the iron 3 steps north-east with the stone pickaxe, mine coal, place a furnace near the table, craft iron tools, then find water, a cow, and a sapling.
+PREDICTION: A stone sword is added to inventory, leaving wood 1 and stone 0.
+ACTION: Make Stone Sword","You see:
+- grass 1 step to your west
+- path 2 steps to your north
+- table 1 step to your south
+- stone 4 steps to your north-east
+- iron 3 steps to your north-east
+- tree 2 steps to your south-east
+
+You face table at your front.",1.0,False
+35,Move North,"OBSERVATION_CHECK: SUCCESS (inventory now shows stone_sword: 1 and stone_pickaxe: 1, so the stone sword was crafted and stone is 0)
+NEW_MEMORY: NONE
+PLAN: Gather 2+ more wood from the tree 2 steps south-east, then return to the table. Mine stone to the north-east and collect coal further north-east. Place a table and furnace near the iron, craft the iron pickaxe and sword, then search for water, a cow, and a sapling.
+PREDICTION: I move one tile north onto the path, and the stone and iron should appear closer to the north-east.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- iron 2 steps to your north-east
+- stone 3 steps to your north
+- path 1 step to your north
+- table 2 steps to your south
+- tree 3 steps to your south-east
+- coal 7 steps to your north-east
+
+You face path at your front.",0.0,False
+36,Move North,"OBSERVATION_CHECK: SUCCESS - Move North moved me onto the path. The table is now 2 steps south and the stone and iron are closer to the north.
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue north to mine stone and reach the iron and coal to the north-east. Then return to the table with the iron, coal, and wood, and place a furnace near the table. Gather more wood from the tree to the south-east before crafting the iron tools.
+PREDICTION: I move one more tile north onto the path, and the stone should be 2 steps north with the iron closer to the north-east.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- stone 2 steps to your north
+- iron 1 step to your east
+- path 1 step to your north
+- table 3 steps to your south
+- tree 4 steps to your south-east
+- coal 5 steps to your north-east
+
+You face path at your front.",0.0,False
+37,Move East,"OBSERVATION_CHECK: SUCCESS (the north move changed the view; stone is now 2 steps north and iron is 1 step east)
+NEW_MEMORY: NONE
+PLAN: KEEP. Turn east to face the iron and mine it with the stone pickaxe, then go north to mine stone and reach the coal to the north-east. Return to the table with iron, coal, and wood, place a furnace near the table, and gather more wood from the tree to the south-east before crafting iron tools.
+PREDICTION: Iron is not walkable, so Move East should turn me to face the iron without moving me; the iron should then be directly in front of me.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 2 steps to your north
+- iron 1 step to your east
+- path 1 step to your north
+- table 3 steps to your south
+- tree 4 steps to your south-east
+- coal 5 steps to your north-east
+
+You face iron at your front.",0.0,False
+38,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Mine the iron to the east with the stone pickaxe, then go north to mine stone and reach the coal, return to the table, place a furnace near it, gather wood from the tree to the south-east, and craft iron tools.
+PREDICTION: I collect 1 iron from the tile to the east, and it appears in my inventory.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 2 steps to your north
+- iron 3 steps to your north-west
+- path 1 step to your north
+- table 3 steps to your south
+- tree 4 steps to your south-east
+- coal 5 steps to your north-east
+
+You face path at your front.",1.0,False
+39,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Iron tile to the east was mined and is now path; inventory shows iron 1.
+PLAN: KEEP. Head north through the path to reach the coal to the north-east, mine stone along the way, return to the table, place a furnace next to it, get more wood from the tree to the south-east, then craft the iron pickaxe and iron sword.
+PREDICTION: I move one step north onto the path tile, getting closer to the coal.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- stone 1 step to your north
+- iron 2 steps to your north-west
+- path 1 step to your south
+- coal 4 steps to your north-east
+
+You face stone at your front.",0.0,False
+40,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Mine the stone to the north for building material, then head north-east to the coal, mine it, return to the table, place a furnace next to it, get more wood from the tree to the south-east, then craft the iron pickaxe and iron sword.
+PREDICTION: The stone in front of me is collected into my inventory and the tile becomes path.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 1 step to your east
+- iron 2 steps to your north-west
+- path 1 step to your north
+- coal 4 steps to your north-east
+
+You face path at your front.",0.0,False
+41,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Turn east to face the stone 1 step east and mine it for extra stone (needed for a furnace and placing stone). Then move north through the path toward the coal 4 steps north-east, mine it, gather one more wood from the tree to the south-east, mine the iron 2 steps north-west for a second iron, return to the table, place a furnace next to it, and craft the iron pickaxe and iron sword.
+PREDICTION: Move East is blocked by the stone, so I turn to face it, and the next Do should collect that stone.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- stone 1 step to your east
+- iron 2 steps to your north-west
+- path 1 step to your north
+- coal 4 steps to your north-east
+
+You face stone at your front.",0.0,False
+42,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Mine the stone to the east, then head north through the path toward the coal 4 steps north-east, gather more wood from the trees to the south-east, mine the iron 2 steps north-west, return to the table, place a furnace beside it, and craft the iron pickaxe and iron sword.
+PREDICTION: The stone 1 step east is collected, so stone goes from 1 to 2 and the tile becomes path.
+ACTION: Do","You see:
+- grass 1 step to your west
+- stone 2 steps to your north
+- iron 2 steps to your north-west
+- path 1 step to your north
+- coal 4 steps to your north-east
+
+You face path at your front.",0.0,False
+43,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move north through the path toward the coal 4 steps north-east, mine stone along the way, then return south-east for wood, mine the iron 2 steps north-west, go back to the table, place a furnace beside it, and craft the iron pickaxe and iron sword (need 2 wood, 2 coal, 2 iron total).
+PREDICTION: I move one tile north onto the path, and the coal to the north-east gets closer.
+ACTION: Move North","You see:
+- grass 2 steps to your west
+- tree 6 steps to your north-west
+- stone 1 step to your north
+- coal 3 steps to your north
+- iron 1 step to your west
+- path 1 step to your south
+
+You face stone at your front.",0.0,False
+44,Do,"OBSERVATION_CHECK: SUCCESS (moved north onto the path; the stone is now 1 step north and I am facing it, so the view changed)
+NEW_MEMORY: NONE
+PLAN: Mine the stone to the north with Do, move north to reach the coal 3 steps north, mine it, return to the table, place a furnace beside it, then craft the iron pickaxe and iron sword (need 2 wood, 2 coal, 2 iron total; currently have 1 wood, 1 iron).
+PREDICTION: Do collects one stone from the tile I'm facing, opening the path north toward the coal.
+ACTION: Do","You see:
+- grass 2 steps to your west
+- tree 6 steps to your north-west
+- stone 1 step to your east
+- coal 3 steps to your north
+- iron 1 step to your west
+- path 1 step to your north
+
+You face path at your front.",0.0,False
+45,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move north along the path to reach the coal 3 steps north and mine it with Do. Then mine the iron 1 step west, collect a second iron and wood, return to the table or place a new one, place a furnace beside it, and craft the iron pickaxe and iron sword.
+PREDICTION: I move one step north onto the path, and the coal should be about 2 steps north.
+ACTION: Move North","You see:
+- grass 2 steps to your west
+- tree 5 steps to your north-west
+- coal 2 steps to your north
+- stone 1 step to your west
+- iron 2 steps to your south-west
+- path 1 step to your south
+
+You face stone at your front.",0.0,False
+46,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Mine the stone directly north to clear the way, move north, then mine the coal 2 steps north with Do. Then mine the iron 2 steps south-west, collect wood from the tree to the north-west, return to the table or place a new one, place a furnace beside it, and craft the iron pickaxe and iron sword.
+PREDICTION: The stone in front of me is collected into inventory (stone goes from 3 to 4) and the tile becomes path, opening the way north to the coal.
+ACTION: Do","You see:
+- grass 2 steps to your west
+- tree 5 steps to your north-west
+- coal 2 steps to your north
+- stone 1 step to your west
+- iron 2 steps to your south-west
+- path 1 step to your north
+
+You face path at your front.",0.0,False
+47,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move north onto the path, then mine the coal directly north with Do. Next, mine the stone to the west and the iron 2 steps south-west, collect wood from the tree to the north-west, place a table and furnace near each other, and craft the iron pickaxe and iron sword.
+PREDICTION: I move one tile north onto the path, leaving the coal 1 step north so I can face it and mine it next.
+ACTION: Move North","You see:
+- sand 7 steps to your north-west
+- grass 3 steps to your west
+- tree 4 steps to your north-west
+- stone 1 step to your west
+- coal 1 step to your north
+- iron 3 steps to your south-west
+- path 1 step to your south
+
+You face coal at your front.",0.0,False
+48,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I mine the coal directly north with my wood pickaxe, adding coal to my inventory.
+ACTION: Do","You see:
+- sand 7 steps to your north-west
+- grass 3 steps to your west
+- tree 4 steps to your north-west
+- stone 1 step to your west
+- coal 2 steps to your north-west
+- iron 3 steps to your south-west
+- path 1 step to your north
+
+You face path at your front.",1.0,False
+49,Move North,"OBSERVATION_CHECK: SUCCESS (coal went from 0 to 1 in inventory, and the tile north is now path)
+NEW_MEMORY: NONE
+PLAN: Move north onto the path, mine the second coal to the north-west, collect wood from the tree 4 steps north-west, place a table and furnace together, then craft the iron pickaxe. I need one more wood, coal, and iron for the iron sword.
+PREDICTION: I move one step north onto the path, and the coal that was 2 steps north-west should be closer.
+ACTION: Move North","You see:
+- water 7 steps to your north-west
+- sand 6 steps to your north-west
+- grass 4 steps to your west
+- path 1 step to your south
+- tree 3 steps to your west
+- stone 1 step to your north
+- coal 1 step to your west
+- iron 4 steps to your south-west
+- diamond 5 steps to your north-east
+
+You face stone at your front.",0.0,False
+50,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Face the coal 1 step west and mine it, then mine the stone north for furnace material, go back to the tree 3 steps west for wood, place a table and furnace near here, craft the iron pickaxe, then find more iron and coal for the iron sword.
+PREDICTION: The coal tile to my west blocks movement, so I turn to face it without moving; the next Do should collect coal.
+ACTION: Move West","You see:
+- water 7 steps to your north-west
+- sand 6 steps to your north-west
+- grass 4 steps to your west
+- path 1 step to your south
+- tree 3 steps to your west
+- stone 1 step to your north
+- coal 1 step to your west
+- iron 4 steps to your south-west
+- diamond 5 steps to your north-east
+
+You face coal at your front.",0.0,False
+51,Do,"OBSERVATION_CHECK: SUCCESS (Move West was blocked by coal, so I turned to face it, which is the intended setup for mining.)
+NEW_MEMORY: Coal is 1 step west and blocks movement; Move West only turns me to face it, so use Do to mine it.
+PLAN: Mine the coal to the west with Do, then mine the stone to the north for furnace material, collect wood from the tree 3 steps west, place a table and furnace near here, craft the iron pickaxe, then find a second iron and more coal for the iron sword.
+PREDICTION: Do collects one coal from the tile to my west, raising coal to 2 and leaving a path tile.
+ACTION: Do","You see:
+- water 7 steps to your north-west
+- sand 6 steps to your north-west
+- grass 4 steps to your west
+- path 1 step to your west
+- tree 3 steps to your west
+- stone 1 step to your north
+- coal 3 steps to your north-west
+- iron 4 steps to your south-west
+- diamond 5 steps to your north-east
+
+You face path at your front.",0.0,False
+52,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Coal tile to the west was mined and is now path; coal count is 2 and iron is 1.
+PLAN: Walk west to the tree 3 steps away and collect several wood (need wood for table, iron pickaxe, and iron sword). Then place a table and furnace near here (furnace needs stone, which I have 4 of), craft the iron pickaxe, then find a second iron and more coal for the iron sword.
+PREDICTION: I move one step west onto the path tile, getting 2 steps from the tree.
+ACTION: Move West","You see:
+- water 6 steps to your north-west
+- grass 3 steps to your west
+- sand 5 steps to your north-west
+- path 1 step to your east
+- tree 2 steps to your west
+- stone 1 step to your west
+- coal 2 steps to your north-west
+- iron 3 steps to your south
+- diamond 6 steps to your north-east
+
+You face stone at your front.",0.0,False
+53,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Stone 1 step west blocks the path to the tree 2 steps west; mine it with Do to clear the way.
+PLAN: Mine the stone to the west, move west onto the cleared tile, face the tree 1 step west and collect several wood, then place a table and furnace near here, craft the iron pickaxe, then find a second iron and more coal for the iron sword.
+PREDICTION: The stone tile to my west is removed and added to inventory (stone 5), leaving a path tile in front of me.
+ACTION: Do","You see:
+- water 6 steps to your north-west
+- grass 3 steps to your west
+- sand 5 steps to your north-west
+- path 1 step to your west
+- tree 2 steps to your west
+- stone 1 step to your north
+- coal 2 steps to your north-west
+- iron 3 steps to your south
+- diamond 6 steps to your north-east
+
+You face path at your front.",0.0,False
+54,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move west onto the cleared path tile, then face the tree 1 step west and collect wood with Do. Then place a table and furnace nearby, craft the iron pickaxe, and find a second iron and more coal for the iron sword.
+PREDICTION: I move one step west onto the path tile, and the tree will be directly in front of me (1 step west).
+ACTION: Move West","You see:
+- water 5 steps to your north-west
+- grass 2 steps to your west
+- sand 4 steps to your north-west
+- path 1 step to your east
+- tree 1 step to your west
+- stone 1 step to your south
+- coal 1 step to your north
+- iron 4 steps to your south-east
+- diamond 7 steps to your north-east
+
+You face tree at your front.",0.0,False
+55,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Collect wood from the tree directly in front with Do, then gather a few more wood, place a table and furnace near the iron and coal, craft the iron pickaxe, and find another iron and more coal for the iron sword.
+PREDICTION: The tree in front gives 1 wood, so wood goes from 1 to 2.
+ACTION: Do","You see:
+- water 5 steps to your north-west
+- grass 1 step to your west
+- sand 4 steps to your north-west
+- path 1 step to your east
+- tree 3 steps to your north-west
+- stone 1 step to your south
+- coal 1 step to your north
+- iron 4 steps to your south-east
+- diamond 7 steps to your north-east
+
+You face grass at your front.",0.0,False
+56,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Walk to the tree 3 steps north-west and collect 2-3 more wood, then place a table near the coal and iron, place a furnace, craft the iron pickaxe, and look for another iron for the iron sword.
+PREDICTION: I move one step west onto the grass, getting closer to the tree at the north-west.
+ACTION: Move West","You see:
+- water 4 steps to your north-west
+- grass 1 step to your west
+- sand 3 steps to your north-west
+- path 1 step to your east
+- tree 2 steps to your north
+- stone 2 steps to your south-east
+- coal 2 steps to your north-east
+- iron 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+57,Move North,"OBSERVATION_CHECK: SUCCESS - the last Move West moved me onto grass, and the tree is now 2 steps north, closer than before.
+NEW_MEMORY: NONE
+PLAN: Move North once to get adjacent to the tree 2 steps north, then Do to collect wood until I have about 4-5 wood. Then place a table near the coal and iron, place a furnace, craft the iron pickaxe, and look for another iron for the iron sword.
+PREDICTION: I move one step north onto grass and end up directly south of the tree, facing it.
+ACTION: Move North","You see:
+- water 3 steps to your north-west
+- grass 1 step to your west
+- sand 2 steps to your north-west
+- path 2 steps to your north
+- tree 1 step to your north
+- coal 1 step to your east
+- stone 2 steps to your north-east
+
+You face tree at your front.",0.0,False
+58,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Chop the tree in front for wood until I have 4-5 wood, then place a table near the coal and iron, place a furnace, craft the iron pickaxe, and look for more iron for the iron sword.
+PREDICTION: The tree in front gives me 1 wood, and wood goes from 2 to 3.
+ACTION: Do","You see:
+- water 3 steps to your north-west
+- grass 1 step to your west
+- sand 2 steps to your north-west
+- path 2 steps to your north
+- coal 1 step to your east
+- stone 2 steps to your north-east
+
+You face grass at your front.",0.0,False
+59,Place Table,"OBSERVATION_CHECK: SUCCESS (wood went from 2 to 3, so the Do chopped the tree)
+NEW_MEMORY: NONE
+PLAN: Place a table here near the coal and iron, place a furnace next to it, craft the iron pickaxe with the wood, coal, and iron I have, then find more iron for the iron sword.
+PREDICTION: A table appears on the grass tile in front of me, and wood drops by the table cost.
+ACTION: Place Table","You see:
+- water 3 steps to your north-west
+- grass 1 step to your west
+- sand 2 steps to your north-west
+- path 2 steps to your north
+- table 1 step to your north
+- coal 1 step to your east
+- stone 2 steps to your north-east
+
+You face table at your front.",0.0,False
+60,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Table placed 1 step north of me on the grass tile; I am still facing it, so a furnace cannot be placed in that tile.
+PLAN: Move West to step off the spot in front of the table, place the furnace on the free tile to the west while staying within reach of the table, then Make Iron Pickaxe using wood 1, coal 1, and iron 1, then find more iron and coal for the iron sword.
+PREDICTION: I move one tile west onto grass, the table ends up diagonally north-east of me, and I face the grass tile further west.
+ACTION: Move West","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+- path 3 steps to your north-east
+- table 2 steps to your north-east
+- coal 2 steps to your east
+- stone 3 steps to your north-east
+
+You face grass at your front.",0.0,False
+61,Move East,"OBSERVATION_CHECK: SUCCESS (the Move West changed the view and I stepped onto new ground)
+NEW_MEMORY: Table is now 2 steps north-east, which is probably too far for crafting. Crafting needs the table within about 1 tile, so I must move adjacent to it before placing the furnace.
+PLAN: Move East, then North to stand diagonal to the table, place the furnace on a free adjacent tile while still next to the table, then Make Iron Pickaxe using wood 1, coal 1, and iron 1. Afterward gather more iron and coal for the iron sword.
+PREDICTION: I move one tile east, which brings the table closer (about 1 step north and 1 step east of me).
+ACTION: Move East","You see:
+- water 3 steps to your north-west
+- grass 1 step to your west
+- sand 2 steps to your north-west
+- path 2 steps to your north
+- table 1 step to your north
+- coal 1 step to your east
+- stone 2 steps to your north-east
+
+You face coal at your front.",0.0,False
+62,Do,"OBSERVATION_CHECK: SUCCESS (the view shifted and the table is now 1 step north, so I am adjacent to it)
+NEW_MEMORY: NONE
+PLAN: Mine the coal in front with Do for a third coal. Then place the furnace on a free tile while standing next to the table. Then Make Iron Pickaxe with wood 1, coal 1, iron 1. Afterward, find more iron and wood for the iron sword.
+PREDICTION: Do on coal collects 1 coal, so coal goes from 2 to 3 and the coal tile becomes path.
+ACTION: Do","You see:
+- water 3 steps to your north-west
+- grass 1 step to your west
+- sand 2 steps to your north-west
+- path 1 step to your east
+- table 1 step to your north
+- coal 4 steps to your north-east
+- stone 2 steps to your north-east
+
+You face path at your front.",0.0,False
+63,Place Furnace,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The coal tile east of me was mined and is now path; coal is 3, iron 1, wood 1, stone 5. The table is 1 step north, so it is adjacent.
+PLAN: Place the furnace on the path tile to the east while the table is adjacent. Then Make Iron Pickaxe using wood 1, coal 1, iron 1. Afterward, find more iron and wood for the iron sword.
+PREDICTION: A furnace appears on the east path tile, with the table still adjacent to the north.
+ACTION: Place Furnace","You see:
+- water 3 steps to your north-west
+- grass 1 step to your west
+- sand 2 steps to your north-west
+- path 2 steps to your north
+- table 1 step to your north
+- coal 4 steps to your north-east
+- stone 2 steps to your north-east
+- furnace 1 step to your east
+
+You face furnace at your front.",1.0,False
+64,Make Iron Pickaxe,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Furnace placed 1 step east, table 1 step north. Inventory has wood 1, coal 3, iron 1, so the iron pickaxe can be crafted here.
+PLAN: Make Iron Pickaxe now using the nearby table and furnace. Then find more wood and iron for the iron sword, and look for diamond with the iron pickaxe.
+PREDICTION: An iron pickaxe is added to inventory, consuming wood 1, coal 1, and iron 1.
+ACTION: Make Iron Pickaxe","You see:
+- water 3 steps to your north-west
+- grass 1 step to your west
+- sand 2 steps to your north-west
+- path 2 steps to your north
+- table 1 step to your north
+- coal 4 steps to your north-east
+- stone 2 steps to your north-east
+- furnace 1 step to your east
+
+You face furnace at your front.",1.0,False
+65,Move West,"OBSERVATION_CHECK: SUCCESS (iron_pickaxe is now in inventory, and the wood, coal, and iron were consumed as predicted)
+NEW_MEMORY: Iron pickaxe crafted at the table and furnace. Wood and iron are now 0, so the iron sword needs both, plus 1 coal (I have 2).
+PLAN: Find a tree and collect wood, then find iron (last seen south-west of the start area). Return to the table and furnace to make the iron sword. Then use the iron pickaxe to mine diamond (last seen north-east of the start area).
+PREDICTION: I move one tile west onto grass and get closer to the trees I saw to the west.
+ACTION: Move West","You see:
+- water 2 steps to your north
+- grass 1 step to your west
+- sand 1 step to your north
+- path 3 steps to your north-east
+- table 2 steps to your north-east
+- coal 5 steps to your north-east
+- stone 3 steps to your north-east
+- furnace 2 steps to your east
+
+You face grass at your front.",0.0,False
+66,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Furnace is now 2 east and table 2 north-east after the last move, so the west move worked. Inventory has no wood or iron, so the iron sword needs both.
+PLAN: Walk north to the water and drink for the Collect Drink achievement. Then find a tree for wood and more iron, return to the table and furnace to craft the iron sword, and collect a sapling, place a plant, and look for cows and zombies. Use the iron pickaxe to mine diamond north-east of the start area.
+PREDICTION: I move one tile north onto sand, and the water will be about 1 step away.
+ACTION: Move North","You see:
+- water 1 step to your north
+- grass 1 step to your west
+- coal 3 steps to your north
+- stone 2 steps to your east
+- path 2 steps to your north-east
+- table 1 step to your east
+- furnace 3 steps to your south-east
+
+You face water at your front.",0.0,False
+67,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Drink water now for the Collect Drink achievement. Then find trees for wood and iron for the iron sword, return to the table and furnace to craft it, collect a sapling, place a plant, and look for cows and zombies. Later, mine diamond to the north-east with the iron pickaxe.
+PREDICTION: I face water, so Do drinks from the lake, raising drink from 6 to 7 and unlocking Collect Drink.
+ACTION: Do","You see:
+- water 1 step to your north
+- grass 1 step to your west
+- coal 3 steps to your north
+- stone 2 steps to your east
+- path 2 steps to your north-east
+- table 1 step to your east
+- furnace 3 steps to your south-east
+
+You face water at your front.",1.0,False
+68,Do,"OBSERVATION_CHECK: SUCCESS - Do on water raised drink from 6 to 7 and the inventory shows the achievements progressing (iron pickaxe, stone pickaxe, stone sword, wood sword already made).
+NEW_MEMORY: Crafted iron pickaxe, wood pickaxe, stone pickaxe, wood sword, stone sword; table is 1 step east and furnace 3 steps south-east of current position; water is directly north.
+PLAN: Drink water until drink is 9 for safety, then collect wood from trees (none visible now, so explore west/north), collect sapling from grass, place plant, find iron and wood for iron sword, return to table and furnace, look for cows, zombies, and skeletons in caves, and mine diamond to the north-east with the iron pickaxe.
+PREDICTION: Drink increases from 7 to 8 and Collect Drink stays unlocked.
+ACTION: Do","You see:
+- water 1 step to your north
+- grass 1 step to your west
+- coal 3 steps to your north
+- stone 2 steps to your east
+- path 2 steps to your north-east
+- table 1 step to your east
+- furnace 3 steps to your south-east
+
+You face water at your front.",0.0,False
+69,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Drink once more to reach 9 water, then collect wood from trees to the west, collect a sapling from grass and place it, find iron and wood for the iron sword, return to the table and furnace, then look for cows, zombies, skeletons, and diamond to the north-east.
+PREDICTION: Drink increases from 8 to 9 and Collect Drink stays unlocked.
+ACTION: Do","You see:
+- water 1 step to your north
+- grass 1 step to your west
+- coal 3 steps to your north
+- stone 2 steps to your east
+- path 2 steps to your north-east
+- table 1 step to your east
+- furnace 3 steps to your south-east
+
+You face water at your front.",0.0,False
+70,Place Stone,"OBSERVATION_CHECK: FAILED: The last Do on water changed nothing because drink was already 9/9, so the action made no progress.
+NEW_MEMORY: Drinking at full drink (9/9) does nothing; stop repeating Do on water. I have 1 stone and am facing water, so I can place it for the Place Stone achievement.
+PLAN: Place Stone on the water to the north for the achievement. Then mine the stone to the east back, collect wood from the trees to the west or south-east, and try Do on grass for a sapling and place it. Find one more iron, then craft the iron sword at the table and furnace with 1 wood, 1 coal, and 1 iron. After that, explore north-east for cows, zombies, skeletons, and diamond.
+PREDICTION: A stone is placed on the water tile north of me, and the Place Stone achievement unlocks.
+ACTION: Place Stone","You see:
+- water 2 steps to your north-west
+- grass 1 step to your west
+- coal 3 steps to your north
+- stone 1 step to your north
+- path 2 steps to your north-east
+- table 1 step to your east
+- furnace 3 steps to your south-east
+
+You face stone at your front.",1.0,False
+71,Do,"OBSERVATION_CHECK: SUCCESS (stone now appears 1 step north where the water was, and my stone count dropped to 0, so the placement worked.)
+NEW_MEMORY: Placed stone on the water tile directly north; it can be mined back with Do to recover it.
+PLAN: Mine the stone to the north with Do to recover it. Then collect more stone for future needs. Find trees to the south-east or west for wood, and collect a sapling by using Do on grass. Place the plant, find one more iron, and craft the iron sword at the table and furnace using 1 wood, 1 coal, and 1 iron. Afterward, explore north-east for cows, zombies, skeletons, and diamond.
+PREDICTION: Do will mine the stone north of me, adding 1 stone to my inventory and leaving the tile as path.
+ACTION: Do","You see:
+- water 2 steps to your north-west
+- grass 1 step to your west
+- coal 3 steps to your north
+- path 1 step to your north
+- stone 2 steps to your east
+- table 1 step to your east
+- furnace 3 steps to your south-east
+
+You face path at your front.",0.0,False
+72,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move north onto the path, mine the coal 3 steps north, then collect more stone and look for wood and iron to craft the iron sword at the table and furnace. Afterward, find a sapling on grass, place a plant, and explore north-east for cows, zombies, skeletons, and diamond.
+PREDICTION: I move one tile north onto the path, and the coal should then be 2 steps north.
+ACTION: Move North","You see:
+- water 1 step to your west
+- grass 2 steps to your south-west
+- stone 3 steps to your north
+- coal 2 steps to your north
+- sand 1 step to your south
+- path 1 step to your east
+- table 2 steps to your south-east
+- furnace 4 steps to your south-east
+
+You face water at your front.",0.0,False
+73,Move East,"OBSERVATION_CHECK: SUCCESS (the view shifted, table and furnace are now farther south-east, so the move north went through, but water now blocks the tile directly north)
+NEW_MEMORY: Water blocks the tile directly north of my current position, so the coal 2 steps north must be reached by going around it, through the path to the east.
+PLAN: Move east onto the path, then north to reach the coal 2 steps north, mine it, then collect stone 3 steps north. Afterward, look for wood and iron to craft the iron sword at the table and furnace, find a sapling on grass and place a plant, and explore north-east for cows, zombies, skeletons, and diamond.
+PREDICTION: I move one tile east onto the path, and the coal should then be reachable by moving north.
+ACTION: Move East","You see:
+- water 2 steps to your west
+- grass 2 steps to your south
+- stone 2 steps to your north
+- coal 2 steps to your north-east
+- path 1 step to your west
+- sand 2 steps to your south-west
+- table 1 step to your south
+- furnace 3 steps to your south-east
+- skeleton 6 steps to your north-east
+
+You face path at your front.",0.0,False
+74,Move North,"OBSERVATION_CHECK: SUCCESS (the view shifted: table moved from 1 step north to 1 step south, so I moved east onto the path)
+NEW_MEMORY: NONE
+PLAN: Move north toward the coal 2 steps north-east and stone 2 steps north, mine the coal and stone, then find wood and iron for the iron sword at the table and furnace, collect a sapling and place a plant, and look for cows, zombies, skeletons, and diamonds to the north-east.
+PREDICTION: I move one tile north, bringing the coal and stone closer.
+ACTION: Move North","You see:
+- water 1 step to your west
+- grass 3 steps to your south
+- stone 1 step to your north
+- coal 1 step to your east
+- path 1 step to your south
+- sand 3 steps to your south-west
+- table 2 steps to your south
+- furnace 4 steps to your south-east
+- skeleton 5 steps to your north-east
+
+You face stone at your front.",0.0,False
+75,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Mine the stone directly north to collect it, then face the coal 1 step east and mine it. After that, find wood and iron for the iron sword, collect a sapling, place a plant, and look for cows, zombies, skeletons, and diamonds to the north-east.
+PREDICTION: The stone tile north of me is mined and becomes path, and my stone count rises from 1 to 2.
+ACTION: Do","You see:
+- water 1 step to your west
+- grass 3 steps to your south
+- stone 2 steps to your north
+- coal 1 step to your east
+- path 1 step to your north
+- sand 3 steps to your south-west
+- table 2 steps to your south
+- furnace 4 steps to your south-east
+- skeleton 4 steps to your north-east
+
+You face path at your front.",0.0,False
+76,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I turn to face the coal 1 step east without moving, since coal blocks movement, so the next Do should mine it.
+ACTION: Move East","You see:
+- water 1 step to your west
+- grass 3 steps to your south
+- stone 2 steps to your north
+- coal 1 step to your east
+- path 1 step to your north
+- sand 3 steps to your south-west
+- table 2 steps to your south
+- furnace 4 steps to your south-east
+- skeleton 5 steps to your north-east
+
+You face coal at your front.",0.0,False
+77,Do,"OBSERVATION_CHECK: FAILED: Move East was blocked by the coal tile, so I only turned to face it and did not advance.
+NEW_MEMORY: Coal 1 step east blocks movement; Move East only turns me to face it. Use Do to mine it, then the tile becomes path.
+PLAN: Mine the coal east with Do, then find wood and iron for the iron sword, collect a sapling, place a plant, and look for cows, zombies, skeletons, and diamonds to the north-east.
+PREDICTION: The coal tile east becomes path and coal count rises to 3.
+ACTION: Do","You see:
+- water 1 step to your west
+- grass 3 steps to your south
+- stone 2 steps to your north
+- coal 2 steps to your north-west
+- path 1 step to your north
+- sand 3 steps to your south-west
+- table 2 steps to your south
+- furnace 4 steps to your south-east
+- arrow 4 steps to your north-east
+- skeleton 5 steps to your north-east
+
+You face path at your front.",0.0,False
+78,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Mine toward the north-east for iron and diamond while avoiding the skeleton's arrows, find wood for the iron sword (needs wood, coal, iron, and a nearby table and furnace), collect a sapling and place a plant, then hunt cows and zombies.
+PREDICTION: I move north onto the path tile, and the coal and stone to the north-west come closer in view.
+ACTION: Move North","You see:
+- water 2 steps to your west
+- grass 5 steps to your south-west
+- stone 1 step to your north
+- coal 1 step to your west
+- path 1 step to your south
+- sand 4 steps to your south-west
+- table 3 steps to your south
+- skeleton 4 steps to your east
+
+You face stone at your front.",0.0,False
+79,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Mine the stone north to open a path, search north and east for iron, diamond, and trees, collect a sapling and place a plant, then hunt cows and zombies while avoiding the skeleton's arrows.
+PREDICTION: The stone tile north becomes path and my stone count rises from 2 to 3.
+ACTION: Do","You see:
+- water 2 steps to your west
+- grass 5 steps to your south-west
+- stone 2 steps to your north-west
+- coal 1 step to your west
+- path 1 step to your north
+- sand 4 steps to your south-west
+- table 3 steps to your south
+- skeleton 4 steps to your east
+
+You face path at your front.",0.0,False
+80,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Explore north along the path for iron, diamond, and trees; avoid the skeleton to the east; then collect a sapling, place a plant, hunt cows and zombies, and craft the iron sword once I have wood, coal, and iron.
+PREDICTION: I move one tile north onto the path and see new terrain to the north.
+ACTION: Move North","You see:
+- water 1 step to your north
+- stone 1 step to your west
+- coal 2 steps to your south-west
+- path 1 step to your south
+- sand 4 steps to your north-east
+- tree 6 steps to your north-east
+- grass 5 steps to your north-east
+- skeleton 5 steps to your south-east
+
+You face water at your front.",0.0,False
+81,Move East,"OBSERVATION_CHECK: SUCCESS - the north move worked. The stone that was 1 step north is now 1 step west, and I'm on the path facing water.
+NEW_MEMORY: NONE
+PLAN: KEEP. Head north-east toward the trees for wood (needed for the iron sword), avoid the skeleton to the south-east, then look for iron, a sapling, cows, and zombies. Sleep when safe to get Wake Up.
+PREDICTION: I move one tile east onto the path, getting closer to the tree and grass to the north-east.
+ACTION: Move East","You see:
+- water 2 steps to your north-west
+- stone 1 step to your east
+- coal 3 steps to your south-west
+- path 1 step to your west
+- sand 3 steps to your north-east
+- tree 5 steps to your north-east
+- grass 4 steps to your north-east
+- arrow 3 steps to your south-east
+- skeleton 4 steps to your south-east
+- diamond 7 steps to your south-east
+
+You face stone at your front.",0.0,False
+82,Do,"OBSERVATION_CHECK: FAILED: the Move East did not clear a path, since stone is still directly in front of me to the east.
+NEW_MEMORY: Stone blocks the tile directly east of my current position, so I cannot move east until I mine it.
+PLAN: Mine the stone east to open the path, then head north-east to the tree for wood, which I need for the iron sword. Along the way, collect a sapling from grass, find a cow and a zombie, and avoid the skeleton to the south-east. Sleep when safe for Wake Up. Later, mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: The stone in front of me is collected, adding 1 stone to inventory and turning the tile into path.
+ACTION: Do","You see:
+- water 2 steps to your north-west
+- stone 2 steps to your west
+- coal 3 steps to your south-west
+- path 1 step to your west
+- sand 3 steps to your north-east
+- tree 5 steps to your north-east
+- grass 4 steps to your north-east
+- skeleton 4 steps to your south-east
+- diamond 7 steps to your south-east
+
+You face path at your front.",0.0,False
+83,Move East,"OBSERVATION_CHECK: SUCCESS. The Do action turned the stone in front of me into path, and the view now shows path directly ahead.
+NEW_MEMORY: NONE
+PLAN: Head north-east toward the tree 5 steps away to collect wood for the iron sword, watching for a cow and zombie along the way. Avoid the skeleton to the south-east. Collect a sapling from grass if one is convenient, then return to the table and furnace (about 3 tiles south-east of the table) to craft the iron sword with 1 wood, 1 coal, and 1 iron. Sleep when safe for Wake Up. Mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: I move one tile east onto the path, closer to the tree to the north-east.
+ACTION: Move East","You see:
+- water 3 steps to your north-west
+- stone 1 step to your south
+- coal 3 steps to your east
+- path 1 step to your west
+- sand 2 steps to your north
+- tree 4 steps to your north-east
+- grass 3 steps to your north-east
+- skeleton 3 steps to your south-east
+- diamond 6 steps to your south-east
+
+You face path at your front.",0.0,False
+84,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Head north-east toward the tree about 4 steps away to collect wood, avoiding the skeleton to the south-east. Look for iron to pair with the wood and coal for the iron sword, then return to the table and furnace to craft it. Sleep when safe for Wake Up. Mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: I move one tile east along the path, closer to the tree to the north-east.
+ACTION: Move East","You see:
+- water 4 steps to your north-west
+- stone 2 steps to your south-west
+- coal 2 steps to your east
+- path 1 step to your west
+- sand 3 steps to your north-west
+- tree 3 steps to your north
+- grass 2 steps to your north
+- skeleton 2 steps to your south-east
+- diamond 5 steps to your south-east
+
+You face path at your front.",0.0,False
+85,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move north 2 steps to reach the tree 3 steps north, then Do to collect wood. Look for iron, then return to the table and furnace to craft the iron sword with wood, coal, and iron. Sleep when safe for Wake Up. Mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: I move one tile north onto grass, and the tree should be 2 steps north.
+ACTION: Move North","You see:
+- water 3 steps to your west
+- stone 2 steps to your east
+- coal 3 steps to your south-east
+- path 1 step to your west
+- sand 2 steps to your north-west
+- grass 1 step to your north
+- tree 2 steps to your north
+- skeleton 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+86,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move north 1 step so the tree is adjacent, then Do to collect wood. Return to the table and furnace to craft the iron sword with wood, coal, and iron (iron still needed). Sleep when safe for Wake Up. Mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: I move one tile north onto grass, and the tree should be 1 step north, directly in front of me.
+ACTION: Move North","You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your east
+- tree 1 step to your north
+- arrow 3 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face tree at your front.",0.0,False
+87,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Collect wood from the tree in front, then return to the table and furnace to craft the iron sword once iron is found. Sleep when safe for Wake Up, then mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: The tree in front should give me 1 wood, and the inventory should show wood: 1.
+ACTION: Do","You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+88,Sleep,"OBSERVATION_CHECK: SUCCESS (wood went from 0 to 1 after the Do on the tree, and the tree is no longer in view)
+NEW_MEMORY: The tree north of me is gone, and wood is now 1, enough for one iron sword with 1 iron and 1 coal still needed.
+PLAN: KEEP. Sleep now for the Wake Up achievement, then find a cow, sapling, and zombie, collect iron for the iron sword, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises while asleep, and I wake up later with the Wake Up achievement unlocked.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 1 step to your east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+89,Sleep,"OBSERVATION_CHECK: SUCCESS. Sleep started; the status shows I am sleeping with energy 7/9 and no movement is expected until energy is full.
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep sleeping until energy is full to unlock Wake Up, then find a cow, sapling, and zombie, collect iron and wood for the iron sword (I have 1 coal, so 1 more is enough), and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy keeps rising while asleep until it reaches 9/9, then I wake up and unlock Wake Up.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your north-east
+- skeleton 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+90,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep sleeping until energy is full to unlock Wake Up, then find a cow, sapling, and zombie, collect 1 iron and 1 wood for the iron sword (I have 3 coal), and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises by 1 while asleep, and I stay asleep until energy reaches 9/9.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 3 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+91,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep sleeping until energy reaches 9/9 to unlock Wake Up. Then find a cow, sapling, and zombie, collect 1 iron and 1 wood for the iron sword (I have 3 coal), and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises by 1 to 8/9 and I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 4 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+92,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep sleeping until energy reaches 9/9 to unlock Wake Up. Then find a cow, sapling, and zombie, collect 1 wood and 1 iron for the iron sword (I have 3 coal), and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises by 1 to 8/9 and I stay asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 3 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+93,Sleep,"OBSERVATION_CHECK: SUCCESS (energy rose from 6 to 7 while sleeping, so the sleep is progressing)
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then find a cow, sapling, and zombie, collect 1 iron for the iron sword (wood 1 and coal 3 are already in inventory), and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises to 8/9 and I stay asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+94,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then find iron and wood for the iron sword (coal is sufficient), find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises toward 8/9 and I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 1 step to your east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+95,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then find wood and iron for the iron sword (coal is sufficient), find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises toward 8/9 and I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+96,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then get wood and iron for the iron sword (coal is sufficient), find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises toward 9/9 and I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 3 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+97,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises toward 9/9 and I stay asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+98,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises toward 9/9 and I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 1 step to your east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+99,Sleep,"OBSERVATION_CHECK: SUCCESS. Energy rose to 7/9 while sleeping, so the Sleep action is making progress.
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy increases toward 9/9 and I stay asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+100,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises to 9/9, and I wake up, unlocking the Wake Up achievement.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 3 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+101,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises to 9/9, and I wake up, unlocking the Wake Up achievement.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+102,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises toward 9/9 and I stay asleep for another step.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 1 step to your east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+103,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises to 9/9 and I stay asleep for another step.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+104,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy stays at 8/9 or rises to 9/9 while I remain asleep, and I wake up once energy is full.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 3 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+105,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy stays at 8/9 or rises toward 9/9 while I remain asleep, and I wake up once energy is full.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 3 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+106,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy stays at 8/9 or rises toward 9/9 while I remain asleep.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+107,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword, find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises toward 9/9 while I remain asleep, and I stay asleep for one more step.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 1 step to your east
+- skeleton 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+108,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword (1 coal still needed, I have 3), find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises to 9/9 and I remain asleep for another step.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+109,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword (1 coal still needed, I have 3), find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises to 9/9 and I remain asleep or wake up soon.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 3 steps to your north-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+110,Sleep,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue sleeping until energy reaches 9/9 and Wake Up unlocks. Then collect wood and iron for the iron sword (1 coal still needed, I have 3), find a cow, sapling, and zombie, and mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Energy rises to 9/9 and I wake up, unlocking the Wake Up achievement.
+ACTION: Sleep","You are sleeping, and will not be able take actions until energy is full.
+
+
+
+You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 3 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+111,Noop,"OBSERVATION_CHECK: SUCCESS (energy reached 9/9, so the agent should wake up soon, but the observation still shows sleeping)
+NEW_MEMORY: NONE
+PLAN: 1. Send Noop until the character wakes up and unlocks Wake Up. 2. Collect wood from the nearest tree to the north-east. 3. Collect iron and make the iron sword at the table and furnace, using 1 coal. 4. Find a cow, a sapling, and a zombie. 5. Mine the diamond to the south-east with the iron pickaxe.
+PREDICTION: Noop does nothing while sleeping, but with energy full the agent should wake up, and the status and view should show it is awake.
+ACTION: Noop","You see:
+- water 2 steps to your west
+- stone 3 steps to your south-east
+- coal 4 steps to your south-east
+- path 1 step to your south
+- sand 1 step to your west
+- grass 1 step to your north
+- arrow 2 steps to your south-east
+- skeleton 4 steps to your south-east
+
+You face grass at your front.",1.0,False
+112,Move South,"OBSERVATION_CHECK: SUCCESS (energy is 9/9, the sleeping message is gone, and the character is awake)
+NEW_MEMORY: NONE
+PLAN: 1. Explore for iron, starting south toward the path and cave area with stone, coal, and skeletons. 2. Once iron is found, mine it and craft the iron sword at the table and furnace with 1 wood, 1 iron, and 1 coal. 3. Collect a sapling and place a plant. 4. Find a cow and a zombie. 5. Find and mine a diamond with the iron pickaxe.
+PREDICTION: I move one tile south onto the path, which reveals more of the cave area and possibly iron.
+ACTION: Move South","You see:
+- water 3 steps to your west
+- stone 2 steps to your east
+- coal 3 steps to your south-east
+- path 1 step to your west
+- sand 2 steps to your north-west
+- grass 1 step to your north
+- arrow 2 steps to your north-east
+- skeleton 2 steps to your south-east
+
+You face path at your front.",0.0,False
+113,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I move one tile south onto the path, and the view shifts so more of the cave area to the south becomes visible, possibly showing iron.
+ACTION: Move South","You see:
+- water 4 steps to your north-west
+- stone 2 steps to your south-west
+- coal 2 steps to your east
+- path 1 step to your west
+- sand 3 steps to your north-west
+- grass 2 steps to your north
+- arrow 4 steps to your north-east
+- skeleton 1 step to your east
+- diamond 5 steps to your south-east
+
+You face path at your front.",0.0,False
+114,Move East,"OBSERVATION_CHECK: SUCCESS (Move South moved me onto the path and the view shifted, with the skeleton now 1 step east.)
+NEW_MEMORY: Skeleton is 1 step east in the cave; I have a stone sword and full health, so I can try to defeat it.
+PLAN: 1. Defeat the nearby skeleton to the east for the Defeat Skeleton achievement. 2. Explore the cave to the south for iron. 3. Once iron is found, mine it and craft the iron sword with 1 wood, 1 iron, and 1 coal at the table and furnace. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie. 6. Mine the diamond 5 steps south-east with the iron pickaxe.
+PREDICTION: Move East is blocked by the skeleton, so I turn to face it, ready to attack with Do next.
+ACTION: Move East","You see:
+- water 4 steps to your north-west
+- stone 2 steps to your south-west
+- coal 2 steps to your east
+- path 1 step to your west
+- sand 3 steps to your north-west
+- grass 2 steps to your north
+- skeleton 1 step to your east
+- diamond 5 steps to your south-east
+
+You face skeleton at your front.",0.0,False
+115,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: The skeleton is directly in front of me to the east, so Do should hit it. With the stone sword and full health, it should take a few hits to defeat.
+ACTION: Do","You see:
+- water 4 steps to your north-west
+- stone 2 steps to your south-west
+- coal 2 steps to your east
+- path 1 step to your west
+- sand 3 steps to your north-west
+- grass 2 steps to your north
+- diamond 5 steps to your south-east
+
+You face path at your front.",1.0,False
+116,Move East,"OBSERVATION_CHECK: SUCCESS. The skeleton is no longer visible and my front tile is now path, so it was most likely defeated by the Do action.
+NEW_MEMORY: NONE
+PLAN: 1. Confirm the skeleton is defeated and check achievements. 2. Mine the coal 2 steps east. 3. Explore the cave to the south for iron. 4. Once iron is found, place a table and furnace nearby and craft the iron sword with 1 wood, 1 iron, and 1 coal. 5. Collect a sapling and place a plant. 6. Find a cow and a zombie. 7. Mine the diamond 5 steps south-east with the iron pickaxe.
+PREDICTION: I move one tile east onto the path, which puts the coal one step in front of me.
+ACTION: Move East","You see:
+- water 5 steps to your north-west
+- path 1 step to your west
+- sand 4 steps to your north-west
+- stone 2 steps to your south
+- grass 2 steps to your north
+- coal 1 step to your east
+- diamond 4 steps to your south-east
+
+You face coal at your front.",0.0,False
+117,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Mine the coal to my east to clear the path. 2. Head south-east toward the diamond 4 steps away and mine it with the iron pickaxe. 3. Search the cave for iron to craft an iron sword at a table and furnace. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie. 6. Drink water when drink is low.
+PREDICTION: Mining the coal adds 1 coal to inventory and turns the coal tile into path, so I can keep moving east.
+ACTION: Do","You see:
+- water 5 steps to your north-west
+- path 1 step to your west
+- sand 4 steps to your north-west
+- stone 2 steps to your south
+- grass 2 steps to your north
+- diamond 4 steps to your south-east
+- coal 3 steps to your east
+
+You face path at your front.",0.0,False
+118,Move East,"OBSERVATION_CHECK: SUCCESS (coal went from 0 to 4 in inventory, so the Do mined it and the tile is now path)
+NEW_MEMORY: Mined coal successfully; inventory now shows coal 4 and the iron_pickaxe is already in inventory, so only iron is still missing for the iron sword.
+PLAN: 1. Move east through the cleared path toward the coal 3 steps east and collect more coal if convenient. 2. Head south-east toward the diamond 4 steps away and mine it with the iron pickaxe. 3. Search the cave for iron. 4. Find wood (need 1 more for the iron sword plus table nearby) and place a table and furnace near each other. 5. Craft the iron sword once iron, coal, and wood are in hand. 6. Collect a sapling and place a plant. 7. Find a cow and a zombie. 8. Drink water when drink is low.
+PREDICTION: I move one tile east onto the path, getting closer to the coal and diamond.
+ACTION: Move East","You see:
+- water 6 steps to your north-west
+- path 1 step to your west
+- sand 5 steps to your north-west
+- stone 1 step to your north
+- grass 3 steps to your north-west
+- diamond 3 steps to your south
+- coal 2 steps to your east
+
+You face stone at your front.",0.0,False
+119,Do,"OBSERVATION_CHECK: SUCCESS. The view shifted (coal went from 3 steps east to 2), so the move east made progress onto the path.
+NEW_MEMORY: NONE
+PLAN: 1. Mine the stone in front to clear the way east toward the coal 2 steps east and collect more coal if convenient. 2. Head south toward the diamond 3 steps south and mine it with the iron pickaxe. 3. Search the cave for iron. 4. Find wood (need 1 more for the iron sword plus a table) and place a table and furnace adjacent to each other. 5. Craft the iron sword once iron, coal, and wood are in hand. 6. Collect a sapling and place a plant. 7. Find a cow and a zombie. 8. Drink water when drink is low.
+PREDICTION: Mining the stone in front adds 1 stone to inventory (5 total) and turns the tile into path.
+ACTION: Do","You see:
+- water 6 steps to your north-west
+- path 1 step to your west
+- sand 5 steps to your north-west
+- stone 1 step to your north
+- grass 3 steps to your north-west
+- diamond 3 steps to your south
+- coal 2 steps to your east
+
+You face path at your front.",0.0,False
+120,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Move south toward the diamond 3 steps south and mine it with the iron pickaxe. 2. Search the cave for iron. 3. Find wood and place a table and furnace adjacent to each other. 4. Craft the iron sword once iron, coal, and wood are in hand. 5. Collect a sapling and place a plant. 6. Find a cow and a zombie. 7. Drink water when drink is low.
+PREDICTION: I move one tile south along the path, getting about 2 steps from the diamond.
+ACTION: Move South","You see:
+- water 6 steps to your north-west
+- path 1 step to your west
+- sand 5 steps to your north-west
+- stone 1 step to your north
+- grass 3 steps to your north-west
+- diamond 3 steps to your south
+- coal 2 steps to your east
+
+You face stone at your front.",0.0,False
+121,Do,"OBSERVATION_CHECK: FAILED: Move South was blocked. The view did not change and the game reports stone directly in front of me, so the south tile is solid stone.
+NEW_MEMORY: The tile directly south is stone, which blocks the route to the diamond 3 steps south. I need to mine it with Do before moving south again.
+PLAN: 1. Mine the stone in front with Do to open the path south. 2. Move south toward the diamond 3 steps away and mine it with the iron pickaxe. 3. Search the cave for iron. 4. Find wood, then place a table and furnace adjacent to each other. 5. Craft the iron sword once iron, coal, and wood are in hand. 6. Collect a sapling and place a plant. 7. Find a cow and a zombie. 8. Drink water when drink is low.
+PREDICTION: The stone in front is mined, I gain 1 stone, and the tile south becomes path so I can advance.
+ACTION: Do","You see:
+- water 6 steps to your north-west
+- path 1 step to your west
+- sand 5 steps to your north-west
+- stone 1 step to your north
+- grass 3 steps to your north-west
+- diamond 3 steps to your south
+- coal 2 steps to your east
+
+You face path at your front.",0.0,False
+122,Move South,"OBSERVATION_CHECK: SUCCESS (the Do mined a stone, stone went from 5 to 6, and the tile in front is now path)
+NEW_MEMORY: NONE
+PLAN: KEEP (1. Move south along the mined path toward the diamond 3 steps south and mine it with the iron pickaxe. 2. Search the cave for iron. 3. Find wood, then place a table and furnace adjacent to each other. 4. Craft the iron sword once iron, coal, and wood are in hand. 5. Collect a sapling and place a plant. 6. Find a cow and a zombie. 7. Drink water when drink is low.)
+PREDICTION: I move one tile south onto the path, and the diamond should be about 2 steps south afterward.
+ACTION: Move South","You see:
+- water 7 steps to your north-west
+- path 1 step to your west
+- stone 1 step to your south
+- sand 6 steps to your north-west
+- grass 4 steps to your north-west
+- diamond 2 steps to your south
+- coal 3 steps to your north-east
+
+You face stone at your front.",0.0,False
+123,Do,"OBSERVATION_CHECK: SUCCESS - the south move worked; the diamond went from 3 steps south to 2, and the stone now directly south blocks the route.
+NEW_MEMORY: NONE
+PLAN: KEEP (1. Mine the stone directly south with Do. 2. Move south onto the cleared tile. 3. Mine the diamond 2 steps south with the iron pickaxe. 2. Search the cave for iron. 3. Find wood, then place a table and furnace adjacent to each other. 4. Craft the iron sword once iron, coal, and wood are in hand. 5. Collect a sapling and place a plant. 6. Find a cow and a zombie. 7. Drink water when drink is low.)
+PREDICTION: The stone tile directly south becomes path, adding one stone to inventory and clearing the way to the diamond.
+ACTION: Do","You see:
+- water 7 steps to your north-west
+- path 1 step to your west
+- stone 1 step to your east
+- sand 6 steps to your north-west
+- grass 4 steps to your north-west
+- diamond 2 steps to your south
+- coal 3 steps to your north-east
+
+You face path at your front.",0.0,False
+124,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Move south onto the cleared path tile. 2. Face the diamond 1 step south and mine it with Do using the iron pickaxe. 3. Search the cave for iron, then find wood to place a table and furnace together. 4. Craft the iron sword once iron, coal, and wood are in hand. 5. Collect a sapling and place a plant. 6. Find a cow and a zombie. 7. Drink water when drink is low.
+PREDICTION: I move one tile south onto the path, and the diamond should then be 1 step south of me, directly in front.
+ACTION: Move South","You see:
+- path 1 step to your north
+- stone 1 step to your west
+- furnace 7 steps to your south-west
+- diamond 1 step to your south
+- coal 4 steps to your north-east
+
+You face diamond at your front.",0.0,False
+125,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Mine the diamond directly south with Do using the iron pickaxe. 2. Search the cave for iron, then find wood to place a table and furnace together. 3. Craft the iron sword once iron, coal, and wood are in hand. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie. 6. Drink water when drink is low.
+PREDICTION: Facing the diamond, Do should collect it and add a diamond to inventory, achieving Collect Diamond.
+ACTION: Do","You see:
+- path 1 step to your north
+- stone 1 step to your west
+- furnace 7 steps to your south-west
+- coal 4 steps to your north-east
+
+You face path at your front.",1.0,False
+126,Move North,"OBSERVATION_CHECK: SUCCESS (diamond is now in inventory, so Collect Diamond is done)
+NEW_MEMORY: Diamond collected at the tile south of my previous position; that tile is now path. Iron is still missing and no iron is visible.
+PLAN: 1. Explore the cave northward to find iron. 2. Get wood, then place a table near the furnace (7 steps south-west) or place a new furnace. 3. Craft the iron sword with iron, coal, and wood. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie. 6. Drink water when drink is low.
+PREDICTION: I move one tile north onto the path and reveal more of the cave, possibly showing iron.
+ACTION: Move North","You see:
+- water 7 steps to your north-west
+- path 1 step to your west
+- stone 1 step to your east
+- sand 6 steps to your north-west
+- grass 4 steps to your north-west
+- coal 3 steps to your north-east
+
+You face path at your front.",0.0,False
+127,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: I move one tile north onto the path, which should reveal more of the cave and possibly iron.
+ACTION: Move North","You see:
+- water 6 steps to your north-west
+- path 1 step to your west
+- sand 5 steps to your north-west
+- stone 1 step to your north
+- grass 3 steps to your north-west
+- coal 2 steps to your east
+
+You face stone at your front.",0.0,False
+128,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Mine the stone to the north to open a route into the cave and search for iron. 2. Once iron is found, craft the iron sword with iron, coal, and wood near a table and furnace. 3. Collect a sapling and place a plant. 4. Find a cow and a zombie. 5. Drink water when drink is low.
+PREDICTION: Facing the stone to the north, Do should collect one stone (stone goes to 8) and turn that tile into path.
+ACTION: Do","You see:
+- water 6 steps to your north-west
+- path 1 step to your west
+- sand 5 steps to your north-west
+- stone 2 steps to your north-east
+- grass 3 steps to your north-west
+- coal 2 steps to your east
+
+You face path at your front.",0.0,False
+129,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Stone to the north was mined (stone is now 8) and the tile is path. Iron is still not visible, so I need to explore the cave area to find it.
+PLAN: 1. Explore the cave and tunnels to the north for iron. 2. Once iron is found, place a table and furnace near each other (I have 1 wood, so I may need more wood for the table) and craft the iron sword with iron, coal, and wood. 3. Collect a sapling and place a plant. 4. Find a cow and a zombie. 5. Drink water when drink is low.
+PREDICTION: I move onto the newly mined path tile to the north, which should reveal more of the cave and possibly iron.
+ACTION: Move North","You see:
+- water 5 steps to your north-west
+- path 1 step to your west
+- sand 4 steps to your north-west
+- stone 1 step to your east
+- grass 2 steps to your north-west
+- coal 3 steps to your south-east
+
+You face path at your front.",0.0,False
+130,Move North,"OBSERVATION_CHECK: SUCCESS (the view shifted, with water, sand, and grass all one tile closer, so the move north worked)
+NEW_MEMORY: NONE
+PLAN: KEEP (1. Explore the cave to the north for iron. 2. Once iron is found, get more wood, place a table and furnace together, and craft the iron sword with 1 iron, 1 coal, and 1 wood. 3. Collect a sapling and place a plant. 4. Find a cow and a zombie. 5. Drink water when drink is low.)
+PREDICTION: I move one tile north onto the path, which should reveal more of the cave and possibly iron.
+ACTION: Move North","You see:
+- water 4 steps to your west
+- path 1 step to your south
+- sand 3 steps to your west
+- stone 1 step to your east
+- grass 1 step to your west
+- coal 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+131,Move North,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP (1. Explore north for iron. 2. Once iron is found, place a table and furnace together near it and craft the iron sword with 1 iron, 1 coal, and 1 wood; I have wood 1 and coal 4. 3. Collect a sapling and place a plant. 4. Find a cow and a zombie. 5. Drink water when drink is low.)
+PREDICTION: I move one tile north onto the grass, which should reveal more of the area to the north and possibly iron.
+ACTION: Move North","You see:
+- sand 3 steps to your west
+- water 4 steps to your west
+- path 1 step to your south
+- grass 1 step to your west
+- tree 3 steps to your north
+- stone 2 steps to your south-east
+- coal 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+132,Move North,"OBSERVATION_CHECK: SUCCESS (the view shifted and the tree to the north is now visible, so the move north worked)
+NEW_MEMORY: NONE
+PLAN: 1. Walk north to the tree 3 steps away and collect extra wood (needed for table and iron sword). 2. Keep exploring north and around the cave for iron. 3. Once iron is found, place a table and furnace nearby and craft the iron sword with 1 wood, 1 coal, and 1 iron. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie. 6. Drink water when drink is low.
+PREDICTION: I move one tile north, getting closer to the tree and revealing more of the northern area.
+ACTION: Move North","You see:
+- sand 3 steps to your west
+- water 4 steps to your west
+- path 2 steps to your south
+- grass 1 step to your west
+- tree 2 steps to your north
+- stone 3 steps to your south-east
+- coal 7 steps to your south-east
+
+You face grass at your front.",0.0,False
+133,Move North,"OBSERVATION_CHECK: SUCCESS, the view shifted and the tree went from 3 steps north to 2 steps north, so the move made progress.
+NEW_MEMORY: NONE
+PLAN: 1. Move north once more to stand adjacent to the tree and collect wood with Do. 2. Explore the cave for iron, then place a table and furnace nearby. 3. Craft the iron sword with wood, coal, and iron. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie. 6. Drink water when drink is low.
+PREDICTION: I move one tile north and end up directly adjacent to the tree, facing it.
+ACTION: Move North","You see:
+- tree 1 step to your north
+- sand 3 steps to your west
+- water 4 steps to your west
+- grass 1 step to your west
+- path 3 steps to your south
+- stone 4 steps to your south-east
+
+You face tree at your front.",0.0,False
+134,Do,"OBSERVATION_CHECK: SUCCESS (Move North moved me one tile closer; the tree is now directly in front of me)
+NEW_MEMORY: NONE
+PLAN: 1. Do to collect wood from the tree in front, repeating until wood is 3 or more. 2. Explore the cave for iron, since iron is still missing. 3. Place a table and furnace near each other, then craft the iron sword with wood, coal, and iron. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie. 6. Drink water when drink is low.
+PREDICTION: Wood increases from 1 to 2 and the tree may remain in front for further collection.
+ACTION: Do","You see:
+- tree 3 steps to your north-west
+- sand 3 steps to your west
+- water 4 steps to your west
+- grass 1 step to your west
+- path 3 steps to your south
+- stone 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+135,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The tree in front was harvested, so wood rose from 1 to 2 and the tree is gone. Iron is still not visible, and the nearest tree is 3 steps north-west.
+PLAN: KEEP. 1. Explore the cave and stone areas for iron, moving west and south while watching for iron. 2. Once iron is found, place a table and furnace next to each other and craft the iron sword with wood, coal, and iron. 3. Collect a sapling and place a plant. 4. Find a cow and a zombie. 5. Drink water at the lake to the west when drink is low.
+PREDICTION: I move one tile west onto the grass, and the map shifts so that more of the western area and possibly iron comes into view.
+ACTION: Move West","You see:
+- grass 1 step to your west
+- sand 2 steps to your west
+- water 3 steps to your west
+- tree 2 steps to your north
+- path 4 steps to your south-east
+- stone 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+136,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. 1. Explore the cave and stone areas for iron, watching for it while mining through stone. 2. Once iron is found, place a table and furnace next to each other and craft the iron sword with wood, coal, and iron. 3. Drink water at the lake to the west when drink drops below 9. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie.
+PREDICTION: I move one tile west onto the grass, and the water should appear 2 steps to my west, closer for drinking.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- sand 1 step to your west
+- water 2 steps to your west
+- tree 3 steps to your north-east
+- path 5 steps to your south-east
+- stone 6 steps to your south-east
+
+You face sand at your front.",0.0,False
+137,Move West,"OBSERVATION_CHECK: SUCCESS (the view shifted: sand is now 1 step west and water 2 steps west, so I made progress toward the lake)
+NEW_MEMORY: NONE
+PLAN: KEEP. 1. Move west onto the sand and drink at the water to restore drink to 9/9. 2. Explore the cave and stone areas for iron, mining through stone as needed. 3. Once iron is found, place a table and furnace next to each other, then craft the iron sword with wood, coal, and iron. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie.
+PREDICTION: I step onto the sand, which puts the water directly in front of me so I can drink next.
+ACTION: Move West","You see:
+- tree 3 steps to your north
+- grass 1 step to your east
+- sand 1 step to your north
+- water 1 step to your west
+- path 6 steps to your south-east
+- stone 7 steps to your south-east
+
+You face water at your front.",0.0,False
+138,Do,"OBSERVATION_CHECK: SUCCESS (moved west and now face water, with the view shifted as expected)
+NEW_MEMORY: NONE
+PLAN: KEEP. 1. Drink at the water in front to raise drink from 7/9 to 9/9. 2. Explore the cave and stone areas for iron, mining through stone as needed. 3. Once iron is found, place a table and furnace next to each other, then craft the iron sword with wood, coal, and iron. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie.
+PREDICTION: Drink increases from 7/9 to 8/9 or 9/9, and the water stays in front of me.
+ACTION: Do","You see:
+- tree 3 steps to your north
+- grass 1 step to your east
+- sand 1 step to your north
+- water 1 step to your west
+- path 6 steps to your south-east
+- stone 7 steps to your south-east
+
+You face water at your front.",0.0,False
+139,Do,"OBSERVATION_CHECK: SUCCESS (drink rose from 7/9 to 8/9 while facing water)
+NEW_MEMORY: NONE
+PLAN: KEEP. 1. Drink once more at the water in front to reach 9/9 drink. 2. Place Stone on the water in front for the Place Stone achievement. 3. Explore the cave and stone areas for iron, mining through stone as needed. 4. Once iron is found, place a table and furnace next to each other, then craft the iron sword with wood, coal, and iron. 5. Collect a sapling and place a plant. 6. Find a cow and a zombie.
+PREDICTION: Drink increases from 8/9 to 9/9 and the water remains in front of me.
+ACTION: Do","You see:
+- tree 3 steps to your north
+- grass 1 step to your east
+- sand 1 step to your north
+- water 1 step to your west
+- path 6 steps to your south-east
+- stone 7 steps to your south-east
+
+You face water at your front.",0.0,False
+140,Place Stone,"OBSERVATION_CHECK: FAILED: The last Do on water made no progress because drink was already at 9/9, so the action did nothing.
+NEW_MEMORY: Repeated Do on water at full drink is a wasted loop. Use Place Stone on the water in front instead.
+PLAN: 1. Place Stone on the water in front for the Place Stone achievement. 2. Mine stone for more materials if needed. 3. Explore the cave and stone areas for iron, mining through stone as needed. 4. Once iron is found, place a table and furnace next to each other, then craft the iron sword with wood, coal, and iron. 5. Collect a sapling and place a plant. 6. Find a cow and a zombie.
+PREDICTION: A stone is placed on the water tile in front of me, and the Place Stone achievement unlocks.
+ACTION: Place Stone","You see:
+- tree 3 steps to your north
+- grass 1 step to your east
+- sand 1 step to your north
+- water 2 steps to your west
+- stone 1 step to your west
+- path 6 steps to your south-east
+
+You face stone at your front.",0.0,False
+141,Do,"OBSERVATION_CHECK: SUCCESS: The water 2 steps west now shows stone 1 step west, so the Place Stone action worked and the Place Stone achievement should be unlocked.
+NEW_MEMORY: Place Stone succeeded on the water tile to the west; the stone is now in front of me, so I must mine it or go around to reach the water.
+PLAN: 1. Mine the stone in front for materials. 2. Explore the cave and stone areas for iron, mining through stone as needed. 3. Once iron is found, place a table and furnace next to each other, then craft the iron sword with wood, coal, and iron. 4. Collect a sapling and place a plant. 5. Find a cow and a zombie.
+PREDICTION: Mining the stone in front adds 1 stone to my inventory and turns that tile into path.
+ACTION: Do","You see:
+- tree 3 steps to your north
+- grass 1 step to your east
+- sand 1 step to your north
+- water 2 steps to your west
+- path 1 step to your west
+- stone 7 steps to your south-east
+
+You face path at your front.",0.0,False
+142,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The stone I placed on the west water was mined back, so the tile west is now path. Iron is still not visible, and food is 4/9, so I need a cow soon.
+PLAN: 1. Explore the path area to the west and the cave tunnels for iron. 2. Once iron is found, place a table and furnace side by side, then craft the iron sword with wood, coal, and iron. 3. Find a cow to eat before food runs out. 4. Collect a sapling, place it, and eat the plant when ripe. 5. Sleep when energy is low to get Wake Up. 6. Defeat a zombie and a skeleton.
+PREDICTION: I move onto the path tile to the west and get a wider view of the cave area.
+ACTION: Move West","You see:
+- grass 2 steps to your east
+- sand 1 step to your north
+- water 1 step to your west
+- tree 3 steps to your north
+- path 7 steps to your south-east
+
+You face water at your front.",0.0,False
+143,Move North,"OBSERVATION_CHECK: SUCCESS (I moved onto the path tile, so the view shifted, but I am now facing water and drink is full, so Do is wasted here.)
+NEW_MEMORY: Facing water at full drink is a loop again; stop using Do or Place Stone on this water and move away to explore.
+PLAN: 1. Find a cow soon, since food is 4/9. 2. Search the cave and stone areas for iron. 3. Place a table and furnace near each other, then craft the iron sword with wood 2, coal 4, and iron 1. 4. Collect a sapling, place it, and eat it when ripe. 5. Sleep when energy is low for Wake Up. 6. Defeat a zombie and a skeleton.
+PREDICTION: I step north onto the sand tile, away from the water, and the view shifts to show new terrain for cows and iron.
+ACTION: Move North","You see:
+- grass 2 steps to your east
+- sand 1 step to your west
+- water 2 steps to your south-west
+- tree 2 steps to your north
+- path 1 step to your south
+
+You face sand at your front.",0.0,False
+144,Move North,"OBSERVATION_CHECK: SUCCESS: Move North moved me onto the sand, and the tree went from 3 steps north to 2, so I made progress.
+NEW_MEMORY: NONE
+PLAN: 1. Collect 1-2 more wood from the tree to the north. 2. Find a cow soon, since food is 4/9. 3. Search the cave and stone areas for iron. 4. Place a table and furnace next to each other, then craft the iron sword with wood, coal, and iron. 5. Collect a sapling, place it, and eat it when ripe. 6. Sleep when energy is low for Wake Up. 7. Defeat a zombie and a skeleton.
+PREDICTION: I step north onto the sand, bringing the tree to 1 step north so I can face it and collect wood.
+ACTION: Move North","You see:
+- grass 2 steps to your west
+- sand 1 step to your west
+- water 3 steps to your south-west
+- tree 1 step to your north
+- path 2 steps to your south
+
+You face tree at your front.",0.0,False
+145,Do,"OBSERVATION_CHECK: SUCCESS. The tree went from 2 steps north to 1 step north, so the move north worked and I now face the tree.
+NEW_MEMORY: NONE
+PLAN: 1. Collect 2-3 more wood from the tree in front. 2. Find a cow soon, since food is 4/9. 3. Search the stone and cave areas for iron. 4. Place a table and furnace next to each other, then craft the iron sword with wood, coal, and iron. 5. Collect a sapling, place it, and eat it when ripe. 6. Sleep when energy is low for Wake Up. 7. Defeat a zombie and a skeleton.
+PREDICTION: Facing the tree, so Do should collect wood and wood in inventory should increase from 2.
+ACTION: Do","You see:
+- grass 1 step to your north
+- sand 1 step to your west
+- water 3 steps to your south-west
+- tree 2 steps to your north
+- path 2 steps to your south
+
+You face grass at your front.",0.0,False
+146,Move North,"OBSERVATION_CHECK: FAILED: The previous Do did not collect wood; the tree is no longer in front (I face grass), and wood stayed at 3, so I am stuck repeating Do near the tree.
+NEW_MEMORY: Tree 2 steps north is not adjacent; I was facing grass after moving, so Do on grass does nothing. Must move North once to get adjacent to the tree before using Do.
+PLAN: 1. Move North to get adjacent to the tree, then Do to collect wood until about 5 wood. 2. Find a cow for food (food 4/9). 3. Explore stone and cave areas to the south for iron. 4. Place table and furnace near each other and craft the iron sword with wood, coal, and iron. 5. Collect a sapling, place it, and eat it when ripe. 6. Sleep when energy is low for Wake Up. 7. Defeat a zombie and a skeleton.
+PREDICTION: I move one tile north onto the grass, and the tree should then be directly in front of me.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- sand 1 step to your south
+- water 4 steps to your south-west
+- tree 1 step to your north
+- path 3 steps to your south
+
+You face tree at your front.",0.0,False
+147,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Do to collect wood from the tree in front until about 5 wood. 2. Find a cow for food (food 4/9). 3. Explore stone and cave areas to the south for iron. 4. Place table and furnace near each other and craft the iron sword with wood, coal, and iron. 5. Collect a sapling, place it, and eat it when ripe. 6. Sleep when energy is low for Wake Up. 7. Defeat a zombie and a skeleton.
+PREDICTION: The tree in front is adjacent, so Do should give me 1 wood (wood goes from 3 to 4).
+ACTION: Do","You see:
+- grass 1 step to your west
+- sand 1 step to your south
+- water 4 steps to your south-west
+- tree 1 step to your east
+- path 3 steps to your south
+
+You face grass at your front.",0.0,False
+148,Move East,"OBSERVATION_CHECK: FAILED: The last Do was used while facing grass, so it gained nothing. The tree is now 1 step east, and I am facing grass to the north.
+NEW_MEMORY: Do on grass wastes actions. The tree is 1 step east, so I must Move East to turn toward it before using Do.
+PLAN: 1. Move East to face the tree, then Do to collect wood until about 5 wood. 2. Find a cow for food (food 4/9). 3. Explore stone and cave areas to the south for iron. 4. Place table and furnace near each other and craft the iron sword with wood, coal, and iron. 5. Collect a sapling, place it, and eat it when ripe. 6. Sleep when energy is low for Wake Up. 7. Defeat a zombie and a skeleton.
+PREDICTION: I turn to face the tree 1 step east, since the tree blocks movement and I stay in place.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- sand 1 step to your south
+- water 4 steps to your south-west
+- tree 1 step to your east
+- path 3 steps to your south
+
+You face tree at your front.",0.0,False
+149,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: 1. Do to collect wood from the tree now in front (wood 4 to 5). 2. Find a cow for food (food 4/9). 3. Explore stone and cave areas to the south for iron. 4. Place a furnace near a table and craft the iron sword with wood, coal, and iron. 5. Collect a sapling, place it, and eat it when ripe. 6. Sleep when energy is low for Wake Up. 7. Defeat a zombie and a skeleton.
+PREDICTION: The tree in front gives 1 wood, so wood goes from 4 to 5 and the tree may stay in place.
+ACTION: Do","You see:
+- grass 1 step to your west
+- sand 1 step to your south
+- water 4 steps to your south-west
+- tree 2 steps to your north
+- path 3 steps to your south
+
+You face grass at your front.",0.0,False
+150,Move South,"OBSERVATION_CHECK: SUCCESS: wood rose from 4 to 5 and the view shows I am facing grass, so the Do action worked.
+NEW_MEMORY: NONE
+PLAN: 1. Explore the stone and path area to the south for iron. 2. Find a cow for food (food 4/9). 3. Place a furnace near a table and craft the iron sword with wood, coal, and iron. 4. Collect a sapling, place it, and eat it when ripe. 5. Sleep when energy is low for Wake Up. 6. Defeat a zombie and a skeleton.
+PREDICTION: I move one tile south onto sand, moving closer to the path and stone area to the south.
+ACTION: Move South","You see:
+- grass 1 step to your north
+- sand 1 step to your west
+- water 3 steps to your south-west
+- tree 3 steps to your north
+- path 2 steps to your south
+
+You face sand at your front.",0.0,False
+151,Move South,"OBSERVATION_CHECK: FAILED: The view shifted, but I have been circling the same trees, grass, and sand without finding iron or moving toward the stone area.
+NEW_MEMORY: Looping near the tree/grass/sand cluster; stop Do on grass and trees that are not adjacent, and head south toward the path and stone area to search for iron.
+PLAN: Move south past the path to the stone area and search for iron, then find a cow for food (food 4/9), place a table and furnace near the iron, craft the iron sword, collect a sapling and place it, sleep when energy is low for Wake Up, and defeat a zombie and a skeleton.
+PREDICTION: I move one tile south onto the path, closer to the stone area where iron may be.
+ACTION: Move South","You see:
+- grass 2 steps to your north
+- sand 1 step to your west
+- water 2 steps to your south-west
+- tree 4 steps to your north-east
+- path 1 step to your south
+
+You face path at your front.",0.0,False
+152,Move South,"OBSERVATION_CHECK: SUCCESS (Move South moved me one tile; the grass and tree are now farther north and a path lies directly south.)
+NEW_MEMORY: NONE
+PLAN: Move south along the path toward the stone area to search for iron, then find a cow for food (food 4/9), place a table and furnace near the iron, craft the iron sword, collect a sapling and place it, sleep when energy is low for Wake Up, and defeat a zombie and a skeleton.
+PREDICTION: I move one tile south onto the path, getting closer to the stone area where iron may be found.
+ACTION: Move South","You see:
+- grass 2 steps to your east
+- sand 1 step to your north
+- water 1 step to your west
+- tree 5 steps to your north-east
+- path 7 steps to your south-east
+
+You face water at your front.",0.0,False
+153,Move East,"OBSERVATION_CHECK: FAILED: The last Move South changed the view, but the front tile is water, so I may be blocked and not making clear progress toward the stone area.
+NEW_MEMORY: Move South may have been blocked by water. Stone and path are to the south-east, so I should route east and then south instead of pushing into the water.
+PLAN: Move east around the water toward the south-east stone area, search there for iron and cows, then place a table and furnace near the iron, craft the iron sword, collect a sapling and place it, sleep when energy is low, and defeat a zombie and a skeleton.
+PREDICTION: I move one tile east onto grass, which gets me around the water and closer to the south-east stone area.
+ACTION: Move East","You see:
+- tree 4 steps to your north-east
+- grass 1 step to your east
+- sand 1 step to your north
+- water 2 steps to your west
+- path 1 step to your west
+- stone 7 steps to your south-east
+
+You face grass at your front.",0.0,False
+154,Move East,"OBSERVATION_CHECK: FAILED: The last Move East changed the view, so I moved, but I have been circling the tree, sand, and water cluster without getting closer to the stone area.
+NEW_MEMORY: Stuck in a loop around the tree/sand/water cluster. Stop returning to this area and head south-east toward the stone at 7 steps.
+PLAN: Move East to get around the water, then move South and East toward the stone area to search for iron and cows. Once iron is found, place a table and furnace next to it, craft the iron sword, eat a cow when food is low, collect a sapling and place it, sleep when energy is low, and defeat a zombie and a skeleton.
+PREDICTION: I move one tile east onto grass, which takes me further from the water and closer to the south-east stone area.
+ACTION: Move East","You see:
+- grass 1 step to your north
+- sand 1 step to your west
+- water 3 steps to your west
+- path 2 steps to your west
+- tree 3 steps to your north-east
+- stone 6 steps to your south-east
+
+You face grass at your front.",0.0,False
+155,Move East,"OBSERVATION_CHECK: SUCCESS (the view shifted and I moved east onto grass, though recent moves have wandered around the tree and water cluster)
+NEW_MEMORY: Stone is 6 steps south-east and the tree cluster to the north-west has been a loop, so I am leaving that area.
+PLAN: Move east and then south-east toward the stone area to search for iron and cows. Mine stone along the way if needed, and place a table and furnace next to any iron found. Craft the iron sword, eat a cow when food gets low, collect a sapling and place it, sleep when energy is low, and defeat a zombie and a skeleton.
+PREDICTION: I move one tile east onto grass, which takes me further from the water and closer to the south-east stone area.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- sand 2 steps to your west
+- water 4 steps to your west
+- path 3 steps to your west
+- tree 2 steps to your north
+- stone 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+156,Move East,"OBSERVATION_CHECK: SUCCESS (moved east; the water is now 4 steps west, so the view shifted and I am closer to the stone area)
+NEW_MEMORY: NONE
+PLAN: KEEP. Head east, then south-east toward the stone area (5 steps away). Look for iron, mine stone as needed, and place a table and furnace next to any iron found. Eat a cow when food gets low, and sleep when energy is low.
+PREDICTION: I move one tile east onto grass, getting closer to the stone area to the south-east.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- sand 3 steps to your west
+- path 3 steps to your south
+- water 5 steps to your south-west
+- tree 3 steps to your north-west
+- stone 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+157,Move East,"OBSERVATION_CHECK: SUCCESS (stone distance dropped from 5 to 4 steps, so the move made progress)
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue east and then south-east toward the stone area to search for iron (needed for the iron sword). Place a furnace and table near any iron found. Eat a cow soon since food is 4/9. Sleep when energy is low.
+PREDICTION: I move one tile east, bringing the stone area to about 3 steps south-east.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- sand 4 steps to your west
+- tree 4 steps to your north-west
+- path 3 steps to your south-east
+- stone 3 steps to your south
+- water 5 steps to your north-east
+- coal 7 steps to your south-east
+
+You face grass at your front.",0.0,False
+158,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Head south toward the stone area 3 steps south to search for iron, then place a table and furnace near any iron found and craft the iron sword. Eat a cow soon since food is 4/9. Sleep when energy is low.
+PREDICTION: I move one tile south and the stone should be about 2 steps south.
+ACTION: Move South","You see:
+- sand 4 steps to your west
+- path 2 steps to your south-east
+- grass 1 step to your west
+- tree 5 steps to your north-west
+- stone 2 steps to your south
+- coal 6 steps to your south-east
+
+You face grass at your front.",0.0,False
+159,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Keep heading south toward the stone 2 steps south, then continue exploring the stone area for iron. Place a table and furnace near any iron found, craft the iron sword, find a cow for food (4/9), and sleep when energy is low.
+PREDICTION: I move one tile south and the stone should be about 1 step south.
+ACTION: Move South","You see:
+- sand 4 steps to your west
+- path 1 step to your east
+- grass 1 step to your west
+- stone 1 step to your south
+- coal 4 steps to your south-east
+
+You face stone at your front.",0.0,False
+160,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Mine the stone in front to open a path south, then explore the stone area for iron. Place a table and furnace near any iron found, craft the iron sword, find a cow for food (4/9), and sleep when energy is low.
+PREDICTION: The stone in front is collected and added to inventory (stone goes from 8 to 9), and the tile south becomes path.
+ACTION: Do","You see:
+- sand 4 steps to your west
+- path 1 step to your south
+- grass 1 step to your west
+- stone 2 steps to your south
+- coal 4 steps to your south-east
+
+You face path at your front.",0.0,False
+161,Move South,"OBSERVATION_CHECK: SUCCESS. The Do on stone added stone (now 9), and the tile south is now path.
+NEW_MEMORY: NONE
+PLAN: Move south onto the path into the stone area, mine through toward the coal and any visible iron, then place a table and furnace near the iron, craft the iron sword, find a cow for food (4/9), and sleep when energy is low.
+PREDICTION: I move one tile south onto the path, and the stone area should come closer, with the stone 1 step south.
+ACTION: Move South","You see:
+- sand 4 steps to your west
+- path 1 step to your west
+- stone 1 step to your south
+- grass 1 step to your north
+- coal 3 steps to your south-east
+
+You face stone at your front.",0.0,False
+162,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Mine through the stone to the south to open a path toward the coal 3 steps south-east, keep searching for iron in the stone area, then place a table and furnace near the iron, craft the iron sword, find a cow for food (4/9), and sleep when energy is low.
+PREDICTION: The stone tile to my south is removed and becomes path, opening the route toward the coal to the south-east.
+ACTION: Do","You see:
+- sand 4 steps to your west
+- path 1 step to your west
+- stone 2 steps to your south-east
+- grass 1 step to your north
+- coal 3 steps to your south-east
+
+You face path at your front.",0.0,False
+163,Move South,"OBSERVATION_CHECK: SUCCESS - the last Do mined the stone to the south (stone count is now 9) and I am now facing a path tile.
+NEW_MEMORY: NONE
+PLAN: Move south into the newly opened path toward the coal 3 steps south-east, mine through stone while searching for iron, then place a table and furnace near the iron, craft the iron sword, find a cow for food (4/9), and sleep when energy is low.
+PREDICTION: I move one tile south onto the path, which brings the coal and stone area closer.
+ACTION: Move South","You see:
+- sand 5 steps to your north-west
+- path 1 step to your west
+- stone 1 step to your east
+- grass 2 steps to your north
+- coal 2 steps to your south-east
+
+You face path at your front.",0.0,False
+164,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Keep exploring south through the stone and path area to find iron and a cow. Mine stone as needed, then place a table and furnace near any iron found and craft the iron sword. Eat a cow when food gets low, and sleep when energy is low.
+PREDICTION: I move one tile south onto the path, revealing more of the area to the south.
+ACTION: Move South","You see:
+- sand 6 steps to your north-west
+- path 1 step to your west
+- stone 1 step to your south
+- grass 3 steps to your north
+- coal 1 step to your east
+
+You face stone at your front.",0.0,False
+165,Move West,"OBSERVATION_CHECK: SUCCESS (the view shifted south by one tile, and I moved onto the path as predicted)
+NEW_MEMORY: Stone is at max-ish (9), so mining more stone is wasteful; coal 1 step east is not needed (4 in inventory). Iron is still the only missing item for the iron sword.
+PLAN: Explore west onto the path and then head south past the stone to search for iron and a cow; place table and furnace near any iron found, craft iron sword; eat a cow when food is low; sleep when energy is low.
+PREDICTION: I move one tile west onto the path, revealing new terrain to the west and south.
+ACTION: Move West","You see:
+- water 6 steps to your north-west
+- path 1 step to your west
+- sand 5 steps to your north-west
+- stone 2 steps to your south-east
+- grass 3 steps to your north-west
+- coal 2 steps to your east
+
+You face path at your front.",0.0,False
+166,Move West,"OBSERVATION_CHECK: SUCCESS (the view shifted: coal went from 1 step east to 2 steps east, so the move west worked)
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue exploring west along the path to find iron and a cow, since food is 3/9. Then head south past the stone. Place a table and furnace near any iron, craft the iron sword, eat a cow when possible, and sleep when energy is low.
+PREDICTION: I move one tile west onto the path and reveal more terrain to the west.
+ACTION: Move West","You see:
+- water 5 steps to your north-west
+- path 1 step to your west
+- sand 4 steps to your north-west
+- stone 2 steps to your south
+- grass 2 steps to your north
+- coal 3 steps to your east
+
+You face path at your front.",0.0,False
+167,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Moved west onto the path and the view shifted, so the move worked. Still need iron and a cow (food 3/9).
+PLAN: Keep exploring west along the path to find iron and a cow. Once iron is found, place a table and furnace next to it, craft the iron sword, eat a cow when possible, and sleep when energy is low.
+PREDICTION: I move one tile west along the path and reveal more terrain to the west.
+ACTION: Move West","You see:
+- water 4 steps to your north-west
+- stone 2 steps to your south-west
+- coal 4 steps to your east
+- path 1 step to your west
+- sand 3 steps to your north-west
+- grass 2 steps to your north
+
+You face path at your front.",0.0,False
+168,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue exploring west along the path to find iron and a cow. Once iron is found, place a table and furnace next to it, craft the iron sword, eat a cow (food 3/9), and sleep when energy is low.
+PREDICTION: I move one more tile west along the path and the view shifts, revealing new terrain to the west.
+ACTION: Move West","You see:
+- water 3 steps to your north-west
+- stone 1 step to your south
+- coal 4 steps to your south-west
+- path 1 step to your west
+- sand 2 steps to your north
+- grass 3 steps to your north-east
+- zombie 6 steps to your north-east
+
+You face path at your front.",0.0,False
+169,Move West,"OBSERVATION_CHECK: SUCCESS (the view shifted and the water, coal, and stone positions changed, so I moved one tile west along the path)
+NEW_MEMORY: NONE
+PLAN: KEEP. Keep exploring west along the path to find iron and a cow (food is 3/9). Once iron is found, place a table and furnace next to it, craft the iron sword, eat a cow, and sleep when energy is low.
+PREDICTION: I move one more tile west along the path and reveal new terrain to the west, possibly showing iron or a cow.
+ACTION: Move West","You see:
+- water 2 steps to your north-west
+- stone 2 steps to your west
+- coal 3 steps to your south-west
+- path 1 step to your west
+- sand 3 steps to your north-east
+- grass 4 steps to your north-east
+- zombie 6 steps to your north-east
+
+You face path at your front.",0.0,False
+170,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue exploring west along the path to find iron and a cow (food is 3/9). Once iron is found, place a table and furnace next to it, craft the iron sword, eat a cow, and sleep when energy is low.
+PREDICTION: I move one more tile west onto the path, and the stone 2 tiles west comes into view as 1 tile west, revealing more terrain to the west.
+ACTION: Move West","You see:
+- water 1 step to your north
+- stone 1 step to your west
+- coal 2 steps to your south-west
+- path 1 step to your south
+- sand 4 steps to your north-east
+- zombie 6 steps to your north-east
+- grass 5 steps to your north-east
+
+You face stone at your front.",0.0,False
+171,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Stone is now 1 step west and I am facing it, so the last Move West worked. Stone is at 9, so I should stop mining it. Water is 1 step north.
+PLAN: Move South onto the path to get around the stone and keep exploring west and south for iron and a cow (food 3/9). When iron is found, place a table and furnace next to it, craft the iron sword, and eat a cow. Drink from the water to the north when drink is low.
+PREDICTION: I move one tile south onto the path, the stone to my west moves out of direct contact, and new terrain to the south and west comes into view.
+ACTION: Move South","You see:
+- water 2 steps to your west
+- grass 5 steps to your south-west
+- stone 2 steps to your north-west
+- coal 1 step to your west
+- path 1 step to your north
+- sand 4 steps to your south-west
+- table 3 steps to your south
+
+You face path at your front.",0.0,False
+172,Move South,"OBSERVATION_CHECK: SUCCESS (the view shifted and the water moved from north to west, so the south move worked)
+NEW_MEMORY: NONE
+PLAN: KEEP. Continue south past the table (3 steps south) to explore for iron and cows, since food is 3/9. Once iron is found, place a furnace next to the table and craft the iron sword. Drink from water to the west when drink is low.
+PREDICTION: I move one tile south onto the path, and the table should come about 2 steps closer.
+ACTION: Move South","You see:
+- water 1 step to your west
+- grass 3 steps to your south
+- stone 2 steps to your east
+- coal 2 steps to your north-west
+- path 1 step to your north
+- sand 3 steps to your south-west
+- table 2 steps to your south
+- furnace 4 steps to your south-east
+
+You face path at your front.",0.0,False
+173,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP. Move south past the table to explore for iron and cows, since food is 3/9. Once iron is found, place a furnace next to the table and craft the iron sword. Drink from the water to the west when drink is low.
+PREDICTION: I move one tile south onto the path, and the table should appear about 1 step south of me.
+ACTION: Move South","You see:
+- water 2 steps to your west
+- grass 2 steps to your south
+- stone 2 steps to your south-east
+- coal 3 steps to your north-west
+- path 1 step to your west
+- sand 2 steps to your south-west
+- table 1 step to your south
+- furnace 3 steps to your south-east
+
+You face table at your front.",0.0,False
+174,Move East,"OBSERVATION_CHECK: SUCCESS (the table went from 2 steps south to 1 step south, so the move worked, but the table now blocks the southward route)
+NEW_MEMORY: Table is directly south and blocks the path south. Route around it to the east. Iron is still missing, and food is 3/9, so a cow is also needed.
+PLAN: Step east around the table, then head south toward the furnace and stone area to search for iron. Look for cows on grass to the south. Return to the table and furnace to craft the iron sword once iron is found. Drink from the water to the west when drink is low.
+PREDICTION: I move one tile east onto the path, and the table should shift to my south-west.
+ACTION: Move East","You see:
+- water 3 steps to your west
+- grass 3 steps to your south-west
+- stone 1 step to your south
+- coal 4 steps to your north-west
+- path 1 step to your west
+- sand 3 steps to your south-west
+- table 2 steps to your south-west
+- furnace 2 steps to your south
+- zombie 4 steps to your north-east
+
+You face stone at your front.",0.0,False
+175,Move East,"OBSERVATION_CHECK: SUCCESS (the view shifted, so the previous move worked; the table and furnace now sit to the south-west and south)
+NEW_MEMORY: Stone is directly south and blocks the way, so I will route east around it instead of mining more stone (already at 9).
+PLAN: Move east to get around the stone, then head south past the furnace to search for iron and cows on the grass; craft the iron sword at the table and furnace once iron is found; drink from the water to the west when drink is low; watch the zombie to the north-east.
+PREDICTION: I move one tile east onto the path, and the stone to the south should no longer be directly in front of me.
+ACTION: Move East","You see:
+- water 3 steps to your west
+- grass 3 steps to your south-west
+- stone 1 step to your south
+- coal 4 steps to your north-west
+- path 1 step to your west
+- sand 3 steps to your south-west
+- table 2 steps to your south-west
+- furnace 2 steps to your south
+- zombie 4 steps to your north-east
+
+You face stone at your front.",0.0,False
+176,Do,"OBSERVATION_CHECK: FAILED: The last Move East left the view unchanged and I still face the same stone, so the move was blocked.
+NEW_MEMORY: Move East was blocked; the stone south of me is the obstacle. Clearing it with Do is better than repeating the failed East move.
+PLAN: Clear the stone to the south with Do, then move south past the furnace to search the grass for iron and cows, craft the iron sword at the table and furnace once iron is found, drink from the water to the west when drink is low, and watch the zombie to the north-east.
+PREDICTION: The stone in front of me is removed and becomes path, opening the way south.
+ACTION: Do","You see:
+- water 3 steps to your west
+- grass 3 steps to your south-west
+- stone 1 step to your south
+- coal 4 steps to your north-west
+- path 1 step to your west
+- sand 3 steps to your south-west
+- table 2 steps to your south-west
+- furnace 2 steps to your south
+- zombie 4 steps to your north-east
+
+You face path at your front.",0.0,False
+177,Move South,"OBSERVATION_CHECK: SUCCESS (the Do turned the front stone into path; stone is capped at 9, so no new stone was gained)
+NEW_MEMORY: Stone is capped at 9, so further mining of stone is wasted; the path south is now open.
+PLAN: Move south through the newly opened path past the furnace and table, explore the grass to the south for iron and cows, eat a cow when found (food 3/9), craft the iron sword at the table and furnace once iron is found, and drink from the water to the west when drink is low.
+PREDICTION: I move one tile south onto the path, and the view shifts so the grass and furnace area comes closer.
+ACTION: Move South","You see:
+- water 3 steps to your west
+- grass 3 steps to your south-west
+- stone 1 step to your south
+- coal 4 steps to your north-west
+- path 1 step to your west
+- sand 3 steps to your south-west
+- table 2 steps to your south-west
+- furnace 2 steps to your south
+- zombie 4 steps to your north-east
+
+You face stone at your front.",0.0,False
+178,Do,"OBSERVATION_CHECK: FAILED: The last Move South did not change the view and I am still facing stone, so the move was blocked.
+NEW_MEMORY: Stone 1 step south is blocking the southward path again. Moving south into it fails, so I need to clear it with Do first. Stone is capped at 9, but clearing the block still opens the path.
+PLAN: Clear the stone to the south with Do, then move south past the furnace and table, explore the grass to the south for iron and cows, eat a cow (food 3/9), craft the iron sword at the table and furnace once iron is found, and drink from the water to the west when drink is low.
+PREDICTION: The stone in front of me is removed and becomes path, so the next Move South should succeed.
+ACTION: Do","You see:
+- water 3 steps to your west
+- grass 3 steps to your south-west
+- stone 2 steps to your north-east
+- coal 4 steps to your north-west
+- path 1 step to your west
+- sand 3 steps to your south-west
+- table 2 steps to your south-west
+- furnace 2 steps to your south
+- zombie 4 steps to your north-east
+
+You face path at your front.",0.0,False
+179,Move South,"OBSERVATION_CHECK: SUCCESS (the stone to the south was cleared, and the view now shows path in front with the furnace 2 steps south)
+NEW_MEMORY: NONE
+PLAN: KEEP. Move south past the cleared tile toward the furnace and table, explore the grass to the south-west for iron and cows, eat a cow (food 3/9), craft the iron sword at the table and furnace once iron is found, and drink from the water to the west when drink is low.
+PREDICTION: I move one tile south onto the cleared path, bringing the furnace closer and changing the view.
+ACTION: Move South","You see:
+- water 4 steps to your north-west
+- grass 2 steps to your south-west
+- coal 5 steps to your north-west
+- path 1 step to your north
+- sand 2 steps to your west
+- table 1 step to your west
+- furnace 1 step to your south
+- stone 1 step to your east
+
+You face furnace at your front.",0.0,False
+180,Move North,"OBSERVATION_CHECK: SUCCESS (Move South moved me onto the cleared tile; the table is now 1 step west and the furnace 1 step south, so I'm next to both for crafting.)
+NEW_MEMORY: Standing next to the table (west) and furnace (south); iron is still missing for the iron sword, and food is 3/9, so a cow is needed. The direct route south is blocked by the furnace and the west by the table.
+PLAN: KEEP. Head north onto the path, then loop west past the table toward the grass and sand to the south-west to search for iron and cows. Return to the table and furnace to craft the iron sword once iron is found. Drink from the water to the north-west when drink is low.
+PREDICTION: I move one tile north onto the path, and the view shifts so the table and furnace are no longer adjacent.
+ACTION: Move North","You see:
+- water 3 steps to your west
+- grass 3 steps to your south-west
+- stone 2 steps to your north-east
+- coal 4 steps to your north-west
+- path 1 step to your west
+- sand 3 steps to your south-west
+- table 2 steps to your south-west
+- furnace 2 steps to your south
+- zombie 5 steps to your north-east
+
+You face path at your front.",0.0,False
+181,Move West,"OBSERVATION_CHECK: SUCCESS. The view shifted: the furnace is now 2 steps south and the table 2 steps south-west, so the move north worked.
+NEW_MEMORY: NONE
+PLAN: Explore west along the path toward the grass and sand to the south-west to find iron and a cow (food is 3/9). Return to the table and furnace to craft the iron sword once iron is found. Drink from the water to the west when drink is low.
+PREDICTION: I move one tile west onto the path, bringing the grass and sand area closer and revealing new terrain.
+ACTION: Move West","You see:
+- water 2 steps to your west
+- grass 2 steps to your south
+- stone 3 steps to your north-east
+- coal 3 steps to your north-west
+- path 1 step to your west
+- sand 2 steps to your south-west
+- table 1 step to your south
+- furnace 3 steps to your south-east
+
+You face path at your front.",0.0,False
+182,Move West,"OBSERVATION_CHECK: SUCCESS (the view shifted and the table is now directly south, so the move west worked)
+NEW_MEMORY: NONE
+PLAN: Explore west and south-west across the grass and sand to find a cow (food is 3/9) and iron. Drink from the water to the west when drink drops. Once iron is found, return to the table and furnace (craft position adjacent to both) and make the iron sword.
+PREDICTION: I move one tile west onto the path, which brings me closer to the water and the grass/sand area to the south-west.
+ACTION: Move West","You see:
+- water 1 step to your west
+- grass 2 steps to your south-west
+- stone 3 steps to your north
+- coal 2 steps to your north
+- sand 1 step to your south
+- path 1 step to your east
+- table 2 steps to your south-east
+- furnace 4 steps to your south-east
+- zombie 7 steps to your north-east
+
+You face water at your front.",0.0,False
+183,Do,"OBSERVATION_CHECK: SUCCESS. The last Move West shifted the view and I now face water, so I moved onto the path.
+NEW_MEMORY: Iron is still not located; the earlier table/stone loop notes are outdated, so I will not mine more stone (9 in inventory).
+PLAN: Drink from the adjacent water now to raise drink from 7 to 9, then explore south and west over the grass and sand for a cow (food 3/9) and iron, and return to the table and furnace to craft the iron sword once iron is found.
+PREDICTION: Drink increases from 7 to 8, since I am facing water with the Do action.
+ACTION: Do","You see:
+- water 1 step to your west
+- grass 2 steps to your south-west
+- stone 3 steps to your north
+- coal 2 steps to your north
+- sand 1 step to your south
+- path 1 step to your east
+- table 2 steps to your south-east
+- furnace 4 steps to your south-east
+- zombie 6 steps to your north-east
+
+You face water at your front.",0.0,False
+184,Do,"OBSERVATION_CHECK: SUCCESS (the last Do raised drink from 7 to 8 while facing water)
+NEW_MEMORY: Facing water with drink at 8/9 is useful now, since one more drink fills it to 9. After that, stop drinking and explore south and west over the sand and grass for iron and a cow.
+PLAN: Drink once more to fill drink to 9. Then move south onto the sand and grass to search for a cow (food 3/9) and iron. Once iron is found, return to the table and furnace and craft the iron sword.
+PREDICTION: Drink rises from 8 to 9 and I stay in place facing the water.
+ACTION: Do","You see:
+- water 1 step to your west
+- grass 2 steps to your south-west
+- stone 3 steps to your north
+- coal 2 steps to your north
+- sand 1 step to your south
+- path 1 step to your east
+- table 2 steps to your south-east
+- furnace 4 steps to your south-east
+- zombie 6 steps to your north-east
+
+You face water at your front.",0.0,False
+185,Move South,"OBSERVATION_CHECK: FAILED: Drink is already 9/9, so repeating Do on the water is wasted and loops in place.
+NEW_MEMORY: Water to the west is no longer useful at full drink; stop using Do on it and explore south over the sand and grass.
+PLAN: Move south onto the sand, then search the grass to the south and south-west for a cow (food 3/9) and iron; once iron is found, return to the table and furnace to craft the iron sword.
+PREDICTION: I move one tile south onto the sand, and the view shifts to show more terrain to the south.
+ACTION: Move South","You see:
+- water 2 steps to your north-west
+- grass 1 step to your west
+- coal 3 steps to your north
+- path 1 step to your north
+- table 1 step to your east
+- furnace 3 steps to your south-east
+- stone 3 steps to your east
+- zombie 6 steps to your north-east
+
+You face grass at your front.",0.0,False
+186,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Explore south over the grass to find a cow for food (3/9), then look for iron; once iron is found, return to the table and furnace to craft the iron sword.
+PREDICTION: I move one tile south onto the grass, and new terrain appears to the south.
+ACTION: Move South","You see:
+- water 3 steps to your north-west
+- grass 1 step to your west
+- path 2 steps to your north
+- sand 1 step to your north
+- table 2 steps to your north-east
+- furnace 2 steps to your east
+- stone 3 steps to your east
+- zombie 7 steps to your north-east
+
+You face grass at your front.",0.0,False
+187,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Explore south over the grass to find a cow for food (3/9), keep an eye out for iron, then return to the table and furnace to craft the iron sword once iron is found.
+PREDICTION: I move one tile south onto the grass and new terrain comes into view to the south.
+ACTION: Move South","You see:
+- water 4 steps to your north-west
+- grass 1 step to your west
+- path 2 steps to your east
+- sand 2 steps to your north
+- table 3 steps to your north-east
+- furnace 3 steps to your north-east
+- stone 3 steps to your south-east
+- iron 6 steps to your south-east
+- zombie 7 steps to your north-east
+
+You face grass at your front.",0.0,False
+188,Move South,"OBSERVATION_CHECK: SUCCESS - I moved south onto grass and the view shifted (table and furnace are now further north-east).
+NEW_MEMORY: NONE
+PLAN: KEEP - Explore south over the grass to find a cow for food (3/9), keep an eye out for iron (6 steps south-east), then return to the table and furnace to craft the iron sword.
+PREDICTION: I move one more tile south, revealing new terrain further south, possibly a cow or more iron.
+ACTION: Move South","You see:
+- water 6 steps to your north-west
+- grass 1 step to your west
+- sand 3 steps to your north
+- table 4 steps to your north-east
+- path 3 steps to your north-east
+- furnace 4 steps to your north-east
+- stone 2 steps to your east
+- iron 5 steps to your south-east
+- zombie 7 steps to your north-east
+
+You face grass at your front.",0.0,False
+189,Move South,"OBSERVATION_CHECK: SUCCESS (the view shifted: the table went from 3 to 4 steps away and the iron came into view, so the south move worked)
+NEW_MEMORY: NONE
+PLAN: Keep exploring south over the grass to find a cow for food (3/9), then mine the iron about 5 steps south-east, return to the table and furnace, and craft the iron sword.
+PREDICTION: I move one tile south onto grass, revealing more terrain to the south, possibly a cow.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- furnace 5 steps to your north-east
+- path 4 steps to your north-east
+- stone 3 steps to your north-east
+- iron 4 steps to your south-east
+- cow 5 steps to your south-east
+
+You face grass at your front.",0.0,False
+190,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Head south-east toward the cow (food 3/9) and then mine the iron about 4 steps south-east, then return to the table and furnace to craft the iron sword.
+PREDICTION: I move one tile east over grass, bringing the cow and iron closer to the south-east.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- furnace 4 steps to your north-east
+- path 3 steps to your north-east
+- stone 2 steps to your north-east
+- iron 3 steps to your south-east
+- cow 4 steps to your south-east
+
+You face grass at your front.",0.0,False
+191,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move south-east toward the cow (food 3/9) and then the iron about 3 steps south-east, then return to the table and furnace to craft the iron sword.
+PREDICTION: I move one tile south over grass, bringing the iron and cow closer to the south-east.
+ACTION: Move South","You see:
+- zombie 7 steps to your north-west
+- grass 1 step to your west
+- path 3 steps to your east
+- stone 3 steps to your north-east
+- iron 2 steps to your east
+- cow 3 steps to your south-east
+
+You face grass at your front.",0.0,False
+192,Move East,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move east 1 tile to face the iron 2 tiles east, then Do to collect iron (I have the iron pickaxe). Then head south-east to the cow for food (2/9), and return to the table and furnace to craft the iron sword.
+PREDICTION: I move one tile east over grass, leaving the iron 1 step to my east and directly in front of me.
+ACTION: Move East","You see:
+- zombie 3 steps to your south
+- grass 1 step to your west
+- path 2 steps to your east
+- stone 2 steps to your north
+- iron 1 step to your east
+- cow 2 steps to your south-east
+- coal 5 steps to your north-east
+
+You face iron at your front.",0.0,False
+193,Do,"OBSERVATION_CHECK: SUCCESS (Move East shifted the view; iron is now 1 step east and directly in front of me)
+NEW_MEMORY: NONE
+PLAN: Do to collect the iron now (I have the iron pickaxe), then go south-east to the cow at 2 steps for food (2/9), then return to the table and furnace to craft the iron sword (needs wood, coal, and iron, all in inventory).
+PREDICTION: Iron is added to my inventory and the iron tile in front of me becomes path.
+ACTION: Do","You see:
+- grass 1 step to your west
+- zombie 2 steps to your south
+- path 1 step to your east
+- stone 2 steps to your north
+- cow 2 steps to your south-east
+- coal 5 steps to your north-east
+
+You face path at your front.",0.0,False
+194,Move East,"OBSERVATION_CHECK: SUCCESS (inventory now shows iron 1, and the iron tile in front became path)
+NEW_MEMORY: Iron collected at this spot. Inventory has wood 5, coal 4, iron 1, so the iron sword only needs a nearby table and furnace. Earlier memories saying iron was missing are outdated.
+PLAN: Move East onto the path, then approach the cow 2 steps south-east and attack it with Do until food rises. Watch the zombie to the south. Then return to the table and furnace, stand adjacent to both, and Make Iron Sword.
+PREDICTION: I move one tile east onto the path, getting closer to the cow at south-east.
+ACTION: Move East","You see:
+- grass 1 step to your west
+- zombie 4 steps to your south-west
+- path 1 step to your east
+- stone 1 step to your north
+- cow 1 step to your south
+- arrow 4 steps to your south-east
+- coal 4 steps to your north-east
+
+You face path at your front.",0.0,False
+195,Move South,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Face the cow 1 step south and attack it with Do until food rises (food is 2/9). Then watch for the zombie to the southwest, find the table and furnace again, stand next to both, and Make Iron Sword (I have wood, coal, and iron).
+PREDICTION: Moving South is blocked by the cow, so I turn to face it and the cow stays in front of me.
+ACTION: Move South","You see:
+- grass 1 step to your west
+- zombie 3 steps to your south-west
+- path 1 step to your east
+- stone 1 step to your north
+- cow 2 steps to your south
+- arrow 3 steps to your south-east
+- coal 4 steps to your north-east
+
+You face grass at your front.",0.0,False
+196,Move South,"OBSERVATION_CHECK: SUCCESS (the view shifted and the cow moved from 1 step south to 2 steps south, so I advanced south)
+NEW_MEMORY: NONE
+PLAN: Move south to get adjacent to the cow, then Do until it is eaten to raise food from 2/9. Then place a new table and furnace nearby (I have wood 5 and stone 9) and Make Iron Sword using the wood, coal, and iron in inventory.
+PREDICTION: I move one step south and the cow ends up directly in front of me, so the next Do should hit it.
+ACTION: Move South","You see:
+- grass 2 steps to your west
+- zombie 1 step to your west
+- stone 2 steps to your north
+- path 1 step to your north
+- cow 1 step to your south
+- arrow 1 step to your east
+- skeleton 4 steps to your south-east
+- coal 5 steps to your north-east
+
+You face cow at your front.",-0.2,False
+197,Do,"OBSERVATION_CHECK: SUCCESS (I moved south and the cow is now directly in front of me, as predicted.)
+NEW_MEMORY: NONE
+PLAN: Attack the cow with Do until food rises from 2/9. Then deal with the zombie to the west if it attacks, and avoid the skeleton to the south-east. Then place a table and furnace near a safe spot and craft the iron sword with the wood, coal, and iron I have.
+PREDICTION: The cow takes damage from my stone sword. Continued Do actions should eat it and raise food.
+ACTION: Do","You see:
+- grass 1 step to your south
+- zombie 1 step to your west
+- stone 2 steps to your north
+- path 1 step to your north
+- arrow 2 steps to your north-east
+- skeleton 4 steps to your south-east
+- coal 5 steps to your north-east
+
+You face grass at your front.",1.0,False
+198,Place Table,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Place a fresh table here on the grass in front, then place a furnace next to it, then craft the iron sword (I have wood 5, coal 4, iron 1). Fight the zombie to the west with the stone sword if it closes in, and avoid the skeleton to the south-east.
+PREDICTION: A table appears on the grass tile in front of me, and the wood count drops.
+ACTION: Place Table","You see:
+- grass 1 step to your west
+- zombie 2 steps to your west
+- stone 2 steps to your north
+- path 1 step to your north
+- table 1 step to your south
+- arrow 3 steps to your north-east
+- skeleton 4 steps to your south-east
+- coal 5 steps to your north-east
+
+You face table at your front.",0.0,False
+199,Move West,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Move west onto the grass so the table stays nearby, place a furnace on the grass in front, then make the iron sword with the table and furnace. Fight the zombie with the stone sword if it closes in, and avoid the skeleton to the south-east.
+PREDICTION: I move one tile west onto grass, the table ends up diagonal to me, and the zombie gets closer.
+ACTION: Move West","You see:
+- grass 1 step to your north
+- zombie 1 step to your west
+- stone 3 steps to your north
+- path 2 steps to your north-east
+- table 2 steps to your south-east
+- arrow 3 steps to your south-east
+- skeleton 5 steps to your south-east
+- coal 6 steps to your north-east
+
+You face zombie at your front.",0.0,False
+200,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: The zombie is now directly in front of me to the west, so I need to fight it before moving on.
+PLAN: Defeat the zombie with the stone sword, move back next to the table, place a furnace, then make the iron sword (wood, coal, and iron are all in inventory). After that, avoid the skeleton to the south-east.
+PREDICTION: The zombie takes damage from the stone sword, and it may be defeated after a few hits.
+ACTION: Do","You see:
+- grass 1 step to your north
+- zombie 1 step to your west
+- stone 3 steps to your north
+- path 2 steps to your north-east
+- table 2 steps to your south-east
+- arrow 2 steps to your east
+- skeleton 4 steps to your south-east
+- coal 6 steps to your north-east
+
+You face zombie at your front.",0.0,False
+201,Do,"OBSERVATION_CHECK: SUCCESS (the Do action attacked the zombie in front; it is still adjacent, so the fight continues)
+NEW_MEMORY: NONE
+PLAN: Defeat the zombie with the stone sword, then move next to the table (2 steps south-east), place a furnace there with stone, and craft the iron sword with wood, coal, and iron. Avoid the skeleton to the south-east.
+PREDICTION: The zombie takes damage from the stone sword and may be defeated after a few hits.
+ACTION: Do","You see:
+- grass 1 step to your north
+- zombie 1 step to your west
+- stone 3 steps to your north
+- path 2 steps to your north-east
+- table 2 steps to your south-east
+- arrow 3 steps to your north-east
+- skeleton 4 steps to your south-east
+- coal 6 steps to your north-east
+
+You face zombie at your front.",0.8,False
+202,Do,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: Keep attacking the zombie until it is defeated, then move 1 step south and 1 step east to stand next to the table, place a furnace with stone, and craft the iron sword with wood, coal, and iron.
+PREDICTION: The zombie takes damage from the stone sword and may be defeated within a couple of hits.
+ACTION: Do","You see:
+- grass 1 step to your north
+- zombie 1 step to your west
+- stone 3 steps to your north
+- path 2 steps to your north-east
+- table 2 steps to your south-east
+- arrow 3 steps to your south-east
+- skeleton 4 steps to your south-east
+- coal 6 steps to your north-east
+
+You face zombie at your front.",0.0,False
+203,Do,"OBSERVATION_CHECK: SUCCESS: the zombie is still directly in front, so the Do action is hitting it as intended and combat is making progress.
+NEW_MEMORY: NONE
+PLAN: Keep attacking the zombie with Do until it is defeated. Then, with health at 5/9, recover food and health, and place a furnace next to the table to craft the iron sword (wood, coal, and iron are already in inventory).
+PREDICTION: The zombie takes another hit from the stone sword and gets closer to being defeated.
+ACTION: Do","You see:
+- grass 1 step to your west
+- zombie 2 steps to your north-west
+- stone 3 steps to your north
+- path 2 steps to your north-east
+- table 2 steps to your south-east
+- arrow 2 steps to your east
+- skeleton 4 steps to your south-east
+- coal 6 steps to your north-east
+
+You face grass at your front.",0.0,False
+204,Move South,"OBSERVATION_CHECK: FAILED: The last Do hit grass instead of the zombie, which has moved to 2 steps north-west, so the fight did not progress.
+NEW_MEMORY: The zombie backed off and the previous Do was wasted on grass; the furnace is not in view, so I must place one next to the table before crafting the iron sword.
+PLAN: Move toward the table (2 steps south-east), place a furnace adjacent to it using stone, then Make Iron Sword with wood, coal, and iron in inventory; afterwards eat a cow and recover health while avoiding the zombie and skeleton arrows.
+PREDICTION: I move one tile south, bringing the table closer, and the zombie likely follows but does not reach me immediately.
+ACTION: Move South","You see:
+- grass 1 step to your north
+- zombie 1 step to your west
+- stone 4 steps to your north-east
+- path 2 steps to your east
+- table 1 step to your east
+- arrow 4 steps to your north-east
+- skeleton 4 steps to your south-east
+- tree 6 steps to your south-east
+- coal 7 steps to your north-east
+
+You face grass at your front.",-0.2,False
+205,Place Furnace,"OBSERVATION_CHECK: SUCCESS (the south move changed the view; the table is now 1 step east)
+NEW_MEMORY: The table is 1 step east, so I can craft here. No furnace is in view, so I need to place one.
+PLAN: Place a furnace on the grass in front of me while the table is adjacent, then Make Iron Sword with wood, coal, and iron. After that, retreat from the zombie and skeleton, recover health, and eat a cow.
+PREDICTION: A furnace appears on the grass tile in front of me, next to the table, which enables iron sword crafting.
+ACTION: Place Furnace","You see:
+- grass 1 step to your north
+- zombie 1 step to your west
+- furnace 1 step to your south
+- stone 4 steps to your north-east
+- path 2 steps to your east
+- table 1 step to your east
+- arrow 5 steps to your north-east
+- skeleton 4 steps to your south-east
+- tree 6 steps to your south-east
+- coal 7 steps to your north-east
+
+You face furnace at your front.",0.0,False
+206,Make Iron Sword,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: Furnace placed 1 step south and table 1 step east, so both are in crafting range. Inventory has wood 3, coal 4, and iron 1, which is enough for the Iron Sword.
+PLAN: Make Iron Sword now. Then retreat from the zombie and skeleton, recover health, eat a cow, and drink water.
+PREDICTION: The Iron Sword is crafted, using 1 wood, 1 coal, and 1 iron.
+ACTION: Make Iron Sword","You see:
+- grass 1 step to your north
+- zombie 1 step to your west
+- furnace 1 step to your south
+- stone 4 steps to your north-east
+- path 2 steps to your east
+- table 1 step to your east
+- arrow 3 steps to your south-east
+- skeleton 4 steps to your south-east
+- tree 6 steps to your south-east
+- coal 7 steps to your north-east
+
+You face furnace at your front.",1.0,False
+207,Move West,"OBSERVATION_CHECK: SUCCESS (iron_sword now in inventory, iron consumed)
+NEW_MEMORY: Iron Sword crafted at the table and furnace spot; no iron left, so remaining goals are defeat zombie, eat cow, collect drink, sleep, and find diamonds and plants.
+PLAN: Turn west to face the zombie (1 step west), attack it with the iron sword until defeated, then recover health by staying away from the skeleton and arrows, drink water to the west, eat a cow to the south-east, and sleep safely when energy is low.
+PREDICTION: Moving West is blocked by the zombie, so I turn to face it, and it stays adjacent for attacks.
+ACTION: Move West","You see:
+- grass 2 steps to your west
+- zombie 1 step to your west
+- furnace 1 step to your south
+- stone 4 steps to your north-east
+- path 3 steps to your north-east
+- table 1 step to your east
+- arrow 2 steps to your east
+- skeleton 4 steps to your south-east
+- tree 6 steps to your south-east
+- coal 7 steps to your north-east
+
+You face zombie at your front.",-0.2,False
+208,Do,"OBSERVATION_CHECK: FAILED: The ""Move West"" was blocked by the zombie, so I turned to face it and did not move. The view did not change, which means I am stuck in a standoff rather than making progress.
+NEW_MEMORY: Zombie blocks the west tile; moving west just turns me to face it. Health is critically low at 1/9, so I must defeat the zombie before anything else.
+PLAN: Attack the zombie now with Do (iron sword) until it is defeated. Then avoid the skeleton and arrows to the south-east, drink water to the west, eat a cow to the south-east, and sleep when energy is low to recover health.
+PREDICTION: The iron sword deals heavy damage, so the zombie should take a hit and may be defeated within a few attacks.
+ACTION: Do","You see:
+- grass 1 step to your west
+- zombie 1 step to your north
+- furnace 1 step to your south
+- stone 4 steps to your north-east
+- path 2 steps to your east
+- table 1 step to your east
+- arrow 3 steps to your north-east
+- skeleton 4 steps to your south-east
+- tree 6 steps to your south-east
+- coal 7 steps to your north-east
+
+You face grass at your front.",0.0,False
+209,Move North,"OBSERVATION_CHECK: FAILED: The Do action hit grass because the zombie moved from west to north, so no attack landed.
+NEW_MEMORY: The zombie now sits 1 step north, not west. Doing nothing while it repositions wastes turns at 1 health, so I must face it directly before attacking.
+PLAN: Move North to turn toward the zombie (the blocked move makes me face it), then Do repeatedly with the iron sword until it is defeated. Afterward, retreat away from the skeleton and arrows, drink water to the west, eat a cow to the south-east, and sleep when energy is low to recover health.
+PREDICTION: I turn to face the zombie to the north, since the tile is occupied and I cannot step into it, so the next Do can hit it.
+ACTION: Move North","You see:
+- grass 1 step to your west
+- zombie 1 step to your north
+- furnace 1 step to your south
+- stone 4 steps to your north-east
+- path 2 steps to your east
+- table 1 step to your east
+- arrow 4 steps to your north-east
+- skeleton 3 steps to your south-east
+- tree 6 steps to your south-east
+- coal 7 steps to your north-east
+
+You face zombie at your front.",0.0,False
+210,Do,"OBSERVATION_CHECK: FAILED: The Move North was blocked by the zombie, so I only turned to face it and did not advance. The observation shows ""You face zombie at your front,"" so the turn did work.
+NEW_MEMORY: Zombie is directly north and blocking movement; moving toward it only turns me to face it, so attack instead of moving.
+PLAN: Attack the zombie with Do now while it is in front of me until it is defeated; then retreat from the skeleton and arrows, drink water to the west, eat a cow to the south-east, and sleep to recover health.
+PREDICTION: The iron sword hit should damage or defeat the zombie, which removes the immediate threat at 1 health.
+ACTION: Do","You died.
+
+
+
+You see:
+- grass 1 step to your north
+- zombie 1 step to your west
+- furnace 1 step to your south
+- stone 4 steps to your north-east
+- path 2 steps to your east
+- table 1 step to your east
+- arrow 5 steps to your north-east
+- skeleton 4 steps to your south-east
+- tree 6 steps to your south-east
+- coal 7 steps to your north-east
+
+You face grass at your front.",-0.1,True

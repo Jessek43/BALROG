@@ -1,0 +1,618 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn right,"NEW_MEMORY: Wall to the right.
+PLAN: Turn right. Go forward. Pick up red ball.
+PREDICTION: Red ball will be in my inventory.
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps left
+a red ball 1 step left and 3 steps forward",0,False
+1,turn left,"OBSERVATION_CHECK: FAILED: Unable to move forward, wall is in the way.
+NEW_MEMORY: Wall to the front.
+PLAN: KEEP
+PREDICTION: Turn to face red ball.
+ACTION: turn left","a wall 3 steps forward
+a wall 3 steps left
+a red ball 3 steps right and 1 step forward",0,False
+2,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Face the red ball directly
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps left
+a red ball 1 step left and 3 steps forward",0,False
+3,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Face the red ball directly
+ACTION: go forward","a wall 3 steps forward
+a wall 3 steps left
+a red ball 1 step left and 2 steps forward",0,False
+4,turn right,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn right and face the red ball directly.
+ACTION: turn right","a wall 4 steps forward
+a wall 3 steps left",0,False
+5,turn left,"OBSERVATION_CHECK: FAILED: Ran into a wall
+NEW_MEMORY: Wall to the right and front
+PLAN: New Plan: Turn left. Go forward. Turn right. Go forward. Pick up red ball.
+PREDICTION: Turn left
+ACTION: turn left","a wall 3 steps forward
+a wall 3 steps left
+a red ball 1 step left and 2 steps forward",0,False
+6,go forward,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Move towards the red ball
+ACTION: go forward","a wall 2 steps forward
+a wall 3 steps left
+a red ball 1 step left and 1 step forward",0,False
+7,turn left,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn towards the red ball
+ACTION: turn left","a wall 3 steps forward
+a wall 2 steps right
+a red ball 1 step right and 1 step forward",0,False
+8,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall to the left is also a dead end.
+PLAN: Turn around. Turn right. Go forward. Turn right. Go forward. Pick up red ball.
+PREDICTION: Move away from the dead end.
+ACTION: turn right","a wall 2 steps forward
+a wall 3 steps left
+a red ball 1 step left and 1 step forward",0,False
+9,turn around,"OBSERVATION_CHECK: FAILED: Stuck in a dead end.
+NEW_MEMORY: Wall to the right and front.
+PLAN: KEEP
+PREDICTION: Turn around.
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a red ball 1 step left",0,False
+10,turn around,"OBSERVATION_CHECK: SUCCESS
+NEW_MEMORY: NONE
+PLAN: KEEP
+PREDICTION: Turn around.
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a red ball 1 step left",0,False
+11,turn right,"OBSERVATION_CHECK: FAILED: Turn around had no effect.
+NEW_MEMORY: Wall to the left is a dead end.
+PLAN: KEEP
+PREDICTION: Turn right to face the red ball.
+ACTION: turn right","a wall 4 steps forward
+a wall 1 step left",0,False
+12,turn around,"OBSERVATION_CHECK: FAILED: Hit a wall by turning right.
+NEW_MEMORY: Wall to the right and front.
+PLAN: Turn around. Go forward. Turn right. Go forward. Pick up red ball.
+PREDICTION: Move away from the wall.
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 3 steps forward
+a wall 1 step left",0,False
+13,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall to the left is also a dead end.
+PLAN: KEEP
+PREDICTION: Turn to face the left wall.
+ACTION: turn right","a wall 6 steps forward
+a wall 3 steps left
+a red ball 2 steps right",0,False
+14,turn around,"OBSERVATION_CHECK: FAILED: Blocked by wall
+NEW_MEMORY: Wall 6 steps forward
+PLAN: Turn around. Go forward.
+PREDICTION: Move away from the wall.
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 5 steps forward
+a wall 3 steps left",0,False
+15,turn around,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 5 steps forward, blocked
+PLAN: KEEP
+PREDICTION: Turn around, should see the original layout
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 3 steps left",0,False
+16,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Should see the red ball.""
+ACTION: ""go forward""","a wall 3 steps forward
+a wall 3 steps left",0,False
+17,turn around,"OBSERVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: WALL 3 STEPS FORWARD, LEFT, RIGHT AND 3 STEPS LEFT
+PLAN: TURN AROUND AND TRY AGAIN
+PREDICTION: SHOULD SEE THE RED BALL
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 3 steps left",0,False
+18,turn around,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 2 steps forward
+PLAN: KEEP
+PREDICTION: Should see the red ball
+ACTION: turn around","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+19,TURN LEFT,"OBSERVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: WALL 1 STEP FORWARD
+PLAN: TRY TO FIND ANOTHER PATH, GO TOWARDS THE RED BALL
+PREDICTION: SHOULD SEE A DIFFERENT WALL OR ANOTHER PATH TOWARDS THE RED BALL
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+20,go backward,"OBSERVATION_CHECK: FAILED: hitting walls in all directions
+NEW_MEMORY: Wall to the left is a dead end
+PLAN: KEEP - Try to backtrack and find another path
+PREDICTION: Wall 1 step backward
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+21,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward is blocked
+PLAN: KEEP - Try to move backward and turn right
+PREDICTION: Move backward 1 step
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 3 steps left",0,False
+22,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall while trying to go backward.
+NEW_MEMORY: Wall to the left is also a dead end.
+PLAN: KEEP - Try to turn left and move one step forward.
+PREDICTION: Turn left.
+ACTION: turn left","a wall 3 steps forward
+a wall 1 step right",0,False
+23,go backward,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward, blocked
+PLAN: KEEP - Try to go backward
+PREDICTION: Move one step backward
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 2 steps forward
+a wall 1 step right",0,False
+24,TURN LEFT,"OBSERVATION_CHECK: FAILED: hit a wall
+NEW_MEMORY: Wall 2 steps forward is blocked
+PLAN: UPDATE - Turn left then try moving backward
+PREDICTION: Move one step to the left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+25,TURN LEFT,"OBSERVATION_CHECK: FAILED: Hit a wall forward
+NEW_MEMORY: Wall 1 step forward is blocked
+PLAN: KEEP - Turn left then try moving backward
+PREDICTION: Move one step to the left
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+26,TURN RIGHT,"OBSERVATION_CHECK: FAILED: HIT WALL TO THE RIGHT
+NEW_MEMORY: ""WALL 1 STEP FORWARD, RIGHT""
+PLAN: ""TURN AROUND THEN TRY MOVING RIGHT THEN BACKWARD""
+PREDICTION: ""MOVE ONE STEP FORWARD""
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+27,TURN AROUND,"OBSERVATION_CHECK: ""FAILED: Tried to move forward but the view did not change, hitting a wall.""
+NEW_MEMORY: ""WALL 1 STEP FORWARD IS BLOCKED""
+PLAN: ""KEEP: TURN AROUND THEN TRY MOVING RIGHT THEN BACKWARD""
+PREDICTION: ""MOVE ONE STEP FORWARD""
+ACTION: ""TURN AROUND""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+28,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Cannot move forward as there is a wall
+NEW_MEMORY: WALL 1 STEP FORWARD
+PLAN: KEEP: TURN RIGHT THEN GO BACKWARD
+PREDICTION: MOVE ONE STEP BACKWARD
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+29,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: WALL 1 STEP FORWARD AND RIGHT
+PLAN: KEEP: TURN RIGHT THEN GO BACKWARD
+PREDICTION: MOVE ONE STEP BACKWARD
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+30,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Blocked by wall in front
+NEW_MEMORY: WALL 1 STEP FORWARD AND RIGHT IS BLOCKED
+PLAN: TURN RIGHT THEN GO BACKWARD
+PREDICTION: MOVE ONE STEP BACKWARD
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+31,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall backward
+NEW_MEMORY: Wall to the back is also blocking the path
+PLAN: TURN RIGHT then GO BACKWARD
+PREDICTION: Move one step backward
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+32,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward is blocked (again)
+PLAN: TURN RIGHT then GO BACKWARD
+PREDICTION: Move one step backward
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+33,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Cannot move backward as there's a wall behind.
+NEW_MEMORY: Wall to the back is also blocking the path
+PLAN: KEEP
+PREDICTION: Turn right and see the new view
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+34,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Tried to move forward but went back instead
+NEW_MEMORY: WALL 1 STEP BACK IS BLOCKED
+PLAN: TURN RIGHT then GO BACKWARD
+PREDICTION: Turn right and see the new view
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+35,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall 1 step forward is blocked
+PLAN: KEEP
+PREDICTION: Turn right and see the new view
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+36,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Did not move closer to the goal, still facing a wall
+NEW_MEMORY: WALL 1 STEP FORWARD IS BLOCKED
+PLAN: TURN RIGHT then GO BACKWARD
+PREDICTION: Will face the back wall
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+37,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit wall
+NEW_MEMORY: ""WALL 1 STEP FORWARD AND RIGHT IS BLOCKED (AGAIN)""
+PLAN: ""KEEP""
+PREDICTION: ""Will face the front wall if turned right""
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+38,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Hit wall forward and right
+NEW_MEMORY: Wall 1 step forward and right also blocked
+PLAN: KEEP
+PREDICTION: ""Will face the back wall if move backward""
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+39,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Dead-end
+NEW_MEMORY: Wall 1 step forward and right is a dead-end
+PLAN: U-TURN AND GO BACKWARD
+PREDICTION: Will face the right open space
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+40,,"OBSERVATION_CHECK: FAILED: Repeatedly hitting a wall on the right and forward
+NEW Memorial: Wall 1 step right is a dead-end
+NEW Memorial: Wall 1 step forward is a dead-end
+PLAN: Keeps U-Turn AND GO BACKWARD
+PREDICTED EFFECT: Agent will face backward
+MOTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+41,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall.
+NEW_MEMORY: Wall 1 step forward is blocked (again).
+PLAN: KEEP U-Turn AND GO BACKWARD.
+PREDICTION: Move away from the wall.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+42,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Went forward and hit a wall.
+NEW_MEMORY: Wall 1 step forward is blocked (again).
+PLAN: KEEP U-Turn AND GO BACKWARD.
+PREDICTION: Move away from the wall.
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+43,TURN LEFT,"OBSERVATION_CHECK: FAILED: ""Unable to move backwards due to a wall, and turning right does not help""
+NEW_MEMORY: ""Failed to move backwards, blocked by a wall""
+PLAN: ""Find an alternative path around the wall by turning left instead of right, then proceed forward""
+PREDICTION: ""Going forward after turning left may reveal a new path forward or hit the left wall""
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+44,GO BACKWARD,"OBSERVATION_CHECK: ""FAILED: Hit the wall""
+NEW_MEMORY: ""WALL 1 STEP FORWARD, LEFT""
+PLAN: ""Backtrack, turn right, then move forward""
+PREDICTION: ""Proceed forward after turning right""
+ACTION: ""GO BACKWARD""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+45,go forward,"OBSERVATION_CHECK: FAILED: Stuck in a loop
+NEW_MEMORY: WALL 1 STEP FORWARD, LEFT, RIGHT, FORWARD AND RIGHT
+PLAN: KEEP
+PREDICTION: ""uneroll myself""
+ACTION: go forward","a wall 1 step forward
+a wall 1 step right",0,False
+46,go back,"OBSERVATION_CHECK: FAILED: HIT A WALL
+NEW_MEMORY: BLOCKED: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Unexpand myself
+ACTION: go back","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step right",0,False
+47,turn right,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: BLOCKED: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Unblock progress
+ACTION: turn right","a wall 1 step forward
+a wall 1 step left",0,False
+48,turn left,"OBSERVVATION_CHECK: FAILED: HIT WALL
+NEW_MEMORY: WALL 1 STEP FORWARD, LEFT
+PLAN: KEEP
+PREDICTION: Unblock progress
+ACTION: turn left","a wall 1 step forward
+a wall 1 step right",0,False
+49,turn right,"OBSERVATION_CHECK: FAILED: Blocked path forward
+NEW_MEMORY: Blocked: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Turn an open corridor
+ACTION: turn right","a wall 1 step forward
+a wall 1 step left",0,False
+50,turn left,"OBSERVATION_CHECK: FAILED: Could not move forward
+NEW_MEMORY: BLOCKED_PATH: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Turn towards the open corridor
+ACTION: turn left","a wall 1 step forward
+a wall 1 step right",0,False
+51,turn right,"OBSERVATION_CHECK: FAILED: Unable to move forward as expected.
+NEW_MEMORY: BLOCKED_PATH: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Should turn towards the open corridor and move forward.
+ACTION: turn right","a wall 1 step forward
+a wall 1 step left",0,False
+52,TURN LEFT,"OBSERVATION_CHECK: FAILED: Blocked
+NEW_MEMORY: BLOCKED_PATH: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Attempt to turn back into the previously open corridor
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+53,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall while trying to go forward
+NEW_MEMORY: WALL 1 STEP FORWARD
+PLAN: KEEP
+PREDICTION: Turn right; back into the same corridor without progression
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+54,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: BLOCKED_PATH: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Backtrack and try a different path
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+55,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Blocked: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Retrace my steps back to the last known intersection
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+56,go backward,"OBSERVATION_CHECK: FAILED: Hitting a wall
+NEW_MEMORY: BLOCKED: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Try to go back
+ACTION: go backward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+57,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Wall 1 step forward is blocked
+NEW_MEMORY: BLOCKED_PATH: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Try to turn right
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+58,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: BLOCKED_PATH: WALL 1 STEP FORWARD
+PLAN: KEEP
+PREDICTION: Try to turn right again, as I should have ended up facing a wall
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+59,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Same observation as the last step
+NEW_MEMORY: BLOCKED_PATH: WALL 1 STEP FORWARD
+PLAN: KEEP
+PREDICTION: Will face a wall again
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+60,GO BACKWARD,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: ""BLOCKED_PATH: Wall 1 step forward""
+PLAN: ""Backtrack, turn right, then move forward""
+PREDICTION: ""Will face a wall again""
+ACTION: GO BACKWARD","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+61,go backward,"OBSERVATION_CHECK: ""FAILED: Hit a wall forward.""
+NEW_MEMORY: ""BLOCKED_PATH: Wall 1 step forward""
+PLAN: ""KEEP""
+ACTION: ""go backward""","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+62,TURN LEFT,"OBSERVATION_CHECK: FAILED: Wall in front
+NEW_MEMORY: BLOCKED_PATH: Wall 1 step forward
+PLAN: TRY TURN LEFT; GO BACK; THEN TURN RIGHT
+PREDICTION: Turning left should reveal a new path.
+ACTION: TURN LEFT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,False
+63,TURN RIGHT,"OBSERVATION_CHECK: FAILED: Tried to move forward but hit a wall
+NEW_MEMORY: BLOCKED_PATH: Wall 1 step forward
+PLAN: KEEP
+PREDICTION: Turning right should reveal a new path.
+ACTION: TURN RIGHT","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 1 step forward
+a wall 1 step left",0,True

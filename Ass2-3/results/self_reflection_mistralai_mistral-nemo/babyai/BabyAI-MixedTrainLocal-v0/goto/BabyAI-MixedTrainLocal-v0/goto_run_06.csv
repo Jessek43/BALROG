@@ -1,0 +1,48 @@
+Step,Action,Reasoning,Observation,Reward,Done
+0,turn left,"NEW_MEMORY: Wall is 3 steps forward, wall is 2 steps right, purple ball is 2 steps left.
+PLAN: Turn left, go forward, pick up purple ball.
+PREDICTION: Purple ball will be seen below me.
+ACTION: turn left","a wall 3 steps right
+a purple ball 2 steps forward",0,False
+1,turn right,"OBSERVATION_CHECK: FAILED: Previously predicted purple ball didn't materialize, indicating a wall or incorrect prediction.
+NEW_MEMORY: Wall is 3 steps forward, 2 steps left, purple ball is 2 steps forward.
+PLAN: Turn right, go forward, pick up purple ball.
+PREDICTION: Purple ball will be seen below me.
+ACTION: turn right","a wall 3 steps forward
+a wall 2 steps right
+a purple ball 2 steps left",0,False
+2,go forward,"OBSERVATION_CHECK: ""SUCCESS""
+NEW_MEMORY: ""NONE""
+PLAN: ""KEEP""
+PREDICTION: ""Purple ball will be seen below me.""
+ACTION: go forward","a wall 2 steps forward
+a wall 2 steps right",0,False
+3,turn left,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall is 2 steps forward
+PLAN: Try moving left to avoid the wall, then go forward
+PREDICTION: Purple ball should be seen in front
+ACTION: turn left","a wall 5 steps forward
+a wall 2 steps right
+a purple ball 1 step left and 2 steps forward",0,False
+4,,"OBSERVATION_CHECK: FAILED: Noticed there is a wall 3 steps forward
+NEW_MEMORY: Wall is 3 steps forward, 2 steps left, purple ball is 2 steps forward","
+
+Your previous output did not contain a valid action. Defaulted to action: go forward
+
+Observation:
+a wall 4 steps forward
+a wall 2 steps right
+a purple ball 1 step left and 1 step forward",0,False
+5,go forward,"OBSERVATION_CHECK: FAILED: Hit a wall
+NEW_MEMORY: Wall is 4 steps forward
+PLAN: KEEP
+PREDICTION: should see the ball now without the wall in the way
+ACTION: go forward","a wall 3 steps forward
+a wall 2 steps right
+a purple ball 1 step left",0,False
+6,turn left,"OBSERVATION_CHECK: FAILED: did not reach the ball
+NEW_MEMORY: Wall is 3 steps forward after previous action
+PLAN: KEEP
+PREDICTION: should see an open path to the left
+ACTION: turn left","a wall 3 steps right
+a purple ball 1 step forward",0.9015625,True
